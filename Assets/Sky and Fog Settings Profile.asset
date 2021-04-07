@@ -120,8 +120,8 @@ MonoBehaviour:
     min: 1
     max: 10
   groundTint:
-    m_OverrideState: 0
-    m_Value: {r: 0.4, g: 0.25, b: 0.15, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 0.102483094, g: 0.16463253, b: 0.46226418, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 0
@@ -139,11 +139,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {x: 0, y: 0, z: 0}
   spaceEmissionTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 8900000, guid: d1bd3fcbc873cfe4898d0e699d1fe14b, type: 3}
   spaceEmissionMultiplier:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 1000
     min: 0
   spaceRotation:
     m_OverrideState: 0
@@ -195,13 +195,13 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   rotation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 85
     min: 0
     max: 360
   skyIntensityMode:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 1
   exposure:
     m_OverrideState: 0
     m_Value: 0
@@ -211,14 +211,14 @@ MonoBehaviour:
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0.89145094
     min: 0
   upperHemisphereLuxColor:
     m_OverrideState: 0
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: 0.15678382, y: 0.29211435, z: 0.5}
   desiredLuxValue:
-    m_OverrideState: 0
-    m_Value: 20000
+    m_OverrideState: 1
+    m_Value: 1000
   updateMode:
     m_OverrideState: 0
     m_Value: 0
@@ -230,8 +230,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   hdriSky:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 8900000, guid: d1bd3fcbc873cfe4898d0e699d1fe14b, type: 3}
   enableDistortion:
     m_OverrideState: 0
     m_Value: 0
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   skyType:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 4
   skyAmbientMode:
     m_OverrideState: 0
     m_Value: 0
@@ -341,6 +341,7 @@ MonoBehaviour:
   - {fileID: -926740811228590861}
   - {fileID: -7138457844182848014}
   - {fileID: 6413871334004708068}
+  - {fileID: -2701856735058662226}
 --- !u!114 &6413871334004708068
 MonoBehaviour:
   m_ObjectHideFlags: 3
