@@ -4,51 +4,89 @@ using UnityEngine;
 
 public class CombatControl : MonoBehaviour
 {
+
+
+    public bool isAttacking = false;
+    bool isStabbing = false;
     public Animator animator;
+
+    public int comboCounter = 0;
+
     public int damage = 0;
+    public bool canAttack;
+    float timer = 0f;
     // Start is called before the first frame update
     void Start()
     {
-
+        //animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer -= Time.deltaTime;
+
         float x = Input.GetAxis("Vertical");
 
         //This will make the stab attack happen
-        if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x > 0.0f)
+        if (Input.GetButtonDown("Melee") && x > 0.0f && !isAttacking)
         {
-            animator.SetTrigger("Stab");
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+
+            animator.SetBool("Stab", true);
             damage = 30;
-        } 
+        }
         //This will make the uppercut attack happen
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x < 0.0f)
+        if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
         {
-            animator.SetTrigger("RisingSlash");
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+
+            animator.SetBool("RisingSlash", true);
             damage = 50;
-        } 
+        }
+
+
         //This will do the first hit of a combo
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank"))
+        if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
         {
-            animator.SetTrigger("SwordSlash");
+            animator.SetBool("isAttacking", true);
+            comboCounter = 1;
+            isAttacking = true;
+            animator.SetInteger("combo", 1);
             damage = 10;
         }
         //This will do the second hit of the combo
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash"))
+        else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
         {
-            animator.SetTrigger("SwordSlash2");
+            animator.SetBool("isAttacking", true);
+
+            comboCounter = 2;
+            isAttacking = true;
+
+            animator.SetInteger("combo", 2);
             damage = 20;
         }
         //This will do the final hit of the combo
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash2"))
+        else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
         {
-            animator.SetTrigger("SwordSlash3");
+            animator.SetBool("isAttacking", true);
+
+            comboCounter = 0;
+            isAttacking = true;
+
+            animator.SetInteger("combo", 3);
             damage = 30;
-        } else
+        }
+
+        if (!isAttacking)
         {
             damage = 0;
+            animator.SetInteger("combo", 0);
+            animator.SetBool("RisingSlash", false);
+            animator.SetBool("Stab", false);
+            animator.SetBool("isAttacking", false);
         }
 
 
