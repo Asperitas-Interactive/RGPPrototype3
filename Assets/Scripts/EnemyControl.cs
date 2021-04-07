@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyControl : MonoBehaviour
 {
     //For Health
     private int health = 100;
+
+    public Slider slider;
+    
     //For Wave Spawning
     public int spawnNum = 5;
 
@@ -28,6 +32,8 @@ public class EnemyControl : MonoBehaviour
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
         GetComponent<NavMeshAgent>().SetDestination(player.position);
+        if(slider!=null)
+        slider.value = health;
 
         if (health < 0)
         {

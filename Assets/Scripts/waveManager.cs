@@ -13,7 +13,7 @@ public class waveManager : MonoBehaviour
     float waveTimer;
     int wave;
 
-   GameObject []boids;
+  public GameObject []boids;
 
     // Start is called before the first frame update
     void Start()
