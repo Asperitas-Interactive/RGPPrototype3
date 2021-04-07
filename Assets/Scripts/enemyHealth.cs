@@ -7,6 +7,23 @@ public class enemyHealth : MonoBehaviour
     private int health = 100;
     public int spawnNum = 5;
 
+    public enum EnemyType
+    {
+        Standard,
+        Rush,
+        Charge
+    };
+
+    public EnemyType type;
+
+    private void Start()
+    {
+        if(type == EnemyType.Standard)
+        {
+
+        }
+    }
+
     private void Update()
     {
         if(health < 0)

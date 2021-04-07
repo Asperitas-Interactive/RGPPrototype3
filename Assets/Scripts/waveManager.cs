@@ -62,7 +62,7 @@ public class waveManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.transform.childCount; i++)
         { 
-            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<enemyHealth>().spawnNum; j++)
+            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
             {
                  Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null);
                             }
