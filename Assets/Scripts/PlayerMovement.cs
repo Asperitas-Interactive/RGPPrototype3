@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     public float speed = 12.0f;
-    public float gravity = -10.0f;
+    public float gravity = -20.0f;
     public float jumpHeight = 2f;
 
     public Transform groundCheck;
@@ -26,6 +26,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Application.Quit();
+        }
+
         float velX = Input.GetAxis("Horizontal");
         float velZ = Input.GetAxis("Vertical");
 
@@ -35,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = gravity;
+            velocity.y = 0.0f;
         }
 
         Vector3 movement = transform.right * velX + transform.forward * velZ;
@@ -44,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(jumpPress && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * (gravity / 2f));
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
