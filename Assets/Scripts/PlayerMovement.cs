@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
         }
 
         float velX = Input.GetAxis("Horizontal");

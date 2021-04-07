@@ -690,8 +690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5520c1ac0d3407c4baff45d8edd5896e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWaves: 2
-  maxWaveTimer: 120
+  maxWaves: 1
+  maxWaveTimer: 10
   enemies: {fileID: 8373634382917164362, guid: 650426207a444284d910f6ee59875f7d, type: 3}
 --- !u!4 &1846404173
 Transform:
