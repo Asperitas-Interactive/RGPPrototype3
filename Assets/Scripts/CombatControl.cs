@@ -16,11 +16,11 @@ public class CombatControl : MonoBehaviour
     {
         float x = Input.GetAxis("Vertical");
 
-        if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x >= 0.5f)
+        if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x > 0.0f)
         {
             animator.SetTrigger("Stab");
         } 
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x <= -0.5f)
+        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x < 0.0f)
         {
             animator.SetTrigger("RisingSlash");
         } 
