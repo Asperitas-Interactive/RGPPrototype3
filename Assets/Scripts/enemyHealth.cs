@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyHealth : MonoBehaviour
 {
     private int health = 100;
+    public int spawnNum = 5;
 
     private void Update()
     {

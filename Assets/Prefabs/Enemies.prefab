@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1970430904466431846}
   - component: {fileID: 2635739467774411262}
   - component: {fileID: 1272367451473895752}
-  - component: {fileID: 5314873269886423877}
   - component: {fileID: 2474652718183552067}
   - component: {fileID: 123481220}
   - component: {fileID: 123481219}
@@ -101,19 +100,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5314873269886423877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1737278642442715370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc5955c82c7c304499d933c51907192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  en: 5
 --- !u!195 &2474652718183552067
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -193,6 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618686b07df25e48b284f209684dc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnNum: 5
 --- !u!1 &3780486976827162529
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +192,6 @@ GameObject:
   - component: {fileID: 3811280385158982299}
   - component: {fileID: 7202400485498699481}
   - component: {fileID: 8334254069200772983}
-  - component: {fileID: 6967305240560766323}
   - component: {fileID: 5602151967147126995}
   - component: {fileID: 986182894}
   - component: {fileID: 56880328}
@@ -292,19 +278,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6967305240560766323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3780486976827162529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc5955c82c7c304499d933c51907192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  en: 4
 --- !u!195 &5602151967147126995
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -355,6 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618686b07df25e48b284f209684dc00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnNum: 5
 --- !u!1 &8373634382917164362
 GameObject:
   m_ObjectHideFlags: 0

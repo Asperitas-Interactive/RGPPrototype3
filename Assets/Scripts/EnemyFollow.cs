@@ -10,7 +10,7 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<NavMeshAgent>().speed = Random.value * 2.0f + 1f;
+        GetComponent<NavMeshAgent>().speed = Random.Range(0.8f, 2.0f);
         rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
