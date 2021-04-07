@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    int health = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             Application.Quit();
+        }
+
+        if(health <= 0)
+        {
+            
         }
 
         float velX = Input.GetAxis("Horizontal");
@@ -55,5 +62,13 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            health -= 10;
+        }
     }
 }
