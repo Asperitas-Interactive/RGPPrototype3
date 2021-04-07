@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CombatControl : MonoBehaviour
 {
-    int comboCounter = 0;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -17,26 +16,29 @@ public class CombatControl : MonoBehaviour
     {
         float x = Input.GetAxis("Vertical");
 
+        //This will make the stab attack happen
         if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x > 0.0f)
         {
             animator.SetTrigger("Stab");
         } 
+        //This will make the uppercut attack happen
         else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x < 0.0f)
         {
             animator.SetTrigger("RisingSlash");
         } 
+        //This will do the first hit of a combo
         else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank"))
         {
             animator.SetTrigger("SwordSlash");
         }
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash") && comboCounter == 0)
+        //This will do the second hit of the combo
+        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash"))
         {
-            comboCounter = 1;
             animator.SetTrigger("SwordSlash2");
         }
-        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash2") && comboCounter == 1)
+        //This will do the final hit of the combo
+        else if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("SwordSlash2"))
         {
-            comboCounter = 0;
             animator.SetTrigger("SwordSlash3");
         }
 

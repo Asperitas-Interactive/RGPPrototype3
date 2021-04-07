@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 123481220}
   - component: {fileID: 123481219}
   - component: {fileID: 4797013470756990045}
+  - component: {fileID: 1926960583}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -180,6 +181,18 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!114 &1926960583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737278642442715370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6618686b07df25e48b284f209684dc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3780486976827162529
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +208,7 @@ GameObject:
   - component: {fileID: 6967305240560766323}
   - component: {fileID: 5602151967147126995}
   - component: {fileID: 986182894}
+  - component: {fileID: 56880328}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Enemy
@@ -329,6 +343,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &56880328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3780486976827162529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6618686b07df25e48b284f209684dc00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8373634382917164362
 GameObject:
   m_ObjectHideFlags: 0
