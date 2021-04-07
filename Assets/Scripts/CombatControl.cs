@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CombatControl : MonoBehaviour
 {
+
+    bool isStabbing;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,7 @@ public class CombatControl : MonoBehaviour
         float x = Input.GetAxis("Vertical");
 
         //This will make the stab attack happen
-        if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x > 0.0f)
+        if (Input.GetButtonDown("Melee") && animator.GetCurrentAnimatorStateInfo(0).IsName("Blank") && x > 0.0f && !isStabbing)
         {
             animator.SetTrigger("Stab");
         } 
