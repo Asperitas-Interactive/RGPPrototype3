@@ -712,6 +712,12 @@ MonoBehaviour:
   slider: {fileID: 9213942538794501207}
   spawnNum: 5
   player: {fileID: 0}
+  ChargeSpot: {fileID: 0}
+  maxCharge: 0
+  ChargeTimer: 0
+  EvadeTimer: 0
+  ChargeCoolDown: 5
+  EvadeCoolDown: 5
 --- !u!1 &2990986051634893708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1068,12 @@ MonoBehaviour:
   slider: {fileID: 0}
   spawnNum: 5
   player: {fileID: 0}
+  ChargeSpot: {fileID: 0}
+  maxCharge: 0
+  ChargeTimer: 0
+  EvadeTimer: 0
+  ChargeCoolDown: 5
+  EvadeCoolDown: 5
 --- !u!1 &5363994690887194357
 GameObject:
   m_ObjectHideFlags: 0
