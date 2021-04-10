@@ -59,6 +59,7 @@ public class EnemyControl : MonoBehaviour
 
         if(!evading && EvadeTimer < 0f)
         {
+            GetComponent<Renderer>().material.color = (Color.green);
             evading = true;
             EvadeCoolDown = 5f;
         }
@@ -66,9 +67,10 @@ public class EnemyControl : MonoBehaviour
         #endregion
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
-        ChargeAttack();
+        
         if (!evading)
         {
+            ChargeAttack();
             if (ChargeBool == false)
             {
                 agent.SetDestination(player.position);
@@ -83,9 +85,9 @@ public class EnemyControl : MonoBehaviour
         else
         {
             agent.SetDestination(player.position);
-            if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
+            //if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
             {
-                agent.velocity *= -1f;
+                agent.velocity = agent.desiredVelocity * -1f;
             }
         }
         if(slider!=null)
