@@ -13,14 +13,25 @@ public class waveManager : MonoBehaviour
     float waveTimer;
     int wave;
 
-    List<GameObject> boids;
+  public GameObject []boids;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        int count = 0;
+        for (int i = 0; i < enemies.transform.childCount; i++)
+        {
+            for (int j = 0; j < enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
+            {
+                count++;
+            }
+        }
+
+        boids = new GameObject[count];
         wave = 1;
         waveTimer = (float)maxWaveTimer;
-        waveStart();
+        
 
     }
 
@@ -58,22 +69,28 @@ public class waveManager : MonoBehaviour
        
     }
 
-    void waveStart()
+    int waveStart()
     {
+        int count = 0;
         for (int i = 0; i < enemies.transform.childCount; i++)
         { 
-            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<enemyNum>().en; j++)
+            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
             {
-                 Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null);
-                            }
+                
+                 boids[count] = Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null).gameObject;
+
+                count++;
+            }
         }
+        return count;
     }
 
     void WaveEnd()
     {
         foreach(GameObject boid in boids)
         {
-            Destroy(boid);
+            if(boid!=null)
+                Destroy(boid);
         }
     }
 

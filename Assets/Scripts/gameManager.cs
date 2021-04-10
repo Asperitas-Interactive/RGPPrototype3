@@ -26,7 +26,12 @@ public class gameManager : MonoBehaviour
 
     public void gameOver()
     {
-        
+        SceneManager.LoadScene(2);
+    }
+
+    public void gameLost()
+    {
+        SceneManager.LoadScene(3);
     }
     
 }
