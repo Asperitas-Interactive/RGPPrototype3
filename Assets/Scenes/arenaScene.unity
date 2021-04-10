@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1481.7451, g: 1835.5391, b: 2429.8105, a: 1}
+  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -130,30 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 126298213}
-    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: canAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: isAttacking
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: comboCounter
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3762352244609901246, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 1610925412}
-    - target: {fileID: 3762352244755345638, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: sensitivity
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 4500991933003703355, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_Name
       value: PlayerControllerFPS
@@ -202,69 +182,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5658677709617004803, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6750975097191972858, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-      propertyPath: m_TagString
-      value: Sword
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 820808977, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
---- !u!1 &126298212 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4500991933003703355, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-  m_PrefabInstance: {fileID: 126298211}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &126298213
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126298212}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 203e350bd2ee0fe4b92f0f1f93002c72, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!20 &252671516 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4500991932868017882, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
