@@ -13,6 +13,7 @@ public class CombatControl : MonoBehaviour
     public int comboCounter = 0;
 
     public int damage = 0;
+    private int damageIncrease = 0;
     public bool canAttack;
     float timer = 0f;
     // Start is called before the first frame update
@@ -35,7 +36,7 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", true);
 
             animator.SetBool("Stab", true);
-            damage = 30;
+            damage = 30 + damageIncrease;
         }
         //This will make the uppercut attack happen
         if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
@@ -44,7 +45,7 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", true);
 
             animator.SetBool("RisingSlash", true);
-            damage = 50;
+            damage = 50 + damageIncrease;
         }
 
 
@@ -55,7 +56,7 @@ public class CombatControl : MonoBehaviour
             comboCounter = 1;
             isAttacking = true;
             animator.SetInteger("combo", 1);
-            damage = 10;
+            damage = 10 + damageIncrease;
         }
         //This will do the second hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
@@ -66,7 +67,7 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 2);
-            damage = 20;
+            damage = 20 + damageIncrease;
         }
         //This will do the final hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
@@ -77,7 +78,7 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 3);
-            damage = 30;
+            damage = 30 + damageIncrease;
         }
 
         if (!isAttacking)
@@ -89,6 +90,10 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
+    }
 
+    public void DamageBoost(int Increase)
+    {
+        damageIncrease += Increase;
     }
 }
