@@ -14,6 +14,8 @@ public class PickUps : ScriptableObject
 
     public Type pickUpType;
 
+    public Material material;
+
     public int increase;
 
     public void powerUp(GameObject gameObject)

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   pickUpType: 0
+  material: {fileID: 2100000, guid: fff7b0d103b7de54f810338cd8c6d44a, type: 2}
   increase: 20

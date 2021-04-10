@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: TotalHealth
   m_EditorClassIdentifier: 
   pickUpType: 1
+  material: {fileID: 2100000, guid: 6a4a9cd798f58bf419164a016513c59e, type: 2}
   increase: 20

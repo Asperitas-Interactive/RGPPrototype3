@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: AttackUp
   m_EditorClassIdentifier: 
   pickUpType: 2
+  material: {fileID: 3332067844585720699, guid: 93a4b7efc82a6bf48ae489a6b36f228d, type: 3}
   increase: 10
