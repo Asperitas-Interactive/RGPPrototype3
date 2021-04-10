@@ -18,6 +18,7 @@ public class PickUpSpawner : MonoBehaviour
             //Update this for our area size
             Vector3 pos = new Vector3(Random.Range(-100, 101), 2.0f, Random.Range(-100, 101));
             Instantiate(pickup, pos, Quaternion.Euler(0, 0, 0));
+            timer = 10.0f;
         }
     }
 }

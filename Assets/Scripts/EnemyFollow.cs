@@ -6,12 +6,11 @@ using UnityEngine.AI;
 public class EnemyFollow : MonoBehaviour
 {
     public Transform player;
-    Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<NavMeshAgent>().speed = Random.Range(0.8f, 2.0f);
-        rb = GetComponent<Rigidbody>();
+      //  rb = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 

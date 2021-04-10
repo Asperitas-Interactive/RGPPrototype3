@@ -17,40 +17,76 @@ public class EnemyControl : MonoBehaviour
     //For Pathfinding
     public Transform player;
 
-    Rigidbody rb;
+    //Rigidbody rb;
 
     public float maxCharge;
     public float ChargeTimer;
     public float EvadeTimer;
+    public float maxEvade = 10f;
     public float ChargeCoolDown = 5.0f;
     public float EvadeCoolDown = 5.0f;
+    public float EvadeDistance = 20f;
 
+    Vector3 chargevel;
+    private NavMeshAgent agent;
     private bool ChargeBool = false;
+    bool evading = false;
 
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+
         //Set up pathfinding
-        GetComponent<NavMeshAgent>().speed = Random.Range(0.8f, 2.0f);
-        maxCharge = Random.Range(10.0f, 11.0f);
+        agent.speed = Random.Range(4.0f, 5.0f);
+        maxCharge = Random.Range(5f, 20f);
         ChargeTimer = maxCharge;
         EvadeTimer = Random.Range(20.0f, 60.0f);
-        rb = GetComponent<Rigidbody>();
+        agent.avoidancePriority = (int)Random.Range(20f, 79f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        GetComponent<NavMeshAgent>().SetDestination(player.position);
+        agent.SetDestination(player.position);
     }
 
     private void Update()
     {
+        #region Evade
+        EvadeTimer -= Time.deltaTime;
+        EvadeCoolDown -= Time.deltaTime;
+        if(evading && EvadeCoolDown <0f)
+        {
+            evading = false;
+            EvadeTimer = maxEvade;
+        }
+
+        if(!evading && EvadeTimer < 0f)
+        {
+            evading = true;
+            EvadeCoolDown = 5f;
+        }
+
+        #endregion
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
         ChargeAttack();
+        if (!evading)
+        {
+            if (ChargeBool == false)
+            {
+                agent.SetDestination(player.position);
+            }
+            else
+            {
+                agent.destination = agent.desiredVelocity * 5 + transform.position;
+                // agent.velocity = chargevel * 2;
 
-        if (ChargeBool == false)
+            }
+        }
+        else
         {
-            GetComponent<NavMeshAgent>().SetDestination(player.position);
-        } else
-        {
-            GetComponent<NavMeshAgent>().SetDestination(transform.forward * 20.0f);
+            agent.SetDestination(player.position);
+            if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
+            {
+                agent.velocity *= -1f;
+            }
         }
         if(slider!=null)
         slider.value = health;
@@ -78,8 +114,13 @@ public class EnemyControl : MonoBehaviour
         {
             if (ChargeTimer <= 0.0f)
             {
-                GetComponent<NavMeshAgent>().speed *= 2;
+                GetComponent<Renderer>().material.color = Color.blue;
+                agent.speed *= 2;
                 ChargeBool = true;
+                transform.LookAt(player);
+                chargevel = agent.velocity;
+                //agent.destination = transform.forward * 20.0f;
+                
                 ChargeCoolDown = 5.0f;
             } else
             {
@@ -89,7 +130,8 @@ public class EnemyControl : MonoBehaviour
         {
             if(ChargeCoolDown <= 0.0f)
             {
-                GetComponent<NavMeshAgent>().speed /= 2;
+                GetComponent<Renderer>().material.color = Color.white;
+                agent.speed /= 2;
                 ChargeBool = false;
                 ChargeTimer = maxCharge;
             } else
