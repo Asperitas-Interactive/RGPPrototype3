@@ -31,7 +31,9 @@ public class waveManager : MonoBehaviour
         boids = new GameObject[count];
         wave = 1;
         waveTimer = (float)maxWaveTimer;
-        
+        waveStart();
+
+
 
     }
 
@@ -64,9 +66,42 @@ public class waveManager : MonoBehaviour
 
         }
 
-        
+        if (!restWave)
+        {
+            bool flag = false;
 
-       
+            foreach (GameObject boid in boids)
+            {
+                if(boid == null)
+                {
+                    continue;
+                }
+
+                else
+                {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (!flag)
+            {
+                waveTimer = 0f;
+            }
+
+        }
+
+
+        else
+        {
+            if (Input.GetButtonDown("Skip"))
+            {
+                waveTimer = 0f;
+            }
+        }
+
+
+
     }
 
     int waveStart()
