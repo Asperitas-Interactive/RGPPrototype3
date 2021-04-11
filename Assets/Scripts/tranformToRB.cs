@@ -8,12 +8,7 @@ public class tranformToRB : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.tag == "Sword")
-        {
-            rb = transform.GetChild(0).GetComponent<Rigidbody>();
-        }
-        else
-            rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
