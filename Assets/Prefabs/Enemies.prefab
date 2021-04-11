@@ -1056,7 +1056,7 @@ MonoBehaviour:
   maxEvade: 10
   ChargeCoolDown: 5
   EvadeCoolDown: 5
-  EvadeDistance: 20
+  EvadeDistance: 5
 --- !u!54 &199686230163004251
 Rigidbody:
   m_ObjectHideFlags: 0

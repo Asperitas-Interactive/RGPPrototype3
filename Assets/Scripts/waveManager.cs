@@ -8,7 +8,7 @@ public class waveManager : MonoBehaviour
     public int maxWaves;
     public int maxWaveTimer;
     public GameObject enemies;
-
+    public PickUpSpawner pickUpSpawner;
     bool restWave;
     float waveTimer;
     int wave;
@@ -117,6 +117,9 @@ public class waveManager : MonoBehaviour
                 count++;
             }
         }
+
+        pickUpSpawner.spawnedPickups.Clear();
+
         return count;
     }
 
