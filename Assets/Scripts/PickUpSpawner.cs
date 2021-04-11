@@ -24,4 +24,14 @@ public class PickUpSpawner : MonoBehaviour
             timer = 10.0f;
         }
     }
+
+    public void deletePickups()
+    {
+        for(int i = 0; i < spawnedPickups.Count; i++)
+        {
+            Destroy(spawnedPickups[i]);
+        }
+
+        spawnedPickups.Clear();
+    }
 }

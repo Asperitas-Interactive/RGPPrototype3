@@ -16,6 +16,11 @@ public class CombatControl : MonoBehaviour
     private int damageIncrease = 0;
     public bool canAttack;
     float timer = 0f;
+
+
+    //AOE values
+    public float Radius = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -90,10 +95,31 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
+
+        //AOE MOVE
+        if (Input.GetButtonDown("AOE"))
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+            for(int i = 0; i < enemies.Length; i++)
+            {
+                if (Radius >= Vector3.Distance(transform.position, enemies[i].transform.position))
+                {
+                    enemies[i].GetComponent<EnemyControl>().AOEDamage();
+                }
+            }
+        }
+
     }
 
     public void DamageBoost(int Increase)
     {
         damageIncrease += Increase;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, Radius);
     }
 }

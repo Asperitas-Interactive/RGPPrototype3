@@ -93,7 +93,7 @@ public class EnemyControl : MonoBehaviour
         if(slider!=null)
         slider.value = health;
 
-        if (health < 0)
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -142,5 +142,10 @@ public class EnemyControl : MonoBehaviour
             }
         }
         
+    }
+
+    public void AOEDamage()
+    {
+        health -= 100;
     }
 }

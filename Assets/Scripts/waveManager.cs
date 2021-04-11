@@ -119,8 +119,6 @@ public class waveManager : MonoBehaviour
             }
         }
 
-        pickUpSpawner.spawnedPickups.Clear();
-
         return count;
     }
 
@@ -132,7 +130,7 @@ public class waveManager : MonoBehaviour
                 Destroy(boid);
         }
 
-        pickUpSpawner.spawnedPickups.Clear();
+        pickUpSpawner.deletePickups();
     }
 
 
