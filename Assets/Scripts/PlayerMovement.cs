@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    int health = 100;
+    private int health = 100;
     private int MaxHealth = 100;
 
     public Slider slider;
@@ -87,5 +87,15 @@ public class PlayerMovement : MonoBehaviour
     {
         MaxHealth += increase;
         slider.maxValue = MaxHealth;
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public int getMaxHP()
+    {
+        return MaxHealth;
     }
 }
