@@ -8,18 +8,24 @@ public class tranformToRB : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (gameObject.tag == "Sword")
-        {
-            rb = transform.GetChild(0).GetComponent<Rigidbody>();
-        }
-        else
+        //if (gameObject.tag == "Sword")
+        //{
+        //    rb = transform.GetChild(0).GetComponent<Rigidbody>();
+        //}
+        //else
             rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        //if (gameObject.tag != "Sword")
+        //    rb.MovePosition(transform.position);
+        //else
         rb.MovePosition(transform.position);
+        Debug.Log(transform.position);
         rb.MoveRotation(transform.rotation);
+
+        
     }
 }
