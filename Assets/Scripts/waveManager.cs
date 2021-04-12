@@ -7,10 +7,11 @@ public class waveManager : MonoBehaviour
 {
     public int maxWaves;
     public int maxWaveTimer;
+    public float restWaveTimer;
     public GameObject enemies;
-
+    public PickUpSpawner pickUpSpawner;
     bool restWave;
-    float waveTimer;
+    public float waveTimer;
     int wave;
 
   public GameObject []boids;
@@ -51,7 +52,7 @@ public class waveManager : MonoBehaviour
 
             if(!restWave)
             {
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)restWaveTimer;
                 restWave = true;
                 WaveEnd();
             }
@@ -117,6 +118,7 @@ public class waveManager : MonoBehaviour
                 count++;
             }
         }
+
         return count;
     }
 
@@ -127,6 +129,8 @@ public class waveManager : MonoBehaviour
             if(boid!=null)
                 Destroy(boid);
         }
+
+        pickUpSpawner.deletePickups();
     }
 
 

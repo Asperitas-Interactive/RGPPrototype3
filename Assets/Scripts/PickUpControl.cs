@@ -9,6 +9,7 @@ public class PickUpControl : MonoBehaviour
     private PickUps[] pickUps;
 
     private PickUps setPickup;
+
     void Start()
     {
         setPickup = pickUps[Random.Range(0, pickUps.Length)];

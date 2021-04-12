@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_Sickle
       objectReference: {fileID: 0}
+    - target: {fileID: 2809057467228992491, guid: c6259f80b7e9ea94089c0c798749c3d9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3b2661e6d9dad6e419190dc55a1927a8, type: 2}
+    - target: {fileID: 2809057467228992491, guid: c6259f80b7e9ea94089c0c798749c3d9, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 558844ddb491720498ea5e39c708a1ef, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6259f80b7e9ea94089c0c798749c3d9, type: 3}
 --- !u!4 &4588960467211387408 stripped
