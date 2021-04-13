@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 40.962635, g: 88.80259, b: 895.0626, a: 1}
+  m_IndirectSpecularColor: {r: 40.930046, g: 88.740616, b: 893.90845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6536,7 +6536,7 @@ MonoBehaviour:
   maxWaveTimer: 60
   restWaveTimer: 0
   enemies: {fileID: 8373634382917164362, guid: 650426207a444284d910f6ee59875f7d, type: 3}
-  pickUpSpawner: {fileID: 0}
+  pickUpSpawner: {fileID: 428884219}
   waveTimer: 0
   boids: []
 --- !u!4 &2012424323

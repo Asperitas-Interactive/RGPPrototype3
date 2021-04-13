@@ -25,7 +25,9 @@ public class EnemyControl : MonoBehaviour
     public float maxEvade = 10f;
     public float ChargeCoolDown = 5.0f;
     public float EvadeCoolDown = 5.0f;
-    public float EvadeDistance = 20f;
+    public float EvadeDistance = 100f;
+
+    public bool isAttacking {get; set; }
 
     Vector3 chargevel;
     private NavMeshAgent agent;
@@ -35,7 +37,7 @@ public class EnemyControl : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-
+        isAttacking = true;
         //Set up pathfinding
         agent.speed = Random.Range(4.0f, 5.0f);
         maxCharge = Random.Range(5f, 20f);
@@ -48,6 +50,10 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
+        if ((transform.position - player.position).magnitude < 10.0f)
+        {
+            isAttacking = true;
+        }
 
         transform.GetChild(0).transform.LookAt(player);
 
@@ -87,8 +93,9 @@ public class EnemyControl : MonoBehaviour
         }
         else
         {
+            agent.stoppingDistance = 0.0f;
             agent.SetDestination(player.position);
-            //if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
+            if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
             {
                 agent.velocity = agent.desiredVelocity * -1f;
             }
@@ -110,6 +117,14 @@ public class EnemyControl : MonoBehaviour
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
             health -= cc.damage;
+        }
+    }
+
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player" && isAttacking)
+        {
+           collision.GetComponent<PlayerMovement>().Damage(10f * Time.deltaTime);
         }
     }
 

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    private int health = 100;
+    private float health = 100f;
     private int MaxHealth = 100;
 
     public Slider slider;
@@ -70,12 +70,10 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    
+    public void Damage(float d)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health -= 10;
-        }
+        health -= d;
     }
 
     public void Heal(int recovery)
@@ -89,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         slider.maxValue = MaxHealth;
     }
 
-    public int getHealth()
+    public float getHealth()
     {
         return health;
     }
