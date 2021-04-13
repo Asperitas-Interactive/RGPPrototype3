@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1481.7451, g: 1835.5391, b: 2429.8105, a: 1}
+  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,9 +206,57 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4645350741744884640, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645350741744884640, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4645350741744884640, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656723213180130457, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Interpolate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4656723213180130457, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838852658471245814, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4282957
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838852658471245814, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Size.z
+      value: 0.20982046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838852658471245814, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Center.x
+      value: 0.00000082377136
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838852658471245814, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Center.y
+      value: 0.53017735
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838852658471245814, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_Center.z
+      value: 0.01085333
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750975097191972858, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6750975097191972858, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9129300729229691852, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_TagString
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 9151427753311873786, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_TagString
