@@ -59,5 +59,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_Hay3 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
