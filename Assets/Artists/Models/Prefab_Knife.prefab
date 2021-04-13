@@ -86,6 +86,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 4302954756326698366, guid: ea1267fdd5550b143a704f3b761bc063, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2547a69ad1b31f24aba4be7215e32c96, type: 2}
+    - target: {fileID: 4302954756326698366, guid: ea1267fdd5550b143a704f3b761bc063, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 49cb6c4e89851f842bf95c9c0c309d40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea1267fdd5550b143a704f3b761bc063, type: 3}
 --- !u!4 &5439447242949199430 stripped
