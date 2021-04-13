@@ -21,13 +21,13 @@ MonoBehaviour:
     max: 360
   skyIntensityMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 13
+    m_Value: 14
   multiplier:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 1126.6
     min: 0
   upperHemisphereLuxValue:
     m_OverrideState: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_Value: {x: 0.022456074, y: 0.04971495, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 19893.72
+    m_Value: 20000
   updateMode:
     m_OverrideState: 1
     m_Value: 0
@@ -51,12 +51,12 @@ MonoBehaviour:
     m_Value: 0
   hdriSky:
     m_OverrideState: 1
-    m_Value: {fileID: 8900000, guid: 22f5cbe895f4ab74a99cde85756e1788, type: 3}
+    m_Value: {fileID: 8900000, guid: e2dd060473d00f048b86428346d51809, type: 3}
   enableDistortion:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   procedural:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   flowmap:
     m_OverrideState: 0
@@ -65,12 +65,12 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 1
   scrollDirection:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 81
     min: 0
     max: 360
   scrollSpeed:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
     min: 0
   enableBackplate:
