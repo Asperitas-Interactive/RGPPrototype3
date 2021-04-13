@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2a118c5ff9d78a547be14788b92d8093, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59a4abfa29894e34e89c1c7e31c248a3, type: 2}
     - target: {fileID: 919132149155446097, guid: 2a118c5ff9d78a547be14788b92d8093, type: 3}
       propertyPath: m_Name
       value: MOD_Fence
