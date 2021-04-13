@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 402bbdd94c02f7e4891f07f6d55b1c58, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
       propertyPath: m_Name
-      value: MOD_Hay3
+      value: MOD_Hay3 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
