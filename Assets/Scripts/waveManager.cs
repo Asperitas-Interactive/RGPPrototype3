@@ -41,24 +41,35 @@ public class waveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool end = false;
+        foreach (GameObject boid in boids)
+        {
+            if (boid == null)
+                continue;
+            else end = true;
+        }
+        if (!end)
+        {
+            end = true;
+            restWave = true;
+            waveTimer = maxWaveTimer;
+        }
+
         waveTimer -= Time.deltaTime;
 
-        if(waveTimer <= 0.0f)
+        if (restWave)
         {
             if(wave > maxWaves)
             {
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
             }
 
-            if(!restWave)
-            {
-                waveTimer = (float)restWaveTimer;
-                restWave = true;
-                WaveEnd();
-            }
+            
 
-            else
+            else if(waveTimer <0.0f)
             {
+                end = false;
+               // waveTimer -= Time.deltaTime;
                 waveTimer = (float)maxWaveTimer;
                 restWave = false;
                 wave++;
@@ -124,12 +135,6 @@ public class waveManager : MonoBehaviour
 
     void WaveEnd()
     {
-        foreach(GameObject boid in boids)
-        {
-            if(boid!=null)
-                Destroy(boid);
-        }
-
         pickUpSpawner.deletePickups();
     }
 
