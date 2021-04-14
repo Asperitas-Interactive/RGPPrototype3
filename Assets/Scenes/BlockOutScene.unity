@@ -3701,7 +3701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1611226158331694404, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_TagString
-      value: Sword
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1823585711403227849, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6827,24 +6827,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5668661345854236358, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
   m_PrefabInstance: {fileID: 1835495833}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1837073775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1611226158331694404, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
-  m_PrefabInstance: {fileID: 850702304}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1837073778
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837073775}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.2, y: 2.8, z: 2.8}
-  m_Center: {x: -0.8, y: 2.3, z: -0.4}
 --- !u!1001 &1847397515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6925,7 +6907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DisplacementPos: {x: 0, y: 1, z: 0}
-  DisplacementNeg: {x: 0, y: -1, z: 0}
+  DisplacementNeg: {x: 0, y: 0, z: 0}
 --- !u!4 &1852882298 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3857939903285572158, guid: 7fc02f6898d859e4f86ab6ff89be842d, type: 3}
@@ -7071,8 +7053,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.03, y: 0.06865754, z: 0.66}
-  m_Center: {x: -0.60365385, y: 0.007074135, z: -0.00058241014}
+  m_Size: {x: 2.03, y: 0.17799675, z: 0.66}
+  m_Center: {x: -0.6036542, y: -0.04759565, z: -0.00058246776}
 --- !u!4 &1922514064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6678265779878678711, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
