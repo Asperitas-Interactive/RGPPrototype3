@@ -249,6 +249,7 @@ Transform:
   - {fileID: 4500991932868017885}
   - {fileID: 4500991933035387545}
   - {fileID: 5658677709617004803}
+  - {fileID: 6678265779878678711}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -512,6 +513,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4248afbfe10ed4dabdb74dd04a5b15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &8191919314684631778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6678265779878678711}
+  m_Layer: 9
+  m_Name: AoEPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6678265779878678711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8191919314684631778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4500991933003703357}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &4656723213180130457
 Rigidbody:
   m_ObjectHideFlags: 0
