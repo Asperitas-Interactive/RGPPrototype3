@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private int MaxHealth = 100;
 
     public Slider slider;
+    public Image viginette;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
+            viginette.GetComponent<FadeOut>().beginFade();
+            //GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
         }
 
         float velX = Input.GetAxis("Horizontal");

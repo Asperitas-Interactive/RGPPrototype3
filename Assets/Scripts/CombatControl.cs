@@ -16,7 +16,7 @@ public class CombatControl : MonoBehaviour
     private int damageIncrease = 0;
     public bool canAttack;
     float timer = 0.0f;
-    bool canAOE = false;
+    bool canAOE = true;
     public Transform aoePos;
 
     //AOE values

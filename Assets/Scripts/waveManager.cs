@@ -17,35 +17,19 @@ public class waveManager : MonoBehaviour
 
     public GameObject []boids;
 
+    public Waves[] waveControl;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        {
-            for (int j = 0; j < enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                count++;
-            }
-        }
-
-        boids = new GameObject[count];
-        wave = 1;
+        wave = 0;
         waveTimer = (float)maxWaveTimer;
         waveStart();
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-      
-
-
         if (restWave)
         {
             waveTimer -= Time.deltaTime;
@@ -111,16 +95,20 @@ public class waveManager : MonoBehaviour
     int waveStart()
     {
         int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        { 
-            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                
-                 boids[count] = Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null).gameObject;
 
-                count++;
-            }
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            count++;
         }
+
+        boids = new GameObject[count];
+
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+        }
+
+        pickUpSpawner.deletePickups();
 
         return count;
     }
