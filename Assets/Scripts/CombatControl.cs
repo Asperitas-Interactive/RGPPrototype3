@@ -50,14 +50,14 @@ public class CombatControl : MonoBehaviour
             damage = 30 + damageIncrease;
         }
         //This will make the uppercut attack happen
-        if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
+        /*if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true);
 
             animator.SetBool("RisingSlash", true);
             damage = 50 + damageIncrease;
-        }
+        }*/
 
 
         //This will do the first hit of a combo
@@ -67,7 +67,7 @@ public class CombatControl : MonoBehaviour
             comboCounter = 1;
             isAttacking = true;
             animator.SetInteger("combo", 1);
-            damage = 10 + damageIncrease;
+            damage = 30 + damageIncrease;
         }
         //This will do the second hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
@@ -78,7 +78,7 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 2);
-            damage = 20 + damageIncrease;
+            damage = 40 + damageIncrease;
         }
         //This will do the final hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
@@ -89,7 +89,7 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 3);
-            damage = 30 + damageIncrease;
+            damage = 50 + damageIncrease;
         }
 
         if (!isAttacking)

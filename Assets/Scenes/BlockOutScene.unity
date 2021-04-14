@@ -2341,6 +2341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 310acfbf268274048a4e80008ba2e499, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 310acfbf268274048a4e80008ba2e499, type: 3}
 --- !u!1001 &565279753
@@ -2903,6 +2907,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 25d31990941bed446a5dc821a30399f7, type: 3}
       propertyPath: m_Name
       value: MOD_EnemyWiltered
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 25d31990941bed446a5dc821a30399f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25d31990941bed446a5dc821a30399f7, type: 3}
@@ -4513,6 +4521,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 55d853c7e4223394d8f2c5bb2f5229c1, type: 3}
       propertyPath: m_Name
       value: MOD_Enemy (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 55d853c7e4223394d8f2c5bb2f5229c1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d853c7e4223394d8f2c5bb2f5229c1, type: 3}
@@ -7053,8 +7065,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.03, y: 0.17799675, z: 0.66}
-  m_Center: {x: -0.6036542, y: -0.04759565, z: -0.00058246776}
+  m_Size: {x: 3.7670348, y: 0.34670433, z: 0.8674593}
+  m_Center: {x: -0.9451639, y: -0.13195178, z: -0.040247392}
 --- !u!4 &1922514064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6678265779878678711, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
