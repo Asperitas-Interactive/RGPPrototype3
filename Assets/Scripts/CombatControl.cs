@@ -50,14 +50,14 @@ public class CombatControl : MonoBehaviour
             damage = 30 + damageIncrease;
         }
         //This will make the uppercut attack happen
-        if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
+        /*if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true);
 
             animator.SetBool("RisingSlash", true);
             damage = 50 + damageIncrease;
-        }
+        }*/
 
 
         //This will do the first hit of a combo

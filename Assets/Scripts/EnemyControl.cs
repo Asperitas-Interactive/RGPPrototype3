@@ -163,6 +163,7 @@ public class EnemyControl : MonoBehaviour
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
             health -= cc.damage;
+            Debug.Log("hit");
         }
     }
 
