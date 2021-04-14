@@ -3685,7 +3685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1611226158331694404, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_TagString
-      value: Sword
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1823585711403227849, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3926,6 +3926,10 @@ PrefabInstance:
     - target: {fileID: 6517708910667445005, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 49.497936
+      objectReference: {fileID: 0}
+    - target: {fileID: 7037584214911749780, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: m_TagString
+      value: Sword
       objectReference: {fileID: 0}
     - target: {fileID: 7108517242915233293, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
