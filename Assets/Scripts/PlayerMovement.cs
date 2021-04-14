@@ -72,13 +72,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health -= 10;
-        }
-    }
+
 
     public void Heal(int recovery)
     {

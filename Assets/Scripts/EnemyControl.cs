@@ -35,6 +35,10 @@ public class EnemyControl : MonoBehaviour
     public float ChargeCoolDown = 5.0f;
     public float EvadeCoolDown = 5.0f;
     public float EvadeDistance = 20f;
+    public float maxAttackCooldown = 3.0f;
+    public int damage = -10;
+    float attackTimer;
+    float attackCooldown = 3.0f;
 
     Vector3 chargevel;
     private NavMeshAgent agent;
@@ -57,8 +61,8 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-
-        transform.GetChild(0).transform.LookAt(player);
+        attackCooldown -= Time.deltaTime;
+        //transform.GetChild(0).transform.LookAt(player);
 
         #region Evade
         EvadeTimer -= Time.deltaTime;
@@ -71,7 +75,6 @@ public class EnemyControl : MonoBehaviour
 
         if(!evading && EvadeTimer < 0f)
         {
-            GetComponent<Renderer>().material.color = (Color.green);
             evading = true;
             EvadeCoolDown = 5f;
         }
@@ -109,8 +112,49 @@ public class EnemyControl : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        #region attackTimers
+        attackCooldown -= Time.deltaTime;
+        attackTimer -= Time.deltaTime;
+        #endregion
+
+        if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
+        {
+            if(attackCooldown < 0.0f)
+            {
+                GetComponent<BoxCollider>().enabled = true;
+                attackTimer = 3.0f;
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", true);
+            }
+
+            if(attackTimer < 0.0f)
+            {
+                GetComponent<BoxCollider>().enabled = false;
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+            }
+
+        }
+
+        else
+        {
+            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+        }
+
+        transform.GetChild(1).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
     }
 
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.CompareTag("Player"))
+        {
+            player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
+            attackTimer = 0f;
+            attackCooldown = maxAttackCooldown;
+            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+
+        }
+    }
+    
     private void OnCollisionEnter(Collision collision)
     {
         //Check collisions
@@ -128,7 +172,6 @@ public class EnemyControl : MonoBehaviour
         {
             if (ChargeTimer <= 0.0f)
             {
-                GetComponent<Renderer>().material.color = Color.blue;
                 agent.speed *= 2;
                 ChargeBool = true;
                 transform.LookAt(player);
@@ -144,7 +187,6 @@ public class EnemyControl : MonoBehaviour
         {
             if(ChargeCoolDown <= 0.0f)
             {
-                GetComponent<Renderer>().material.color = Color.white;
                 agent.speed /= 2;
                 ChargeBool = false;
                 ChargeTimer = maxCharge;
