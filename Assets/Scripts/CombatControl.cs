@@ -15,7 +15,7 @@ public class CombatControl : MonoBehaviour
     public int damage = 0;
     private int damageIncrease = 0;
     public bool canAttack;
-    float timer = 0f;
+    float timer = 30.0f;
 
     public Transform aoePos;
 
@@ -32,6 +32,11 @@ public class CombatControl : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
+
+        if(timer <= 0)
+        {
+
+        }
 
         float x = Input.GetAxis("Vertical");
 
@@ -107,6 +112,7 @@ public class CombatControl : MonoBehaviour
                 if (Radius >= Vector3.Distance(aoePos.position, enemies[i].transform.position))
                 {
                     enemies[i].GetComponent<EnemyControl>().AOEDamage();
+                    timer = 30.0f;
                 }
             }
         }
@@ -116,11 +122,5 @@ public class CombatControl : MonoBehaviour
     public void DamageBoost(int Increase)
     {
         damageIncrease += Increase;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(aoePos.position, Radius);
     }
 }
