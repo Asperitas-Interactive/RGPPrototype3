@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 217161078240397676, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
       propertyPath: m_Name
-      value: Cube Variant
+      value: StrongEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 1954438411769303853, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
       propertyPath: hPool
@@ -26,6 +26,10 @@ PrefabInstance:
     - target: {fileID: 2132132969530469246, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127607230208777669, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7078621680187558398, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
       propertyPath: m_RootOrder

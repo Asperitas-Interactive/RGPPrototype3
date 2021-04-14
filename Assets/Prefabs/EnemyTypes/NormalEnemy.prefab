@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!65 &-5124991701563073527
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217161078240397676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.71, z: 4.49}
+  m_Center: {x: 0, y: 1.02, z: 1.65}
 --- !u!1001 &1190442868306221500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13,19 +26,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 942262605333476034, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 942262605333476034, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 942262605333476034, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_Name
-      value: Cube Variant
+      value: NormalEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3220355237501359254, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3390864235839181252, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6021630457281790975, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8266671107008843842, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_RootOrder
@@ -71,5 +96,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 377221468941024881, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+    - {fileID: 6464327890570355669, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+--- !u!1 &217161078240397676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+  m_PrefabInstance: {fileID: 1190442868306221500}
+  m_PrefabAsset: {fileID: 0}

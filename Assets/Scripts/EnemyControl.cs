@@ -124,23 +124,23 @@ public class EnemyControl : MonoBehaviour
             {
                 GetComponent<BoxCollider>().enabled = true;
                 attackTimer = 3.0f;
-                GetComponent<Animator>().SetBool("isAttacking", true);
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", true);
             }
 
             if(attackTimer < 0.0f)
             {
                 GetComponent<BoxCollider>().enabled = false;
-                GetComponent<Animator>().SetBool("isAttacking", false);
+                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
             }
 
         }
 
         else
         {
-            GetComponent<Animator>().SetBool("isAttacking", false);
+            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
         }
 
-        GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
+        transform.GetChild(1).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -150,7 +150,7 @@ public class EnemyControl : MonoBehaviour
             player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
             attackTimer = 0f;
             attackCooldown = maxAttackCooldown;
-            GetComponent<Animator>().SetBool("isAttacking", false);
+            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
 
         }
     }
