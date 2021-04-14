@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Health
   m_EditorClassIdentifier: 
   pickUpType: 0
-  material: {fileID: 2100000, guid: fff7b0d103b7de54f810338cd8c6d44a, type: 2}
+  mMesh: {fileID: -7843526606762953986, guid: 0677fc746ea8ac047a17d263acb0058b, type: 3}
+  mMaterial: {fileID: 2100000, guid: 0f036fc7600be394292430b19a1cae62, type: 2}
   increase: 20
