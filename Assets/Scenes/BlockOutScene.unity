@@ -3656,7 +3656,7 @@ PrefabInstance:
       objectReference: {fileID: 1922514064}
     - target: {fileID: 1027023001, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3762352244609901246, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: slider
