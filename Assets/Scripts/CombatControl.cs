@@ -15,8 +15,8 @@ public class CombatControl : MonoBehaviour
     public int damage = 0;
     private int damageIncrease = 0;
     public bool canAttack;
-    float timer = 30.0f;
-
+    float timer = 0.0f;
+    bool canAOE = false;
     public Transform aoePos;
 
     //AOE values
@@ -33,9 +33,9 @@ public class CombatControl : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        if(timer <= 0)
+        if (timer <= 0)
         {
-
+            canAOE = true;
         }
 
         float x = Input.GetAxis("Vertical");
@@ -103,20 +103,23 @@ public class CombatControl : MonoBehaviour
 
 
         //AOE MOVE
-        if (Input.GetButtonDown("AOE"))
+        if (canAOE == true)
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            for(int i = 0; i < enemies.Length; i++)
+            if (Input.GetButtonDown("AOE"))
             {
-                if (Radius >= Vector3.Distance(aoePos.position, enemies[i].transform.position))
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+                for (int i = 0; i < enemies.Length; i++)
                 {
-                    enemies[i].GetComponent<EnemyControl>().AOEDamage();
-                    timer = 30.0f;
+                    if (Radius >= Vector3.Distance(aoePos.position, enemies[i].transform.position))
+                    {
+                        enemies[i].GetComponent<EnemyControl>().AOEDamage();
+                        canAOE = false;
+                        timer = 30.0f;
+                    }
                 }
             }
         }
-
     }
 
     public void DamageBoost(int Increase)
