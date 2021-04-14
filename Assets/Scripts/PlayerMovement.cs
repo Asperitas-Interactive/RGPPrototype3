@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,6 +18,11 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    private int health = 100;
+    private int MaxHealth = 100;
+
+    public Slider slider;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             Application.Quit();
+        }
+
+        slider.value = health;
+
+        if(health <= 0)
+        {
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
         }
 
         float velX = Input.GetAxis("Horizontal");
@@ -55,5 +68,34 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            health -= 10;
+        }
+    }
+
+    public void Heal(int recovery)
+    {
+        health = (int)Mathf.Clamp(health + recovery, 0, MaxHealth);
+    }
+
+    public void MaxHealthUp(int increase)
+    {
+        MaxHealth += increase;
+        slider.maxValue = MaxHealth;
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public int getMaxHP()
+    {
+        return MaxHealth;
     }
 }
