@@ -114,7 +114,7 @@ public class CombatControl : MonoBehaviour
                     if (Radius >= Vector3.Distance(aoePos.position, enemies[i].transform.position))
                     {
                         enemies[i].GetComponent<EnemyControl>().AOEDamage();
-                        //canAOE = false;
+                        canAOE = false;
                         timer = 30.0f;
                     }
                 }
