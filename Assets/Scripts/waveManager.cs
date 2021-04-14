@@ -42,10 +42,6 @@ public class waveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-      
-
-
         if (restWave)
         {
             waveTimer -= Time.deltaTime;

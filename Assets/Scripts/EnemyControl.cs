@@ -17,6 +17,15 @@ public class EnemyControl : MonoBehaviour
     //For Pathfinding
     public Transform player;
 
+    public enum healthPool
+    {
+        WEAK,
+        NORMAL,
+        STRONG
+    };
+
+    public healthPool hPool;
+
     //Rigidbody rb;
 
     public float maxCharge;
@@ -37,7 +46,7 @@ public class EnemyControl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         //Set up pathfinding
-        agent.speed = Random.Range(4.0f, 5.0f);
+        setVariables();
         maxCharge = Random.Range(5f, 20f);
         ChargeTimer = maxCharge;
         EvadeTimer = Random.Range(20.0f, 60.0f);
@@ -150,5 +159,24 @@ public class EnemyControl : MonoBehaviour
     public void AOEDamage()
     {
         health -= 100;
+    }
+
+    public void setVariables()
+    {
+        if (hPool == healthPool.WEAK)
+        {
+            agent.speed = Random.Range(5.0f, 6.0f);
+            health = Random.Range(50, 80);
+        }
+        else if (hPool == healthPool.NORMAL)
+        {
+            agent.speed = Random.Range(4.0f, 5.0f);
+            health = Random.Range(80, 110);
+        }
+        else if (hPool == healthPool.STRONG)
+        {
+            agent.speed = Random.Range(3.0f, 4.0f);
+            health = Random.Range(110, 140);
+        }
     }
 }
