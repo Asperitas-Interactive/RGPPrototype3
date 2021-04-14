@@ -69,12 +69,14 @@ public class EnemyControl : MonoBehaviour
         EvadeCoolDown -= Time.deltaTime;
         if(evading && EvadeCoolDown <0f)
         {
+            agent.speed *= 2f;
             evading = false;
             EvadeTimer = maxEvade;
         }
 
         if(!evading && EvadeTimer < 0f)
         {
+            agent.speed /= 2f;
             evading = true;
             EvadeCoolDown = 5f;
         }
