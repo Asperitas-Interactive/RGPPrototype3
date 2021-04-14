@@ -13,8 +13,9 @@ public class waveManager : MonoBehaviour
     bool restWave;
     public float waveTimer;
     int wave;
+    bool end = false;
 
-  public GameObject []boids;
+    public GameObject []boids;
 
     // Start is called before the first frame update
     void Start()
@@ -41,25 +42,15 @@ public class waveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool end = false;
-        foreach (GameObject boid in boids)
-        {
-            if (boid == null)
-                continue;
-            else end = true;
-        }
-        if (!end)
-        {
-            end = true;
-            restWave = true;
-            waveTimer = maxWaveTimer;
-        }
+        
+      
 
-        waveTimer -= Time.deltaTime;
 
         if (restWave)
         {
-            if(wave > maxWaves)
+            waveTimer -= Time.deltaTime;
+
+            if (wave > maxWaves)
             {
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
             }
@@ -98,7 +89,8 @@ public class waveManager : MonoBehaviour
 
             if (!flag)
             {
-                waveTimer = 0f;
+                restWave = true;
+                waveTimer = (float)maxWaveTimer;
             }
 
         }
