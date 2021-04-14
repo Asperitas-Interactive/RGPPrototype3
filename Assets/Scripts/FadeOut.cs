@@ -21,8 +21,6 @@ public class FadeOut : MonoBehaviour
             viginette.color = new Color(viginette.color.r, viginette.color.g, viginette.color.b, viginette.color.a + (0.5f * Time.deltaTime));
         }
 
-        Debug.Log(viginette.color.a);
-
         if(viginette.color.a > 1.0f)
         {
             GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
