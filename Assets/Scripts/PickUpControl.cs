@@ -13,7 +13,8 @@ public class PickUpControl : MonoBehaviour
     void Start()
     {
         setPickup = pickUps[Random.Range(0, pickUps.Length)];
-        GetComponent<MeshRenderer>().material = setPickup.material;
+        gameObject.GetComponent<MeshFilter>().mesh = setPickup.mMesh;
+        gameObject.GetComponent<MeshRenderer>().material = setPickup.mMaterial;
     }
 
     private void OnTriggerEnter(Collider other)
