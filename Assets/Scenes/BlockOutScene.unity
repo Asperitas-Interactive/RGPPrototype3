@@ -3488,6 +3488,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: Radius
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 946728067, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+      propertyPath: aoePos
+      value: 
+      objectReference: {fileID: 1922514064}
     - target: {fileID: 3762352244609901246, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
       propertyPath: slider
       value: 
@@ -6485,6 +6493,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1922514064 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6678265779878678711, guid: a666cabccc552a64ea59754822dd1f34, type: 3}
+  m_PrefabInstance: {fileID: 850702304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1976263245
 PrefabInstance:
   m_ObjectHideFlags: 0
