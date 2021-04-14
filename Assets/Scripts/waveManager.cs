@@ -110,8 +110,6 @@ public class waveManager : MonoBehaviour
 
         pickUpSpawner.deletePickups();
 
-        Debug.Log(waveControl[wave].enemies.Length);
-
         return count;
     }
 
