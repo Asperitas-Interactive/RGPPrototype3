@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 9213942538794501207}
-  spawnNum: 5
+  spawnNum: 2
   player: {fileID: 0}
   maxCharge: 0
   ChargeTimer: 0
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 8334039781480218840}
-  spawnNum: 5
+  spawnNum: 2
   player: {fileID: 0}
   maxCharge: 0
   ChargeTimer: 0
