@@ -14,7 +14,9 @@ public class PickUps : ScriptableObject
 
     public Type pickUpType;
 
-    public Material material;
+    //public Material material;
+    public Mesh mMesh;
+    public Material mMaterial;
 
     public int increase;
 
