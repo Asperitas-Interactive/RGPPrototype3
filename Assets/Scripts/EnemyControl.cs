@@ -49,7 +49,7 @@ public class EnemyControl : MonoBehaviour
     private void Update()
     {
 
-        transform.GetChild(0).transform.LookAt(player);
+        //transform.GetChild(0).transform.LookAt(player);
 
         #region Evade
         EvadeTimer -= Time.deltaTime;
