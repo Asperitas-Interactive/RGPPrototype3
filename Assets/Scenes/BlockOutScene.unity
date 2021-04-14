@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.704895, g: 61.049316, b: 614.7207, a: 1}
+  m_IndirectSpecularColor: {r: 27.72821, g: 61.09546, b: 615.5137, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6708,13 +6708,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5520c1ac0d3407c4baff45d8edd5896e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxWaves: 1
-  maxWaveTimer: 60
+  maxWaves: 4
+  maxWaveTimer: 20
   restWaveTimer: 0
   enemies: {fileID: 8373634382917164362, guid: 650426207a444284d910f6ee59875f7d, type: 3}
   pickUpSpawner: {fileID: 428884219}
   waveTimer: 0
   boids: []
+  waveControl:
+  - {fileID: 11400000, guid: 76610b016ab5d314ca9e4fbfb8f254f8, type: 2}
+  - {fileID: 11400000, guid: e031f071ac18170429783c4978559327, type: 2}
+  - {fileID: 11400000, guid: 76ce3fd093a6817428c7d87579f82128, type: 2}
+  - {fileID: 11400000, guid: 7a973032e9a044542b6293abdbe26cb9, type: 2}
+  - {fileID: 11400000, guid: 63d5ace534e2ee74d9595c49e72bc7f2, type: 2}
 --- !u!4 &2012424323
 Transform:
   m_ObjectHideFlags: 0

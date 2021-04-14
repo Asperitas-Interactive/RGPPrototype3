@@ -13,53 +13,28 @@ public class waveManager : MonoBehaviour
     bool restWave;
     public float waveTimer;
     int wave;
+    bool end = false;
 
-  public GameObject []boids;
+    public GameObject []boids;
+
+    public Waves[] waveControl;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        {
-            for (int j = 0; j < enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                count++;
-            }
-        }
-
-        boids = new GameObject[count];
-        wave = 1;
+        wave = 0;
         waveTimer = (float)maxWaveTimer;
         waveStart();
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool end = false;
-        foreach (GameObject boid in boids)
-        {
-            if (boid == null)
-                continue;
-            else end = true;
-        }
-        if (!end)
-        {
-            end = true;
-            restWave = true;
-            waveTimer = maxWaveTimer;
-        }
-
-        waveTimer -= Time.deltaTime;
-
         if (restWave)
         {
-            if(wave > maxWaves)
+            waveTimer -= Time.deltaTime;
+
+            if (wave > maxWaves)
             {
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
             }
@@ -98,7 +73,8 @@ public class waveManager : MonoBehaviour
 
             if (!flag)
             {
-                waveTimer = 0f;
+                restWave = true;
+                waveTimer = (float)maxWaveTimer;
             }
 
         }
@@ -119,16 +95,22 @@ public class waveManager : MonoBehaviour
     int waveStart()
     {
         int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        { 
-            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                
-                 boids[count] = Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null).gameObject;
 
-                count++;
-            }
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            count++;
         }
+
+        boids = new GameObject[count];
+
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+        }
+
+        pickUpSpawner.deletePickups();
+
+        Debug.Log(waveControl[wave].enemies.Length);
 
         return count;
     }
