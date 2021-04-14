@@ -18,7 +18,8 @@ public class HPText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentHealth.text = player.getHealth().ToString();
+        int health = (int)player.getHealth();
+        currentHealth.text = health.ToString();
         maxHealth.text = player.getMaxHP().ToString();
     }
 }
