@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,9 @@ public class TImerUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<Text>().text = ((int)manager.waveTimer).ToString();
+        if (manager.restWave)
+            this.GetComponent<Text>().text = ((int)manager.waveTimer).ToString();
+        else
+            this.GetComponent<Text>().text = (manager.boidCount).ToString();
     }
 }
