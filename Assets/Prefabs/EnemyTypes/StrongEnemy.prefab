@@ -28,6 +28,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4127607230208777669, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+      propertyPath: m_Height
+      value: 3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127607230208777669, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+      propertyPath: m_Radius
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127607230208777669, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127607230208777669, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
       propertyPath: m_StoppingDistance
       value: 5
       objectReference: {fileID: 0}
@@ -75,5 +87,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 772319050628491470, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
