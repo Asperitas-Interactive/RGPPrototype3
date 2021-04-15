@@ -17,6 +17,9 @@ public class PickUps : ScriptableObject
     //public Material material;
     public Mesh mMesh;
     public Material mMaterial;
+    public AudioClip sound;
+
+    public string soundTag;
 
     public int increase;
 

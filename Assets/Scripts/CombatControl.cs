@@ -22,6 +22,9 @@ public class CombatControl : MonoBehaviour
     //AOE values
     public float Radius = 5.0f;
 
+    public AudioSource thrust;
+    public AudioSource slash;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +51,8 @@ public class CombatControl : MonoBehaviour
 
             animator.SetBool("Stab", true);
             damage = 30 + damageIncrease;
+
+            thrust.Play();
         }
         //This will make the uppercut attack happen
         /*if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
@@ -68,6 +73,7 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
             animator.SetInteger("combo", 1);
             damage = 30 + damageIncrease;
+            slash.Play();
         }
         //This will do the second hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
@@ -79,6 +85,7 @@ public class CombatControl : MonoBehaviour
 
             animator.SetInteger("combo", 2);
             damage = 40 + damageIncrease;
+            slash.Play();
         }
         //This will do the final hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
@@ -90,6 +97,7 @@ public class CombatControl : MonoBehaviour
 
             animator.SetInteger("combo", 3);
             damage = 50 + damageIncrease;
+            slash.Play();
         }
 
         if (!isAttacking)
