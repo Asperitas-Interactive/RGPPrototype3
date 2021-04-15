@@ -19,6 +19,8 @@ public class PickUps : ScriptableObject
     public Material mMaterial;
     public AudioClip sound;
 
+    public string soundTag;
+
     public int increase;
 
     public void powerUp(GameObject gameObject)

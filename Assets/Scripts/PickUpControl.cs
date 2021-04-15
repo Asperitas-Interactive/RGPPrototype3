@@ -17,7 +17,7 @@ public class PickUpControl : MonoBehaviour
         setPickup = pickUps[Random.Range(0, pickUps.Length)];
         gameObject.GetComponent<MeshFilter>().mesh = setPickup.mMesh;
         gameObject.GetComponent<MeshRenderer>().material = setPickup.mMaterial;
-        source.clip = setPickup.sound;
+        source = GameObject.FindGameObjectWithTag(setPickup.soundTag).GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)

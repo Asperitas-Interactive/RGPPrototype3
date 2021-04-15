@@ -16,4 +16,5 @@ MonoBehaviour:
   mMesh: {fileID: 2381890483179193753, guid: 88aeea870944b6e41b9f941e93b96bff, type: 3}
   mMaterial: {fileID: 2100000, guid: 87ee3f502577cfc4c9888709b53c9ad8, type: 2}
   sound: {fileID: 8300000, guid: 5d52fa55c82c22848a3d0b6d740a855a, type: 3}
+  soundTag: AttackUpSound
   increase: 10
