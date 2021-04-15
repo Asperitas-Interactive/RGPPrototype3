@@ -15,4 +15,6 @@ MonoBehaviour:
   pickUpType: 1
   mMesh: {fileID: 5302568919011541938, guid: 44a2c2d772edbf44c9e3bc0faf6b8ed7, type: 3}
   mMaterial: {fileID: 2100000, guid: 0f036fc7600be394292430b19a1cae62, type: 2}
+  sound: {fileID: 8300000, guid: 63a801d2a5e3e1445ba8782b9b68fd26, type: 3}
+  soundTag: RecoverSound
   increase: 20
