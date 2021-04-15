@@ -44,16 +44,7 @@ public class CombatControl : MonoBehaviour
         float x = Input.GetAxis("Vertical");
 
         //This will make the stab attack happen
-        if (Input.GetButtonDown("Melee") && x > 0.0f && !isAttacking)
-        {
-            isAttacking = true;
-            animator.SetBool("isAttacking", true);
 
-            animator.SetBool("Stab", true);
-            damage = 30 + damageIncrease;
-
-            thrust.Play();
-        }
         //This will make the uppercut attack happen
         /*if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
         {
@@ -111,21 +102,17 @@ public class CombatControl : MonoBehaviour
 
 
         //AOE MOVE
-        if (canAOE == true)
+
         {
             if (Input.GetButtonDown("AOE"))
             {
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                isAttacking = true;
+                animator.SetBool("isAttacking", true);
 
-                for (int i = 0; i < enemies.Length; i++)
-                {
-                    if (Radius >= Vector3.Distance(aoePos.position, enemies[i].transform.position))
-                    {
-                        enemies[i].GetComponent<EnemyControl>().AOEDamage();
-                        canAOE = false;
-                        timer = 30.0f;
-                    }
-                }
+                animator.SetBool("Stab", true);
+                damage = 30 + damageIncrease;
+
+                thrust.Play();
             }
         }
     }
