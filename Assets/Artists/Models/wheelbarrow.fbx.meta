@@ -1,24 +1,9 @@
 fileFormatVersion: 2
-guid: 76082cb26c891e545a0338429191087a
+guid: 7372ac3353f20ef4fb60b959185ac34f
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert_HayBale
-    second: {fileID: 2100000, guid: d4c11ed2e37c9fe478b9c7aa5dacafc1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert_HayBaleEnd
-    second: {fileID: 2100000, guid: 773fc087d0d798b409016d5f5228c9fa, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert_HayBaleStrap
-    second: {fileID: 2100000, guid: 284a18dfb305f67418f4e70abbc06196, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
