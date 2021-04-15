@@ -10,10 +10,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.0254264
-  m_Height: 9.943766
+  m_Radius: 1.5556653
+  m_Height: 8.576589
   m_Direction: 1
-  m_Center: {x: 0.0071074963, y: 4.9636517, z: 0.000010728836}
+  m_Center: {x: 0.2833923, y: 4.2859473, z: -0.000009000301}
 --- !u!1 &5705320281418841625
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5631399378155348056}
   m_Layer: 0
-  m_Name: Prefab_Tree1
+  m_Name: Prefab_Tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 23617f8db49433c4cb127ac1fce883ed, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 79cf7e54b8177f34c8ab07466e91e2ae, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3972166743513975802, guid: 5336787a4135b5647932ab6b6711cf14, type: 3}
     - target: {fileID: 919132149155446097, guid: 79cf7e54b8177f34c8ab07466e91e2ae, type: 3}
       propertyPath: m_Name
       value: Tree1
