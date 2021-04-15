@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.755737, g: 60.89746, b: 613.56836, a: 1}
+  m_IndirectSpecularColor: {r: 28.150515, g: 60.74993, b: 612.28033, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,6 +259,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (2)
@@ -321,6 +329,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (12)
@@ -914,6 +930,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence
@@ -981,6 +1005,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (6)
@@ -1229,6 +1261,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (5)
@@ -1423,6 +1463,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (9)
@@ -1542,6 +1590,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (6)
@@ -1607,6 +1663,14 @@ PrefabInstance:
     - target: {fileID: 1651738242919906883, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
@@ -2071,6 +2135,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (2)
@@ -2232,6 +2304,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 0000362706268074c9426dd84fd8e773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 0000362706268074c9426dd84fd8e773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 0000362706268074c9426dd84fd8e773, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2374,7 +2454,7 @@ GameObject:
   m_Name: Terrain_(-200.0, 0.0, 0.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &170211605
@@ -2643,6 +2723,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2700,6 +2788,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (17)
@@ -3129,6 +3225,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (1)
@@ -3315,6 +3419,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (5)
@@ -3442,7 +3554,7 @@ GameObject:
   m_Name: Terrain_(200.0, 0.0, 200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &239060796
@@ -3558,6 +3670,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b936bca12409b364aac9fc632e774769, type: 3}
 --- !u!4 &244719828 stripped
@@ -3572,6 +3692,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -3691,6 +3819,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (9)
@@ -3910,6 +4046,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (4)
@@ -4091,6 +4235,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (16)
@@ -4619,6 +4771,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (10)
@@ -4803,6 +4963,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (5)
@@ -4922,6 +5090,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (13)
@@ -5175,6 +5351,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset
@@ -5448,6 +5632,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (15)
@@ -5912,6 +6104,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (17)
@@ -5969,6 +6169,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence
@@ -6145,6 +6353,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (7)
@@ -6335,6 +6551,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (7)
@@ -6415,7 +6639,7 @@ GameObject:
   m_Name: Terrain_(0.0, 0.0, -200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &492854861
@@ -6593,6 +6817,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &498453800 stripped
@@ -6649,6 +6881,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (11)
@@ -6932,6 +7172,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (1)
@@ -7480,6 +7728,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (8)
@@ -7650,6 +7906,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (3)
@@ -7958,6 +8222,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (2)
@@ -8196,6 +8468,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (16)
@@ -8678,6 +8958,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (22)
@@ -8817,6 +9105,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (1)
@@ -8878,6 +9174,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -8936,6 +9240,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (2)
@@ -9328,6 +9640,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -9525,6 +9845,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (10)
@@ -10124,6 +10452,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (3)
@@ -10243,6 +10579,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (8)
@@ -10607,6 +10951,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (21)
@@ -10672,7 +11024,7 @@ GameObject:
   m_Name: Terrain_(-200.0, 0.0, 200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &776090185
@@ -10870,6 +11222,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (6)
@@ -11339,6 +11699,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (5)
@@ -11649,6 +12017,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -11727,6 +12103,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (1)
@@ -11904,6 +12288,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &832005993 stripped
@@ -11918,6 +12310,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 15fb8ddc97e464f479d92b14d9fb1816, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -11990,6 +12390,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (22)
@@ -12055,6 +12463,14 @@ PrefabInstance:
     - target: {fileID: 1651738242919906883, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
@@ -12878,6 +13294,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (7)
@@ -13005,6 +13429,14 @@ PrefabInstance:
     - target: {fileID: 5668661345854236358, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
@@ -13154,6 +13586,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (20)
@@ -13727,6 +14167,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &898668895 stripped
@@ -13871,6 +14319,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (13)
@@ -13956,6 +14412,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -14142,6 +14606,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (13)
@@ -14382,6 +14854,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &947309974 stripped
@@ -14401,6 +14881,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (19)
@@ -15058,6 +15546,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (8)
@@ -15378,6 +15874,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (23)
@@ -15621,6 +16125,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (21)
@@ -15678,6 +16190,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (6)
@@ -15735,6 +16255,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (7)
@@ -16210,6 +16738,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight
       objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -16377,6 +16913,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (11)
@@ -16506,6 +17050,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (7)
@@ -16660,6 +17212,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -16717,6 +17277,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (2)
@@ -16807,6 +17375,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (2)
@@ -17023,6 +17599,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -17147,6 +17731,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset
@@ -17266,6 +17858,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -17442,6 +18042,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 732816b4b340ebf44ab308d029f0e0b1, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17499,6 +18107,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (3)
@@ -17556,6 +18172,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (2)
@@ -17889,6 +18513,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &1224033710 stripped
@@ -18204,6 +18836,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &1265202430 stripped
@@ -18293,6 +18933,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (12)
@@ -18420,7 +19068,7 @@ GameObject:
   m_Name: Terrain_(0.0, 0.0, 200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &1278622909
@@ -18583,7 +19231,7 @@ GameObject:
   m_Name: Terrain_(200.0, 0.0, -200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &1303717737
@@ -18651,6 +19299,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (6)
@@ -18925,6 +19581,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (1)
@@ -19121,6 +19785,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (20)
@@ -19344,6 +20016,14 @@ PrefabInstance:
     - target: {fileID: 5668661345854236358, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
@@ -19931,6 +20611,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (6)
@@ -19988,6 +20676,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (9)
@@ -20127,6 +20823,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (3)
@@ -20237,6 +20941,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &1460588568 stripped
@@ -20256,6 +20968,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (14)
@@ -20442,6 +21162,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (4)
@@ -20777,6 +21505,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 0000362706268074c9426dd84fd8e773, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 0000362706268074c9426dd84fd8e773, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 0000362706268074c9426dd84fd8e773, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -21150,6 +21886,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b936bca12409b364aac9fc632e774769, type: 3}
 --- !u!4 &1510116397 stripped
@@ -21366,6 +22110,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset
@@ -21769,7 +22521,7 @@ GameObject:
   m_Name: Terrain_(200.0, 0.0, 0.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &1562519084
@@ -21947,6 +22699,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b936bca12409b364aac9fc632e774769, type: 3}
 --- !u!4 &1566916427 stripped
@@ -21961,6 +22721,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -22168,6 +22936,14 @@ PrefabInstance:
     - target: {fileID: 1651738242919906883, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceBrokenRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4410380908312672523, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5668661345854236358, guid: fd67ee3e0d221fa449129b92538f8007, type: 3}
       propertyPath: m_RootOrder
@@ -22475,6 +23251,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (15)
@@ -22642,6 +23426,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!4 &1642582742 stripped
@@ -22714,6 +23506,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190984301132109057, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09f508b2ce91aca41bc4fcd0527b2b9d, type: 3}
 --- !u!1001 &1652744771
@@ -22780,6 +23580,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (4)
@@ -23230,6 +24038,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (6)
@@ -23287,6 +24103,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (4)
@@ -23344,6 +24168,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (3)
@@ -23406,6 +24238,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (9)
@@ -23726,6 +24566,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: 98bf2789d4f4d6a47928a60938562a14, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -23970,6 +24818,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (8)
@@ -24318,6 +25174,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913624447838878506, guid: b936bca12409b364aac9fc632e774769, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b936bca12409b364aac9fc632e774769, type: 3}
 --- !u!4 &1795044776 stripped
@@ -24404,6 +25268,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (9)
@@ -24471,6 +25343,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (7)
@@ -24533,6 +25413,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (1)
@@ -24590,6 +25478,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (18)
@@ -24930,6 +25826,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (10)
@@ -25007,6 +25911,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (4)
@@ -25209,6 +26121,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (19)
@@ -25885,6 +26805,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b27fca1f4787fe44faba4839c2d3773a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -26785,6 +27713,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (1)
@@ -27351,6 +28287,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (14)
@@ -27593,7 +28537,7 @@ GameObject:
   m_Name: Terrain_(-200.0, 0.0, -200.0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!154 &2018921634
@@ -27805,6 +28749,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (12)
@@ -27967,6 +28919,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (8)
@@ -28149,6 +29109,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (10)
@@ -28330,6 +29298,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 137665453}
     m_Modifications:
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514140506299085010, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 5b1897f1825edd144867df74b32739d5, type: 3}
       propertyPath: m_Name
       value: Prefab_Fence (8)
@@ -28578,6 +29554,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 518927956}
     m_Modifications:
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588271071072419668, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5631399378155348056, guid: b4d9d7ea293dc3a41b29ec75fc767f83, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -28697,6 +29681,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 804536263}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (18)
@@ -29091,6 +30083,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 314862026}
     m_Modifications:
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313691370043546733, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1651738242919906883, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
       propertyPath: m_Name
       value: Prefab_FenceOffset (11)
