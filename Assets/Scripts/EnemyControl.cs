@@ -130,7 +130,8 @@ public class EnemyControl : MonoBehaviour
             }
             destroy = true;
             //agent.velocity = Vector3.zero;
-            agent.enabled = false;
+            agent.isStopped  = true;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
             destroyTimer = 2.967f;
         }
 
