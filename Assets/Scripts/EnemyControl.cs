@@ -39,11 +39,14 @@ public class EnemyControl : MonoBehaviour
     public int damage = -10;
     float attackTimer;
     float attackCooldown = 3.0f;
+    float maxHealth;
 
     Vector3 chargevel;
     private NavMeshAgent agent;
     private bool ChargeBool = false;
     bool evading = false;
+    bool destroy = false;
+    float destroyTimer = 0.5f;
 
     public AudioSource hit;
     public AudioSource damagesound;
@@ -115,7 +118,66 @@ public class EnemyControl : MonoBehaviour
         if(slider!=null)
         slider.value = health;
 
-        if (health <= 0)
+        if (health <= 0 && !destroy)
+        {
+            for (int i = 1; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).gameObject.activeSelf)
+                {
+                    transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
+                    break;
+                }
+            }
+            destroy = true;
+            //agent.velocity = Vector3.zero;
+            agent.enabled = false;
+            destroyTimer = 2.967f;
+        }
+
+        #region EnemyModelFromHealth
+        if(health< maxHealth && health > maxHealth - maxHealth / 5)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
+
+       else if (health < maxHealth - maxHealth / 5 && health > maxHealth - maxHealth * (2 / 5))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        else if (health < maxHealth - maxHealth *(2/ 5) && health > maxHealth - maxHealth * (3 / 5))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(true);
+        }
+        else if (health < maxHealth - maxHealth *(3/ 5) && health > maxHealth - maxHealth * (4 / 5))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(true);
+        }
+        else if (health < maxHealth - maxHealth *(4/ 5) && health > 0)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
+            transform.GetChild(5).gameObject.SetActive(true);
+        }
+
+        #endregion
+
+        destroyTimer -= Time.deltaTime;
+        if(destroyTimer<0.0f && destroy)
         {
             Destroy(this.gameObject);
         }
@@ -127,37 +189,71 @@ public class EnemyControl : MonoBehaviour
 
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
         {
-            if(attackCooldown < 0.0f)
+            if (attackCooldown < 0.0f)
             {
                 GetComponent<BoxCollider>().enabled = true;
                 attackTimer = 3.0f;
-                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", true);
+                for (int i = 1; i < transform.childCount; i++)
+                {
+                    if (transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
+                        break;
+                    }
+                }
             }
 
             if(attackTimer < 0.0f)
             {
                 GetComponent<BoxCollider>().enabled = false;
-                transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+                for (int i = 1; i < transform.childCount; i++)
+                {
+                    if (transform.GetChild(i).gameObject.activeSelf)
+                    {
+                        transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                        break;
+                    }
+                }
             }
 
         }
 
         else
         {
-            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+            for (int i = 1; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).gameObject.activeSelf)
+                {
+                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                    break;
+                }
+            }
         }
-
-        transform.GetChild(1).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
+        for (int i = 1; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.activeSelf)
+            {
+                transform.GetChild(i).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
+                break;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.CompareTag("Player"))
+        if(collider.CompareTag("Player") && !destroy)
         {
             player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
             attackTimer = 0f;
             attackCooldown = maxAttackCooldown;
-            transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
+            for (int i = 1; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).gameObject.activeSelf)
+                {
+                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                    break;
+                }
+            }
             damagesound.Play();
         }
     }
@@ -218,16 +314,19 @@ public class EnemyControl : MonoBehaviour
         {
             agent.speed = Random.Range(5.0f, 6.0f);
             health = Random.Range(50, 80);
+            maxHealth = health;
         }
         else if (hPool == healthPool.NORMAL)
         {
             agent.speed = Random.Range(4.0f, 5.0f);
             health = Random.Range(80, 110);
+            maxHealth = health;
         }
         else if (hPool == healthPool.STRONG)
         {
             agent.speed = Random.Range(3.0f, 4.0f);
             health = Random.Range(110, 140);
+            maxHealth = health;
         }
     }
 }
