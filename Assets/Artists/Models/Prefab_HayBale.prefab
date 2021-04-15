@@ -99,6 +99,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_HayBale_sharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1286586291068329850, guid: c1a4bb1d2579a9940a1e1c45d012f190, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fba319da3f09f40458bbda31cdf75ca8, type: 2}
+    - target: {fileID: 1286586291068329850, guid: c1a4bb1d2579a9940a1e1c45d012f190, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 45a623163866fe44ebf9224edaffa106, type: 2}
+    - target: {fileID: 1286586291068329850, guid: c1a4bb1d2579a9940a1e1c45d012f190, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6b984edf02bd30c4c947f2e93b6a6099, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1a4bb1d2579a9940a1e1c45d012f190, type: 3}
 --- !u!4 &6467966172287137391 stripped
