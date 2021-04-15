@@ -45,6 +45,8 @@ public class EnemyControl : MonoBehaviour
     private bool ChargeBool = false;
     bool evading = false;
 
+    public AudioSource hit;
+    public AudioSource damagesound;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -57,6 +59,9 @@ public class EnemyControl : MonoBehaviour
         agent.avoidancePriority = (int)Random.Range(20f, 79f);
         player = GameObject.FindGameObjectWithTag("Player").transform;
         agent.SetDestination(player.position);
+
+        hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
+        damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -151,7 +156,7 @@ public class EnemyControl : MonoBehaviour
             attackTimer = 0f;
             attackCooldown = maxAttackCooldown;
             transform.GetChild(1).GetComponent<Animator>().SetBool("isAttacking", false);
-
+            damagesound.Play();
         }
     }
     
@@ -163,6 +168,8 @@ public class EnemyControl : MonoBehaviour
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
             health -= cc.damage;
+
+            hit.Play();
         }
     }
 

@@ -349,6 +349,8 @@ MonoBehaviour:
   EvadeDistance: 20
   maxAttackCooldown: 3
   damage: -10
+  hit: {fileID: 0}
+  damagesound: {fileID: 0}
 --- !u!54 &7602316017985697966
 Rigidbody:
   m_ObjectHideFlags: 0
