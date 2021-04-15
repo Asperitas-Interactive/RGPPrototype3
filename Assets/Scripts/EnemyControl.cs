@@ -268,7 +268,10 @@ public class EnemyControl : MonoBehaviour
 
             health -= cc.damage;
 
-            hit.Play();
+            if (cc.damage > 0)
+            {
+                hit.Play();
+            }
         }
     }
 
