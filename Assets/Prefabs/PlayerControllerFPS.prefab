@@ -924,6 +924,8 @@ MonoBehaviour:
   canAttack: 1
   aoePos: {fileID: 6678265779878678711}
   Radius: 10
+  thrust: {fileID: 0}
+  slash: {fileID: 0}
 --- !u!95 &126298213
 Animator:
   serializedVersion: 3
@@ -1524,6 +1526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8875960155249005120}
   - component: {fileID: 1901003102}
+  - component: {fileID: 6303978826837574933}
   m_Layer: 0
   m_Name: Bone001
   m_TagString: Sword
@@ -1546,6 +1549,19 @@ Transform:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -74.441925, y: 37.585384, z: -127.40282}
 --- !u!65 &1901003102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7037584214911749780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.7670348, y: 0.34670433, z: 0.8674593}
+  m_Center: {x: -0.9451639, y: -0.13195178, z: -0.040247392}
+--- !u!65 &6303978826837574933
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1937,6 +1953,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5658677709617004803}
   - component: {fileID: 499356263}
+  - component: {fileID: 1662162390096428217}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -1960,6 +1977,19 @@ Transform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &499356263
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9151427753311873786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1662162390096428217
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

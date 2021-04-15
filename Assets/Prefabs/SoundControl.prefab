@@ -684,7 +684,7 @@ GameObject:
   - component: {fileID: 5742388991635766649}
   m_Layer: 0
   m_Name: AttackUp
-  m_TagString: Untagged
+  m_TagString: AttackUpSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -714,7 +714,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5d52fa55c82c22848a3d0b6d740a855a, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 5765187468137216591}
   m_Layer: 0
   m_Name: Recover
-  m_TagString: Untagged
+  m_TagString: RecoverSound
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -841,7 +841,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 63a801d2a5e3e1445ba8782b9b68fd26, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
