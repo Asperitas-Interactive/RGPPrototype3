@@ -85,7 +85,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: aa9263fa1322fd643a93a0e016789f11, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c1cbf81d2f1e40149a786c2427a5a994, type: 2}
+      objectReference: {fileID: 2100000, guid: f008e4d0453dbf9479fc32b8b5c82fdf, type: 2}
     - target: {fileID: -7511558181221131132, guid: aa9263fa1322fd643a93a0e016789f11, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -93,7 +93,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: aa9263fa1322fd643a93a0e016789f11, type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: f008e4d0453dbf9479fc32b8b5c82fdf, type: 2}
+      objectReference: {fileID: 2100000, guid: c1cbf81d2f1e40149a786c2427a5a994, type: 2}
     - target: {fileID: 919132149155446097, guid: aa9263fa1322fd643a93a0e016789f11, type: 3}
       propertyPath: m_Name
       value: MOD_SiloMedium
