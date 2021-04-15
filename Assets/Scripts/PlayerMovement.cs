@@ -81,8 +81,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void MaxHealthUp(int increase)
     {
-        MaxHealth += increase;
-        slider.maxValue = MaxHealth;
+        if (MaxHealth < 500)
+        {
+            MaxHealth += increase;
+            slider.maxValue = MaxHealth;
+            health += increase;
+        }
     }
 
     public int getHealth()

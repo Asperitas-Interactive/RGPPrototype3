@@ -119,6 +119,9 @@ public class CombatControl : MonoBehaviour
 
     public void DamageBoost(int Increase)
     {
-        damageIncrease += Increase;
+        if (damageIncrease < 100)
+        {
+            damageIncrease += Increase;
+        }
     }
 }
