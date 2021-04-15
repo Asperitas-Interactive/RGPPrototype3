@@ -5,12 +5,13 @@ using UnityEngine.AI;
 
 public class waveManager : MonoBehaviour
 {
+    public int boidCount = 0;
     public int maxWaves;
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
     public PickUpSpawner pickUpSpawner;
-    bool restWave;
+   public bool restWave;
     public float waveTimer;
     int wave;
     bool end = false;
@@ -52,7 +53,7 @@ public class waveManager : MonoBehaviour
             }
 
         }
-
+        int t = 0;
         if (!restWave)
         {
             bool flag = false;
@@ -66,10 +67,12 @@ public class waveManager : MonoBehaviour
 
                 else
                 {
+                    t++;
                     flag = true;
-                    break;
+                    
                 }
             }
+            boidCount = t;
 
             if (!flag)
             {
