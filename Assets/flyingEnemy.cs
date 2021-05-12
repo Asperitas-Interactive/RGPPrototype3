@@ -4,13 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class EnemyControl : MonoBehaviour
+public class flyingEnemy : MonoBehaviour
 {
     //For Health
     private int health = 100;
 
     public Slider slider;
-    
+
     //For Wave Spawning
     public int spawnNum = 5;
 
@@ -103,8 +103,8 @@ public class EnemyControl : MonoBehaviour
             agent.velocity = Vector3.zero;
             agent.SetDestination(transform.position);
         }
-        if(slider!=null)
-        slider.value = health;
+        if (slider != null)
+            slider.value = health;
 
         if (health <= 0 && !destroy)
         {
@@ -112,25 +112,25 @@ public class EnemyControl : MonoBehaviour
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
+                    //transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
                     break;
                 }
             }
             destroy = true;
             //agent.velocity = Vector3.zero;
-            agent.isStopped  = true;
+            agent.isStopped = true;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             destroyTimer = 2.967f;
         }
 
         #region EnemyModelFromHealth
-        if(health< maxHealth && health > maxHealth - maxHealth / 5)
+        if (health < maxHealth && health > maxHealth - maxHealth / 5)
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
         }
 
-       else if (health < maxHealth - maxHealth *(1.0f/ 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
+        else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
 
@@ -138,14 +138,14 @@ public class EnemyControl : MonoBehaviour
             transform.GetChild(2).gameObject.SetActive(true);
         }
 
-        else if (health < maxHealth - maxHealth *(2.0f/ 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
+        else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
             transform.GetChild(3).gameObject.SetActive(true);
         }
-        else if (health < maxHealth - maxHealth *(3.0f/ 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
+        else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
@@ -153,7 +153,7 @@ public class EnemyControl : MonoBehaviour
             transform.GetChild(3).gameObject.SetActive(false);
             transform.GetChild(4).gameObject.SetActive(true);
         }
-        else if (health < maxHealth - maxHealth *(4.0f/ 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
+        else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
@@ -166,7 +166,7 @@ public class EnemyControl : MonoBehaviour
         #endregion
 
         destroyTimer -= Time.deltaTime;
-        if(destroyTimer<0.0f && destroy)
+        if (destroyTimer < 0.0f && destroy)
         {
             Destroy(this.gameObject);
         }
@@ -176,7 +176,7 @@ public class EnemyControl : MonoBehaviour
         attackTimer -= Time.deltaTime;
         #endregion
         Debug.Log(attackCooldown);
-            
+
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
         {
             if (attackCooldown < 0.0f)
@@ -187,15 +187,15 @@ public class EnemyControl : MonoBehaviour
                 {
                     if (transform.GetChild(i).gameObject.activeSelf)
                     {
-                       // transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
+                      //  transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
                         attackCooldown = maxAttackCooldown;
                         break;
                     }
                 }
             }
 
-            else 
-           
+            else
+
             {
                 agent.velocity = Vector3.zero;
 
@@ -204,7 +204,7 @@ public class EnemyControl : MonoBehaviour
                 {
                     if (transform.GetChild(i).gameObject.activeSelf)
                     {
-                      //  transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                        //transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
                         break;
                     }
                 }
@@ -218,7 +218,7 @@ public class EnemyControl : MonoBehaviour
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                   // transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
                     break;
                 }
             }
@@ -227,7 +227,7 @@ public class EnemyControl : MonoBehaviour
         {
             if (transform.GetChild(i).gameObject.activeSelf)
             {
-                transform.GetChild(i).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
+               // transform.GetChild(i).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
                 break;
             }
         }
@@ -235,7 +235,7 @@ public class EnemyControl : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.CompareTag("Player") && !destroy)
+        if (collider.CompareTag("Player") && !destroy)
         {
             player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
             attackTimer = 0f;
@@ -244,14 +244,14 @@ public class EnemyControl : MonoBehaviour
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                   // transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
                     break;
                 }
             }
             damagesound.Play();
         }
     }
-    
+
     private void OnCollisionEnter(Collision collision)
     {
         //Check collisions

@@ -86,6 +86,7 @@ public class CombatControl : MonoBehaviour
             comboCounter = 0;
             isAttacking = true;
 
+            
             animator.SetInteger("combo", 3);
             damage = 50 + damageIncrease;
             slash.Play();
