@@ -573,34 +573,6 @@ PrefabInstance:
       propertyPath: viginette
       value: 
       objectReference: {fileID: 856093702}
-    - target: {fileID: 4715426723128607476, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: jumpHeight
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.85
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5418037751416479383, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5418037751809262705, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
       propertyPath: m_Name
       value: PlayerControllerThirdPerson
@@ -647,22 +619,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5418037751809262711, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8450442790051450057, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4712930608017556069, guid: 5da30ddf2ccb85042ad1f728f279f97e, type: 3}
-    - target: {fileID: 8688951550557452934, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8688951550557452934, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 8688951550557452934, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
-      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

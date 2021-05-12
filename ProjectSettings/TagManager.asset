@@ -12,6 +12,7 @@ TagManager:
   - HitSound
   - RecoverSound
   - AttackUpSound
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

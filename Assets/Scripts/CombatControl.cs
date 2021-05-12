@@ -120,7 +120,10 @@ public class CombatControl : MonoBehaviour
         //Ranged Attack
         if (Input.GetButtonDown("Range"))
         {
-            bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000);
+            GameObject bulletClone = Instantiate(bullet);
+            bulletClone.transform.position = transform.position + (transform.forward * 5);
+            bulletClone.transform.localRotation = transform.localRotation;
+            bulletClone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
     }
 
