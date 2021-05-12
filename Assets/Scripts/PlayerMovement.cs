@@ -69,12 +69,14 @@ public class PlayerMovement : MonoBehaviour
             m_IsFalling = false;
         }
 
-        if(m_IsFalling && !isGrounded)
+        if (m_IsFalling && !isGrounded)
         {
-            velocity.y = gravity * 2;
+            velocity.y += gravity * 10 * Time.deltaTime;
         }
-
-        velocity.y += gravity * Time.deltaTime;
+        else
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
 
         controller.Move(velocity * Time.deltaTime);
     }

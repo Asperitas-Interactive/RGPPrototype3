@@ -60,11 +60,6 @@ public class CombatControl : MonoBehaviour
             damage = 50 + damageIncrease;
         }*/
 
-        if(Input.GetButtonDown("AOE") && m_MovementScript.isGrounded && !isAttacking)
-        {
-            m_MovementScript.m_IsFalling = true;
-        }
-
         //This will do the first hit of a combo
         if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
         {
@@ -110,9 +105,17 @@ public class CombatControl : MonoBehaviour
         }
 
 
-        //Stab Move
+        //Special moves
         {
-            if (Input.GetButtonDown("AOE"))
+            //Downward plunge
+            if (Input.GetButtonDown("AOE") && !m_MovementScript.isGrounded && !isAttacking)
+            {
+                m_MovementScript.m_IsFalling = true;
+                isAttacking = true;
+                //Add animation code so we cant buffer a move during this
+            }
+            //stab
+            else if (Input.GetButtonDown("AOE"))
             {
                 isAttacking = true;
                 animator.SetBool("isAttacking", true);
