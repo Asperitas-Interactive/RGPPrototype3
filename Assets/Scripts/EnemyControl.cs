@@ -69,52 +69,36 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-        attackCooldown -= Time.deltaTime;
         //transform.GetChild(0).transform.LookAt(player);
 
         #region Evade
-        EvadeTimer -= Time.deltaTime;
-        EvadeCoolDown -= Time.deltaTime;
-        if(evading && EvadeCoolDown <0f)
-        {
-            agent.speed *= 2f;
-            evading = false;
-            EvadeTimer = maxEvade;
-        }
+        //EvadeTimer -= Time.deltaTime;
+        //EvadeCoolDown -= Time.deltaTime;
+        //if(evading && EvadeCoolDown <0f)
+        //{
+        //    agent.speed *= 2f;
+        //    evading = false;
+        //    EvadeTimer = maxEvade;
+        //}
 
-        if(!evading && EvadeTimer < 0f)
-        {
-            agent.speed /= 2f;
-            evading = true;
-            EvadeCoolDown = 5f;
-        }
+        //if(!evading && EvadeTimer < 0f)
+        //{
+        //    agent.speed /= 2f;
+        //    evading = true;
+        //    EvadeCoolDown = 5f;
+        //}
 
         #endregion
+
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
-        
-        if (!evading)
-        {
-            ChargeAttack();
-            if (ChargeBool == false)
-            {
-                agent.SetDestination(player.position);
-            }
-            else
-            {
-                agent.destination = agent.desiredVelocity * 5 + transform.position;
-                // agent.velocity = chargevel * 2;
 
-            }
-        }
-        else
+        if (attackCooldown < 0.0f)
         {
             agent.SetDestination(player.position);
-            //if(Vector3.Distance(player.position, transform.position) < EvadeDistance)
-            {
-                agent.velocity = agent.desiredVelocity * -1f;
-            }
         }
+        else agent.velocity = Vector3.zero;
+       
         if(slider!=null)
         slider.value = health;
 
@@ -187,7 +171,7 @@ public class EnemyControl : MonoBehaviour
         attackCooldown -= Time.deltaTime;
         attackTimer -= Time.deltaTime;
         #endregion
-
+        Debug.Log(attackCooldown);
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
         {
             if (attackCooldown < 0.0f)
@@ -199,13 +183,17 @@ public class EnemyControl : MonoBehaviour
                     if (transform.GetChild(i).gameObject.activeSelf)
                     {
                         transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
+                        attackCooldown = maxAttackCooldown;
                         break;
                     }
                 }
             }
 
-            if(attackTimer < 0.0f)
+            else 
+           
             {
+                agent.velocity = Vector3.zero;
+
                 GetComponent<BoxCollider>().enabled = false;
                 for (int i = 1; i < transform.childCount; i++)
                 {
@@ -275,37 +263,7 @@ public class EnemyControl : MonoBehaviour
         }
     }
 
-    private void ChargeAttack()
-    {
-        if(ChargeBool == false)
-        {
-            if (ChargeTimer <= 0.0f)
-            {
-                agent.speed *= 2;
-                ChargeBool = true;
-                transform.LookAt(player);
-                chargevel = agent.velocity;
-                //agent.destination = transform.forward * 20.0f;
-                
-                ChargeCoolDown = 5.0f;
-            } else
-            {
-                ChargeTimer -= Time.deltaTime;
-            }
-        } else
-        {
-            if(ChargeCoolDown <= 0.0f)
-            {
-                agent.speed /= 2;
-                ChargeBool = false;
-                ChargeTimer = maxCharge;
-            } else
-            {
-                ChargeCoolDown -= Time.deltaTime;
-            }
-        }
-        
-    }
+
 
     public void AOEDamage()
     {
