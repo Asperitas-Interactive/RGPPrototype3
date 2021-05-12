@@ -16,13 +16,15 @@ public class PlayerMovement : MonoBehaviour
 
 
     Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
 
     private int health = 100;
     private int MaxHealth = 100;
 
     public Slider slider;
     public Image viginette;
+
+    public bool m_IsFalling = false;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,12 @@ public class PlayerMovement : MonoBehaviour
         if(jumpPress && isGrounded)
         {
             velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
+            m_IsFalling = false;
+        }
+
+        if(m_IsFalling && !isGrounded)
+        {
+            velocity.y = gravity * 2;
         }
 
         velocity.y += gravity * Time.deltaTime;

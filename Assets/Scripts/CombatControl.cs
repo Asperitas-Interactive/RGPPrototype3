@@ -27,10 +27,13 @@ public class CombatControl : MonoBehaviour
 
     public GameObject bullet;
 
+    public PlayerMovement m_MovementScript;
+
     // Start is called before the first frame update
     void Start()
     {
         //animator = GetComponent<Animator>();
+        m_MovementScript = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -57,6 +60,10 @@ public class CombatControl : MonoBehaviour
             damage = 50 + damageIncrease;
         }*/
 
+        if(Input.GetButtonDown("AOE") && m_MovementScript.isGrounded && !isAttacking)
+        {
+            m_MovementScript.m_IsFalling = true;
+        }
 
         //This will do the first hit of a combo
         if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)

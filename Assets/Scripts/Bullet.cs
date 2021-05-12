@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Timer = 2.0f;
+    public float m_Timer = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +14,9 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Timer -= Time.deltaTime;
+        m_Timer -= Time.deltaTime;
 
-        if(Timer <= 0.0f)
+        if(m_Timer <= 0.0f)
         {
             Destroy(this.gameObject);
         }
