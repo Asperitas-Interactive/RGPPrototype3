@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         if(health <= 0)
         {
             viginette.GetComponent<FadeOut>().beginFade();
-            //GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
         }
 
         float velX = Input.GetAxis("Horizontal");
@@ -64,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(jumpPress && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
         }
 
         velocity.y += gravity * Time.deltaTime;
