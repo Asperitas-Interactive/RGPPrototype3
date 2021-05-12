@@ -27,8 +27,8 @@ public class CameraMovment : MonoBehaviour
 
         xRot = Mathf.Clamp(xRot, -45.0f, 45.0f);
 
-        player.Rotate(Vector3.up * mouseX);
+        transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);
 
-        Debug.Log(player.localRotation.eulerAngles.x);
+        player.Rotate(Vector3.up * mouseX);
     }
 }
