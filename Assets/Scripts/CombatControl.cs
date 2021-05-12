@@ -25,6 +25,8 @@ public class CombatControl : MonoBehaviour
     public AudioSource thrust;
     public AudioSource slash;
 
+    public GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,8 +103,7 @@ public class CombatControl : MonoBehaviour
         }
 
 
-        //AOE MOVE
-
+        //Stab Move
         {
             if (Input.GetButtonDown("AOE"))
             {
@@ -114,6 +115,12 @@ public class CombatControl : MonoBehaviour
 
                 thrust.Play();
             }
+        }
+
+        //Ranged Attack
+        if (Input.GetButtonDown("Range"))
+        {
+            bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1000);
         }
     }
 
