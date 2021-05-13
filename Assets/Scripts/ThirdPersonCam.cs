@@ -36,11 +36,7 @@ public class ThirdPersonCam : MonoBehaviour
         //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
         //player.Rotate(Vector3.up, mouseX);
         transform.parent.Rotate(Vector3.up, mouseX);
-
-        if (m_playerCont.velocity != Vector3.zero)
-        {
-            player.Rotate(Vector3.up, mouseX);
-        }
+        player.Rotate(Vector3.up, mouseX);
     }
 
     private void LateUpdate()
