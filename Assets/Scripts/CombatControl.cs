@@ -15,8 +15,6 @@ public class CombatControl : MonoBehaviour
     public int damage = 0;
     private int damageIncrease = 0;
     public bool canAttack;
-    float timer = 0.0f;
-    bool canAOE = true;
     public Transform aoePos;
 
     //AOE values
@@ -39,13 +37,13 @@ public class CombatControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-
-        if (timer <= 0)
+        if (isAttacking == true)
         {
-            canAOE = true;
+            m_MovementScript.m_isAttacking = true;
+        } else
+        {
+            m_MovementScript.m_isAttacking = false;
         }
-
         float x = Input.GetAxis("Vertical");
 
         //This will make the stab attack happen
@@ -104,7 +102,6 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
-
         //Special moves
         {
             //Downward plunge
@@ -135,6 +132,8 @@ public class CombatControl : MonoBehaviour
             bulletClone.transform.localRotation = transform.localRotation;
             bulletClone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
+
+        Debug.Log(isAttacking);
     }
 
     public void DamageBoost(int Increase)

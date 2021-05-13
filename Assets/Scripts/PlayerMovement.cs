@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject[] bodyToRotate;
 
+    public bool m_isAttacking = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,8 +72,10 @@ public class PlayerMovement : MonoBehaviour
         {
             //go.transform.rotation = Quaternion.LookRotation(NextDir);
         }*/
-
-        controller.Move(movement * speed * Time.deltaTime);
+        if (m_isAttacking == false)
+        {
+            controller.Move(movement * speed * Time.deltaTime);
+        }
 
         if(jumpPress && isGrounded)
         {
