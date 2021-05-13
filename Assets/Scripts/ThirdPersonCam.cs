@@ -12,6 +12,7 @@ public class ThirdPersonCam : MonoBehaviour
     private CharacterController m_playerCont;
 
     float xRot = 0f;
+    float yRot = 90f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,13 +30,15 @@ public class ThirdPersonCam : MonoBehaviour
 
         xRot += mouseY;
 
-        xRot = Mathf.Clamp(xRot, -45.0f, 45.0f);
+        xRot = Mathf.Clamp(xRot, 0.0f, 80.0f);
 
+        yRot += mouseX;
         //transform.parent.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);
 
         //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
         //player.Rotate(Vector3.up, mouseX);
-        transform.parent.Rotate(Vector3.up, mouseX);
+        //transform.parent.Rotate(Vector3.up, mouseX);
+        transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
         player.Rotate(Vector3.up, mouseX);
     }
 

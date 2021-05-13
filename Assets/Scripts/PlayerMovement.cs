@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool m_IsFalling = false;
 
+    public GameObject[] bodyToRotate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 movement = transform.right * velX + transform.forward * velZ;
+
+        //I'll try this later
+        /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        Debug.Log(NextDir);
+        foreach (GameObject go in bodyToRotate)
+        {
+            //go.transform.rotation = Quaternion.LookRotation(NextDir);
+        }*/
 
         controller.Move(movement * speed * Time.deltaTime);
 

@@ -822,6 +822,22 @@ PrefabInstance:
       propertyPath: viginette
       value: 
       objectReference: {fileID: 856093702}
+    - target: {fileID: 4715426723128607476, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+      propertyPath: bodyToRotate.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715426723128607476, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+      propertyPath: bodyToRotate.Array.data[0]
+      value: 
+      objectReference: {fileID: 8450442788270397023}
+    - target: {fileID: 4715426723128607476, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+      propertyPath: bodyToRotate.Array.data[1]
+      value: 
+      objectReference: {fileID: 8450442788270397022}
+    - target: {fileID: 4715426723128607476, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+      propertyPath: bodyToRotate.Array.data[2]
+      value: 
+      objectReference: {fileID: 8450442788270397021}
     - target: {fileID: 5418037751809262705, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
       propertyPath: m_Name
       value: PlayerControllerThirdPerson
@@ -872,3 +888,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+--- !u!1 &8450442788270397021 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 677621442346802815, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+  m_PrefabInstance: {fileID: 8450442788270397020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8450442788270397022 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7141083201946479886, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+  m_PrefabInstance: {fileID: 8450442788270397020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8450442788270397023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 916058658845848591, guid: 4c48d6362dcfbe4409052f6437644109, type: 3}
+  m_PrefabInstance: {fileID: 8450442788270397020}
+  m_PrefabAsset: {fileID: 0}
