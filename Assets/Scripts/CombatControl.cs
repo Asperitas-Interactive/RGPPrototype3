@@ -58,8 +58,19 @@ public class CombatControl : MonoBehaviour
             damage = 50 + damageIncrease;
         }*/
 
+        //Stab
+        if(Input.GetAxis("Vertical") > 0.0f && Input.GetButton("Vertical") && Input.GetButtonDown("Melee") && canAttack && !isAttacking)
+        {
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+
+            animator.SetBool("Stab", true);
+            damage = 30 + damageIncrease;
+
+            thrust.Play();
+        }
         //This will do the first hit of a combo
-        if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
+        else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
         {
             animator.SetBool("isAttacking", true);
             comboCounter = 1;
@@ -112,7 +123,7 @@ public class CombatControl : MonoBehaviour
                 //Add animation code so we cant buffer a move during this
             }
             //stab
-            else if (Input.GetButtonDown("AOE"))
+            /*else if (Input.GetButtonDown("AOE"))
             {
                 isAttacking = true;
                 animator.SetBool("isAttacking", true);
@@ -121,7 +132,7 @@ public class CombatControl : MonoBehaviour
                 damage = 30 + damageIncrease;
 
                 thrust.Play();
-            }
+            }*/
         }
 
         //Ranged Attack
