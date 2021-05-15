@@ -2,298 +2,149 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class flyingEnemy : MonoBehaviour
 {
-    //For Health
-    private int health = 100;
 
-    public Slider slider;
 
-    //For Wave Spawning
-    public int spawnNum = 5;
+    public float m_radius;
+    private Vector3 m_origin;
+    public float m_maxTimer;
 
-    //For Pathfinding
-    public Transform player;
+    Transform m_player;
 
-    public enum healthPool
+    float m_attackBuffer;
+    public enum eState
     {
-        WEAK,
-        NORMAL,
-        STRONG
-    };
+        wander,
+        follow,
+        attack,
+    }
 
-    public healthPool hPool;
+    public eState m_state;
+    private float m_timer;
+    NavMeshAgent m_agent;
 
-    //Rigidbody rb;
-
-    public float maxCharge;
-    public float ChargeTimer;
-    public float EvadeTimer;
-    public float maxEvade = 10f;
-    public float ChargeCoolDown = 5.0f;
-    public float EvadeCoolDown = 5.0f;
-    public float EvadeDistance = 20f;
-    public float maxAttackCooldown = 3.0f;
-    public int damage = -10;
-    float attackTimer;
-    float attackCooldown = 3.0f;
-    float maxHealth;
-
-    Vector3 chargevel;
-    private NavMeshAgent agent;
-    private bool ChargeBool = false;
-    bool evading = false;
-    bool destroy = false;
-    float destroyTimer = 0.5f;
-
-    public AudioSource hit;
-    public AudioSource damagesound;
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
-
-        //Set up pathfinding
-        setVariables();
-        maxCharge = Random.Range(5f, 20f);
-        ChargeTimer = maxCharge;
-        EvadeTimer = Random.Range(20.0f, 60.0f);
-        agent.avoidancePriority = (int)Random.Range(20f, 79f);
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.SetDestination(player.position);
-
-        hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
-        damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
+        m_player = GameObject.FindGameObjectWithTag("Player").transform;
+        m_agent = GetComponent<NavMeshAgent>();
+        StateStuff();
+    }
+    private void OnEnable()
+    {
+        m_origin = transform.localPosition;
+        
     }
 
-    private void Update()
+    //Called every time state changes
+    void StateStuff()
     {
-        //transform.GetChild(0).transform.LookAt(player);
-
-        #region Evade
-        //EvadeTimer -= Time.deltaTime;
-        //EvadeCoolDown -= Time.deltaTime;
-        //if(evading && EvadeCoolDown <0f)
-        //{
-        //    agent.speed *= 2f;
-        //    evading = false;
-        //    EvadeTimer = maxEvade;
-        //}
-
-        //if(!evading && EvadeTimer < 0f)
-        //{
-        //    agent.speed /= 2f;
-        //    evading = true;
-        //    EvadeCoolDown = 5f;
-        //}
-
-        #endregion
-
-        //Seek
-        // rb.velocity = (player.position - transform.position).normalized * 5.0f;
-
-        if (attackCooldown < 0.0f)
+        switch (m_state)
         {
-            agent.SetDestination(player.position);
-            //agent.transform.LookAt(player);
-        }
-        else
-        {
-            agent.velocity = Vector3.zero;
-            agent.SetDestination(transform.position);
-        }
-        if (slider != null)
-            slider.value = health;
-
-        if (health <= 0 && !destroy)
-        {
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
+            case eState.wander:
                 {
-                    //transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
-                    break;
+                    m_agent.stoppingDistance = 0;
+
+                    Vector3 movePos = RandomPositionInCircle(m_origin, m_radius);
+                    m_agent.SetDestination(movePos);
                 }
-            }
-            destroy = true;
-            //agent.velocity = Vector3.zero;
-            agent.isStopped = true;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            destroyTimer = 2.967f;
-        }
-
-        #region EnemyModelFromHealth
-        if (health < maxHealth && health > maxHealth - maxHealth / 5)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(true);
-        }
-
-        else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(true);
-        }
-
-        else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(false);
-            transform.GetChild(5).gameObject.SetActive(true);
-        }
-
-        #endregion
-
-        destroyTimer -= Time.deltaTime;
-        if (destroyTimer < 0.0f && destroy)
-        {
-            Destroy(this.gameObject);
-        }
-
-        #region attackTimers
-        attackCooldown -= Time.deltaTime;
-        attackTimer -= Time.deltaTime;
-        #endregion
-        Debug.Log(attackCooldown);
-
-        if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
-        {
-            if (attackCooldown < 0.0f)
-            {
-                GetComponent<BoxCollider>().enabled = true;
-                attackTimer = 3.0f;
-                for (int i = 1; i < transform.childCount; i++)
-                {
-                    if (transform.GetChild(i).gameObject.activeSelf)
-                    {
-                      //  transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
-                        attackCooldown = maxAttackCooldown;
-                        break;
-                    }
-                }
-            }
-
-            else
-
-            {
-                agent.velocity = Vector3.zero;
-
-                GetComponent<BoxCollider>().enabled = false;
-                for (int i = 1; i < transform.childCount; i++)
-                {
-                    if (transform.GetChild(i).gameObject.activeSelf)
-                    {
-                        //transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
-                        break;
-                    }
-                }
-            }
-
-        }
-
-        else
-        {
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
-                {
-                   // transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
-                    break;
-                }
-            }
-        }
-        for (int i = 1; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).gameObject.activeSelf)
-            {
-               // transform.GetChild(i).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
                 break;
-            }
-        }
-    }
-
-    private void OnTriggerEnter(Collider collider)
-    {
-        if (collider.CompareTag("Player") && !destroy)
-        {
-            player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
-            attackTimer = 0f;
-            attackCooldown = maxAttackCooldown;
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
+            case eState.follow:
                 {
-                   // transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
-                    break;
+                    m_agent.stoppingDistance = 25;
+                    m_agent.SetDestination(m_player.position);
                 }
-            }
-            damagesound.Play();
+                break;
+            case eState.attack:
+                {
+                    GetComponent<Animator>().enabled = true;
+                }
+                break;
+            default:
+                break;
         }
+    }    
+    private void OnDisable()
+    {
+        //GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    // Update is called once per frame
+    void Update()
     {
-        //Check collisions
-        if (collision.gameObject.tag == "Sword")
+        m_timer -= Time.deltaTime;
+
+        switch (m_state)
         {
-            CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
+            case eState.wander:
+                {
+                    if (m_agent.remainingDistance < 0.01f)
+                    {
+                        Vector3 movePos = RandomPositionInCircle(m_origin, m_radius);
+                        m_agent.SetDestination(movePos);
+                        //transform.rotation = Quaternion.Euler(0f, Mathf.Atan2(vel.x, vel.z) * Mathf.Rad2Deg, 0f);
 
-            health -= cc.damage;
+                        m_timer = m_maxTimer;
+                    }
+                }   break;
+            case eState.follow:
+                {
+                    m_agent.SetDestination(m_player.position);
+                    NavMeshPath path = m_agent.path;
+                    m_agent.CalculatePath(m_player.position, path);
+                    if(m_agent.remainingDistance < m_agent.stoppingDistance + 0.1f)
+                    {
+                        m_state = eState.attack;
+                        StateStuff();
+                    }
+                }
+                break;
+            case eState.attack:
+                {
+                    if((m_player.position - transform.position).magnitude > m_agent.stoppingDistance +  m_attackBuffer)
+                    {
 
-            if (cc.damage > 0)
+                    }
+                }
+                break;
+            default:
+                break;
+        }
+
+        if (m_state == eState.wander)
+        {
+            if (m_agent.remainingDistance < 0.01f)
             {
-                hit.Play();
+                Vector3 movePos = RandomPositionInCircle(m_origin, m_radius);
+                m_agent.SetDestination(movePos);
+
+                m_timer = m_maxTimer;
             }
         }
+
+        
     }
 
-
-
-    public void AOEDamage()
+    Vector3 RandomPositionInCircle(Vector3 _origin, float _radius)
     {
-        health -= 100;
+        Vector3 randPos = new Vector3((Random.insideUnitCircle.x * _radius) + _origin.x, _origin.y, (Random.insideUnitCircle.y * _radius) + _origin.z) ;
+        return randPos;
     }
 
-    public void setVariables()
+    private void OnTriggerEnter(Collider other)
     {
-        if (hPool == healthPool.WEAK)
+        if (other.tag == "Player")
         {
-            agent.speed = Random.Range(5.0f, 6.0f);
-            health = Random.Range(400, 600);
-            maxHealth = health;
+
         }
-        else if (hPool == healthPool.NORMAL)
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player")
         {
-            agent.speed = Random.Range(4.0f, 5.0f);
-            health = Random.Range(600, 800);
-            maxHealth = health;
-        }
-        else if (hPool == healthPool.STRONG)
-        {
-            agent.speed = Random.Range(3.0f, 4.0f);
-            health = Random.Range(800, 1200);
-            maxHealth = health;
+            //agent.enabled = true;
         }
     }
 }

@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
             Application.Quit();
         }
 
-        slider.value = health;
+        //slider.value = health;
 
         if(health <= 0)
         {
