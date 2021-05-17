@@ -10,10 +10,14 @@ public class PickUpControl : MonoBehaviour
 
     private PickUps setPickup;
 
+    public AudioSource source;
+
     void Start()
     {
         setPickup = pickUps[Random.Range(0, pickUps.Length)];
-        GetComponent<MeshRenderer>().material = setPickup.material;
+        gameObject.GetComponent<MeshFilter>().mesh = setPickup.mMesh;
+        gameObject.GetComponent<MeshRenderer>().material = setPickup.mMaterial;
+        source = GameObject.FindGameObjectWithTag(setPickup.soundTag).GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,6 +25,7 @@ public class PickUpControl : MonoBehaviour
         if(other.tag == "Player")
         {
             setPickup.powerUp(other.gameObject);
+            source.Play();
             Destroy(this.gameObject);
         }
     }

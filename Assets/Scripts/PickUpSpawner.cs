@@ -18,7 +18,7 @@ public class PickUpSpawner : MonoBehaviour
         if(timer <= 0.0f)
         {
             //Update this for our area size
-            Vector3 pos = new Vector3(Random.Range(-100, 101), 2.0f, Random.Range(-100, 101));
+            Vector3 pos = new Vector3(transform.position.x + Random.Range(-50, 51), 2.0f, transform.position.z + Random.Range(-50, 51));
             GameObject newclone = Instantiate(pickup, pos, Quaternion.Euler(0, 0, 0));
             spawnedPickups.Add(newclone);
             timer = 10.0f;

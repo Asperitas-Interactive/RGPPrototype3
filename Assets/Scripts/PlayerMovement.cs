@@ -16,12 +16,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
 
     private int health = 100;
     private int MaxHealth = 100;
 
     public Slider slider;
+    public Image viginette;
+
+    public bool m_IsFalling = false;
+
+    public GameObject[] bodyToRotate;
+
+    public bool m_isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
         if(health <= 0)
         {
-            GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
+            viginette.GetComponent<FadeOut>().beginFade();
         }
 
         float velX = Input.GetAxis("Horizontal");
@@ -58,25 +65,37 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = transform.right * velX + transform.forward * velZ;
 
-        controller.Move(movement * speed * Time.deltaTime);
+        //I'll try this later
+        /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        Debug.Log(NextDir);
+        foreach (GameObject go in bodyToRotate)
+        {
+            //go.transform.rotation = Quaternion.LookRotation(NextDir);
+        }*/
+        if (m_isAttacking == false)
+        {
+            controller.Move(movement * speed * Time.deltaTime);
+        }
 
         if(jumpPress && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
+            m_IsFalling = false;
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        if (m_IsFalling && !isGrounded)
+        {
+            velocity.y += gravity * 10 * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
 
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            health -= 10;
-        }
-    }
+
 
     public void Heal(int recovery)
     {
@@ -85,8 +104,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void MaxHealthUp(int increase)
     {
-        MaxHealth += increase;
-        slider.maxValue = MaxHealth;
+        if (MaxHealth < 500)
+        {
+            MaxHealth += increase;
+            slider.maxValue = MaxHealth;
+            health += increase;
+        }
     }
 
     public int getHealth()

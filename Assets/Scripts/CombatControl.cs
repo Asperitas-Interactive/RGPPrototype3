@@ -15,53 +15,69 @@ public class CombatControl : MonoBehaviour
     public int damage = 0;
     private int damageIncrease = 0;
     public bool canAttack;
-    float timer = 0f;
-
+    public Transform aoePos;
 
     //AOE values
     public float Radius = 5.0f;
+
+    public AudioSource thrust;
+    public AudioSource slash;
+
+    public GameObject bullet;
+
+    public PlayerMovement m_MovementScript;
 
     // Start is called before the first frame update
     void Start()
     {
         //animator = GetComponent<Animator>();
+        m_MovementScript = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-
+        if (isAttacking == true)
+        {
+            m_MovementScript.m_isAttacking = true;
+        } else
+        {
+            m_MovementScript.m_isAttacking = false;
+        }
         float x = Input.GetAxis("Vertical");
 
         //This will make the stab attack happen
-        if (Input.GetButtonDown("Melee") && x > 0.0f && !isAttacking)
-        {
-            isAttacking = true;
-            animator.SetBool("isAttacking", true);
 
-            animator.SetBool("Stab", true);
-            damage = 30 + damageIncrease;
-        }
         //This will make the uppercut attack happen
-        if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
+        /*if (Input.GetButtonDown("Melee") && x < 0.0f && !isAttacking)
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true);
 
             animator.SetBool("RisingSlash", true);
             damage = 50 + damageIncrease;
+        }*/
+
+        //Stab
+        if(Input.GetAxis("Vertical") > 0.0f && Input.GetButton("Vertical") && Input.GetButtonDown("Melee") && canAttack && !isAttacking)
+        {
+            isAttacking = true;
+            animator.SetBool("isAttacking", true);
+
+            animator.SetBool("Stab", true);
+            damage = 30 + damageIncrease;
+
+            thrust.Play();
         }
-
-
         //This will do the first hit of a combo
-        if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
+        else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
         {
             animator.SetBool("isAttacking", true);
             comboCounter = 1;
             isAttacking = true;
             animator.SetInteger("combo", 1);
-            damage = 10 + damageIncrease;
+            damage = 30 + damageIncrease;
+            slash.Play();
         }
         //This will do the second hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
@@ -72,7 +88,8 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 2);
-            damage = 20 + damageIncrease;
+            damage = 40 + damageIncrease;
+            slash.Play();
         }
         //This will do the final hit of the combo
         else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
@@ -83,7 +100,8 @@ public class CombatControl : MonoBehaviour
             isAttacking = true;
 
             animator.SetInteger("combo", 3);
-            damage = 30 + damageIncrease;
+            damage = 50 + damageIncrease;
+            slash.Play();
         }
 
         if (!isAttacking)
@@ -95,31 +113,45 @@ public class CombatControl : MonoBehaviour
             animator.SetBool("isAttacking", false);
         }
 
-
-        //AOE MOVE
-        if (Input.GetButtonDown("AOE"))
+        //Special moves
         {
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-            for(int i = 0; i < enemies.Length; i++)
+            //Downward plunge
+            if (Input.GetButtonDown("AOE") && !m_MovementScript.isGrounded && !isAttacking)
             {
-                if (Radius >= Vector3.Distance(transform.position, enemies[i].transform.position))
-                {
-                    enemies[i].GetComponent<EnemyControl>().AOEDamage();
-                }
+                m_MovementScript.m_IsFalling = true;
+                isAttacking = true;
+                //Add animation code so we cant buffer a move during this
             }
+            //stab
+            /*else if (Input.GetButtonDown("AOE"))
+            {
+                isAttacking = true;
+                animator.SetBool("isAttacking", true);
+
+                animator.SetBool("Stab", true);
+                damage = 30 + damageIncrease;
+
+                thrust.Play();
+            }*/
         }
 
+        //Ranged Attack
+        if (Input.GetButtonDown("Range"))
+        {
+            GameObject bulletClone = Instantiate(bullet);
+            bulletClone.transform.position = transform.position + (transform.forward * 5);
+            bulletClone.transform.localRotation = transform.localRotation;
+            bulletClone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
+        }
+
+        Debug.Log(isAttacking);
     }
 
     public void DamageBoost(int Increase)
     {
-        damageIncrease += Increase;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Radius);
+        if (damageIncrease < 100)
+        {
+            damageIncrease += Increase;
+        }
     }
 }

@@ -5,60 +5,47 @@ using UnityEngine.AI;
 
 public class waveManager : MonoBehaviour
 {
+    public int boidCount = 0;
     public int maxWaves;
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
     public PickUpSpawner pickUpSpawner;
-    bool restWave;
+   public bool restWave;
     public float waveTimer;
     int wave;
+    bool end = false;
 
-  public GameObject []boids;
+    public GameObject []boids;
+
+    public Waves[] waveControl;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        {
-            for (int j = 0; j < enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                count++;
-            }
-        }
-
-        boids = new GameObject[count];
-        wave = 1;
+        wave = 0;
         waveTimer = (float)maxWaveTimer;
         waveStart();
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        waveTimer -= Time.deltaTime;
-
-        if(waveTimer <= 0.0f)
+        if (restWave)
         {
-            if(wave > maxWaves)
+            waveTimer -= Time.deltaTime;
+
+            if (wave > maxWaves)
             {
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
             }
 
-            if(!restWave)
-            {
-                waveTimer = (float)restWaveTimer;
-                restWave = true;
-                WaveEnd();
-            }
+            
 
-            else
+            else if(waveTimer <0.0f)
             {
+                end = false;
+               // waveTimer -= Time.deltaTime;
                 waveTimer = (float)maxWaveTimer;
                 restWave = false;
                 wave++;
@@ -66,7 +53,7 @@ public class waveManager : MonoBehaviour
             }
 
         }
-
+        int t = 0;
         if (!restWave)
         {
             bool flag = false;
@@ -80,14 +67,17 @@ public class waveManager : MonoBehaviour
 
                 else
                 {
+                    t++;
                     flag = true;
-                    break;
+                    
                 }
             }
+            boidCount = t;
 
             if (!flag)
             {
-                waveTimer = 0f;
+                restWave = true;
+                waveTimer = (float)maxWaveTimer;
             }
 
         }
@@ -108,28 +98,26 @@ public class waveManager : MonoBehaviour
     int waveStart()
     {
         int count = 0;
-        for (int i = 0; i < enemies.transform.childCount; i++)
-        { 
-            for(int j = 0; j< enemies.transform.GetChild(i).GetComponent<EnemyControl>().spawnNum; j++)
-            {
-                
-                 boids[count] = Instantiate(enemies.transform.GetChild(i), GetRandomLocation(), Quaternion.identity, null).gameObject;
 
-                count++;
-            }
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            count++;
         }
+
+        boids = new GameObject[count];
+
+        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        {
+            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+        }
+
+        pickUpSpawner.deletePickups();
 
         return count;
     }
 
     void WaveEnd()
     {
-        foreach(GameObject boid in boids)
-        {
-            if(boid!=null)
-                Destroy(boid);
-        }
-
         pickUpSpawner.deletePickups();
     }
 

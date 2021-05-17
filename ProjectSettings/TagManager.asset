@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Sword
   - PickUps
+  - DamageSound
+  - HitSound
+  - RecoverSound
+  - AttackUpSound
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

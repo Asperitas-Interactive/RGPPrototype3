@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: TotalHealth
   m_EditorClassIdentifier: 
   pickUpType: 1
-  material: {fileID: 2100000, guid: 6a4a9cd798f58bf419164a016513c59e, type: 2}
-  increase: 20
+  mMesh: {fileID: 5302568919011541938, guid: 44a2c2d772edbf44c9e3bc0faf6b8ed7, type: 3}
+  mMaterial: {fileID: 2100000, guid: 0f036fc7600be394292430b19a1cae62, type: 2}
+  sound: {fileID: 8300000, guid: 63a801d2a5e3e1445ba8782b9b68fd26, type: 3}
+  soundTag: RecoverSound
+  increase: 10
