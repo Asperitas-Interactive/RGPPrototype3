@@ -9,11 +9,12 @@ public class flyingEnemy : MonoBehaviour
 
     public float m_radius;
     private Vector3 m_origin;
+    public bool m_attackTranstion;
     public float m_maxTimer;
 
     Transform m_player;
 
-    float m_attackBuffer;
+    float m_attackBuffer = 5.0f;
     public enum eState
     {
         wander,
@@ -22,11 +23,14 @@ public class flyingEnemy : MonoBehaviour
     }
 
     public eState m_state;
+
     private float m_timer;
     NavMeshAgent m_agent;
+    Animator m_animator;
 
     private void Start()
     {
+        m_animator = GetComponent<Animator>();
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
         m_agent = GetComponent<NavMeshAgent>();
         StateStuff();
@@ -52,13 +56,16 @@ public class flyingEnemy : MonoBehaviour
                 break;
             case eState.follow:
                 {
+                    m_animator.SetBool("Attack", false);
+
                     m_agent.stoppingDistance = 25;
                     m_agent.SetDestination(m_player.position);
                 }
                 break;
             case eState.attack:
                 {
-                    GetComponent<Animator>().enabled = true;
+                    transform.LookAt(m_player);
+                    m_animator.SetBool("Attack", true);
                 }
                 break;
             default:
@@ -102,9 +109,14 @@ public class flyingEnemy : MonoBehaviour
                 break;
             case eState.attack:
                 {
-                    if((m_player.position - transform.position).magnitude > m_agent.stoppingDistance +  m_attackBuffer)
-                    {
+                    m_animator.SetBool("Retreat", false);
 
+                    if ((m_player.position - transform.GetChild(0).position).magnitude > m_attackBuffer && !m_attackTranstion)
+                    {
+                        m_animator.SetBool("Retreat", true);
+
+                        m_state = eState.follow;
+                        StateStuff();
                     }
                 }
                 break;
