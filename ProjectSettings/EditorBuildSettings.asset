@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1606f3e03d5905848b67b57c25eb7b29
   - enabled: 1
-    path: Assets/Scenes/BlockOutScene.unity
+    path: Assets/Scenes/FarmScene.unity
     guid: 55ea770f84b66cc4ea764b9df093fcb6
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
