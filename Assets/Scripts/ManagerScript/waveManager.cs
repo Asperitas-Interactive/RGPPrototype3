@@ -10,7 +10,6 @@ public class waveManager : MonoBehaviour
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
-    public PickUpSpawner pickUpSpawner;
    public bool restWave;
     public float waveTimer;
     int wave;
@@ -19,6 +18,8 @@ public class waveManager : MonoBehaviour
     public GameObject []boids;
 
     public Waves[] waveControl;
+
+    public bool m_CombatEnded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,8 @@ public class waveManager : MonoBehaviour
 
             if (wave > maxWaves)
             {
-                GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
+                //Insert new way to change the Scene
+                m_CombatEnded = true;
             }
 
             
@@ -46,7 +48,7 @@ public class waveManager : MonoBehaviour
             {
                 end = false;
                // waveTimer -= Time.deltaTime;
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)0;
                 restWave = false;
                 wave++;
                 waveStart();
@@ -77,7 +79,7 @@ public class waveManager : MonoBehaviour
             if (!flag)
             {
                 restWave = true;
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)0;
             }
 
         }
@@ -111,14 +113,12 @@ public class waveManager : MonoBehaviour
             boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
         }
 
-        pickUpSpawner.deletePickups();
-
         return count;
     }
 
     void WaveEnd()
     {
-        pickUpSpawner.deletePickups();
+        //Its use was removed in mini prod
     }
 
 
