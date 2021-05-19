@@ -37,7 +37,6 @@ public class ShopDetection : MonoBehaviour
                 player.GetComponent<CombatControl>().enabled = false;
                 camera.GetComponent<ThirdPersonCam>().enabled = false;
 
-                //Make sure the 'Exit Scene' button goes here
                 if (waveManager.m_CombatEnded)
                 {
                     buttons[0].gameObject.SetActive(true);
