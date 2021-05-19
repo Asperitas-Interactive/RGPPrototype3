@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/FarmScene.unity
     guid: 55ea770f84b66cc4ea764b9df093fcb6
   - enabled: 1
+    path: Assets/Scenes/PlayerScene2.unity
+    guid: 4a137dfaff9e0c541ad95bed98100cb6
+  - enabled: 1
+    path: Assets/Scenes/PlayerScene3.unity
+    guid: 3d30c6002c1454244983cfe209a76923
+  - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: 72a9dd5fcc6964b4fbc6c88a015f95c1
   - enabled: 1
