@@ -8,6 +8,7 @@ public class ThirdPersonCam : MonoBehaviour
     private float sensitivity = 100f;
     [SerializeField]
     private Transform player;
+    GameObject m_temp;
 
     private CharacterController m_playerCont;
 
@@ -17,6 +18,11 @@ public class ThirdPersonCam : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_temp = new GameObject();
+
+        m_temp.transform.position = player.transform.position;
+        m_temp.transform.rotation = player.transform.rotation;
+
         Cursor.lockState = CursorLockMode.Locked;
         transform.parent.transform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
         m_playerCont = player.GetComponent<CharacterController>();
@@ -38,9 +44,24 @@ public class ThirdPersonCam : MonoBehaviour
         //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
         //player.Rotate(Vector3.up, mouseX);
         //transform.parent.Rotate(Vector3.up, mouseX);
+        
         transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
-        player.Rotate(Vector3.up, mouseX);
+                m_temp.transform.Rotate(Vector3.up, mouseX);
+
+        if(player.gameObject.GetComponent<PlayerMovement>().velZ > 0.01f)
+        {
+            player.rotation = m_temp.transform.rotation;
+
+
+            float scalingFactor = 1;
+            Quaternion rotateFrom = player.rotation;
+
+           
+                transform.rotation = Quaternion.Slerp(rotateFrom, m_temp.transform.rotation, Time.deltaTime / scalingFactor);
+            
+        }
     }
+
 
     private void LateUpdate()
     {

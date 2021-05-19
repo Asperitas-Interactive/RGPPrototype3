@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool m_isAttacking = false;
 
+    public float velZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (Input.GetButtonDown("Cancel"))
         {
             Application.Quit();
@@ -52,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         float velX = Input.GetAxis("Horizontal");
-        float velZ = Input.GetAxis("Vertical");
+        velZ = Input.GetAxis("Vertical");
 
         bool jumpPress = Input.GetButtonDown("Jump");
 
@@ -93,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         controller.Move(velocity * Time.deltaTime);
+
+       
     }
 
 

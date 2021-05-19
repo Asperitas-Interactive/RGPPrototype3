@@ -14,6 +14,7 @@ public class CombatControl : MonoBehaviour
 
     public int damage = 0;
     private int damageIncrease = 0;
+    private CharacterController m_characterController;
     public bool canAttack;
     public Transform aoePos;
 
@@ -32,6 +33,7 @@ public class CombatControl : MonoBehaviour
     {
         //animator = GetComponent<Animator>();
         m_MovementScript = GetComponent<PlayerMovement>();
+        m_characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -63,6 +65,8 @@ public class CombatControl : MonoBehaviour
         {
             isAttacking = true;
             animator.SetBool("isAttacking", true);
+
+            m_characterController.Move(transform.forward * 2.0f);
 
             animator.SetBool("Stab", true);
             damage = 30 + damageIncrease;
