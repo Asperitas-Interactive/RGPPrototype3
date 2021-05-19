@@ -26,12 +26,12 @@ public class gameManager : MonoBehaviour
 
     public void gameOver()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("WinScene");
     }
 
     public void gameLost()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("gameOver");
     }
     
 }
