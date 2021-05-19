@@ -16,13 +16,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     Vector3 velocity;
-    bool isGrounded;
+    public bool isGrounded;
 
     private int m_health = 10000;
     private int MaxHealth = 100;
 
     public Slider slider;
     public Image viginette;
+
+    public bool m_IsFalling = false;
+
+    public GameObject[] bodyToRotate;
+
+    public bool m_isAttacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +49,6 @@ public class PlayerMovement : MonoBehaviour
         if(m_health <= 0)
         {
             viginette.GetComponent<FadeOut>().beginFade();
-            //GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
         }
 
         float velX = Input.GetAxis("Horizontal");
@@ -60,14 +65,32 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 movement = transform.right * velX + transform.forward * velZ;
 
-        controller.Move(movement * speed * Time.deltaTime);
+        //I'll try this later
+        /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+        Debug.Log(NextDir);
+        foreach (GameObject go in bodyToRotate)
+        {
+            //go.transform.rotation = Quaternion.LookRotation(NextDir);
+        }*/
+        if (m_isAttacking == false)
+        {
+            controller.Move(movement * speed * Time.deltaTime);
+        }
 
         if(jumpPress && isGrounded)
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
+            m_IsFalling = false;
         }
 
-        velocity.y += gravity * Time.deltaTime;
+        if (m_IsFalling && !isGrounded)
+        {
+            velocity.y += gravity * 10 * Time.deltaTime;
+        }
+        else
+        {
+            velocity.y += gravity * Time.deltaTime;
+        }
 
         controller.Move(velocity * Time.deltaTime);
     }

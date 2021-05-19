@@ -299,6 +299,12 @@ public class EnemyControl : MonoBehaviour
                 hit.Play();
             }
         }
+
+        if(collision.gameObject.tag == "PlayerProjectile")
+        {
+            health -= 100;
+            hit.Play();
+        }
     }
 
 
