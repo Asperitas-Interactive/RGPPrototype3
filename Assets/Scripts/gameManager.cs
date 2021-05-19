@@ -26,7 +26,7 @@ public class gameManager : MonoBehaviour
 
     public void gameOver()
     {
-        SceneManager.LoadScene("WinScene");
+        SceneManager.LoadScene("WinScreen");
     }
 
     public void gameLost()

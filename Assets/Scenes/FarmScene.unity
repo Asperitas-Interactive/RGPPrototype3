@@ -30853,7 +30853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boidCount: 0
-  maxWaves: 2
+  maxWaves: 0
   maxWaveTimer: 20
   restWaveTimer: 0
   enemies: {fileID: 8373634382917164362, guid: 650426207a444284d910f6ee59875f7d, type: 3}

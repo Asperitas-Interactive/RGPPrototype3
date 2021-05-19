@@ -10,7 +10,6 @@ public class waveManager : MonoBehaviour
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
-    public PickUpSpawner pickUpSpawner;
    public bool restWave;
     public float waveTimer;
     int wave;
@@ -111,14 +110,12 @@ public class waveManager : MonoBehaviour
             boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
         }
 
-        pickUpSpawner.deletePickups();
-
         return count;
     }
 
     void WaveEnd()
     {
-        pickUpSpawner.deletePickups();
+        //Its use was removed in mini prod
     }
 
 
