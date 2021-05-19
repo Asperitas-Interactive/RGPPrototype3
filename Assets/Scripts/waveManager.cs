@@ -10,13 +10,12 @@ public class waveManager : MonoBehaviour
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
-    public PickUpSpawner pickUpSpawner;
-   public bool restWave;
+    public bool restWave;
     public float waveTimer;
     int wave;
     bool end = false;
 
-    public GameObject []boids;
+    public GameObject[] boids;
 
     public Waves[] waveControl;
 
@@ -40,12 +39,12 @@ public class waveManager : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
             }
 
-            
 
-            else if(waveTimer <0.0f)
+
+            else if (waveTimer < 0.0f)
             {
                 end = false;
-               // waveTimer -= Time.deltaTime;
+                // waveTimer -= Time.deltaTime;
                 waveTimer = (float)maxWaveTimer;
                 restWave = false;
                 wave++;
@@ -60,7 +59,7 @@ public class waveManager : MonoBehaviour
 
             foreach (GameObject boid in boids)
             {
-                if(boid == null)
+                if (boid == null)
                 {
                     continue;
                 }
@@ -69,7 +68,7 @@ public class waveManager : MonoBehaviour
                 {
                     t++;
                     flag = true;
-                    
+
                 }
             }
             boidCount = t;
@@ -108,78 +107,27 @@ public class waveManager : MonoBehaviour
 
         for (int i = 0; i < waveControl[wave].enemies.Length; i++)
         {
-            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocationAir(), Quaternion.identity, null).gameObject;
+            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
         }
-
-        pickUpSpawner.deletePickups();
 
         return count;
     }
 
     void WaveEnd()
     {
-        pickUpSpawner.deletePickups();
+        //Its use was removed in mini prod
     }
 
-
-    public Vector3 RandomNavmeshLocation(float radius)
-    {
-        Vector3 randomDirection = Random.insideUnitSphere * radius;
-        randomDirection += transform.position;
-        NavMeshHit hit;
-        Vector3 finalPosition = Vector3.zero;
-        if (NavMesh.SamplePosition(randomDirection, out hit, radius, 1))
-        {
-            finalPosition = hit.position;
-        }
-
-        
-        return finalPosition;
-    }
 
     public Vector3 GetRandomLocation()
     {
         NavMeshTriangulation data = NavMesh.CalculateTriangulation();
-        
-        int t = Random.Range(0, data.indices.Length - 3);
-
-
-        
-        
-        Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
-        point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);
-        
-        if(point.y > 19.0f && point.y < 21f)
-        {
-            Vector3 _point = GetRandomLocation();
-            return _point;
-        }
-
-        else return point;
-
-    }
-
-    public Vector3 GetRandomLocationAir()
-    {
-        NavMeshTriangulation data = NavMesh.CalculateTriangulation();
 
         int t = Random.Range(0, data.indices.Length - 3);
-
-
-
 
         Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
         point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);
 
-        if (point.y < 19.0f || point.y > 21f)
-        {
-            Vector3 _point = GetRandomLocationAir();
-            return _point;
-        }
-
-        else return point;
-
+        return point;
     }
-
-
 }

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
-    private int health = 100;
+    private int m_health = 10000;
     private int MaxHealth = 100;
 
     public Slider slider;
@@ -38,9 +38,9 @@ public class PlayerMovement : MonoBehaviour
             Application.Quit();
         }
 
-        //slider.value = health;
+        slider.value = m_health;
 
-        if(health <= 0)
+        if(m_health <= 0)
         {
             viginette.GetComponent<FadeOut>().beginFade();
             //GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameLost();
@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Heal(int recovery)
     {
-        health = (int)Mathf.Clamp(health + recovery, 0, MaxHealth);
+        //m_health = (int)Mathf.Clamp(m_health + recovery, 0, MaxHealth);
     }
 
     public void MaxHealthUp(int increase)
@@ -85,13 +85,13 @@ public class PlayerMovement : MonoBehaviour
         {
             MaxHealth += increase;
             slider.maxValue = MaxHealth;
-            health += increase;
+            m_health += increase;
         }
     }
 
     public int getHealth()
     {
-        return health;
+        return m_health;
     }
 
     public int getMaxHP()
