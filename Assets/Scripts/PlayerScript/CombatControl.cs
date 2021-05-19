@@ -149,7 +149,7 @@ public class CombatControl : MonoBehaviour
             bulletClone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
         }
 
-        Debug.Log(isAttacking);
+        //Debug.Log(isAttacking);
     }
 
     public void DamageBoost(int Increase)

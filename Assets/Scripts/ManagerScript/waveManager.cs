@@ -19,6 +19,8 @@ public class waveManager : MonoBehaviour
 
     public Waves[] waveControl;
 
+    public bool m_CombatEnded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,8 @@ public class waveManager : MonoBehaviour
 
             if (wave > maxWaves)
             {
-                GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
+                //Insert new way to change the Scene
+                m_CombatEnded = true;
             }
 
 
@@ -44,8 +47,8 @@ public class waveManager : MonoBehaviour
             else if (waveTimer < 0.0f)
             {
                 end = false;
-                // waveTimer -= Time.deltaTime;
-                waveTimer = (float)maxWaveTimer;
+               // waveTimer -= Time.deltaTime;
+                waveTimer = (float)0;
                 restWave = false;
                 wave++;
                 waveStart();
@@ -76,7 +79,7 @@ public class waveManager : MonoBehaviour
             if (!flag)
             {
                 restWave = true;
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)0;
             }
 
         }
