@@ -36,7 +36,7 @@ public class waveManager : MonoBehaviour
 
             if (wave > maxWaves)
             {
-                GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
+                //Insert new way to change the Scene
             }
 
             
