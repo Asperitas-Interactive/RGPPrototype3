@@ -12,6 +12,8 @@ public class ThirdPersonCam : MonoBehaviour
 
     private CharacterController m_playerCont;
 
+    bool m_turning;
+
     float xRot = 0f;
     float yRot = 90f;
 
@@ -48,16 +50,11 @@ public class ThirdPersonCam : MonoBehaviour
         transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
                 m_temp.transform.Rotate(Vector3.up, mouseX);
 
-        if(player.gameObject.GetComponent<PlayerMovement>().velZ > 0.01f)
+        if(player.gameObject.GetComponent<PlayerMovement>().velZ > 0.01f || m_turning)
         {
-            player.rotation = m_temp.transform.rotation;
-
-
-            float scalingFactor = 1;
-            Quaternion rotateFrom = player.rotation;
+             player.rotation = m_temp.transform.rotation;
 
            
-                transform.rotation = Quaternion.Slerp(rotateFrom, m_temp.transform.rotation, Time.deltaTime / scalingFactor);
             
         }
     }
