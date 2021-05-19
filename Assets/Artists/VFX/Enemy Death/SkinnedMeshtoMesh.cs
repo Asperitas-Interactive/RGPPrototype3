@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SkinnedMeshtoMesh : MonoBehaviour
 {
     public SkinnedMeshRenderer skinnedMesh;
-    public VisualEffect
-        public float refreshRate;
+    
+    public float refreshRate;
     // Start is called before the first frame update
-    void Start()
+     void Start()
     {
-        StartCoroutine(UpdateVFXGraph());
+        //StartCoroutine(UpdateVFXGraph());
     }
-    IEnumerator UpdateVFXGraph()
-    {
+    //IEnumerator UpdateVFXGraph()
+    //{
 
-    }
+    //}
 }
-
