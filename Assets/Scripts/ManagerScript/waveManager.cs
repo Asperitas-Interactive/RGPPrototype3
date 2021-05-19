@@ -48,7 +48,7 @@ public class waveManager : MonoBehaviour
             {
                 end = false;
                // waveTimer -= Time.deltaTime;
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)0;
                 restWave = false;
                 wave++;
                 waveStart();
@@ -79,7 +79,7 @@ public class waveManager : MonoBehaviour
             if (!flag)
             {
                 restWave = true;
-                waveTimer = (float)maxWaveTimer;
+                waveTimer = (float)0;
             }
 
         }
