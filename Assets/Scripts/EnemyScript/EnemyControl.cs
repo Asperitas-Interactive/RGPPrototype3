@@ -175,7 +175,7 @@ public class EnemyControl : MonoBehaviour
         attackCooldown -= Time.deltaTime;
         attackTimer -= Time.deltaTime;
         #endregion
-        Debug.Log(attackCooldown);
+        //Debug.Log(attackCooldown);
             
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
         {

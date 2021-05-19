@@ -64,16 +64,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 402bbdd94c02f7e4891f07f6d55b1c58, type: 2}
     - target: {fileID: 919132149155446097, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
       propertyPath: m_Name
-      value: MOD_Hay3 Variant
+      value: Prefab_Hay3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 8
+      value: 4294967294
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f9339d0ac5a09844b5451a3480e6fa0, type: 3}

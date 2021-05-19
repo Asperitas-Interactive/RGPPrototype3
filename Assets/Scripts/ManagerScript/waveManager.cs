@@ -19,6 +19,8 @@ public class waveManager : MonoBehaviour
 
     public Waves[] waveControl;
 
+    public bool m_CombatEnded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class waveManager : MonoBehaviour
             if (wave > maxWaves)
             {
                 //Insert new way to change the Scene
+                m_CombatEnded = true;
             }
 
             
