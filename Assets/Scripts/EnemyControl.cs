@@ -138,16 +138,21 @@ public class EnemyControl : MonoBehaviour
         {
             case eStatus.follow:
                 {
+                    //transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
                     agent.SetDestination(player.position);
                     break;
                 }
             case eStatus.stun:
                 {
+                    //transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
                     agent.velocity = Vector3.zero;
                     break;
                 }
             case eStatus.attack:
                 {
+                    //transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+
                     agent.transform.LookAt(player);
                     agent.velocity = Vector3.zero;
 
