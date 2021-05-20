@@ -172,7 +172,7 @@ public class CombatControl : MonoBehaviour
 
                     int random = Random.Range(1, 100);
 
-                    if (random > 25)
+                    if (random < 25)
                     {
                         //Want to add any increases in damage to the critical boost
                         collider.health -= (int)((damage + damageIncrease) * 1.5);
@@ -215,7 +215,6 @@ public class CombatControl : MonoBehaviour
                     if (random < 25)
                     {
                         //Want to add any increases in damage to the critical boost
-                        Debug.Log("Crit!");
                         collider.health -= (int)((damage + damageIncrease) * 1.5);
                     }
                     else
