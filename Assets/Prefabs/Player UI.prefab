@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 104511262}
   - component: {fileID: 104511261}
   - component: {fileID: 1690028156}
+  - component: {fileID: 1835113845511109827}
   m_Layer: 5
   m_Name: UpgradeGear
   m_TagString: ShopUI
@@ -225,6 +226,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890b3af992d7ae4429b1a4f1c9986042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1835113845511109827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104511260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4f5b23a7d92bc44b8c225d1f7b58db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponUp: {fileID: 6434892252970410862}
+  ComboUp: {fileID: 6002894573704698882}
+  StabUp: {fileID: 8081652049599656065}
+  EquipUp: {fileID: 7591330333961228980}
 --- !u!1 &654713845
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +998,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3698820467295756662}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1835113845511109827}
+        m_TargetAssemblyTypeName: StoreSubMenuControl, Assembly-CSharp
+        m_MethodName: EquipClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &894639513961163133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3470,7 +3499,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6229591532665593842}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1835113845511109827}
+        m_TargetAssemblyTypeName: StoreSubMenuControl, Assembly-CSharp
+        m_MethodName: ComboClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3709525781427706672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,7 +6460,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2424799603177782189}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1835113845511109827}
+        m_TargetAssemblyTypeName: StoreSubMenuControl, Assembly-CSharp
+        m_MethodName: WeaponClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7661185557155411070
 GameObject:
   m_ObjectHideFlags: 0
@@ -6576,7 +6629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 119155047464636294}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1835113845511109827}
+        m_TargetAssemblyTypeName: StoreSubMenuControl, Assembly-CSharp
+        m_MethodName: StabClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7954955217538758539
 GameObject:
   m_ObjectHideFlags: 0
