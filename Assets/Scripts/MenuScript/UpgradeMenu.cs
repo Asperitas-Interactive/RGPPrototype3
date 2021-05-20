@@ -41,11 +41,9 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (menuActive)
         {
-            Debug.Log("Playing this");
             CloseUpgradeMenu();
         } else
         {
-            Debug.Log("Playing That");
             ShowUpgradeMenu();
         }
     }

@@ -21,7 +21,6 @@ public class ShopDetection : MonoBehaviour
     void Start()
     {
         camera = Camera.main.gameObject;
-        Cursor.lockState = CursorLockMode.None;
 
         Endbutton.gameObject.SetActive(false);
 
