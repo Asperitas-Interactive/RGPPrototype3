@@ -13,10 +13,6 @@ TagManager:
   - RecoverSound
   - AttackUpSound
   - PlayerProjectile
-  - PlayerUI
-  - ShopUI
-  - ShopEvent
-  - UpgradeUI
   layers:
   - Default
   - TransparentFX

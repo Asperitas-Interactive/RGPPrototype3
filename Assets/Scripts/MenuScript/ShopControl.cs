@@ -5,11 +5,9 @@ using UnityEngine.UI;
 
 public class ShopControl : MonoBehaviour
 {
-    public ShopDetection detector;
-
-    public void CloseMenu()
+    public void Upgrade()
     {
-        detector.closeMenus();
+        Debug.Log("this will go to a menu");
     }
 
     public void NextLevel()
