@@ -79,8 +79,6 @@ public class ShopDetection : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         UpgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
-
-
         Endbutton.gameObject.SetActive(false);
         foreach (GameObject go in PlayerUIObjects)
         {
