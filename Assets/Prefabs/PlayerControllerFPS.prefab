@@ -903,8 +903,12 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  isGrounded: 0
   slider: {fileID: 0}
   viginette: {fileID: 0}
+  m_IsFalling: 0
+  bodyToRotate: []
+  m_isAttacking: 0
 --- !u!114 &946728067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -926,6 +930,8 @@ MonoBehaviour:
   Radius: 10
   thrust: {fileID: 0}
   slash: {fileID: 0}
+  bullet: {fileID: 0}
+  m_MovementScript: {fileID: 0}
 --- !u!95 &126298213
 Animator:
   serializedVersion: 3
@@ -1423,7 +1429,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c9af0dbe88854d64aa8e276b41a10462, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1558,8 +1564,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.7670348, y: 0.34670433, z: 0.8674593}
-  m_Center: {x: -0.9451639, y: -0.13195178, z: -0.040247392}
+  m_Size: {x: 1.3792627, y: 0.3467045, z: 0.46201128}
+  m_Center: {x: -0.6302154, y: -0.13195562, z: -0.029318973}
 --- !u!1 &7669110272629241345
 GameObject:
   m_ObjectHideFlags: 0
