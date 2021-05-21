@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class ShopDetection : MonoBehaviour
 {
-    public Button[] buttons;
+    public Button Endbutton;
+    public Button UpgradeButton;
     public Image prompt;
     public bool inZone;
     public bool inMenu;
@@ -13,14 +14,27 @@ public class ShopDetection : MonoBehaviour
     public GameObject camera;
     public waveManager waveManager;
 
+    GameObject[] PlayerUIObjects;
+    GameObject[] ShopUIObjects;
+
     // Start is called before the first frame update
     void Start()
     {
         camera = Camera.main.gameObject;
-        Cursor.lockState = CursorLockMode.None;
 
-        buttons[0].gameObject.SetActive(false);
-        buttons[1].gameObject.SetActive(false);
+        Endbutton.gameObject.SetActive(false);
+
+        PlayerUIObjects = GameObject.FindGameObjectsWithTag("PlayerUI");
+        ShopUIObjects = GameObject.FindGameObjectsWithTag("ShopUI");
+
+        foreach (GameObject go in PlayerUIObjects)
+        {
+            go.SetActive(true);
+        }
+        foreach (GameObject go in ShopUIObjects)
+        {
+            go.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -33,30 +47,21 @@ public class ShopDetection : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
 
-                player.GetComponent<PlayerMovement>().enabled = false;
-                player.GetComponent<CombatControl>().enabled = false;
-                camera.GetComponent<ThirdPersonCam>().enabled = false;
-
                 if (waveManager.m_CombatEnded)
                 {
-                    buttons[0].gameObject.SetActive(true);
+                    Endbutton.gameObject.SetActive(true);
                 }
 
-                buttons[1].gameObject.SetActive(true);
+                foreach (GameObject go in PlayerUIObjects)
+                {
+                    go.SetActive(false);
+                }
+                foreach(GameObject go in ShopUIObjects)
+                {
+                    go.SetActive(true);
+                }
                 
                 inMenu = true;
-            } else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-
-                player.GetComponent<PlayerMovement>().enabled = true;
-                player.GetComponent<CombatControl>().enabled = true;
-                camera.GetComponent<ThirdPersonCam>().enabled = true;
-
-                buttons[0].gameObject.SetActive(false);
-                buttons[1].gameObject.SetActive(false);
-
-                inMenu = false;
             }
         }
     }
@@ -67,5 +72,23 @@ public class ShopDetection : MonoBehaviour
         {
             inZone = true;
         }
+    }
+
+    public void closeMenus()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        UpgradeButton.GetComponent<StoreSubMenuControl>().CloseAll();
+        UpgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
+        Endbutton.gameObject.SetActive(false);
+        foreach (GameObject go in PlayerUIObjects)
+        {
+            go.SetActive(true);
+        }
+        foreach (GameObject go in ShopUIObjects)
+        {
+            go.SetActive(false);
+        }
+
+        inMenu = false;
     }
 }

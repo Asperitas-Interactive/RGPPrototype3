@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class EnemyControl : MonoBehaviour
 {
     //For Health
-    private int health = 100;
+    public int health = 100;
 
     public Slider slider;
     
@@ -293,17 +293,12 @@ public class EnemyControl : MonoBehaviour
             }
 
             health -= cc.damage;
+            cc.AttackEffect(this);
 
             if (cc.damage > 0)
             {
                 hit.Play();
             }
-        }
-
-        if(collision.gameObject.tag == "PlayerProjectile")
-        {
-            health -= 100;
-            hit.Play();
         }
     }
 

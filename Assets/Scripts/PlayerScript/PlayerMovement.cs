@@ -31,11 +31,12 @@ public class PlayerMovement : MonoBehaviour
     public bool m_isAttacking = false;
 
     public float velZ;
+    ShopDetection ShopCheck;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
     }
 
     // Update is called once per frame
@@ -82,23 +83,58 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if(jumpPress && isGrounded)
+        if (!ShopCheck.inMenu)
         {
-            velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
-            m_IsFalling = false;
-        }
+            slider.value = health;
 
-        if (m_IsFalling && !isGrounded)
-        {
-            velocity.y += gravity * 10 * Time.deltaTime;
-        }
-        else
-        {
-            velocity.y += gravity * Time.deltaTime;
-        }
+            if (health <= 0)
+            {
+                viginette.GetComponent<FadeOut>().beginFade();
+            }
 
-        controller.Move(velocity * Time.deltaTime);
+            float velX = Input.GetAxis("Horizontal");
+            float velZ = Input.GetAxis("Vertical");
 
-       
+            bool jumpPress = Input.GetButtonDown("Jump");
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = 0.0f;
+            }
+
+            Vector3 movement = transform.right * velX + transform.forward * velZ;
+
+            //I'll try this later
+            /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
+            Debug.Log(NextDir);
+            foreach (GameObject go in bodyToRotate)
+            {
+                //go.transform.rotation = Quaternion.LookRotation(NextDir);
+            }*/
+            if (m_isAttacking == false)
+            {
+                controller.Move(movement * speed * Time.deltaTime);
+            }
+
+            if (jumpPress && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
+                m_IsFalling = false;
+            }
+
+            if (m_IsFalling && !isGrounded)
+            {
+                velocity.y += gravity * 10 * Time.deltaTime;
+            }
+            else
+            {
+                velocity.y += gravity * Time.deltaTime;
+            }
+
+            controller.Move(velocity * Time.deltaTime);
+        }
     }
 
 

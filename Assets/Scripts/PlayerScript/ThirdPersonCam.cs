@@ -17,6 +17,8 @@ public class ThirdPersonCam : MonoBehaviour
     float xRot = 0f;
     float yRot = 90f;
 
+    ShopDetection ShopCheck;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,35 +30,43 @@ public class ThirdPersonCam : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         transform.parent.transform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
         m_playerCont = player.GetComponent<CharacterController>();
+        ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        if (!ShopCheck.inMenu) {
+            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        xRot += mouseY;
+            xRot += mouseY;
 
-        xRot = Mathf.Clamp(xRot, 0.0f, 80.0f);
+            xRot = Mathf.Clamp(xRot, 0.0f, 80.0f);
 
-        yRot += mouseX;
-        //transform.parent.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);
+            yRot += mouseX;
+            //transform.parent.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);
 
         //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
         //player.Rotate(Vector3.up, mouseX);
         //transform.parent.Rotate(Vector3.up, mouseX);
         
-        transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
-                m_temp.transform.Rotate(Vector3.up, mouseX);
+        // transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
+        //         m_temp.transform.Rotate(Vector3.up, mouseX);
 
-        if(player.gameObject.GetComponent<PlayerMovement>().velZ > 0.01f || m_turning)
-        {
-             player.rotation = m_temp.transform.rotation;
+        // if(player.gameObject.GetComponent<PlayerMovement>().velZ > 0.01f || m_turning)
+        // {
+        //      player.rotation = m_temp.transform.rotation;
+        // }
 
            
             
-        }
+            //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
+            //player.Rotate(Vector3.up, mouseX);
+            //transform.parent.Rotate(Vector3.up, mouseX);
+            transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
+            player.Rotate(Vector3.up, mouseX);
+        
     }
 
 
