@@ -1023,6 +1023,7 @@ GameObject:
   - component: {fileID: 2963594435753753640}
   - component: {fileID: 2456452598058043361}
   - component: {fileID: 3256614380192998516}
+  - component: {fileID: 432900816}
   m_Layer: 5
   m_Name: ComboDropdown
   m_TagString: Untagged
@@ -1139,16 +1140,32 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Normal
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: Mighty
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: Explosive
+      m_Image: {fileID: 0}
+    - m_Text: Stun
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &432900816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894639513961163133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce977489c7a2f1438d31cb497fad846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackType: 1
+  cc: {fileID: 0}
 --- !u!1 &959136465782717996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1257,7 @@ GameObject:
   - component: {fileID: 2394385340006357520}
   - component: {fileID: 4110408794794234306}
   - component: {fileID: 3067811465755654878}
+  - component: {fileID: 182580519}
   m_Layer: 5
   m_Name: PowerUp2
   m_TagString: Untagged
@@ -1348,7 +1366,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4110408794794234306}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 182580519}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &182580519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096843467595603984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 1
+  equipScript: {fileID: 432900816}
 --- !u!1 &1322400672943990866
 GameObject:
   m_ObjectHideFlags: 0
@@ -3084,6 +3128,7 @@ GameObject:
   - component: {fileID: 1109095614111658147}
   - component: {fileID: 2456448485624653901}
   - component: {fileID: 3393968552384259458}
+  - component: {fileID: 1091896703}
   m_Layer: 5
   m_Name: PowerUp1
   m_TagString: Untagged
@@ -3192,7 +3237,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2456448485624653901}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1091896703}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1091896703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2623536469525684856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 0
+  equipScript: {fileID: 432900816}
 --- !u!1 &3148047551019462531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,6 +3716,7 @@ GameObject:
   - component: {fileID: 3849739276765127533}
   - component: {fileID: 6397304696199913106}
   - component: {fileID: 5581252121552874227}
+  - component: {fileID: 1506736865}
   m_Layer: 5
   m_Name: PowerUp2
   m_TagString: Untagged
@@ -3753,7 +3825,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6397304696199913106}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1506736865}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1506736865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3846599582823213520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 1
+  equipScript: {fileID: 1581499177}
 --- !u!1 &3997304043296310791
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,6 +4498,7 @@ GameObject:
   - component: {fileID: 7348097835058375276}
   - component: {fileID: 3637800008461445126}
   - component: {fileID: 6633889464864187766}
+  - component: {fileID: 891430243}
   m_Layer: 5
   m_Name: PowerUp3
   m_TagString: Untagged
@@ -4508,7 +4607,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3637800008461445126}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 891430243}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &891430243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262145389614371628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 2
+  equipScript: {fileID: 432900816}
 --- !u!1 &5426760956650934973
 GameObject:
   m_ObjectHideFlags: 0
@@ -5666,6 +5791,7 @@ GameObject:
   - component: {fileID: 7441185644919949644}
   - component: {fileID: 6105744192346604274}
   - component: {fileID: 1048782773872067604}
+  - component: {fileID: 1074493800}
   m_Layer: 5
   m_Name: PowerUp1
   m_TagString: Untagged
@@ -5774,7 +5900,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6105744192346604274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1074493800}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1074493800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6797355522394247534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 0
+  equipScript: {fileID: 1581499177}
 --- !u!1 &6843132928720525959
 GameObject:
   m_ObjectHideFlags: 0
@@ -5932,7 +6084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: Normal
 --- !u!1 &6884964629819107340
 GameObject:
   m_ObjectHideFlags: 0
@@ -6103,6 +6255,7 @@ GameObject:
   - component: {fileID: 2263993639794138812}
   - component: {fileID: 8476099714751705261}
   - component: {fileID: 553890344911316898}
+  - component: {fileID: 1581499177}
   m_Layer: 5
   m_Name: StabDropdown
   m_TagString: Untagged
@@ -6219,16 +6372,32 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
+    - m_Text: Normal
       m_Image: {fileID: 0}
-    - m_Text: Option B
+    - m_Text: Mighty
       m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: Explosive
+      m_Image: {fileID: 0}
+    - m_Text: Stun
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &1581499177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6954102867364634191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce977489c7a2f1438d31cb497fad846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackType: 0
+  cc: {fileID: 0}
 --- !u!1 &7159288964690728304
 GameObject:
   m_ObjectHideFlags: 0
@@ -7239,6 +7408,7 @@ GameObject:
   - component: {fileID: 6515448423467475772}
   - component: {fileID: 2008947880276150669}
   - component: {fileID: 1036136114373700413}
+  - component: {fileID: 168156165}
   m_Layer: 5
   m_Name: PowerUp3
   m_TagString: Untagged
@@ -7347,7 +7517,33 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2008947880276150669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 168156165}
+        m_TargetAssemblyTypeName: PurchaseMove, Assembly-CSharp
+        m_MethodName: Purchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &168156165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8497860710365357430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activatortype: 2
+  equipScript: {fileID: 1581499177}
 --- !u!1 &8605542684048198800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7584,7 +7780,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: Normal
 --- !u!1 &9043504302456785792
 GameObject:
   m_ObjectHideFlags: 0

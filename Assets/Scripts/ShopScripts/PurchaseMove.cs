@@ -4,12 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PurchaseMove : MonoBehaviour
 {
-    [SerializeField]
-    private string DropdownText;
-    //for the sprite
-    [SerializeField]
-    private Sprite DropdownSprite;
+    public enum activator
+    {
+        Mighty,
+        Explosive,
+        Stun
+    }
 
+    public activator activatortype;
+    
     public AttackEquip equipScript;
 
     private Button purchaseButton;
@@ -25,8 +28,9 @@ public class PurchaseMove : MonoBehaviour
         
     }
 
-    void Purchase()
+    public void Purchase()
     {
         purchaseButton.interactable = false;
+        equipScript.activatePowerup(activatortype);
     }
 }
