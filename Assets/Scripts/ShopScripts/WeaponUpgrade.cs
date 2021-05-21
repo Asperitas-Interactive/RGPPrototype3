@@ -27,9 +27,10 @@ public class WeaponUpgrade : MonoBehaviour
         }
     }
 
-    void OnClick()
+    public void OnClick()
     {
-        selfButton.enabled = false;
+        selfButton.interactable = false;
+        selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
         cc.DamageBoost(increase);
         if (successorButton != null)
         {

@@ -1936,6 +1936,7 @@ GameObject:
   - component: {fileID: 3994815939305450703}
   - component: {fileID: 4404215706518838443}
   - component: {fileID: 719269662874646230}
+  - component: {fileID: 1522359964}
   m_Layer: 5
   m_Name: Upgrade3
   m_TagString: Untagged
@@ -2044,7 +2045,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4404215706518838443}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1522359964}
+        m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1522359964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794231244955795838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cc: {fileID: 0}
+  increase: 40
+  successorButton: {fileID: 0}
+  successorText: {fileID: 0}
 --- !u!1 &2034508963620291254
 GameObject:
   m_ObjectHideFlags: 0
@@ -3595,6 +3624,7 @@ GameObject:
   - component: {fileID: 7707339658487349664}
   - component: {fileID: 1348963327343803698}
   - component: {fileID: 13304487202026424}
+  - component: {fileID: 2016813801}
   m_Layer: 5
   m_Name: Upgrade2
   m_TagString: Untagged
@@ -3703,7 +3733,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1348963327343803698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2016813801}
+        m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2016813801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3709525781427706672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cc: {fileID: 0}
+  increase: 20
+  successorButton: {fileID: 1794231244955795838}
+  successorText: {fileID: 8439823657452852400}
 --- !u!1 &3846599582823213520
 GameObject:
   m_ObjectHideFlags: 0
@@ -4377,6 +4435,7 @@ GameObject:
   - component: {fileID: 1430436505241228093}
   - component: {fileID: 8450336940675565018}
   - component: {fileID: 2387539549868294128}
+  - component: {fileID: 1029542926}
   m_Layer: 5
   m_Name: Upgrade1
   m_TagString: Untagged
@@ -4485,7 +4544,35 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8450336940675565018}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1029542926}
+        m_TargetAssemblyTypeName: WeaponUpgrade, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1029542926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859768191381219840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cc: {fileID: 0}
+  increase: 10
+  successorButton: {fileID: 3709525781427706672}
+  successorText: {fileID: 2182231072437312130}
 --- !u!1 &5262145389614371628
 GameObject:
   m_ObjectHideFlags: 0

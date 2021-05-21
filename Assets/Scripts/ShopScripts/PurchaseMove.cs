@@ -31,6 +31,7 @@ public class PurchaseMove : MonoBehaviour
     public void Purchase()
     {
         purchaseButton.interactable = false;
+        purchaseButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
         equipScript.activatePowerup(activatortype);
     }
 }
