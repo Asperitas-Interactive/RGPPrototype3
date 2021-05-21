@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class CombatControl : MonoBehaviour
 {
-
+    public enum attackType
+    {
+        NORMAL,
+        MIGHTY,
+        EXPLOSIVE,
+        STUN
+    }
 
     public bool isAttacking = false;
     bool isStabbing = false;
@@ -28,6 +34,9 @@ public class CombatControl : MonoBehaviour
     public PlayerMovement m_MovementScript;
 
     ShopDetection ShopCheck;
+
+    public attackType StabType;
+    public attackType ComboType;
 
     // Start is called before the first frame update
     void Start()
@@ -141,24 +150,96 @@ public class CombatControl : MonoBehaviour
                 }*/
             }
 
-            //Ranged Attack
-            if (Input.GetButtonDown("Range"))
-            {
-                GameObject bulletClone = Instantiate(bullet);
-                bulletClone.transform.position = transform.position + (transform.forward * 5);
-                bulletClone.transform.localRotation = transform.localRotation;
-                bulletClone.GetComponent<Rigidbody>().AddForce(transform.forward * 1000);
-            }
-
             //Debug.Log(isAttacking);
         }
     }
 
     public void DamageBoost(int Increase)
     {
-        if (damageIncrease < 100)
+        damageIncrease = Increase;
+    }
+
+    public void AttackEffect(EnemyControl collider)
+    {
+        if (animator.GetBool("Stab") == true)
         {
-            damageIncrease += Increase;
+            switch (StabType)
+            {
+                case attackType.MIGHTY:
+
+                    int random = Random.Range(1, 100);
+
+                    if (random < 25)
+                    {
+                        //Want to add any increases in damage to the critical boost
+                        collider.health -= (int)((damage + damageIncrease) * 1.5);
+                    } else
+                    {
+                        collider.health -= damage + damageIncrease;
+                    }
+
+                    break;
+                case attackType.EXPLOSIVE:
+                    Collider[] objInRadius = Physics.OverlapSphere(collider.gameObject.transform.position, 5.0f);
+                    foreach (Collider col in objInRadius)
+                    {
+                        if (col.gameObject.tag == "Enemy" && col.gameObject != collider.gameObject)
+                        {
+                            col.gameObject.GetComponent<EnemyControl>().health -= (int)((damage + damageIncrease) / 2);
+                        }
+                    }
+
+                    collider.health -= damage + damageIncrease;
+                    break;
+                case attackType.STUN:
+                    Debug.Log("Inset a stun mechanic oops lol");
+                    collider.health -= damage + damageIncrease;
+                    break;
+                //Default is for attackType.NORMAL
+                default:
+                    collider.health -= damage + damageIncrease;
+                    break;
+            }
+        }
+        
+        if(animator.GetInteger("combo") > 0)
+        {
+            switch (ComboType)
+            {
+                case attackType.MIGHTY:
+                    int random = Random.Range(1, 100);
+
+                    if (random < 25)
+                    {
+                        //Want to add any increases in damage to the critical boost
+                        collider.health -= (int)((damage + damageIncrease) * 1.5);
+                    }
+                    else
+                    {
+                        collider.health -= damage + damageIncrease;
+                    }
+                    break;
+                case attackType.EXPLOSIVE:
+                    Collider[] objInRadius = Physics.OverlapSphere(collider.gameObject.transform.position, 5.0f);
+                    foreach (Collider col in objInRadius)
+                    {
+                        if (col.gameObject.tag == "Enemy" && col.gameObject != collider.gameObject)
+                        {
+                            col.gameObject.GetComponent<EnemyControl>().health -= (int)((damage + damageIncrease) / 2);
+                        }
+                    }
+
+                    collider.health -= damage + damageIncrease;
+                    break;
+                case attackType.STUN:
+                    Debug.Log("Inset a stun mechanic oops lol");
+                    collider.health -= damage + damageIncrease;
+                    break;
+                //Default is for attackType.NORMAL
+                default:
+                    collider.health -= damage + damageIncrease;
+                    break;
+            }
         }
     }
 }
