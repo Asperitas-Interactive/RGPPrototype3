@@ -156,10 +156,7 @@ public class CombatControl : MonoBehaviour
 
     public void DamageBoost(int Increase)
     {
-        if (damageIncrease < 100)
-        {
-            damageIncrease += Increase;
-        }
+        damageIncrease = Increase;
     }
 
     public void AttackEffect(EnemyControl collider)
