@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Transform m_playerCam;
 
     Vector3 velocity;
     public bool isGrounded;
@@ -49,51 +50,19 @@ public class PlayerMovement : MonoBehaviour
             Application.Quit();
         }
 
-        slider.value = m_health;
 
-        if(m_health <= 0)
-        {
-            viginette.GetComponent<FadeOut>().beginFade();
-        }
 
-        float velX = Input.GetAxis("Horizontal");
-        velZ = Input.GetAxis("Vertical");
-
-        bool jumpPress = Input.GetButtonDown("Jump");
-
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = 0.0f;
-        }
-
-        Vector3 movement = transform.right * velX + transform.forward * velZ;
-
-        //I'll try this later
-        /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
-        Debug.Log(NextDir);
-        foreach (GameObject go in bodyToRotate)
-        {
-            //go.transform.rotation = Quaternion.LookRotation(NextDir);
-        }*/
-        if (m_isAttacking == false)
-        {
-            controller.Move(movement * speed * Time.deltaTime);
-        }
-
-        if(jumpPress && isGrounded)
         if (!ShopCheck.inMenu)
         {
-            slider.value = health;
+            slider.value = m_health;
 
-            if (health <= 0)
+            if (m_health <= 0)
             {
                 viginette.GetComponent<FadeOut>().beginFade();
             }
 
-            float velX = Input.GetAxis("Horizontal");
-            float velZ = Input.GetAxis("Vertical");
+            float velX = Input.GetAxisRaw("Horizontal");
+            velZ = Input.GetAxisRaw("Vertical");
 
             bool jumpPress = Input.GetButtonDown("Jump");
 
@@ -104,7 +73,9 @@ public class PlayerMovement : MonoBehaviour
                 velocity.y = 0.0f;
             }
 
-            Vector3 movement = transform.right * velX + transform.forward * velZ;
+            Vector3 movement = new Vector3(velX, 0f, velZ);
+
+
 
             //I'll try this later
             /*Vector3 NextDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0.0f, Input.GetAxisRaw("Vertical"));
@@ -113,15 +84,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 //go.transform.rotation = Quaternion.LookRotation(NextDir);
             }*/
-            if (m_isAttacking == false)
+            if (m_isAttacking == false && movement.magnitude > 0.1f)
             {
-                controller.Move(movement * speed * Time.deltaTime);
+                float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + m_playerCam.eulerAngles.y;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.Move(moveDir.normalized * speed * Time.deltaTime);
             }
-
-            if (jumpPress && isGrounded)
+            else if(movement.magnitude > 0.1f && GetComponent<CombatControl>().canAttack && Input.GetButtonDown("Melee"))
             {
-                velocity.y = Mathf.Sqrt(-jumpHeight * 2f * -gravity);
-                m_IsFalling = false;
+                float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + m_playerCam.eulerAngles.y;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
 
             if (m_IsFalling && !isGrounded)

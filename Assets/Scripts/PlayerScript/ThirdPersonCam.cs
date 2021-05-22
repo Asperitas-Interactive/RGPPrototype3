@@ -65,12 +65,13 @@ public class ThirdPersonCam : MonoBehaviour
             //player.Rotate(Vector3.up, mouseX);
             //transform.parent.Rotate(Vector3.up, mouseX);
             transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
-            player.Rotate(Vector3.up, mouseX);
+            //player.Rotate(Vector3.up, mouseX);
         
+        }
     }
 
 
-    private void LateUpdate()
+    void LateUpdate()
     {
         transform.parent.position = player.transform.position;
     }
