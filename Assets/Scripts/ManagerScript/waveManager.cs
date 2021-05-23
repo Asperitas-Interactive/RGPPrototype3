@@ -10,12 +10,12 @@ public class waveManager : MonoBehaviour
     public int maxWaveTimer;
     public float restWaveTimer;
     public GameObject enemies;
-   public bool restWave;
+    public bool restWave;
     public float waveTimer;
     int wave;
     bool end = false;
 
-    public GameObject []boids;
+    public GameObject[] boids;
 
     public Waves[] waveControl;
 
@@ -42,9 +42,9 @@ public class waveManager : MonoBehaviour
                 m_CombatEnded = true;
             }
 
-            
 
-            else if(waveTimer <0.0f)
+
+            else if (waveTimer < 0.0f)
             {
                 end = false;
                // waveTimer -= Time.deltaTime;
@@ -62,7 +62,7 @@ public class waveManager : MonoBehaviour
 
             foreach (GameObject boid in boids)
             {
-                if(boid == null)
+                if (boid == null)
                 {
                     continue;
                 }
@@ -71,7 +71,7 @@ public class waveManager : MonoBehaviour
                 {
                     t++;
                     flag = true;
-                    
+
                 }
             }
             boidCount = t;

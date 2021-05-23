@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemyHealth : MonoBehaviour
 {
-    private int health = 100;
+    private int m_health = 100;
     public int spawnNum = 5;
 
     public enum EnemyType
@@ -26,7 +26,7 @@ public class enemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if(health < 0)
+        if(m_health < 0)
         {
             Destroy(this.gameObject);
         }
@@ -38,9 +38,9 @@ public class enemyHealth : MonoBehaviour
         {
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
-            health -= cc.damage;
+            m_health -= cc.damage;
 
-            Debug.Log(health);
+            Debug.Log(m_health);
         }
     }
 }
