@@ -20,6 +20,7 @@ public class CombatControl : MonoBehaviour
 
     public int damage = 0;
     private int damageIncrease = 0;
+    private CharacterController m_characterController;
     public bool canAttack;
     public Transform aoePos;
 
@@ -43,6 +44,7 @@ public class CombatControl : MonoBehaviour
     {
         //animator = GetComponent<Animator>();
         m_MovementScript = GetComponent<PlayerMovement>();
+        m_characterController = GetComponent<CharacterController>();
         ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
     }
 

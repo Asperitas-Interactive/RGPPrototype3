@@ -24,6 +24,15 @@ public class EnemyControl : MonoBehaviour
         STRONG
     };
 
+    public enum eStatus
+    {
+        follow,
+        stun,
+        attack,
+    };
+
+    eStatus m_status = eStatus.follow;
+
     public healthPool hPool;
 
     //Rigidbody rb;
@@ -36,6 +45,12 @@ public class EnemyControl : MonoBehaviour
     public float EvadeCoolDown = 5.0f;
     public float EvadeDistance = 20f;
     public float maxAttackCooldown = 3.0f;
+
+    public float maxStunTimer = 8.0f;
+    public float maxStunPerHit = 3.0f;
+    float stunTimer = 0.0f;
+
+
     public int damage = -10;
     float attackTimer;
     float attackCooldown = 3.0f;
@@ -69,41 +84,121 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-        //transform.GetChild(0).transform.LookAt(player);
+        #region EnemyModelFromHealth
+        if (health < maxHealth && health > maxHealth - maxHealth / 5)
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(true);
+        }
 
-        #region Evade
-        //EvadeTimer -= Time.deltaTime;
-        //EvadeCoolDown -= Time.deltaTime;
-        //if(evading && EvadeCoolDown <0f)
-        //{
-        //    agent.speed *= 2f;
-        //    evading = false;
-        //    EvadeTimer = maxEvade;
-        //}
+        else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
 
-        //if(!evading && EvadeTimer < 0f)
-        //{
-        //    agent.speed /= 2f;
-        //    evading = true;
-        //    EvadeCoolDown = 5f;
-        //}
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+        else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(true);
+        }
+        else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(true);
+        }
+        else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
+        {
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(3).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
+            transform.GetChild(5).gameObject.SetActive(true);
+        }
 
         #endregion
+
+        #region attackTimers
+        attackCooldown -= Time.deltaTime;
+        attackTimer -= Time.deltaTime;
+        stunTimer -= Time.deltaTime;
+        #endregion
+
+
+
+        switch (m_status)
+        {
+            case eStatus.follow:
+                {
+                    //transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+                    agent.SetDestination(player.position);
+                    break;
+                }
+            case eStatus.stun:
+                {
+                    //transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
+                    agent.velocity = Vector3.zero;
+                    break;
+                }
+            case eStatus.attack:
+                {
+                    //transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+
+                    agent.transform.LookAt(player);
+                    agent.velocity = Vector3.zero;
+
+                    GetComponent<BoxCollider>().enabled = false;
+                    for (int i = 1; i < transform.childCount; i++)
+                    {
+                        if (transform.GetChild(i).gameObject.activeSelf)
+                        {
+                            break;
+                        }
+                    }
+
+
+                    break;
+                }
+            default:
+                break;
+        }
 
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
 
         if (attackCooldown < 0.0f)
         {
-            agent.SetDestination(player.position);
-            //agent.transform.LookAt(player);
+            GetComponent<BoxCollider>().enabled = true;
+            attackTimer = 3.0f;
+            for (int i = 1; i < transform.childCount; i++)
+            {
+                if (transform.GetChild(i).gameObject.activeSelf)
+                {
+                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
+                    attackCooldown = maxAttackCooldown;
+                    break;
+                }
+            }
+            m_status = eStatus.follow;
         }
-        else
+
+        if (m_status == eStatus.stun && stunTimer < 0.0f)
         {
-            agent.velocity = Vector3.zero;
-            agent.SetDestination(transform.position);
+            m_status = eStatus.follow;
         }
-        if(slider!=null)
+
+
+
+        if (slider!=null)
         slider.value = health;
 
         if (health <= 0 && !destroy)
@@ -123,47 +218,6 @@ public class EnemyControl : MonoBehaviour
             destroyTimer = 2.967f;
         }
 
-        #region EnemyModelFromHealth
-        if(health< maxHealth && health > maxHealth - maxHealth / 5)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(true);
-        }
-
-       else if (health < maxHealth - maxHealth *(1.0f/ 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(true);
-        }
-
-        else if (health < maxHealth - maxHealth *(2.0f/ 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth *(3.0f/ 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth *(4.0f/ 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(false);
-            transform.GetChild(5).gameObject.SetActive(true);
-        }
-
-        #endregion
 
         destroyTimer -= Time.deltaTime;
         if(destroyTimer<0.0f && destroy)
@@ -171,45 +225,11 @@ public class EnemyControl : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        #region attackTimers
-        attackCooldown -= Time.deltaTime;
-        attackTimer -= Time.deltaTime;
-        #endregion
-        //Debug.Log(attackCooldown);
-            
-        if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f))
+        Debug.Log(attackCooldown);
+
+        if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f) && m_status != eStatus.stun) 
         {
-            if (attackCooldown < 0.0f)
-            {
-                GetComponent<BoxCollider>().enabled = true;
-                attackTimer = 3.0f;
-                for (int i = 1; i < transform.childCount; i++)
-                {
-                    if (transform.GetChild(i).gameObject.activeSelf)
-                    {
-                        //transform.LookAt(player);
-                        transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
-                        attackCooldown = maxAttackCooldown;
-                        break;
-                    }
-                }
-            }
-
-            else 
-           
-            {
-                agent.velocity = Vector3.zero;
-
-                GetComponent<BoxCollider>().enabled = false;
-                for (int i = 1; i < transform.childCount; i++)
-                {
-                    if (transform.GetChild(i).gameObject.activeSelf)
-                    {
-                        transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
-                        break;
-                    }
-                }
-            }
+            m_status = eStatus.attack;
 
         }
 
@@ -260,6 +280,19 @@ public class EnemyControl : MonoBehaviour
         {
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
+            if(attackCooldown > maxAttackCooldown - maxAttackCooldown * 4.0f / 5.0f && cc.damage > 0)
+            {
+                m_status = eStatus.stun;
+                if (stunTimer > 0f)
+                {
+                    if(stunTimer < maxStunTimer - maxStunPerHit)
+                        stunTimer += maxStunPerHit;
+
+                }
+                else stunTimer = maxStunPerHit;
+            }
+
+            health -= cc.damage;
             cc.AttackEffect(this);
 
             if (cc.damage > 0)
