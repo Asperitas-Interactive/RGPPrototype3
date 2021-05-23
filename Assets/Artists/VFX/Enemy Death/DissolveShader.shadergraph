@@ -3156,7 +3156,7 @@
     },
     "m_Name": "DissolveAmount",
     "m_DefaultReferenceName": "Vector1_bc8a8d3228f649c88e75b385e68b16b7",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "DissolveAmount_",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
