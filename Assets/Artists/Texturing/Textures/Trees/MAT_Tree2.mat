@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MAT_Tree
+  m_Name: MAT_Tree2
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ShaderKeywords: _DISABLE_SSR_TRANSPARENT _MASKMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE
   m_LightmapFlags: 4
@@ -30,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 36e99818d7d438f45a3410de483b17a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 02fe953f0b99fc94b84cb3ceb0bf565d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -70,15 +70,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 36e99818d7d438f45a3410de483b17a2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 02fe953f0b99fc94b84cb3ceb0bf565d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: 9cb2e4ac6e0ca0543b5c0140fb7d0c1a, type: 3}
+        m_Texture: {fileID: 2800000, guid: e2030fb204ef0e64499ac1ba2ef9142b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 3b9f25f5cfeaa7d4184491e24606633b, type: 3}
+        m_Texture: {fileID: 2800000, guid: bbbf1d08001252842ad44bf37e792cb9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
