@@ -7,14 +7,12 @@ public class StoreSubMenuControl : MonoBehaviour
 {
     public Canvas WeaponUp;
     public Canvas ComboUp;
-    public Canvas StabUp;
     public Canvas EquipUp;
     // Start is called before the first frame update
     void Start()
     {
         WeaponUp.enabled = false;
         ComboUp.enabled = false;
-        StabUp.enabled = false;
         EquipUp.enabled = false;
     }
 
@@ -22,7 +20,6 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         WeaponUp.enabled = true;
         ComboUp.enabled = false;
-        StabUp.enabled = false;
         EquipUp.enabled = false;
     }
 
@@ -30,13 +27,11 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         ComboUp.enabled = true;
         WeaponUp.enabled = false;
-        StabUp.enabled = false;
         EquipUp.enabled = false;
     }
 
     public void StabClick()
     {
-        StabUp.enabled = true;
         ComboUp.enabled = false;
         WeaponUp.enabled = false;
         EquipUp.enabled = false;
@@ -46,7 +41,6 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         EquipUp.enabled = true;
         ComboUp.enabled = false;
-        StabUp.enabled = false;
         WeaponUp.enabled = false;
     }
 
@@ -54,7 +48,6 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         WeaponUp.enabled = false;
         ComboUp.enabled = false;
-        StabUp.enabled = false;
         EquipUp.enabled = false;
     }
 }

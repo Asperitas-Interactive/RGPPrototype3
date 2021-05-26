@@ -17,6 +17,8 @@ public class EnemyControl : MonoBehaviour
     //For Pathfinding
     public Transform player;
 
+    public RankingSystem rankingSys;
+
     public enum healthPool
     {
         WEAK,
@@ -80,6 +82,8 @@ public class EnemyControl : MonoBehaviour
 
         hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
         damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
+
+        rankingSys = player.GetComponent<RankingSystem>();
     }
 
     private void Update()
@@ -232,7 +236,7 @@ public class EnemyControl : MonoBehaviour
            // Destroy(this.gameObject);
         }
 
-        Debug.Log(attackCooldown);
+        //Debug.Log(attackCooldown);
 
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f) && m_status != eStatus.stun) 
         {
@@ -276,6 +280,7 @@ public class EnemyControl : MonoBehaviour
                     break;
                 }
             }
+            rankingSys.dropCombo();
             damagesound.Play();
         }
     }
@@ -305,6 +310,7 @@ public class EnemyControl : MonoBehaviour
             if (cc.damage > 0)
             {
                 hit.Play();
+                rankingSys.increaseCombo();
             }
         }
     }
