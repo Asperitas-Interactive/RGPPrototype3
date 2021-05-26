@@ -71,6 +71,8 @@ public class waveManager : MonoBehaviour
         {
             int count = 0;
 
+            encounterController = _encounter;
+
             waveControl = _encounter.waves;
 
             maxWaves = _encounter.waves.Length;
@@ -102,7 +104,28 @@ public class waveManager : MonoBehaviour
         //Its use was removed in mini prod
         isActive = false;
         waveControl = new Waves[0];
-        rankSys.EncounterRewards(encounterController);
+
+        //Rewards
+        if (rankSys.getCombo() <= encounterController.Star2Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star1Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star2Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star3Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star4Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star5Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star5Money);
+        }
     }
 
 

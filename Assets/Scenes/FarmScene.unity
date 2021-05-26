@@ -13127,15 +13127,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce0b0212731919c43832165edb734ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Star2Combo: 0
-  Star3Combo: 0
-  Star4Combo: 0
-  Star5Combo: 0
-  Star1Money: 0
-  Star2Money: 0
-  Star3Money: 0
-  Star4Money: 0
-  Star5Money: 0
+  Star2Combo: 10
+  Star3Combo: 20
+  Star4Combo: 25
+  Star5Combo: 30
+  Star1Money: 10
+  Star2Money: 20
+  Star3Money: 30
+  Star4Money: 40
+  Star5Money: 50
   waves:
   - {fileID: 11400000, guid: 76610b016ab5d314ca9e4fbfb8f254f8, type: 2}
 --- !u!4 &811985144
