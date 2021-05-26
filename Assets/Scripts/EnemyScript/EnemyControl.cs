@@ -226,7 +226,7 @@ public class EnemyControl : MonoBehaviour
            // Destroy(this.gameObject);
         }
 
-        Debug.Log(attackCooldown);
+        //Debug.Log(attackCooldown);
 
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f) && m_status != eStatus.stun) 
         {

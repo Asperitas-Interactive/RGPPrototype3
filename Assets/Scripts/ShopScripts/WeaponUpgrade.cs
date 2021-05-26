@@ -20,6 +20,8 @@ public class WeaponUpgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
+
         selfButton = GetComponent<Button>();
         if (successorButton != null)
         {
