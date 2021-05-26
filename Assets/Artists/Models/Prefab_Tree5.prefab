@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8783197118442224722}
   - component: {fileID: 3019312187041376633}
   - component: {fileID: 2003495702558565258}
+  - component: {fileID: 4939668089782247001}
   m_Layer: 0
   m_Name: Prefab_Tree5
   m_TagString: Untagged
@@ -101,3 +102,17 @@ LODGroup:
     renderers:
     - renderer: {fileID: 8783197118442224722}
   m_Enabled: 1
+--- !u!136 &4939668089782247001
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5705320281418841625}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3794574
+  m_Height: 9.047993
+  m_Direction: 1
+  m_Center: {x: -0.15937436, y: 4.5339746, z: 0.0040212274}
