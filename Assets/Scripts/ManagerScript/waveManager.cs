@@ -7,13 +7,7 @@ public class waveManager : MonoBehaviour
 {
     public int boidCount = 0;
     public int maxWaves;
-    public int maxWaveTimer;
-    public float restWaveTimer;
-    public GameObject enemies;
-    public bool restWave;
-    public float waveTimer;
     int wave;
-    bool end = false;
 
     public GameObject[] boids;
 
@@ -23,11 +17,12 @@ public class waveManager : MonoBehaviour
 
     public RankingSystem rankSys;
 
+    public bool isActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
         wave = 0;
-        waveTimer = (float)maxWaveTimer;
         waveStart();
         rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
@@ -35,32 +30,16 @@ public class waveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (restWave)
+        if (isActive)
         {
-            waveTimer -= Time.deltaTime;
-
             if (wave > maxWaves)
             {
                 //Insert new way to change the Scene
                 m_CombatEnded = true;
+                WaveEnd();
             }
 
-
-
-            else if (waveTimer < 0.0f)
-            {
-                end = false;
-               // waveTimer -= Time.deltaTime;
-                waveTimer = (float)0;
-                restWave = false;
-                wave++;
-                waveStart();
-            }
-
-        }
-        int t = 0;
-        if (!restWave)
-        {
+            int t = 0;
             bool flag = false;
 
             foreach (GameObject boid in boids)
@@ -81,23 +60,9 @@ public class waveManager : MonoBehaviour
 
             if (!flag)
             {
-                restWave = true;
-                waveTimer = (float)0;
-            }
-
-        }
-
-
-        else
-        {
-            if (Input.GetButtonDown("Skip"))
-            {
-                waveTimer = 0f;
+                wave++;
             }
         }
-
-
-
     }
 
     int waveStart()
@@ -122,6 +87,7 @@ public class waveManager : MonoBehaviour
     void WaveEnd()
     {
         //Its use was removed in mini prod
+        
     }
 
 

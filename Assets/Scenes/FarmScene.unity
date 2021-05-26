@@ -31149,18 +31149,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012424321}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5520c1ac0d3407c4baff45d8edd5896e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   boidCount: 0
-  maxWaves: 0
-  maxWaveTimer: 20
-  restWaveTimer: 0
-  enemies: {fileID: 8373634382917164362, guid: 650426207a444284d910f6ee59875f7d, type: 3}
-  restWave: 0
-  waveTimer: 0
+  maxWaves: 1
   boids: []
   waveControl:
   - {fileID: 11400000, guid: 76610b016ab5d314ca9e4fbfb8f254f8, type: 2}
