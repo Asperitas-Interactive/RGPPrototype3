@@ -56,6 +56,8 @@ public class EnemyControl : MonoBehaviour
     float attackCooldown = 3.0f;
     float maxHealth;
 
+    bool m_canHit = true;
+
     Vector3 chargevel;
     private NavMeshAgent agent;
     private bool ChargeBool = false;
@@ -85,44 +87,44 @@ public class EnemyControl : MonoBehaviour
     private void Update()
     {
         #region EnemyModelFromHealth
-        if (health < maxHealth && health > maxHealth - maxHealth / 5)
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(true);
-        }
+        //if (health < maxHealth && health > maxHealth - maxHealth / 5)
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(false);
+        //    transform.GetChild(1).gameObject.SetActive(true);
+        //}
 
-        else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
+        //else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(false);
 
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(true);
-        }
+        //    transform.GetChild(1).gameObject.SetActive(false);
+        //    transform.GetChild(2).gameObject.SetActive(true);
+        //}
 
-        else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(true);
-        }
-        else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
-        {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(false);
-            transform.GetChild(5).gameObject.SetActive(true);
-        }
+        //else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(false);
+        //    transform.GetChild(1).gameObject.SetActive(false);
+        //    transform.GetChild(2).gameObject.SetActive(false);
+        //    transform.GetChild(3).gameObject.SetActive(true);
+        //}
+        //else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(false);
+        //    transform.GetChild(1).gameObject.SetActive(false);
+        //    transform.GetChild(2).gameObject.SetActive(false);
+        //    transform.GetChild(3).gameObject.SetActive(false);
+        //    transform.GetChild(4).gameObject.SetActive(true);
+        //}
+        //else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
+        //{
+        //    transform.GetChild(0).gameObject.SetActive(false);
+        //    transform.GetChild(1).gameObject.SetActive(false);
+        //    transform.GetChild(2).gameObject.SetActive(false);
+        //    transform.GetChild(3).gameObject.SetActive(false);
+        //    transform.GetChild(4).gameObject.SetActive(false);
+        //    transform.GetChild(5).gameObject.SetActive(true);
+       // }
 
         #endregion
 
@@ -283,8 +285,9 @@ public class EnemyControl : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Check collisions
-        if (collision.gameObject.tag == "Sword")
+        if (collision.gameObject.tag == "Sword" && m_canHit)
         {
+            m_canHit = false;
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
             if(attackCooldown > maxAttackCooldown - maxAttackCooldown * 4.0f / 5.0f && cc.damage > 0)
@@ -309,6 +312,13 @@ public class EnemyControl : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Sword")
+        {
+            m_canHit = true;
+        }
+    }
 
 
     public void AOEDamage()
@@ -321,19 +331,19 @@ public class EnemyControl : MonoBehaviour
         if (hPool == healthPool.WEAK)
         {
             agent.speed = Random.Range(5.0f, 6.0f);
-            health = Random.Range(400, 600);
+            health = Random.Range(120, 160);
             maxHealth = health;
         }
         else if (hPool == healthPool.NORMAL)
         {
             agent.speed = Random.Range(4.0f, 5.0f);
-            health = Random.Range(600, 800);
+            health = Random.Range(100, 130);
             maxHealth = health;
         }
         else if (hPool == healthPool.STRONG)
         {
             agent.speed = Random.Range(3.0f, 4.0f);
-            health = Random.Range(800, 1200);
+            health = Random.Range(150, 200);
             maxHealth = health;
         }
     }

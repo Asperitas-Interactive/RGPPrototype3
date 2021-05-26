@@ -784,6 +784,7 @@ GameObject:
   - component: {fileID: 5277656875708283926}
   - component: {fileID: 5277656875708283927}
   - component: {fileID: 5277656875708283924}
+  - component: {fileID: 4759251617127163916}
   m_Layer: 0
   m_Name: VFX_Test_Enemy Variant
   m_TagString: Untagged
@@ -841,6 +842,20 @@ MonoBehaviour:
   dissolveRate: 0.02
   refreshRate: 0.05
   dieDelay: 0.2
+--- !u!64 &4759251617127163916
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5277656875708283925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &5277656875723083926
 GameObject:
   m_ObjectHideFlags: 0
