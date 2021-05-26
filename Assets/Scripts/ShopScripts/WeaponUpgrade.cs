@@ -9,6 +9,10 @@ public class WeaponUpgrade : MonoBehaviour
     [SerializeField]
     private int increase;
 
+    public float value;
+
+    public MoneyController moneyController;
+
     Button selfButton;
 
     public GameObject successorButton;
@@ -16,6 +20,8 @@ public class WeaponUpgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
+
         selfButton = GetComponent<Button>();
         if (successorButton != null)
         {
@@ -29,17 +35,23 @@ public class WeaponUpgrade : MonoBehaviour
 
     public void OnClick()
     {
-        selfButton.interactable = false;
-        selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
-        cc.DamageBoost(increase);
-        if (successorButton != null)
+        if (moneyController.Money >= value)
         {
-            successorButton.gameObject.SetActive(true);
-        }
-        if (successorText != null)
+            selfButton.interactable = false;
+            selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
+            cc.DamageBoost(increase);
+            moneyController.TakeMoney(value);
+            if (successorButton != null)
+            {
+                successorButton.gameObject.SetActive(true);
+            }
+            if (successorText != null)
+            {
+                successorText.gameObject.SetActive(true);
+            }
+        } else
         {
-            successorText.gameObject.SetActive(true);
+            Debug.Log("Insufficient funds");
         }
-
     }
 }
