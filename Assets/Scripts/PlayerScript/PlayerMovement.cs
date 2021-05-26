@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Transform m_playerCam;
 
+    public Animator animator;
+
     Vector3 velocity;
     public bool isGrounded;
 
@@ -38,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -75,6 +78,14 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 movement = new Vector3(velX, 0f, velZ);
 
+            if(movement.magnitude > 0.1f)
+            {
+                animator.SetFloat("speed", movement.magnitude);
+            }
+            else
+            {
+                animator.SetFloat("speed", 0f);
+            }
 
 
             //I'll try this later
