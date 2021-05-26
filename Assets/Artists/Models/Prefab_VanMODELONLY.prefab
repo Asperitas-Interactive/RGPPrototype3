@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1407546712436287121}
   m_Layer: 0
-  m_Name: Prefab_Van
+  m_Name: Prefab_VanMODELONLY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,11 +27,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5424092704962969303}
+  - {fileID: 6030289379112533198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5533946402157599036
+--- !u!1001 &6063355006817229605
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -48,11 +48,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd2ea1618c522340bd2d05d239965a6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0121636195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd2ea1618c522340bd2d05d239965a6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.01028656
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7dd2ea1618c522340bd2d05d239965a6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -88,8 +88,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd2ea1618c522340bd2d05d239965a6, type: 3}
---- !u!4 &5424092704962969303 stripped
+--- !u!4 &6030289379112533198 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7dd2ea1618c522340bd2d05d239965a6, type: 3}
-  m_PrefabInstance: {fileID: 5533946402157599036}
+  m_PrefabInstance: {fileID: 6063355006817229605}
   m_PrefabAsset: {fileID: 0}
