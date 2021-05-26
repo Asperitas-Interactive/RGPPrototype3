@@ -38,13 +38,11 @@ public class RankingSystem : MonoBehaviour
         }
     }
 
-    public int getCombo()
-    {
-        return combo;
-    }
-
     public void EncounterRewards(EncounterThreshold _encounter)
     {
-
+        if(combo <= _encounter.Star2Combo)
+        {
+            gameObject.GetComponent<MoneyController>().
+        }
     }
 }
