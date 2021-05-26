@@ -16,4 +16,12 @@ public class EncounterThreshold : MonoBehaviour
     public float Star5Money;
 
     public Waves[] waves;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            Debug.Log("EncounterStart!");
+        }
+    }
 }
