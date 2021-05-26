@@ -42,4 +42,9 @@ public class RankingSystem : MonoBehaviour
     {
         return combo;
     }
+
+    public void EncounterRewards(EncounterThreshold _encounter)
+    {
+
+    }
 }

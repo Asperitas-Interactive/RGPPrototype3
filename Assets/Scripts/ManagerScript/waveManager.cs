@@ -92,6 +92,8 @@ public class waveManager : MonoBehaviour
     {
         //Its use was removed in mini prod
         isActive = false;
+        waveControl = new Waves[0];
+        
         
     }
 
