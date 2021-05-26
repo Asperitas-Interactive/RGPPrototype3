@@ -26,7 +26,7 @@ GameObject:
   m_Name: Prefab_BarnDoor_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &7436504629705355272
@@ -106,6 +106,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e96262aa36324534a900362faf87cbbb, type: 3}
       propertyPath: m_Name
       value: MOD_BarnDoor_M
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e96262aa36324534a900362faf87cbbb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e96262aa36324534a900362faf87cbbb, type: 3}
