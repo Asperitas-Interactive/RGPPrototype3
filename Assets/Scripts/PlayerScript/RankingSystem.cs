@@ -37,4 +37,9 @@ public class RankingSystem : MonoBehaviour
             combo -= 15;
         }
     }
+
+    public int getCombo()
+    {
+        return combo;
+    }
 }

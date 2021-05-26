@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EncounterThreshold : MonoBehaviour
 {
-    public int Star1Combo;
     public int Star2Combo;
     public int Star3Combo;
     public int Star4Combo;
@@ -12,5 +11,9 @@ public class EncounterThreshold : MonoBehaviour
 
     public float Star1Money;
     public float Star2Money;
-    public float 
+    public float Star3Money;
+    public float Star4Money;
+    public float Star5Money;
+
+    public Waves[] waves;
 }
