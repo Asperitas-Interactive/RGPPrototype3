@@ -31,13 +31,10 @@ public class DissolvingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(Dissolve());
-        }
+        
     }
 
-    IEnumerator Dissolve()
+    public IEnumerator Dissolve()
     {
         if (animator != null)
             animator.SetTrigger("Die");
