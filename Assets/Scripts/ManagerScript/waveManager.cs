@@ -67,25 +67,34 @@ public class waveManager : MonoBehaviour
 
     public int waveStart(EncounterThreshold _encounter)
     {
-        int count = 0;
-
-        waveControl = _encounter.waves;
-
-        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        if (isActive == false)
         {
-            count++;
+            int count = 0;
+
+            waveControl = _encounter.waves;
+
+            maxWaves = _encounter.waves.Length;
+
+            wave = 0;
+
+            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            {
+                count++;
+            }
+
+            boids = new GameObject[count];
+
+            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            {
+                boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+            }
+
+            isActive = true;
+
+            return count;
         }
 
-        boids = new GameObject[count];
-
-        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
-        {
-            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
-        }
-
-        isActive = true;
-
-        return count;
+        return 0;
     }
 
     void WaveEnd()
