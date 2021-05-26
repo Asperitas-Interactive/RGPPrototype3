@@ -30986,6 +30986,10 @@ PrefabInstance:
       propertyPath: cc
       value: 
       objectReference: {fileID: 1741561212}
+    - target: {fileID: 1029542926, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1522359964, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: cc
       value: 
@@ -31093,6 +31097,10 @@ PrefabInstance:
     - target: {fileID: 2034508965313788397, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_Name
       value: Player UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034508965652627719, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52.999817
       objectReference: {fileID: 0}
     - target: {fileID: 7674570232331056333, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

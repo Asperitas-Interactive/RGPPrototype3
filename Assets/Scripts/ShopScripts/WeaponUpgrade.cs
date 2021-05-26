@@ -9,6 +9,10 @@ public class WeaponUpgrade : MonoBehaviour
     [SerializeField]
     private int increase;
 
+    public float value;
+
+    public MoneyController moneyController;
+
     Button selfButton;
 
     public GameObject successorButton;
