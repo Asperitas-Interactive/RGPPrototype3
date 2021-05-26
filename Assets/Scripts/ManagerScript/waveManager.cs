@@ -11,7 +11,7 @@ public class waveManager : MonoBehaviour
 
     public GameObject[] boids;
 
-    public Waves[] waveControl;
+    private Waves[] waveControl;
 
     public bool m_CombatEnded = false;
 
@@ -19,11 +19,11 @@ public class waveManager : MonoBehaviour
 
     public bool isActive = false;
 
+    public EncounterThreshold encounterController;
+
     // Start is called before the first frame update
     void Start()
     {
-        wave = 0;
-        waveStart();
         rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
 
@@ -65,9 +65,11 @@ public class waveManager : MonoBehaviour
         }
     }
 
-    int waveStart()
+    public int waveStart(EncounterThreshold _encounter)
     {
         int count = 0;
+
+        waveControl = _encounter.waves;
 
         for (int i = 0; i < waveControl[wave].enemies.Length; i++)
         {
@@ -81,12 +83,15 @@ public class waveManager : MonoBehaviour
             boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
         }
 
+        isActive = true;
+
         return count;
     }
 
     void WaveEnd()
     {
         //Its use was removed in mini prod
+        isActive = false;
         
     }
 

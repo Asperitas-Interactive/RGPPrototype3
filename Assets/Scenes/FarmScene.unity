@@ -31137,7 +31137,7 @@ GameObject:
   - component: {fileID: 2012424322}
   m_Layer: 0
   m_Name: WaveManager
-  m_TagString: Untagged
+  m_TagString: Wavemanager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31157,10 +31157,10 @@ MonoBehaviour:
   boidCount: 0
   maxWaves: 1
   boids: []
-  waveControl:
-  - {fileID: 11400000, guid: 76610b016ab5d314ca9e4fbfb8f254f8, type: 2}
   m_CombatEnded: 0
   rankSys: {fileID: 0}
+  isActive: 0
+  encounterController: {fileID: 0}
 --- !u!4 &2012424323
 Transform:
   m_ObjectHideFlags: 0
