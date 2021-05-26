@@ -21,12 +21,15 @@ public class waveManager : MonoBehaviour
 
     public bool m_CombatEnded = false;
 
+    public RankingSystem rankSys;
+
     // Start is called before the first frame update
     void Start()
     {
         wave = 0;
         waveTimer = (float)maxWaveTimer;
         waveStart();
+        rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
 
     // Update is called once per frame

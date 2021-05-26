@@ -6,12 +6,12 @@ public class MoneyController : MonoBehaviour
 {
     public float Money;
     
-    void ReceiveMoney(float _moneyCount)
+    public void ReceiveMoney(float _moneyCount)
     {
         Money += _moneyCount;
     }
 
-    void TakeMoney(float _moneyCount)
+    public void TakeMoney(float _moneyCount)
     {
         Money -= _moneyCount;
     }

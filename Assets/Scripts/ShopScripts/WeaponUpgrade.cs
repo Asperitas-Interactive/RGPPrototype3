@@ -35,17 +35,23 @@ public class WeaponUpgrade : MonoBehaviour
 
     public void OnClick()
     {
-        selfButton.interactable = false;
-        selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
-        cc.DamageBoost(increase);
-        if (successorButton != null)
+        if (moneyController.Money >= value)
         {
-            successorButton.gameObject.SetActive(true);
-        }
-        if (successorText != null)
+            selfButton.interactable = false;
+            selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
+            cc.DamageBoost(increase);
+            moneyController.TakeMoney(value);
+            if (successorButton != null)
+            {
+                successorButton.gameObject.SetActive(true);
+            }
+            if (successorText != null)
+            {
+                successorText.gameObject.SetActive(true);
+            }
+        } else
         {
-            successorText.gameObject.SetActive(true);
+            Debug.Log("Insufficient funds");
         }
-
     }
 }

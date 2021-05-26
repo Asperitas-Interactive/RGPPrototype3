@@ -26868,6 +26868,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83908a750d9b60e4d9621f990501df48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1741561214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741561208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7113403c5c9334ead0fb9592caa480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combo: 0
 --- !u!4 &1753082281 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5668661345854236358, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
@@ -30991,10 +31004,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1224802476}
     m_Modifications:
+    - target: {fileID: 182580519, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 432900816, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: cc
       value: 
       objectReference: {fileID: 1741561212}
+    - target: {fileID: 891430243, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1029542926, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: cc
       value: 
@@ -31003,10 +31024,18 @@ PrefabInstance:
       propertyPath: value
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1091896703, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1522359964, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: cc
       value: 
       objectReference: {fileID: 1741561212}
+    - target: {fileID: 1522359964, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1581499177, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: cc
       value: 
@@ -31019,6 +31048,10 @@ PrefabInstance:
       propertyPath: cc
       value: 
       objectReference: {fileID: 1741561212}
+    - target: {fileID: 2016813801, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: value
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2034508963620291249, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
