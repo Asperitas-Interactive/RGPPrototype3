@@ -9,6 +9,8 @@ public class RankingSystem : MonoBehaviour
 
     int currentScore;
 
+
+
     // Start is called before the first frame update
     void Start()
     {

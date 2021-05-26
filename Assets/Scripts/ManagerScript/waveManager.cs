@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class waveManager : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class waveManager : MonoBehaviour
     public bool isActive = false;
 
     public EncounterThreshold encounterController;
+
+    public Text meter;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +65,31 @@ public class waveManager : MonoBehaviour
             {
                 wave++;
             }
+
+            if (rankSys.getCombo() <= encounterController.Star2Combo)
+            {
+                meter.text = "*";
+            }
+            else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+            {
+                meter.text = "**";
+            }
+            else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+            {
+                meter.text = "***";
+            }
+            else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+            {
+                meter.text = "****";
+            }
+            else if (rankSys.getCombo() > encounterController.Star5Combo)
+            {
+                meter.text = "*****";
+            }
+        }
+        else
+        {
+            meter.text = "";
         }
     }
 
