@@ -31,7 +31,7 @@ public class DissolvingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+         
     }
 
     public IEnumerator Dissolve()
