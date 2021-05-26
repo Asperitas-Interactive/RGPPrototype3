@@ -41,6 +41,8 @@ public class CombatControl : MonoBehaviour
 
     RankingSystem rankSys;
 
+    bool m_moveForward;
+    float m_moveTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +56,21 @@ public class CombatControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (!ShopCheck.inMenu)
         {
+            m_moveTimer -= Time.deltaTime;
+
+            if(m_moveForward && m_moveTimer<0f)
+            {
+                m_moveForward = false;
+            }
+            else if(m_moveForward)
+            {
+                m_characterController.Move(transform.forward * Time.deltaTime * 3.0f);
+            }
+
+            
             if (isAttacking == true)
             {
                 m_MovementScript.m_isAttacking = true;
@@ -92,6 +107,8 @@ public class CombatControl : MonoBehaviour
             //This will do the first hit of a combo
             if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
             {
+                m_moveForward = true;
+                m_moveTimer = 0.3f;
                 animator.SetBool("isAttacking", true);
                 comboCounter = 1;
                 isAttacking = true;
@@ -102,27 +119,18 @@ public class CombatControl : MonoBehaviour
             //This will do the second hit of the combo
             else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
             {
+                m_moveForward = true;
+                m_moveTimer = 0.3f;
                 animator.SetBool("isAttacking", true);
 
-                comboCounter = 2;
+                comboCounter = 0;
                 isAttacking = true;
 
                 animator.SetInteger("combo", 2);
                 damage = 40 + damageIncrease;
                 slash.Play();
             }
-            //This will do the final hit of the combo
-            else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 2)
-            {
-                animator.SetBool("isAttacking", true);
-
-                comboCounter = 0;
-                isAttacking = true;
-
-                animator.SetInteger("combo", 3);
-                damage = 50 + damageIncrease;
-                slash.Play();
-            }
+            
 
             if (!isAttacking)
             {
