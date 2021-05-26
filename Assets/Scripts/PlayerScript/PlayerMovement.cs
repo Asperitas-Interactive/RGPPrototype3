@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 velocity;
     public bool isGrounded;
 
-    private int m_health = 10000;
+    private int m_health = 100;
     private int MaxHealth = 100;
 
     public Slider slider;
@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Heal(int recovery)
     {
-        //m_health = (int)Mathf.Clamp(m_health + recovery, 0, MaxHealth);
+        m_health = (int)Mathf.Clamp(m_health + recovery, 0, MaxHealth);
     }
 
     public void MaxHealthUp(int increase)
