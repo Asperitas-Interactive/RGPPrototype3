@@ -17,6 +17,7 @@ TagManager:
   - ShopUI
   - ShopEvent
   - UpgradeUI
+  - Wavemanager
   layers:
   - Default
   - TransparentFX

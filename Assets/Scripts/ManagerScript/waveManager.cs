@@ -2,62 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class waveManager : MonoBehaviour
 {
     public int boidCount = 0;
     public int maxWaves;
-    public int maxWaveTimer;
-    public float restWaveTimer;
-    public GameObject enemies;
-    public bool restWave;
-    public float waveTimer;
     int wave;
-    bool end = false;
 
     public GameObject[] boids;
 
-    public Waves[] waveControl;
+    private Waves[] waveControl;
 
     public bool m_CombatEnded = false;
+
+    public RankingSystem rankSys;
+
+    public bool isActive = false;
+
+    public EncounterThreshold encounterController;
+
+    public Text meter;
 
     // Start is called before the first frame update
     void Start()
     {
-        wave = 0;
-        waveTimer = (float)maxWaveTimer;
-        waveStart();
+        rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (restWave)
+        if (isActive)
         {
-            waveTimer -= Time.deltaTime;
-
             if (wave > maxWaves)
             {
                 //Insert new way to change the Scene
                 m_CombatEnded = true;
+                WaveEnd();
             }
 
-
-
-            else if (waveTimer < 0.0f)
-            {
-                end = false;
-               // waveTimer -= Time.deltaTime;
-                waveTimer = (float)0;
-                restWave = false;
-                wave++;
-                waveStart();
-            }
-
-        }
-        int t = 0;
-        if (!restWave)
-        {
+            int t = 0;
             bool flag = false;
 
             foreach (GameObject boid in boids)
@@ -78,47 +63,97 @@ public class waveManager : MonoBehaviour
 
             if (!flag)
             {
-                restWave = true;
-                waveTimer = (float)0;
+                wave++;
             }
 
+            if (rankSys.getCombo() <= encounterController.Star2Combo)
+            {
+                meter.text = "*";
+            }
+            else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+            {
+                meter.text = "**";
+            }
+            else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+            {
+                meter.text = "***";
+            }
+            else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+            {
+                meter.text = "****";
+            }
+            else if (rankSys.getCombo() > encounterController.Star5Combo)
+            {
+                meter.text = "*****";
+            }
         }
-
-
         else
         {
-            if (Input.GetButtonDown("Skip"))
-            {
-                waveTimer = 0f;
-            }
+            meter.text = "";
         }
-
-
-
     }
 
-    int waveStart()
+    public int waveStart(EncounterThreshold _encounter)
     {
-        int count = 0;
-
-        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+        if (isActive == false)
         {
-            count++;
+            int count = 0;
+
+            encounterController = _encounter;
+
+            waveControl = _encounter.waves;
+
+            maxWaves = _encounter.waves.Length;
+
+            wave = 0;
+
+            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            {
+                count++;
+            }
+
+            boids = new GameObject[count];
+
+            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            {
+                boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+            }
+
+            isActive = true;
+
+            return count;
         }
 
-        boids = new GameObject[count];
-
-        for (int i = 0; i < waveControl[wave].enemies.Length; i++)
-        {
-            boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
-        }
-
-        return count;
+        return 0;
     }
 
     void WaveEnd()
     {
         //Its use was removed in mini prod
+        isActive = false;
+        waveControl = new Waves[0];
+
+        //Rewards
+        if (rankSys.getCombo() <= encounterController.Star2Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star1Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star2Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star3Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star4Money);
+        }
+        else if (rankSys.getCombo() > encounterController.Star5Combo)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star5Money);
+        }
     }
 
 
