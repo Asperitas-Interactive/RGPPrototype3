@@ -219,8 +219,8 @@ public class EnemyControl : MonoBehaviour
                     transform.GetChild(3).gameObject.SetActive(false);
                     transform.GetChild(4).gameObject.SetActive(false);
                     transform.GetChild(5).gameObject.SetActive(false);
-                    transform.GetChild(6).gameObject.SetActive(true);
-                    transform.GetChild(6).gameObject.GetComponent<DissolvingController>().StartCoroutine(transform.GetChild(5).gameObject.GetComponent<DissolvingController>().Dissolve());
+                    //transform.GetChild(6).gameObject.SetActive(true);
+                    //transform.GetChild(6).gameObject.GetComponent<DissolvingController>().StartCoroutine(transform.GetChild(5).gameObject.GetComponent<DissolvingController>().Dissolve());
                     // transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
                     break;
                 }
