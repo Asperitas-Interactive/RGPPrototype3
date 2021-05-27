@@ -326,25 +326,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a394f1c0458d6de4a9ee1ebdda62176d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  slider: {fileID: 5666632288244691729}
-  spawnNum: 5
-  player: {fileID: 0}
-  rankingSys: {fileID: 0}
-  hPool: 0
-  maxCharge: 0
-  ChargeTimer: 0
-  EvadeTimer: 0
-  maxEvade: 10
-  ChargeCoolDown: 5
-  EvadeCoolDown: 5
-  EvadeDistance: 20
-  maxAttackCooldown: 3
-  maxStunTimer: 8
-  maxStunPerHit: 3
-  damage: -10
-  hit: {fileID: 0}
-  damagesound: {fileID: 0}
+  m_health: 100
+  m_slider: {fileID: 5666632288244691729}
+  m_spawnNum: 5
+  m_player: {fileID: 0}
+  m_rankingSys: {fileID: 0}
+  m_hPool: 0
+  m_maxCharge: 0
+  m_chargeTimer: 0
+  m_evadeTimer: 0
+  m_maxEvade: 10
+  m_chargeCoolDown: 5
+  m_evadeCoolDown: 5
+  m_evadeDistance: 20
+  m_maxAttackCooldown: 3
+  m_maxStunTimer: 8
+  m_maxStunPerHit: 3
+  m_damage: -10
+  m_hit: {fileID: 0}
+  m_damagesound: {fileID: 0}
 --- !u!114 &6140055863959726324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 048b9777a70286a428a2e18168082b59, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2342369390206987007, guid: 048b9777a70286a428a2e18168082b59, type: 3}
       propertyPath: m_LocalPosition.y

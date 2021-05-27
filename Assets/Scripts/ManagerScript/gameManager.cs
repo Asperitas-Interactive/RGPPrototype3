@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-   
-    private static gameManager m_instance;
+
+    private static gameManager m_instance { get; set; }
 
     private Scene m_currentScene;
 
-    public static gameManager Instance { get { return m_instance; } }
+    public static gameManager Instance
+    {
+        get { return m_instance; }
+        
+    }
 
 
     private void Awake()
@@ -22,6 +26,7 @@ public class gameManager : MonoBehaviour
        }
        else
        {
+           m_instance = this;
            DontDestroyOnLoad(this.gameObject);
        } 
        m_currentScene = SceneManager.GetActiveScene();
