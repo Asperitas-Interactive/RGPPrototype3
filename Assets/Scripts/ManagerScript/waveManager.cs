@@ -22,7 +22,7 @@ public class waveManager : MonoBehaviour
 
     public EncounterThreshold encounterController;
 
-    public Text meter;
+    public ScoreUI meter;
 
     // Start is called before the first frame update
     void Start()
@@ -68,28 +68,24 @@ public class waveManager : MonoBehaviour
 
             if (rankSys.getCombo() <= encounterController.Star2Combo)
             {
-                meter.text = "*";
+                meter.rank = 1;
             }
             else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
             {
-                meter.text = "**";
+                meter.rank = 2;
             }
             else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
             {
-                meter.text = "***";
+                meter.rank = 3;
             }
             else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
             {
-                meter.text = "****";
+                meter.rank = 4;
             }
             else if (rankSys.getCombo() > encounterController.Star5Combo)
             {
-                meter.text = "*****";
+               meter.rank = 5;
             }
-        }
-        else
-        {
-            meter.text = "";
         }
     }
 
@@ -121,6 +117,8 @@ public class waveManager : MonoBehaviour
 
             isActive = true;
 
+            meter.ShowImages();
+
             return count;
         }
 
@@ -129,7 +127,7 @@ public class waveManager : MonoBehaviour
 
     void WaveEnd()
     {
-        //Its use was removed in mini prod
+        meter.HideImages();
         isActive = false;
         waveControl = new Waves[0];
 
@@ -159,12 +157,20 @@ public class waveManager : MonoBehaviour
 
     public Vector3 GetRandomLocation()
     {
-        NavMeshTriangulation data = NavMesh.CalculateTriangulation();
+        /*NavMeshTriangulation data = NavMesh.CalculateTriangulation();
 
         int t = Random.Range(0, data.indices.Length - 3);
 
         Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
-        point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);
+        point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);*/
+
+        BoxCollider bc = encounterController.gameObject.GetComponent<BoxCollider>();
+
+        Vector3 point = new Vector3(
+            Random.Range(bc.bounds.min.x, bc.bounds.max.x),
+            0.0f,
+            Random.Range(bc.bounds.min.z, bc.bounds.max.z)
+            );
 
         return point;
     }
