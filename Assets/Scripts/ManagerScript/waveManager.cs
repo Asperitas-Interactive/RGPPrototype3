@@ -22,7 +22,7 @@ public class waveManager : MonoBehaviour
 
     public EncounterThreshold encounterController;
 
-    public Text meter;
+    public ScoreUI meter;
 
     // Start is called before the first frame update
     void Start()
