@@ -19,6 +19,11 @@ public class ScoreUI : MonoBehaviour
         {
             img.sprite = GreyedStar;
         }
+
+        foreach (Image img in images)
+        {
+            img.enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -33,6 +38,22 @@ public class ScoreUI : MonoBehaviour
             {
                 images[i].sprite = GreyedStar;
             }
+        }
+    }
+
+    public void ShowImages()
+    {
+        foreach (Image img in images)
+        {
+            img.enabled = true;
+        }
+    }
+
+    public void HideImages()
+    {
+        foreach (Image img in images)
+        {
+            img.enabled = false;
         }
     }
 }

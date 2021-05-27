@@ -68,28 +68,24 @@ public class waveManager : MonoBehaviour
 
             if (rankSys.getCombo() <= encounterController.Star2Combo)
             {
-                //meter.text = "*";
+                meter.rank = 1;
             }
             else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
             {
-                //meter.text = "**";
+                meter.rank = 2;
             }
             else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
             {
-               // meter.text = "***";
+                meter.rank = 3;
             }
             else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
             {
-                //meter.text = "****";
+                meter.rank = 4;
             }
             else if (rankSys.getCombo() > encounterController.Star5Combo)
             {
-               // meter.text = "*****";
+               meter.rank = 5;
             }
-        }
-        else
-        {
-            //meter.text = "";
         }
     }
 
@@ -121,6 +117,8 @@ public class waveManager : MonoBehaviour
 
             isActive = true;
 
+            meter.ShowImages();
+
             return count;
         }
 
@@ -129,7 +127,7 @@ public class waveManager : MonoBehaviour
 
     void WaveEnd()
     {
-        //Its use was removed in mini prod
+        meter.HideImages();
         isActive = false;
         waveControl = new Waves[0];
 
