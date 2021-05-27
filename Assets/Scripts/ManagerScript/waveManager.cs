@@ -68,28 +68,28 @@ public class waveManager : MonoBehaviour
 
             if (rankSys.getCombo() <= encounterController.Star2Combo)
             {
-                meter.text = "*";
+                //meter.text = "*";
             }
             else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
             {
-                meter.text = "**";
+                //meter.text = "**";
             }
             else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
             {
-                meter.text = "***";
+               // meter.text = "***";
             }
             else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
             {
-                meter.text = "****";
+                //meter.text = "****";
             }
             else if (rankSys.getCombo() > encounterController.Star5Combo)
             {
-                meter.text = "*****";
+               // meter.text = "*****";
             }
         }
         else
         {
-            meter.text = "";
+            //meter.text = "";
         }
     }
 
