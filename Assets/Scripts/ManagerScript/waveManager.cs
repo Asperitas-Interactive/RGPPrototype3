@@ -157,12 +157,18 @@ public class waveManager : MonoBehaviour
 
     public Vector3 GetRandomLocation()
     {
-        NavMeshTriangulation data = NavMesh.CalculateTriangulation();
+        /*NavMeshTriangulation data = NavMesh.CalculateTriangulation();
 
         int t = Random.Range(0, data.indices.Length - 3);
 
         Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
-        point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);
+        point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);*/
+
+        Vector3 point;
+
+        BoxCollider bc = encounterController.gameObject.GetComponent<BoxCollider>();
+
+        //bc.bounds.
 
         return point;
     }
