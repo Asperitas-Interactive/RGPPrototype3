@@ -5,15 +5,15 @@ using UnityEngine;
 public class tranformToChild : MonoBehaviour
 {
 
-    Vector3 movePos;
+    Vector3 m_movePos;
     // Start is called before the first frame update
     void Start()
     {
-        movePos = new Vector3();
+        m_movePos = new Vector3();
     }
     private void OnEnable()
     {
-        movePos = new Vector3(transform.GetChild(5).localPosition.y, 0f, 0f);
+        m_movePos = new Vector3(transform.GetChild(5).localPosition.y, 0f, 0f);
     }
 
     private void OnDisable()

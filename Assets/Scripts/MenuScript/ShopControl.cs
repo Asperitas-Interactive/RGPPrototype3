@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ShopControl : MonoBehaviour
 {
-    public ShopDetection detector;
+    [FormerlySerializedAs("detector")] public ShopDetection m_detector;
 
     public void CloseMenu()
     {
-        detector.closeMenus();
+        m_detector.CloseMenus();
     }
 
     public void NextLevel()
     {
-        GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().gameOver();
+       gameManager.Instance.GameOver();
     }
 }

@@ -1,46 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController controller;
-    public float speed = 12.0f;
-    public float gravity = -20.0f;
-    public float jumpHeight = 2f;
+    [FormerlySerializedAs("controller")] public CharacterController m_controller;
+    [FormerlySerializedAs("speed")] public float m_speed = 12.0f;
+    [FormerlySerializedAs("gravity")] public float m_gravity = -20.0f;
+    [FormerlySerializedAs("jumpHeight")] public float m_jumpHeight = 2f;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
+    [FormerlySerializedAs("groundCheck")] public Transform m_groundCheck;
+    [FormerlySerializedAs("groundDistance")] public float m_groundDistance = 0.4f;
+    [FormerlySerializedAs("groundMask")] public LayerMask m_groundMask;
 
     public Transform m_playerCam;
 
-    public Animator animator;
+    [FormerlySerializedAs("animator")] public Animator m_animator;
 
-    Vector3 velocity;
-    public bool isGrounded;
+    Vector3 m_velocity;
+    [FormerlySerializedAs("isGrounded")] public bool m_isGrounded;
 
     private int m_health = 100;
-    private int MaxHealth = 100;
+    private int m_maxHealth = 100;
 
-    public Slider slider;
-    public Image viginette;
+    [FormerlySerializedAs("slider")] public Slider m_slider;
+    [FormerlySerializedAs("vignette")] public Image m_viginette;
 
-    public bool m_IsFalling = false;
+    [FormerlySerializedAs("m_IsFalling")] public bool m_isFalling = false;
 
-    public GameObject[] bodyToRotate;
+    [FormerlySerializedAs("bodyToRotate")] public GameObject[] m_bodyToRotate;
 
     public bool m_isAttacking = false;
 
-    public float velZ;
-    ShopDetection ShopCheck;
+    [FormerlySerializedAs("velZ")] public float m_velZ;
+    ShopDetection m_shopCheck;
+    private FadeOut m_fadeOut;
+    private static readonly int Speed = Animator.StringToHash("speed");
+    private CombatControl m_combatControl;
 
     // Start is called before the first frame update
     void Start()
     {
-        ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
-        animator = GetComponent<Animator>();
+        m_combatControl = GetComponent<CombatControl>();
+        m_fadeOut = m_viginette.GetComponent<FadeOut>();
+        m_shopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
+        m_animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,36 +61,36 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (!ShopCheck.inMenu)
+        if (!m_shopCheck.m_inMenu)
         {
-            slider.value = m_health;
+            m_slider.value = m_health;
 
             if (m_health <= 0)
             {
-                viginette.GetComponent<FadeOut>().beginFade();
+                m_fadeOut.BeginFade();
             }
 
             float velX = Input.GetAxisRaw("Horizontal");
-            velZ = Input.GetAxisRaw("Vertical");
+            m_velZ = Input.GetAxisRaw("Vertical");
 
             bool jumpPress = Input.GetButtonDown("Jump");
 
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+            m_isGrounded = Physics.CheckSphere(m_groundCheck.position, m_groundDistance, m_groundMask);
 
-            if (isGrounded && velocity.y < 0)
+            if (m_isGrounded && m_velocity.y < 0)
             {
-                velocity.y = 0.0f;
+                m_velocity.y = 0.0f;
             }
 
-            Vector3 movement = new Vector3(velX, 0f, velZ);
+            Vector3 movement = new Vector3(velX, 0f, m_velZ);
 
             if(movement.magnitude > 0.1f)
             {
-                animator.SetFloat("speed", movement.magnitude);
+                m_animator.SetFloat(Speed, movement.magnitude);
             }
             else
             {
-                animator.SetFloat("speed", 0f);
+                m_animator.SetFloat(Speed, 0f);
             }
 
 
@@ -100,51 +106,51 @@ public class PlayerMovement : MonoBehaviour
                 float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + m_playerCam.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
                 Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-                controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                m_controller.Move(moveDir.normalized * (m_speed * Time.deltaTime));
             }
-            else if(movement.magnitude > 0.1f && GetComponent<CombatControl>().canAttack && Input.GetButtonDown("Melee"))
+            else if(movement.magnitude > 0.1f && m_combatControl.m_canAttack && Input.GetButtonDown("Melee"))
             {
                 float targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg + m_playerCam.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
 
-            if (m_IsFalling && !isGrounded)
+            if (m_isFalling && !m_isGrounded)
             {
-                velocity.y += gravity * 10 * Time.deltaTime;
+                m_velocity.y += m_gravity * 10 * Time.deltaTime;
             }
             else
             {
-                velocity.y += gravity * Time.deltaTime;
+                m_velocity.y += m_gravity * Time.deltaTime;
             }
 
-            controller.Move(velocity * Time.deltaTime);
+            m_controller.Move(m_velocity * Time.deltaTime);
         }
     }
 
 
 
-    public void Heal(int recovery)
+    public void Heal(int _recovery)
     {
-        m_health = (int)Mathf.Clamp(m_health + recovery, 0, MaxHealth);
+        m_health = (int)Mathf.Clamp(m_health + _recovery, 0, m_maxHealth);
     }
 
-    public void MaxHealthUp(int increase)
+    public void MAXHealthUp(int _increase)
     {
-        if (MaxHealth < 500)
+        if (m_maxHealth < 500)
         {
-            MaxHealth += increase;
-            slider.maxValue = MaxHealth;
-            m_health += increase;
+            m_maxHealth += _increase;
+            m_slider.maxValue = m_maxHealth;
+            m_health += _increase;
         }
     }
 
-    public int getHealth()
+    public int GETHealth()
     {
         return m_health;
     }
 
-    public int getMaxHP()
+    public int GETMaxHp()
     {
-        return MaxHealth;
+        return m_maxHealth;
     }
 }

@@ -1,23 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FloatingBobbing : MonoBehaviour
 {
     //The Distance the end points are
-    public Vector3 DisplacementPos;
-    public Vector3 DisplacementNeg;
+    [FormerlySerializedAs("displacementPos")] [FormerlySerializedAs("DisplacementPos")] public Vector3 m_displacementPos;
+    [FormerlySerializedAs("displacementNeg")] [FormerlySerializedAs("DisplacementNeg")] public Vector3 m_displacementNeg;
     //The Speed you arrive at a end point
-    private Vector3 VectorSpeed;
+    private Vector3 m_vectorSpeed;
     //The Destination it checks
-    private Vector3 DestinationMax;
-    private Vector3 DestinationMin;
+    private Vector3 m_destinationMax;
+    private Vector3 m_destinationMin;
     // Start is called before the first frame update
     void Start()
     {
-        VectorSpeed.y = 0.5f;
-        DestinationMax = transform.position + DisplacementPos;
-        DestinationMin = transform.position + DisplacementNeg;
+        m_vectorSpeed.y = 0.5f;
+        m_destinationMax = transform.position + m_displacementPos;
+        m_destinationMin = transform.position + m_displacementNeg;
     }
 
 
@@ -26,11 +28,11 @@ public class FloatingBobbing : MonoBehaviour
     {
         transform.Rotate(0, 30.0f * Time.deltaTime, 0, Space.Self);
         //Move towards location
-        transform.Translate(VectorSpeed * Time.deltaTime, Space.World);
+        transform.Translate(m_vectorSpeed * Time.deltaTime, Space.World);
         //Clamp between for correct calculation
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, DestinationMin.x, DestinationMax.x),
-            Mathf.Clamp(transform.position.y, DestinationMin.y, DestinationMax.y),
-            Mathf.Clamp(transform.position.z, DestinationMin.z, DestinationMax.z));
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, m_destinationMin.x, m_destinationMax.x),
+            Mathf.Clamp(transform.position.y, m_destinationMin.y, m_destinationMax.y),
+            Mathf.Clamp(transform.position.z, m_destinationMin.z, m_destinationMax.z));
         //check if reached
         DestinationReach();
     }
@@ -38,14 +40,14 @@ public class FloatingBobbing : MonoBehaviour
     //Check if it reached its destination
     void DestinationReach()
     {
-        if (transform.position.x == DestinationMax.x && transform.position.y == DestinationMax.y && transform.position.z == DestinationMax.z)
+        if (Math.Abs(transform.position.x - m_destinationMax.x) < 0.1f && Math.Abs(transform.position.y - m_destinationMax.y) < 0.1f && Math.Abs(transform.position.z - m_destinationMax.z) < 0.1f)
         {
-            VectorSpeed = -VectorSpeed;
+            m_vectorSpeed = -m_vectorSpeed;
         }
 
-        if (transform.position.x == DestinationMin.x && transform.position.y == DestinationMin.y && transform.position.z == DestinationMin.z)
+        if (Math.Abs(transform.position.x - m_destinationMin.x) < 0.1f && Math.Abs(transform.position.y - m_destinationMin.y) < 0.1f && Math.Abs(transform.position.z - m_destinationMin.z) < 0.1f)
         {
-            VectorSpeed = -VectorSpeed;
+            m_vectorSpeed = -m_vectorSpeed;
         }
     }
 }

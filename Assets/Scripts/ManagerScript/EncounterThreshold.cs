@@ -1,28 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class EncounterThreshold : MonoBehaviour
 {
-    public int Star2Combo;
-    public int Star3Combo;
-    public int Star4Combo;
-    public int Star5Combo;
+    [FormerlySerializedAs("Star2Combo")] public int m_star2Combo;
+    [FormerlySerializedAs("Star3Combo")] public int m_star3Combo;
+    [FormerlySerializedAs("Star4Combo")] public int m_star4Combo;
+    [FormerlySerializedAs("Star5Combo")] public int m_star5Combo;
 
-    public float Star1Money;
-    public float Star2Money;
-    public float Star3Money;
-    public float Star4Money;
-    public float Star5Money;
+    [FormerlySerializedAs("Star1Money")] public float m_star1Money;
+    [FormerlySerializedAs("Star2Money")] public float m_star2Money;
+    [FormerlySerializedAs("Star3Money")] public float m_star3Money;
+    [FormerlySerializedAs("Star4Money")] public float m_star4Money;
+    [FormerlySerializedAs("Star5Money")] public float m_star5Money;
 
-    public Waves[] waves;
+    [FormerlySerializedAs("waves")] public Waves[] m_waves;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _other)
     {
-        if(other.gameObject.tag == "Player")
+        if(_other.gameObject.CompareTag("Player"))
         {
             Debug.Log("EncounterStart!");
-            GameObject.FindGameObjectWithTag("Wavemanager").GetComponent<waveManager>().waveStart(this);
+            GameObject.FindGameObjectWithTag("Wavemanager").GetComponent<waveManager>().WaveStart(this);
         }
     }
 }
