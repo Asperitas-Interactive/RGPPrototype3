@@ -376,27 +376,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b66613a681e57ed4c9648008936b30ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 2116726279061082741}
-  speed: 12
-  gravity: -10
-  jumpHeight: -2
-  groundCheck: {fileID: 991469638654550929}
-  groundDistance: 0.4
-  groundMask:
+  m_controller: {fileID: 2116726279061082741}
+  m_speed: 12
+  m_gravity: -10
+  m_jumpHeight: -2
+  m_groundCheck: {fileID: 991469638654550929}
+  m_groundDistance: 0.4
+  m_groundMask:
     serializedVersion: 2
     m_Bits: 64
   m_playerCam: {fileID: 0}
-  animator: {fileID: 0}
-  isGrounded: 0
-  slider: {fileID: 0}
-  viginette: {fileID: 0}
-  m_IsFalling: 0
-  bodyToRotate:
+  m_animator: {fileID: 2528387483460771370}
+  m_isGrounded: 0
+  m_slider: {fileID: 0}
+  m_viginette: {fileID: 0}
+  m_isFalling: 0
+  m_bodyToRotate:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_isAttacking: 0
-  velZ: 0
+  m_velZ: 0
 --- !u!114 &2528387482984372940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,19 +409,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83908a750d9b60e4d9621f990501df48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttacking: 0
-  animator: {fileID: 2528387483460771370}
-  comboCounter: 0
-  damage: 0
-  canAttack: 1
-  aoePos: {fileID: 0}
-  Radius: 10
-  thrust: {fileID: 0}
-  slash: {fileID: 0}
-  bullet: {fileID: 4712930608017556069, guid: 5da30ddf2ccb85042ad1f728f279f97e, type: 3}
-  m_MovementScript: {fileID: 1666380704132617457}
-  StabType: 0
-  ComboType: 0
+  m_isAttacking: 0
+  m_animator: {fileID: 2528387483460771370}
+  m_comboCounter: 0
+  m_damage: 0
+  m_canAttack: 1
+  m_aoePos: {fileID: 0}
+  m_radius: 10
+  m_thrust: {fileID: 0}
+  m_slash: {fileID: 0}
+  m_bullet: {fileID: 4712930608017556069, guid: 5da30ddf2ccb85042ad1f728f279f97e, type: 3}
+  m_movementScript: {fileID: 1666380704132617457}
+  m_stabType: 0
+  m_comboType: 0
 --- !u!95 &2528387483460771370
 Animator:
   serializedVersion: 3

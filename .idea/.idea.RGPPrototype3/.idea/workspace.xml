@@ -12,6 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc Scripts/tranformToChild.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -19,9 +21,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/FloatingBobbing.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/ScoreUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/tranformToChild.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/HPText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/CombatControl.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SCRAPPEDSCRIPTS/PickUps.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/AttackEquip.cs" />
@@ -31,6 +31,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/EncounterThreshold.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/gameManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/FadeOut.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/HPText.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t7LUohOWlPeyAXbOSZdepycuhI" />
@@ -40,6 +42,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -59,10 +63,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15264">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="15264" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -78,7 +82,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622115204135</updated>
-      <workItem from="1622115213965" duration="6405000" />
+      <workItem from="1622115213965" duration="8574000" />
     </task>
     <servers />
   </component>
@@ -89,6 +93,51 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs</url>
+          <line>47</line>
+          <properties documentPath="D:\repos\RGPPrototype3\Assets\Scripts\PlayerScript\PlayerMovement.cs" initialLine="47" containingFunctionPresentation="method 'Awake'">
+            <startOffsets>
+              <option value="1687" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1777" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/MenuScript/MenuControl.cs</url>
+          <line>9</line>
+          <properties documentPath="D:\repos\RGPPrototype3\Assets\Scripts\MenuScript\MenuControl.cs" initialLine="9" containingFunctionPresentation="method 'Start'">
+            <startOffsets>
+              <option value="197" />
+            </startOffsets>
+            <endOffsets>
+              <option value="236" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/PlayerScript/CombatControl.cs</url>
+          <line>143</line>
+          <properties documentPath="D:\repos\RGPPrototype3\Assets\Scripts\PlayerScript\CombatControl.cs" initialLine="143" containingFunctionPresentation="method 'Update'">
+            <startOffsets>
+              <option value="4776" />
+            </startOffsets>
+            <endOffsets>
+              <option value="4789" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

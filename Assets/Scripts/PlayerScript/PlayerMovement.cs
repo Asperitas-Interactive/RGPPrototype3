@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private int m_maxHealth = 100;
 
     [FormerlySerializedAs("slider")] public Slider m_slider;
-    [FormerlySerializedAs("vignette")] public Image m_viginette;
+    public Image m_viginette;
 
     [FormerlySerializedAs("m_IsFalling")] public bool m_isFalling = false;
 
@@ -60,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
+        if (m_shopCheck == null)
+        {
+            m_shopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
+        }
 
         if (!m_shopCheck.m_inMenu)
         {
