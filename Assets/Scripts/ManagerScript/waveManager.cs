@@ -29,6 +29,7 @@ public class waveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_wave = 0;
         m_moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
         m_rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
@@ -67,6 +68,7 @@ public class waveManager : MonoBehaviour
             if (!flag)
             {
                 m_wave++;
+                NewWave();
             }
 
             if (m_rankSys.GETCombo() <= m_encounterController.m_star2Combo)
@@ -128,9 +130,29 @@ public class waveManager : MonoBehaviour
         return 0;
     }
 
+    int NewWave()
+    {
+        int count = 0;
+
+        for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+        {
+            count++;
+        }
+
+        m_boids = new GameObject[count];
+
+        for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+        {
+            m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+        }
+
+        return count;
+    }
+
     private void WaveEnd()
     {
         m_meter.HideImages();
+        m_wave = 0;
         m_isActive = false;
         m_waveControl = new Waves[0];
 

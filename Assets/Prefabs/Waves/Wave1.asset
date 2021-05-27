@@ -12,22 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20ee5f63322e9c4d8587412d0108346, type: 3}
   m_Name: Wave1
   m_EditorClassIdentifier: 
-  enemies:
+  m_enemies:
   - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
   - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
   - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  - {fileID: 1407040232003817680, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
-  Star1Score: 10
-  Star2Score: 20
-  Star3Score: 30
-  Star4Score: 40
-  Star5Score: 50
-  Star1Money: 10
-  Star2Money: 20
-  Star3Money: 50
-  Star4Money: 70
-  Star5Money: 100

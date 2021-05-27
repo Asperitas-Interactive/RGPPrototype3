@@ -23,7 +23,7 @@ public class EncounterThreshold : MonoBehaviour
         if(_other.gameObject.CompareTag("Player"))
         {
             Debug.Log("EncounterStart!");
-            GameObject.FindGameObjectWithTag("Wavemanager").GetComponent<waveManager>().WaveStart(this);
+            GameObject.FindGameObjectWithTag("WaveManager").GetComponent<waveManager>().WaveStart(this);
         }
     }
 }
