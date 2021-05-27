@@ -164,11 +164,13 @@ public class waveManager : MonoBehaviour
         Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
         point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);*/
 
-        Vector3 point;
-
         BoxCollider bc = encounterController.gameObject.GetComponent<BoxCollider>();
 
-        //bc.bounds.
+        Vector3 point = new Vector3(
+            Random.Range(bc.bounds.min.x, bc.bounds.max.x),
+            0.0f,
+            Random.Range(bc.bounds.min.z, bc.bounds.max.z)
+            );
 
         return point;
     }
