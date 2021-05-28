@@ -136,6 +136,7 @@ public class PlayerMovement : MonoBehaviour
     public void Heal(int _recovery)
     {
         m_health = (int)Mathf.Clamp(m_health + _recovery, 0, m_maxHealth);
+       Debug.Log("Ouch");
     }
 
     public void MAXHealthUp(int _increase)

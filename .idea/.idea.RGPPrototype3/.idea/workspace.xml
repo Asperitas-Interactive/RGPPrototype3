@@ -16,6 +16,7 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Unity/2020.2.7f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42A5878C-E129-4030-83AC-CCF18E43363F/bc/88f6b305/UnityException.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -24,17 +25,17 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/ScoreUI.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/tranformToChild.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/CombatControl.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/SCRAPPEDSCRIPTS/PickUps.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/AttackEquip.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/WeaponUpgrade.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/enemyHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/waveManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/FadeOut.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/HPText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/EncounterThreshold.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/gameManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/EnemyControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t7LUohOWlPeyAXbOSZdepycuhI" />
@@ -50,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.28134555" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -84,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1622115204135</updated>
-      <workItem from="1622115213965" duration="11915000" />
+      <workItem from="1622115213965" duration="23245000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -42,6 +40,8 @@ public class EnemyControl : MonoBehaviour
 
     //Rigidbody rb;
 
+    private GameObject[] m_children;
+    
     [FormerlySerializedAs("maxCharge")] public float m_maxCharge;
     [FormerlySerializedAs("chargeTimer")] [FormerlySerializedAs("ChargeTimer")] public float m_chargeTimer;
     [FormerlySerializedAs("evadeTimer")] [FormerlySerializedAs("EvadeTimer")] public float m_evadeTimer;
@@ -49,7 +49,7 @@ public class EnemyControl : MonoBehaviour
     [FormerlySerializedAs("ChargeCoolDown")] public float m_chargeCoolDown = 5.0f;
     [FormerlySerializedAs("EvadeCoolDown")] public float m_evadeCoolDown = 5.0f;
     [FormerlySerializedAs("EvadeDistance")] public float m_evadeDistance = 20f;
-    [FormerlySerializedAs("maxAttackCooldown")] public float m_maxAttackCooldown = 3.0f;
+    [FormerlySerializedAs("maxAttackCooldown")] public float m_maxAttackCooldown;
 
     [FormerlySerializedAs("maxStunTimer")] public float m_maxStunTimer = 8.0f;
     [FormerlySerializedAs("maxStunPerHit")] public float m_maxStunPerHit = 3.0f;
@@ -70,16 +70,15 @@ public class EnemyControl : MonoBehaviour
     [FormerlySerializedAs("hit")] public AudioSource m_hit;
     [FormerlySerializedAs("damagesound")] public AudioSource m_damagesound;
     private BoxCollider m_boxCollider;
+    private Rigidbody m_rigidbody;
     
     private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
-    private Rigidbody m_rigidbody;
     private static readonly int Speed = Animator.StringToHash("speed");
+    private Animator m_animator;
 
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
-        m_boxCollider = GetComponent<BoxCollider>();
-        m_boxCollider = GetComponent<BoxCollider>();
         m_agent = GetComponent<NavMeshAgent>();
 
         //Set up pathfinding
@@ -95,204 +94,154 @@ public class EnemyControl : MonoBehaviour
         m_damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
 
         m_rankingSys = m_player.GetComponent<RankingSystem>();
+
+        m_children = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            m_children[i] = transform.GetChild(i).gameObject;
+        }
+        
+        m_boxCollider = m_children[1].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+        m_animator = m_children[1].GetComponent<Animator>();
+       
+
+        m_maxAttackCooldown = Random.Range(2f, 6f);
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     private void Update()
     {
         #region EnemyModelFromHealth
+
         if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(true);
+            m_children[0].gameObject.SetActive(false);
+            m_children[1].gameObject.SetActive(true);
+            m_boxCollider = m_children[1].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+            m_animator = m_children[1].GetComponent<Animator>();
         }
 
-        else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
+                 m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
         {
-            transform.GetChild(0).gameObject.SetActive(false);
+            m_children[0].gameObject.SetActive(false);
 
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(true);
+            m_children[1].gameObject.SetActive(false);
+            m_children[2].gameObject.SetActive(true);
+
+            m_boxCollider = m_children[2].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+            m_animator = m_children[2].GetComponent<Animator>();
         }
 
-        else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
+                 m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(true);
+            m_children[0].gameObject.SetActive(false);
+            m_children[1].gameObject.SetActive(false);
+            m_children[2].gameObject.SetActive(false);
+            m_children[3].gameObject.SetActive(true);
+
+            m_boxCollider = m_children[3].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+            m_animator = m_children[3].GetComponent<Animator>();
         }
-        else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
+                 m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(true);
+            m_children[0].gameObject.SetActive(false);
+            m_children[1].gameObject.SetActive(false);
+            m_children[2].gameObject.SetActive(false);
+            m_children[3].gameObject.SetActive(false);
+            m_children[4].gameObject.SetActive(true);
+            m_boxCollider = m_children[4].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+            m_animator = m_children[4].GetComponent<Animator>();
         }
-        else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
+                 m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
         {
-            transform.GetChild(0).gameObject.SetActive(false);
-            transform.GetChild(1).gameObject.SetActive(false);
-            transform.GetChild(2).gameObject.SetActive(false);
-            transform.GetChild(3).gameObject.SetActive(false);
-            transform.GetChild(4).gameObject.SetActive(false);
-            transform.GetChild(5).gameObject.SetActive(true);
+            m_children[0].gameObject.SetActive(false);
+            m_children[1].gameObject.SetActive(false);
+            m_children[2].gameObject.SetActive(false);
+            m_children[3].gameObject.SetActive(false);
+            m_children[4].gameObject.SetActive(false);
+            m_children[5].gameObject.SetActive(true);
+
+            m_boxCollider = m_children[5].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
+            m_animator = m_children[5].GetComponent<Animator>();
         }
 
         #endregion
 
-        #region attackTimers
-        m_attackCooldown -= Time.deltaTime;
-        m_attackTimer -= Time.deltaTime;
-        m_stunTimer -= Time.deltaTime;
-        #endregion
-
-
-
-        switch (m_status)
-        {
-            case eStatus.Follow:
-                {
-                    //transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-
-                    m_agent.SetDestination(m_player.position);
-                    break;
-                }
-            case eStatus.Stun:
-                {
-                    //transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                    m_agent.velocity = Vector3.zero;
-                    break;
-                }
-            case eStatus.Attack:
-                {
-                    //transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
-
-                    m_agent.transform.LookAt(m_player);
-                    m_agent.velocity = Vector3.zero;
-
-                    m_boxCollider.enabled = false;
-                    for (int i = 1; i < transform.childCount; i++)
-                    {
-                        if (transform.GetChild(i).gameObject.activeSelf)
-                        {
-                            break;
-                        }
-                    }
-
-
-                    break;
-                }
-            default:
-                break;
-        }
-
-        //Seek
-        // rb.velocity = (player.position - transform.position).normalized * 5.0f;
-
-        if (m_attackCooldown < 0.0f)
-        {
-            m_boxCollider.enabled = true;
-            m_attackTimer = 3.0f;
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
-                {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, true);
-                    m_attackCooldown = m_maxAttackCooldown;
-                    break;
-                }
-            }
-            m_status = eStatus.Follow;
-        }
-
+        //CalculateTimer();
         
-        if (m_status == eStatus.Stun && m_stunTimer < 0.0f)
-        {
-            m_status = eStatus.Follow;
-        }
-
-
-
-        if (m_slider != null)
-            m_slider.value = m_health;
-
-        if (m_health <= 0 && !m_destroy)
-        {
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
-                {
-                    transform.GetChild(0).gameObject.SetActive(false);
-                    transform.GetChild(1).gameObject.SetActive(false);
-                    transform.GetChild(2).gameObject.SetActive(false);
-                    transform.GetChild(3).gameObject.SetActive(false);
-                    transform.GetChild(4).gameObject.SetActive(false);
-                    transform.GetChild(5).gameObject.SetActive(false);
-                    //transform.GetChild(6).gameObject.SetActive(true);
-                    //transform.GetChild(6).gameObject.GetComponent<DissolvingController>().StartCoroutine(transform.GetChild(5).gameObject.GetComponent<DissolvingController>().Dissolve());
-                    // transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
-                    break;
-                }
-            }
-            m_destroy = true;
-            //agent.velocity = Vector3.zero;
-            m_agent.isStopped  = true;
-            m_rigidbody.velocity = Vector3.zero;
-            m_destroyTimer = 2.967f;
-        }
-
-
-        m_destroyTimer -= Time.deltaTime;
-        if(m_destroyTimer<0.0f && m_destroy)
-        {
-           // Destroy(this.gameObject);
-        }
-
-        //Debug.Log(attackCooldown);
-
-        if ((transform.position - m_player.position).magnitude < (m_agent.stoppingDistance + 2.0f) && m_status != eStatus.Stun) 
-        {
-            m_status = eStatus.Attack;
-
-        }
-
-        else
-        {
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
-                {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, false);
-                    break;
-                }
-            }
-        }
-        for (int i = 1; i < transform.childCount; i++)
-        {
-            if (transform.GetChild(i).gameObject.activeSelf)
-            {
-                transform.GetChild(i).GetComponent<Animator>().SetFloat(Speed, m_agent.velocity.magnitude);
+        switch (m_status)
+        {   
+            case eStatus.Attack:
+                m_agent.transform.LookAt(m_player);
+                m_agent.SetDestination(m_player.position);
+                m_boxCollider.enabled = true;
                 break;
+            
+            case eStatus.Stun:
+                m_agent.SetDestination(transform.position);
+                break;
+            
+            case eStatus.Follow:
+                m_agent.SetDestination(m_player.position);
+                break;
+        }
+        
+
+       
+        m_animator.SetFloat(Speed, m_agent.velocity.magnitude);
+
+    }
+
+    private void CalculateTimer()
+    {
+        if (m_status != eStatus.Attack)
+        {
+            if (m_attackCooldown < 0f)
+            {
+                m_status = eStatus.Attack;
+            }
+            else if ((transform.position - m_player.position).magnitude < m_agent.stoppingDistance + 2.0f)
+            {
+                m_attackCooldown -= Time.deltaTime;
             }
         }
     }
 
+    private void LateUpdate()
+    {
+        switch (m_status)
+        {   
+            case eStatus.Attack:
+                
+                break;
+            
+            case eStatus.Stun:
+
+                break;
+            
+            case eStatus.Follow:
+
+                break;
+        }        
+    }
+
     private void OnTriggerEnter(Collider _collider)
     {
-        if(_collider.CompareTag("Player") && !m_destroy)
+        if (_collider.CompareTag("Player") && !m_destroy)
         {
             m_player.gameObject.GetComponent<PlayerMovement>().Heal(m_damage);
             m_attackTimer = 0f;
             m_attackCooldown = m_maxAttackCooldown;
-            for (int i = 1; i < transform.childCount; i++)
-            {
-                if (transform.GetChild(i).gameObject.activeSelf)
-                {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, false);
-                    break;
-                }
-            }
+            m_animator.SetBool(IsAttacking, false);
+
             m_rankingSys.DropCombo();
             m_damagesound.Play();
         }

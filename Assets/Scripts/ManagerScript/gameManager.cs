@@ -9,6 +9,7 @@ public class gameManager : MonoBehaviour
 
     private static gameManager m_instance { get; set; }
 
+
     private Scene m_currentScene;
 
     public static gameManager Instance
