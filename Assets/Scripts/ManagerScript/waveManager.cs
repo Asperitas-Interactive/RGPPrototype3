@@ -39,13 +39,6 @@ public class waveManager : MonoBehaviour
     {
         if (m_isActive)
         {
-            if (m_wave > m_maxWaves)
-            {
-                //Insert new way to change the Scene
-                m_combatEnded = true;
-                WaveEnd();
-            }
-
             int t = 0;
             bool flag = false;
 
@@ -91,6 +84,14 @@ public class waveManager : MonoBehaviour
             {
                m_meter.m_rank = 5;
             }
+
+            //I moved it down the bottom so we can have multiple waves in one encounter
+            if (m_wave > m_maxWaves)
+            {
+                //Insert new way to change the Scene
+                m_combatEnded = true;
+                WaveEnd();
+            }
         }
     }
 
@@ -101,6 +102,8 @@ public class waveManager : MonoBehaviour
             int count = 0;
 
             m_encounterController = _encounter;
+
+            m_encounterController.turnOnWalls();
 
             m_waveControl = _encounter.m_waves;
 
@@ -134,23 +137,26 @@ public class waveManager : MonoBehaviour
     {
         int count = 0;
 
-        for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+        if (m_wave < m_maxWaves)
         {
-            count++;
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                count++;
+            }
+
+            m_boids = new GameObject[count];
+
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+            }
         }
-
-        m_boids = new GameObject[count];
-
-        for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
-        {
-            m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
-        }
-
         return count;
     }
 
     private void WaveEnd()
     {
+        m_encounterController.turnOffWalls();
         m_meter.HideImages();
         m_wave = 0;
         m_isActive = false;
