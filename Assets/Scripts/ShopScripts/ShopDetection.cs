@@ -74,6 +74,14 @@ public class ShopDetection : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject == player)
+        {
+            inZone = false;
+        }
+    }
+
     public void closeMenus()
     {
         Cursor.lockState = CursorLockMode.Locked;

@@ -17,6 +17,8 @@ public class EnemyControl : MonoBehaviour
     //For Pathfinding
     public Transform player;
 
+    public RankingSystem rankingSys;
+
     public enum healthPool
     {
         WEAK,
@@ -56,6 +58,8 @@ public class EnemyControl : MonoBehaviour
     float attackCooldown = 3.0f;
     float maxHealth;
 
+    bool m_canHit = true;
+
     Vector3 chargevel;
     private NavMeshAgent agent;
     private bool ChargeBool = false;
@@ -80,6 +84,8 @@ public class EnemyControl : MonoBehaviour
 
         hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
         damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
+
+        rankingSys = player.GetComponent<RankingSystem>();
     }
 
     private void Update()
@@ -212,8 +218,9 @@ public class EnemyControl : MonoBehaviour
                     transform.GetChild(2).gameObject.SetActive(false);
                     transform.GetChild(3).gameObject.SetActive(false);
                     transform.GetChild(4).gameObject.SetActive(false);
-                    transform.GetChild(5).gameObject.SetActive(true);
-                    transform.GetChild(5).gameObject.GetComponent<DissolvingController>().StartCoroutine(transform.GetChild(5).gameObject.GetComponent<DissolvingController>().Dissolve());
+                    transform.GetChild(5).gameObject.SetActive(false);
+                    //transform.GetChild(6).gameObject.SetActive(true);
+                    //transform.GetChild(6).gameObject.GetComponent<DissolvingController>().StartCoroutine(transform.GetChild(5).gameObject.GetComponent<DissolvingController>().Dissolve());
                     // transform.GetChild(i).GetComponent<Animator>().SetBool("death", true);
                     break;
                 }
@@ -232,7 +239,7 @@ public class EnemyControl : MonoBehaviour
            // Destroy(this.gameObject);
         }
 
-        Debug.Log(attackCooldown);
+        //Debug.Log(attackCooldown);
 
         if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f) && m_status != eStatus.stun) 
         {
@@ -276,6 +283,7 @@ public class EnemyControl : MonoBehaviour
                     break;
                 }
             }
+            rankingSys.dropCombo();
             damagesound.Play();
         }
     }
@@ -283,8 +291,9 @@ public class EnemyControl : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         //Check collisions
-        if (collision.gameObject.tag == "Sword")
+        if (collision.gameObject.tag == "Sword" && m_canHit)
         {
+            m_canHit = false;
             CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
 
             if(attackCooldown > maxAttackCooldown - maxAttackCooldown * 4.0f / 5.0f && cc.damage > 0)
@@ -305,10 +314,18 @@ public class EnemyControl : MonoBehaviour
             if (cc.damage > 0)
             {
                 hit.Play();
+                rankingSys.increaseCombo();
             }
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag == "Sword")
+        {
+            m_canHit = true;
+        }
+    }
 
 
     public void AOEDamage()
@@ -327,13 +344,13 @@ public class EnemyControl : MonoBehaviour
         else if (hPool == healthPool.NORMAL)
         {
             agent.speed = Random.Range(4.0f, 5.0f);
-            health = Random.Range(600, 800);
+            health = Random.Range(100, 130);
             maxHealth = health;
         }
         else if (hPool == healthPool.STRONG)
         {
             agent.speed = Random.Range(3.0f, 4.0f);
-            health = Random.Range(800, 1200);
+            health = Random.Range(150, 200);
             maxHealth = health;
         }
     }
