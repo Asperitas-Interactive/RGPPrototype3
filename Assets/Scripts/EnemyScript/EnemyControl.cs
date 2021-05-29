@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -16,7 +17,7 @@ public class EnemyControl : MonoBehaviour
     [FormerlySerializedAs("spawnNum")] public int m_spawnNum = 5;
 
     //For Pathfinding
-    [FormerlySerializedAs("player")] public Transform m_player;
+    public Transform m_player { get; private set; }
 
     [FormerlySerializedAs("rankingSys")] public RankingSystem m_rankingSys;
 
@@ -63,19 +64,20 @@ public class EnemyControl : MonoBehaviour
 
     bool m_canHit = true;
 
-    private NavMeshAgent m_agent;
+    public NavMeshAgent m_agent { get; private set; }
     bool m_destroy = false;
     float m_destroyTimer = 0.5f;
 
     [FormerlySerializedAs("hit")] public AudioSource m_hit;
     [FormerlySerializedAs("damagesound")] public AudioSource m_damagesound;
-    private BoxCollider m_boxCollider;
+    public BoxCollider m_boxCollider { get; private set; }
     private Rigidbody m_rigidbody;
     
     private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
     private static readonly int Speed = Animator.StringToHash("speed");
     private Animator m_animator;
 
+    private Transform m_target;
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
@@ -88,7 +90,6 @@ public class EnemyControl : MonoBehaviour
         m_evadeTimer = Random.Range(20.0f, 60.0f);
         m_agent.avoidancePriority = (int)Random.Range(20f, 79f);
         m_player = GameObject.FindGameObjectWithTag("Player").transform;
-        m_agent.SetDestination(m_player.position);
 
         m_hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
         m_damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
@@ -106,6 +107,21 @@ public class EnemyControl : MonoBehaviour
        
 
         m_maxAttackCooldown = Random.Range(2f, 6f);
+        InitializeStateMachine();
+    }
+
+    private void InitializeStateMachine()
+    {
+        var states = new Dictionary<Type, BaseState>()
+        {
+            {typeof(WanderState), new WanderState(this)},
+            {typeof(ChaseState), new ChaseState(this)},
+            {typeof(PseudoAttackState), new PseudoAttackState(this)},
+            {typeof(AttackState), new AttackState(this)},
+            {typeof(StunState), new StunState(this)},
+        };
+        
+        GetComponent<StateMachine>().SetState(states);
     }
 
     private void FixedUpdate()
@@ -177,62 +193,47 @@ public class EnemyControl : MonoBehaviour
 
         //CalculateTimer();
         
-        switch (m_status)
-        {   
-            case eStatus.Attack:
-                m_agent.transform.LookAt(m_player);
-                m_agent.SetDestination(m_player.position);
-                m_boxCollider.enabled = true;
-                break;
-            
-            case eStatus.Stun:
-                m_agent.SetDestination(transform.position);
-                break;
-            
-            case eStatus.Follow:
-                m_agent.SetDestination(m_player.position);
-                break;
-        }
+      
         
 
        
-        m_animator.SetFloat(Speed, m_agent.velocity.magnitude);
+       // m_animator.SetFloat(Speed, m_agent.velocity.magnitude);
 
     }
 
     private void CalculateTimer()
     {
-        if (m_status != eStatus.Attack)
-        {
-            if (m_attackCooldown < 0f)
-            {
-                m_status = eStatus.Attack;
-            }
-            else if ((transform.position - m_player.position).magnitude < m_agent.stoppingDistance + 2.0f)
-            {
-                m_attackCooldown -= Time.deltaTime;
-            }
-        }
+        if (m_status != eStatus.Attack) ;
+        // {
+        //     if (m_attackCooldown < 0f)
+        //     {
+        //         m_status = eStatus.Attack;
+        //     }
+        //     else if ((transform.position - m_player.position).magnitude < m_agent.stoppingDistance + 2.0f)
+        //     {
+        //         m_attackCooldown -= Time.deltaTime;
+        //     }
+        // }
     }
 
-    private void LateUpdate()
-    {
-        switch (m_status)
-        {   
-            case eStatus.Attack:
-                
-                break;
-            
-            case eStatus.Stun:
-
-                break;
-            
-            case eStatus.Follow:
-
-                break;
-        }        
-    }
-
+    // private void LateUpdate()
+    // {
+    //     switch (m_status)
+    //     {   
+    //         case eStatus.Attack:
+    //             
+    //             break;
+    //         
+    //         case eStatus.Stun:
+    //
+    //             break;
+    //         
+    //         case eStatus.Follow:
+    //
+    //             break;
+    //     }        
+    // }
+    //
     private void OnTriggerEnter(Collider _collider)
     {
         if (_collider.CompareTag("Player") && !m_destroy)
@@ -241,41 +242,41 @@ public class EnemyControl : MonoBehaviour
             m_attackTimer = 0f;
             m_attackCooldown = m_maxAttackCooldown;
             m_animator.SetBool(IsAttacking, false);
-
+    
             m_rankingSys.DropCombo();
             m_damagesound.Play();
         }
     }
-    
-    private void OnCollisionEnter(Collision _collision)
-    {
-        //Check collisions
-        if (_collision.gameObject.CompareTag("Sword") && m_canHit)
-        {
-            m_canHit = false;
-            CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
-
-            if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
-            {
-                m_status = eStatus.Stun;
-                if (m_stunTimer > 0f)
-                {
-                    if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
-                        m_stunTimer += m_maxStunPerHit;
-
-                }
-                else m_stunTimer = m_maxStunPerHit;
-            }
-
-            m_health -= cc.m_damage;
-            cc.AttackEffect(this);
-
-            if (cc.m_damage <= 0) return;
-            
-            m_hit.Play();
-            m_rankingSys.IncreaseCombo();
-        }
-    }
+    //
+    // private void OnCollisionEnter(Collision _collision)
+    // {
+    //     //Check collisions
+    //     if (_collision.gameObject.CompareTag("Sword") && m_canHit)
+    //     {
+    //         m_canHit = false;
+    //         CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
+    //
+    //         if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
+    //         {
+    //             m_status = eStatus.Stun;
+    //             if (m_stunTimer > 0f)
+    //             {
+    //                 if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
+    //                     m_stunTimer += m_maxStunPerHit;
+    //
+    //             }
+    //             else m_stunTimer = m_maxStunPerHit;
+    //         }
+    //
+    //         m_health -= cc.m_damage;
+    //         cc.AttackEffect(this);
+    //
+    //         if (cc.m_damage <= 0) return;
+    //         
+    //         m_hit.Play();
+    //         m_rankingSys.IncreaseCombo();
+    //     }
+    // }
 
     private void OnCollisionExit(Collision _collision)
     {
@@ -291,22 +292,27 @@ public class EnemyControl : MonoBehaviour
         switch (m_hPool)
         {
             case eHealthPool.Weak:
-                m_agent.speed = Random.Range(5.0f, 6.0f);
+               // m_agent.speed = Random.Range(5.0f, 6.0f);
                 m_health = Random.Range(400, 600);
                 m_maxHealth = m_health;
                 break;
             case eHealthPool.Normal:
-                m_agent.speed = Random.Range(4.0f, 5.0f);
                 m_health = Random.Range(100, 130);
+               // m_agent.speed = Random.Range(4.0f, 5.0f);
                 m_maxHealth = m_health;
                 break;
             case eHealthPool.Strong:
-                m_agent.speed = Random.Range(3.0f, 4.0f);
+               // m_agent.speed = Random.Range(3.0f, 4.0f);
                 m_health = Random.Range(150, 200);
                 m_maxHealth = m_health;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
+    }
+
+    public void SetTarget(Transform _target)
+    {
+        m_target = _target;
     }
 }
