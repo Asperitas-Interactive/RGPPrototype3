@@ -1,30 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 public class PurchaseMove : MonoBehaviour
 {
-    public enum activator
+    public enum eActivator
     {
         Mighty,
         Explosive,
         Stun
     }
 
-    public activator activatortype;
+    [FormerlySerializedAs("activatortype")] public eActivator m_activatortype;
     
-    public AttackEquip equipScript;
+    [FormerlySerializedAs("equipScript")] public AttackEquip m_equipScript;
 
-    public float value;
+    [FormerlySerializedAs("value")] public float m_value;
 
-    public MoneyController moneyController;
+    [FormerlySerializedAs("moneyController")] public MoneyController m_moneyController;
 
-    private Button purchaseButton;
+    private Button m_purchaseButton;
     // Start is called before the first frame update
     void Start()
     {
-        purchaseButton = gameObject.GetComponent<Button>();
-        moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
+        m_purchaseButton = gameObject.GetComponent<Button>();
+        m_moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
     }
 
     // Update is called once per frame
@@ -35,12 +36,12 @@ public class PurchaseMove : MonoBehaviour
 
     public void Purchase()
     {
-        if (moneyController.Money >= value)
+        if (m_moneyController.m_money >= m_value)
         {
-            purchaseButton.interactable = false;
-            purchaseButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
-            equipScript.activatePowerup(activatortype);
-            moneyController.TakeMoney(value);
+            m_purchaseButton.interactable = false;
+            m_purchaseButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
+            m_equipScript.ActivatePowerup(m_activatortype);
+            m_moneyController.TakeMoney(m_value);
         } else
         {
             Debug.Log("insufficient funds");

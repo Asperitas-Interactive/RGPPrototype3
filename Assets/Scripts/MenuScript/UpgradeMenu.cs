@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UpgradeMenu : MonoBehaviour
 {
-    GameObject[] upgradeUI;
-    bool menuActive = false;
+    GameObject[] m_upgradeUI;
+    bool m_menuActive = false;
     // Start is called before the first frame update
     void Start()
     {
-        upgradeUI = GameObject.FindGameObjectsWithTag("UpgradeUI");
+        m_upgradeUI = GameObject.FindGameObjectsWithTag("UpgradeUI");
         CloseUpgradeMenu();
     }
 
@@ -21,25 +21,25 @@ public class UpgradeMenu : MonoBehaviour
 
     public void ShowUpgradeMenu()
     {
-        foreach(GameObject go in upgradeUI)
+        foreach(GameObject go in m_upgradeUI)
         {
             go.SetActive(true);
         }
-        menuActive = true;
+        m_menuActive = true;
     }
 
     public void CloseUpgradeMenu()
     {
-        foreach (GameObject go in upgradeUI)
+        foreach (GameObject go in m_upgradeUI)
         {
             go.SetActive(false);
         }
-        menuActive = false;
+        m_menuActive = false;
     }
 
     public void OnClick()
     {
-        if (menuActive)
+        if (m_menuActive)
         {
             CloseUpgradeMenu();
         } else

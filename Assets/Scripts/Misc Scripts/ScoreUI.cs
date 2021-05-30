@@ -1,26 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ScoreUI : MonoBehaviour
 {
-    public Image[] images;
-    [SerializeField]
-    Sprite GreyedStar;
-    [SerializeField]
-    Sprite ColoredStar;
+    [FormerlySerializedAs("images")] public Image[] m_images;
+    [FormerlySerializedAs("greyedStar")] [FormerlySerializedAs("GreyedStar")] [SerializeField]
+    Sprite m_greyedStar;
+    [FormerlySerializedAs("coloredStar")] [FormerlySerializedAs("ColoredStar")] [SerializeField]
+    Sprite m_coloredStar;
 
-    public int rank = 1;
+    [FormerlySerializedAs("rank")] public int m_rank = 1;
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Image img in images)
+        foreach(var img in m_images)
         {
-            img.sprite = GreyedStar;
+            img.sprite = m_greyedStar;
         }
 
-        foreach (Image img in images)
+        foreach (var img in m_images)
         {
             img.enabled = false;
         }
@@ -29,21 +30,15 @@ public class ScoreUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < images.Length; i++)
+        for(var i = 0; i < m_images.Length; i++)
         {
-            if(i < rank)
-            {
-                images[i].sprite = ColoredStar;
-            } else
-            {
-                images[i].sprite = GreyedStar;
-            }
+            m_images[i].sprite = i < m_rank ? m_coloredStar : m_greyedStar;
         }
     }
 
     public void ShowImages()
     {
-        foreach (Image img in images)
+        foreach (var img in m_images)
         {
             img.enabled = true;
         }
@@ -51,7 +46,7 @@ public class ScoreUI : MonoBehaviour
 
     public void HideImages()
     {
-        foreach (Image img in images)
+        foreach (var img in m_images)
         {
             img.enabled = false;
         }

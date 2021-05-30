@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class TImerUpdate : MonoBehaviour
 {
-    public waveManager manager;
+    [FormerlySerializedAs("manager")] public waveManager m_manager;
 
     // Update is called once per frame
     void Update()

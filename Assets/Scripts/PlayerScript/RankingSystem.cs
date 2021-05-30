@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RankingSystem : MonoBehaviour
 {
-    [SerializeField]
-    int combo = 0;
+    [FormerlySerializedAs("combo")] [SerializeField]
+    int m_combo = 0;
 
-    int currentScore;
+    int m_currentScore;
 
 
 
@@ -23,25 +24,25 @@ public class RankingSystem : MonoBehaviour
         
     }
 
-    public void increaseCombo()
+    public void IncreaseCombo()
     {
-        combo++;
+        m_combo++;
     }
 
-    public void dropCombo()
+    public void DropCombo()
     {
-        if (combo >= 0 && combo < 15)
+        if (m_combo >= 0 && m_combo < 15)
         {
-            combo = 0;
+            m_combo = 0;
         }
         else
         {
-            combo -= 15;
+            m_combo -= 15;
         }
     }
 
-    public int getCombo()
+    public int GETCombo()
     {
-        return combo;
+        return m_combo;
     }
 }

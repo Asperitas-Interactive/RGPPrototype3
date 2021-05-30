@@ -2,50 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class waveManager : MonoBehaviour
 {
-    public int boidCount = 0;
-    public int maxWaves;
-    int wave;
+    [FormerlySerializedAs("boidCount")] public int m_boidCount = 0;
+    [FormerlySerializedAs("maxWaves")] public int m_maxWaves;
+    int m_wave;
 
-    public GameObject[] boids;
+    [FormerlySerializedAs("boids")] public GameObject[] m_boids;
 
-    private Waves[] waveControl;
+    private Waves[] m_waveControl;
 
-    public bool m_CombatEnded = false;
+    [FormerlySerializedAs("m_CombatEnded")] public bool m_combatEnded = false;
 
-    public RankingSystem rankSys;
+    [FormerlySerializedAs("rankSys")] public RankingSystem m_rankSys;
 
-    public bool isActive = false;
+    [FormerlySerializedAs("isActive")] public bool m_isActive = false;
 
-    public EncounterThreshold encounterController;
+    [FormerlySerializedAs("encounterController")] public EncounterThreshold m_encounterController;
 
-    public ScoreUI meter;
+    [FormerlySerializedAs("meter")] public ScoreUI m_meter;
+    private MoneyController m_moneyController;
 
     // Start is called before the first frame update
     void Start()
     {
-        rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
+        m_wave = 0;
+        m_moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
+        m_rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isActive)
+        if (m_isActive)
         {
-            if (wave > maxWaves)
-            {
-                //Insert new way to change the Scene
-                m_CombatEnded = true;
-                WaveEnd();
-            }
-
             int t = 0;
             bool flag = false;
 
-            foreach (GameObject boid in boids)
+            foreach (GameObject boid in m_boids)
             {
                 if (boid == null)
                 {
@@ -59,65 +56,76 @@ public class waveManager : MonoBehaviour
 
                 }
             }
-            boidCount = t;
+            m_boidCount = t;
 
             if (!flag)
             {
-                wave++;
+                m_wave++;
+                NewWave();
             }
 
-            if (rankSys.getCombo() <= encounterController.Star2Combo)
+            if (m_rankSys.GETCombo() <= m_encounterController.m_star2Combo)
             {
-                meter.rank = 1;
+                m_meter.m_rank = 1;
             }
-            else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+            else if (m_rankSys.GETCombo() > m_encounterController.m_star2Combo && m_rankSys.GETCombo() <= m_encounterController.m_star3Combo)
             {
-                meter.rank = 2;
+                m_meter.m_rank = 2;
             }
-            else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+            else if (m_rankSys.GETCombo() > m_encounterController.m_star3Combo && m_rankSys.GETCombo() <= m_encounterController.m_star4Combo)
             {
-                meter.rank = 3;
+                m_meter.m_rank = 3;
             }
-            else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+            else if (m_rankSys.GETCombo() > m_encounterController.m_star4Combo && m_rankSys.GETCombo() <= m_encounterController.m_star5Combo)
             {
-                meter.rank = 4;
+                m_meter.m_rank = 4;
             }
-            else if (rankSys.getCombo() > encounterController.Star5Combo)
+            else if (m_rankSys.GETCombo() > m_encounterController.m_star5Combo)
             {
-               meter.rank = 5;
+               m_meter.m_rank = 5;
+            }
+
+            //I moved it down the bottom so we can have multiple waves in one encounter
+            if (m_wave > m_maxWaves)
+            {
+                //Insert new way to change the Scene
+                m_combatEnded = true;
+                WaveEnd();
             }
         }
     }
 
-    public int waveStart(EncounterThreshold _encounter)
+    public int WaveStart(EncounterThreshold _encounter)
     {
-        if (isActive == false)
+        if (m_isActive == false)
         {
             int count = 0;
 
-            encounterController = _encounter;
+            m_encounterController = _encounter;
 
-            waveControl = _encounter.waves;
+            m_encounterController.turnOnWalls();
 
-            maxWaves = _encounter.waves.Length;
+            m_waveControl = _encounter.m_waves;
 
-            wave = 0;
+            m_maxWaves = _encounter.m_waves.Length;
 
-            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            m_wave = 0;
+
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
             {
                 count++;
             }
 
-            boids = new GameObject[count];
+            m_boids = new GameObject[count];
 
-            for (int i = 0; i < waveControl[wave].enemies.Length; i++)
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
             {
-                boids[i] = Instantiate(waveControl[wave].enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+                m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
             }
 
-            isActive = true;
+            m_isActive = true;
 
-            meter.ShowImages();
+            m_meter.ShowImages();
 
             return count;
         }
@@ -125,37 +133,60 @@ public class waveManager : MonoBehaviour
         return 0;
     }
 
-    void WaveEnd()
+    int NewWave()
     {
-        meter.HideImages();
-        isActive = false;
-        waveControl = new Waves[0];
+        int count = 0;
+
+        if (m_wave < m_maxWaves)
+        {
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                count++;
+            }
+
+            m_boids = new GameObject[count];
+
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+            }
+        }
+        return count;
+    }
+
+    private void WaveEnd()
+    {
+        m_encounterController.turnOffWalls();
+        m_meter.HideImages();
+        m_wave = 0;
+        m_isActive = false;
+        m_waveControl = new Waves[0];
 
         //Rewards
-        if (rankSys.getCombo() <= encounterController.Star2Combo)
+        if (m_rankSys.GETCombo() <= m_encounterController.m_star2Combo)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star1Money);
+            m_moneyController.ReceiveMoney(m_encounterController.m_star1Money);
         }
-        else if (rankSys.getCombo() > encounterController.Star2Combo && rankSys.getCombo() <= encounterController.Star3Combo)
+        else if (m_rankSys.GETCombo() > m_encounterController.m_star2Combo && m_rankSys.GETCombo() <= m_encounterController.m_star3Combo)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star2Money);
+            m_moneyController.ReceiveMoney(m_encounterController.m_star2Money);
         }
-        else if (rankSys.getCombo() > encounterController.Star3Combo && rankSys.getCombo() <= encounterController.Star4Combo)
+        else if (m_rankSys.GETCombo() > m_encounterController.m_star3Combo && m_rankSys.GETCombo() <= m_encounterController.m_star4Combo)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star3Money);
+            m_moneyController.ReceiveMoney(m_encounterController.m_star3Money);
         }
-        else if (rankSys.getCombo() > encounterController.Star4Combo && rankSys.getCombo() <= encounterController.Star5Combo)
+        else if (m_rankSys.GETCombo() > m_encounterController.m_star4Combo && m_rankSys.GETCombo() <= m_encounterController.m_star5Combo)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star4Money);
+            m_moneyController.ReceiveMoney(m_encounterController.m_star4Money);
         }
-        else if (rankSys.getCombo() > encounterController.Star5Combo)
+        else if (m_rankSys.GETCombo() > m_encounterController.m_star5Combo)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>().ReceiveMoney(encounterController.Star5Money);
+            m_moneyController.ReceiveMoney(m_encounterController.m_star5Money);
         }
     }
 
 
-    public Vector3 GetRandomLocation()
+    private Vector3 GetRandomLocation()
     {
         /*NavMeshTriangulation data = NavMesh.CalculateTriangulation();
 
@@ -164,12 +195,12 @@ public class waveManager : MonoBehaviour
         Vector3 point = Vector3.Lerp(data.vertices[data.indices[t]], data.vertices[data.indices[t + 1]], Random.value);
         point = Vector3.Lerp(point, data.vertices[data.indices[t + 2]], Random.value);*/
 
-        BoxCollider bc = encounterController.gameObject.GetComponent<BoxCollider>();
+        var bounds = m_encounterController.gameObject.GetComponent<BoxCollider>().bounds;
 
-        Vector3 point = new Vector3(
-            Random.Range(bc.bounds.min.x, bc.bounds.max.x),
+        var point = new Vector3(
+            Random.Range(bounds.min.x, bounds.max.x),
             0.0f,
-            Random.Range(bc.bounds.min.z, bc.bounds.max.z)
+            Random.Range(bounds.min.z, bounds.max.z)
             );
 
         return point;

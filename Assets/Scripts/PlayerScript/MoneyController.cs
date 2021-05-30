@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class MoneyController : MonoBehaviour
 {
-    public float Money;
-    
+    [FormerlySerializedAs("Money")] public float m_money;
+    [FormerlySerializedAs("MoneyCount")] public Text MoneyUI;
+
+    private void Update()
+    {
+        MoneyUI.text = m_money.ToString();
+    }
+
     public void ReceiveMoney(float _moneyCount)
     {
-        Money += _moneyCount;
+        m_money += _moneyCount;
     }
 
     public void TakeMoney(float _moneyCount)
     {
-        Money -= _moneyCount;
+        m_money -= _moneyCount;
     }
 }

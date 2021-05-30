@@ -6,35 +6,39 @@ using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     // Start is called before the first frame update
-   
-    private static gameManager _instance;
 
-    private Scene currentScene;
+    private static gameManager m_instance { get; set; }
 
-    public static gameManager Instance { get { return _instance; } }
+    private Scene m_currentScene;
+
+    public static gameManager Instance
+    {
+        get { return m_instance; }
+        
+    }
 
 
     private void Awake()
     {
-       if (_instance != null && _instance != this)
+       if (m_instance != null && m_instance != this)
        {
            Destroy(this.gameObject);
        }
        else
        {
+           m_instance = this;
            DontDestroyOnLoad(this.gameObject);
-       }
-
-        currentScene = SceneManager.GetActiveScene();
+       } 
+       m_currentScene = SceneManager.GetActiveScene();
     }
 
-    public void gameOver()
+    public void GameOver()
     {
         //Get the scene after the current scene
-        SceneManager.LoadScene(currentScene.buildIndex + 1);
+        SceneManager.LoadScene(m_currentScene.buildIndex + 1);
     }
 
-    public void gameLost()
+    public void GameLost()
     {
         SceneManager.LoadScene("gameOver");
     }

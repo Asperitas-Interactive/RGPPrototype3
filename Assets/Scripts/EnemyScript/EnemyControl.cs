@@ -1,103 +1,112 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class EnemyControl : MonoBehaviour
 {
     //For Health
-    public int health = 100;
+    [FormerlySerializedAs("health")] public int m_health = 100;
 
-    public Slider slider;
+    [FormerlySerializedAs("slider")] public Slider m_slider;
     
     //For Wave Spawning
-    public int spawnNum = 5;
+    [FormerlySerializedAs("spawnNum")] public int m_spawnNum = 5;
 
     //For Pathfinding
-    public Transform player;
+    [FormerlySerializedAs("player")] public Transform m_player;
 
-    public RankingSystem rankingSys;
+    [FormerlySerializedAs("rankingSys")] public RankingSystem m_rankingSys;
 
-    public enum healthPool
+    public enum eHealthPool
     {
-        WEAK,
-        NORMAL,
-        STRONG
+        Weak,
+        Normal,
+        Strong
     };
 
     public enum eStatus
     {
-        follow,
-        stun,
-        attack,
+        Follow,
+        Stun,
+        Attack,
     };
 
-    eStatus m_status = eStatus.follow;
+    eStatus m_status = eStatus.Follow;
 
-    public healthPool hPool;
+    [FormerlySerializedAs("hPool")] public eHealthPool m_hPool;
 
     //Rigidbody rb;
 
-    public float maxCharge;
-    public float ChargeTimer;
-    public float EvadeTimer;
-    public float maxEvade = 10f;
-    public float ChargeCoolDown = 5.0f;
-    public float EvadeCoolDown = 5.0f;
-    public float EvadeDistance = 20f;
-    public float maxAttackCooldown = 3.0f;
+    [FormerlySerializedAs("maxCharge")] public float m_maxCharge;
+    [FormerlySerializedAs("chargeTimer")] [FormerlySerializedAs("ChargeTimer")] public float m_chargeTimer;
+    [FormerlySerializedAs("evadeTimer")] [FormerlySerializedAs("EvadeTimer")] public float m_evadeTimer;
+    [FormerlySerializedAs("maxEvade")] public float m_maxEvade = 10f;
+    [FormerlySerializedAs("ChargeCoolDown")] public float m_chargeCoolDown = 5.0f;
+    [FormerlySerializedAs("EvadeCoolDown")] public float m_evadeCoolDown = 5.0f;
+    [FormerlySerializedAs("EvadeDistance")] public float m_evadeDistance = 20f;
+    [FormerlySerializedAs("maxAttackCooldown")] public float m_maxAttackCooldown = 3.0f;
 
-    public float maxStunTimer = 8.0f;
-    public float maxStunPerHit = 3.0f;
-    float stunTimer = 0.0f;
+    [FormerlySerializedAs("maxStunTimer")] public float m_maxStunTimer = 8.0f;
+    [FormerlySerializedAs("maxStunPerHit")] public float m_maxStunPerHit = 3.0f;
+    float m_stunTimer = 0.0f;
 
 
-    public int damage = -10;
-    float attackTimer;
-    float attackCooldown = 3.0f;
-    float maxHealth;
+    [FormerlySerializedAs("damage")] public int m_damage = -10;
+    float m_attackTimer;
+    float m_attackCooldown = 3.0f;
+    float m_maxHealth;
 
     bool m_canHit = true;
 
-    Vector3 chargevel;
-    private NavMeshAgent agent;
-    private bool ChargeBool = false;
-    bool evading = false;
-    bool destroy = false;
-    float destroyTimer = 0.5f;
+    private NavMeshAgent m_agent;
+    bool m_destroy = false;
+    float m_destroyTimer = 0.5f;
 
-    public AudioSource hit;
-    public AudioSource damagesound;
+    [FormerlySerializedAs("hit")] public AudioSource m_hit;
+    [FormerlySerializedAs("damagesound")] public AudioSource m_damagesound;
+    private BoxCollider m_boxCollider;
+    
+    private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
+    private Rigidbody m_rigidbody;
+    private static readonly int Speed = Animator.StringToHash("speed");
+
     private void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        m_rigidbody = GetComponent<Rigidbody>();
+        m_boxCollider = GetComponent<BoxCollider>();
+        m_boxCollider = GetComponent<BoxCollider>();
+        m_agent = GetComponent<NavMeshAgent>();
 
         //Set up pathfinding
-        setVariables();
-        maxCharge = Random.Range(5f, 20f);
-        ChargeTimer = maxCharge;
-        EvadeTimer = Random.Range(20.0f, 60.0f);
-        agent.avoidancePriority = (int)Random.Range(20f, 79f);
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        agent.SetDestination(player.position);
+        SetVariables();
+        m_maxCharge = Random.Range(5f, 20f);
+        m_chargeTimer = m_maxCharge;
+        m_evadeTimer = Random.Range(20.0f, 60.0f);
+        m_agent.avoidancePriority = (int)Random.Range(20f, 79f);
+        m_player = GameObject.FindGameObjectWithTag("Player").transform;
+        m_agent.SetDestination(m_player.position);
 
-        hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
-        damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
+        m_hit = GameObject.FindGameObjectWithTag("HitSound").GetComponent<AudioSource>();
+        m_damagesound = GameObject.FindGameObjectWithTag("DamageSound").GetComponent<AudioSource>();
 
-        rankingSys = player.GetComponent<RankingSystem>();
+        m_rankingSys = m_player.GetComponent<RankingSystem>();
     }
 
     private void Update()
     {
         #region EnemyModelFromHealth
-        if (health < maxHealth && health > maxHealth - maxHealth / 5)
+        if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(true);
         }
 
-        else if (health < maxHealth - maxHealth * (1.0f / 5.0f) && health > maxHealth - maxHealth * (2.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
 
@@ -105,14 +114,14 @@ public class EnemyControl : MonoBehaviour
             transform.GetChild(2).gameObject.SetActive(true);
         }
 
-        else if (health < maxHealth - maxHealth * (2.0f / 5.0f) && health > maxHealth - maxHealth * (3.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
             transform.GetChild(3).gameObject.SetActive(true);
         }
-        else if (health < maxHealth - maxHealth * (3.0f / 5.0f) && health > maxHealth - maxHealth * (4.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
@@ -120,7 +129,7 @@ public class EnemyControl : MonoBehaviour
             transform.GetChild(3).gameObject.SetActive(false);
             transform.GetChild(4).gameObject.SetActive(true);
         }
-        else if (health < maxHealth - maxHealth * (4.0f / 5.0f) && health > maxHealth - maxHealth * (5.0f / 5.0f))
+        else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) && m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
         {
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
@@ -133,36 +142,36 @@ public class EnemyControl : MonoBehaviour
         #endregion
 
         #region attackTimers
-        attackCooldown -= Time.deltaTime;
-        attackTimer -= Time.deltaTime;
-        stunTimer -= Time.deltaTime;
+        m_attackCooldown -= Time.deltaTime;
+        m_attackTimer -= Time.deltaTime;
+        m_stunTimer -= Time.deltaTime;
         #endregion
 
 
 
         switch (m_status)
         {
-            case eStatus.follow:
+            case eStatus.Follow:
                 {
                     //transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
 
-                    agent.SetDestination(player.position);
+                    m_agent.SetDestination(m_player.position);
                     break;
                 }
-            case eStatus.stun:
+            case eStatus.Stun:
                 {
                     //transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
-                    agent.velocity = Vector3.zero;
+                    m_agent.velocity = Vector3.zero;
                     break;
                 }
-            case eStatus.attack:
+            case eStatus.Attack:
                 {
                     //transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
 
-                    agent.transform.LookAt(player);
-                    agent.velocity = Vector3.zero;
+                    m_agent.transform.LookAt(m_player);
+                    m_agent.velocity = Vector3.zero;
 
-                    GetComponent<BoxCollider>().enabled = false;
+                    m_boxCollider.enabled = false;
                     for (int i = 1; i < transform.childCount; i++)
                     {
                         if (transform.GetChild(i).gameObject.activeSelf)
@@ -181,33 +190,34 @@ public class EnemyControl : MonoBehaviour
         //Seek
         // rb.velocity = (player.position - transform.position).normalized * 5.0f;
 
-        if (attackCooldown < 0.0f)
+        if (m_attackCooldown < 0.0f)
         {
-            GetComponent<BoxCollider>().enabled = true;
-            attackTimer = 3.0f;
+            m_boxCollider.enabled = true;
+            m_attackTimer = 3.0f;
             for (int i = 1; i < transform.childCount; i++)
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", true);
-                    attackCooldown = maxAttackCooldown;
+                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, true);
+                    m_attackCooldown = m_maxAttackCooldown;
                     break;
                 }
             }
-            m_status = eStatus.follow;
+            m_status = eStatus.Follow;
         }
 
-        if (m_status == eStatus.stun && stunTimer < 0.0f)
+        
+        if (m_status == eStatus.Stun && m_stunTimer < 0.0f)
         {
-            m_status = eStatus.follow;
+            m_status = eStatus.Follow;
         }
 
 
 
-        if (slider!=null)
-        slider.value = health;
+        if (m_slider != null)
+            m_slider.value = m_health;
 
-        if (health <= 0 && !destroy)
+        if (m_health <= 0 && !m_destroy)
         {
             for (int i = 1; i < transform.childCount; i++)
             {
@@ -225,25 +235,25 @@ public class EnemyControl : MonoBehaviour
                     break;
                 }
             }
-            destroy = true;
+            m_destroy = true;
             //agent.velocity = Vector3.zero;
-            agent.isStopped  = true;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            destroyTimer = 2.967f;
+            m_agent.isStopped  = true;
+            m_rigidbody.velocity = Vector3.zero;
+            m_destroyTimer = 2.967f;
         }
 
 
-        destroyTimer -= Time.deltaTime;
-        if(destroyTimer<0.0f && destroy)
+        m_destroyTimer -= Time.deltaTime;
+        if(m_destroyTimer<0.0f && m_destroy)
         {
            // Destroy(this.gameObject);
         }
 
         //Debug.Log(attackCooldown);
 
-        if ((transform.position - player.position).magnitude < (agent.stoppingDistance + 2.0f) && m_status != eStatus.stun) 
+        if ((transform.position - m_player.position).magnitude < (m_agent.stoppingDistance + 2.0f) && m_status != eStatus.Stun) 
         {
-            m_status = eStatus.attack;
+            m_status = eStatus.Attack;
 
         }
 
@@ -253,7 +263,7 @@ public class EnemyControl : MonoBehaviour
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, false);
                     break;
                 }
             }
@@ -262,96 +272,92 @@ public class EnemyControl : MonoBehaviour
         {
             if (transform.GetChild(i).gameObject.activeSelf)
             {
-                transform.GetChild(i).GetComponent<Animator>().SetFloat("speed", agent.velocity.magnitude);
+                transform.GetChild(i).GetComponent<Animator>().SetFloat(Speed, m_agent.velocity.magnitude);
                 break;
             }
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerEnter(Collider _collider)
     {
-        if(collider.CompareTag("Player") && !destroy)
+        if(_collider.CompareTag("Player") && !m_destroy)
         {
-            player.gameObject.GetComponent<PlayerMovement>().Heal(damage);
-            attackTimer = 0f;
-            attackCooldown = maxAttackCooldown;
+            m_player.gameObject.GetComponent<PlayerMovement>().Heal(m_damage);
+            m_attackTimer = 0f;
+            m_attackCooldown = m_maxAttackCooldown;
             for (int i = 1; i < transform.childCount; i++)
             {
                 if (transform.GetChild(i).gameObject.activeSelf)
                 {
-                    transform.GetChild(i).GetComponent<Animator>().SetBool("isAttacking", false);
+                    transform.GetChild(i).GetComponent<Animator>().SetBool(IsAttacking, false);
                     break;
                 }
             }
-            rankingSys.dropCombo();
-            damagesound.Play();
+            m_rankingSys.DropCombo();
+            m_damagesound.Play();
         }
     }
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision _collision)
     {
         //Check collisions
-        if (collision.gameObject.tag == "Sword" && m_canHit)
+        if (_collision.gameObject.CompareTag("Sword") && m_canHit)
         {
             m_canHit = false;
-            CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
+            CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
 
-            if(attackCooldown > maxAttackCooldown - maxAttackCooldown * 4.0f / 5.0f && cc.damage > 0)
+            if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
             {
-                m_status = eStatus.stun;
-                if (stunTimer > 0f)
+                m_status = eStatus.Stun;
+                if (m_stunTimer > 0f)
                 {
-                    if(stunTimer < maxStunTimer - maxStunPerHit)
-                        stunTimer += maxStunPerHit;
+                    if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
+                        m_stunTimer += m_maxStunPerHit;
 
                 }
-                else stunTimer = maxStunPerHit;
+                else m_stunTimer = m_maxStunPerHit;
             }
 
-            health -= cc.damage;
+            m_health -= cc.m_damage;
             cc.AttackEffect(this);
 
-            if (cc.damage > 0)
-            {
-                hit.Play();
-                rankingSys.increaseCombo();
-            }
+            if (cc.m_damage <= 0) return;
+            
+            m_hit.Play();
+            m_rankingSys.IncreaseCombo();
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision _collision)
     {
-        if(collision.gameObject.tag == "Sword")
+        if(_collision.gameObject.CompareTag("Sword"))
         {
             m_canHit = true;
         }
     }
 
 
-    public void AOEDamage()
+    private void SetVariables()
     {
-        health -= 100;
-    }
-
-    public void setVariables()
-    {
-        if (hPool == healthPool.WEAK)
+        switch (m_hPool)
         {
-            agent.speed = Random.Range(5.0f, 6.0f);
-            health = Random.Range(400, 600);
-            maxHealth = health;
-        }
-        else if (hPool == healthPool.NORMAL)
-        {
-            agent.speed = Random.Range(4.0f, 5.0f);
-            health = Random.Range(100, 130);
-            maxHealth = health;
-        }
-        else if (hPool == healthPool.STRONG)
-        {
-            agent.speed = Random.Range(3.0f, 4.0f);
-            health = Random.Range(150, 200);
-            maxHealth = health;
+            case eHealthPool.Weak:
+                m_agent.speed = Random.Range(5.0f, 6.0f);
+                m_health = Random.Range(400, 600);
+                m_maxHealth = m_health;
+                break;
+            case eHealthPool.Normal:
+                m_agent.speed = Random.Range(4.0f, 5.0f);
+                m_health = Random.Range(100, 130);
+                m_maxHealth = m_health;
+                break;
+            case eHealthPool.Strong:
+                m_agent.speed = Random.Range(3.0f, 4.0f);
+                m_health = Random.Range(150, 200);
+                m_maxHealth = m_health;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

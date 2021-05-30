@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "Pickup", menuName = "Pickups")]
 public class PickUps : ScriptableObject
@@ -12,37 +13,37 @@ public class PickUps : ScriptableObject
         AttackUp
     }
 
-    public Type pickUpType;
+    [FormerlySerializedAs("pickUpType")] public Type m_pickUpType;
 
     //public Material material;
-    public Mesh mMesh;
-    public Material mMaterial;
-    public AudioClip sound;
+    [FormerlySerializedAs("mMesh")] public Mesh m_mMesh;
+    [FormerlySerializedAs("mMaterial")] public Material m_mMaterial;
+    [FormerlySerializedAs("sound")] public AudioClip m_sound;
 
-    public string soundTag;
+    [FormerlySerializedAs("soundTag")] public string m_soundTag;
 
-    public int increase;
+    [FormerlySerializedAs("increase")] public int m_increase;
 
-    public void powerUp(GameObject gameObject)
+    public void PowerUp(GameObject _gameObject)
     {
-        switch (pickUpType)
+        switch (m_pickUpType)
         {
             case Type.Health:
-                if(gameObject.GetComponent<PlayerMovement>() != null)
+                if(_gameObject.GetComponent<PlayerMovement>() != null)
                 {
-                    gameObject.GetComponent<PlayerMovement>().Heal(increase);
+                    _gameObject.GetComponent<PlayerMovement>().Heal(m_increase);
                 }
                 break;
             case Type.HealthUp:
-                if (gameObject.GetComponent<PlayerMovement>() != null)
+                if (_gameObject.GetComponent<PlayerMovement>() != null)
                 {
-                    gameObject.GetComponent<PlayerMovement>().MaxHealthUp(increase);
+                    _gameObject.GetComponent<PlayerMovement>().MAXHealthUp(m_increase);
                 }
                 break;
             case Type.AttackUp:
-                if (gameObject.GetComponent<CombatControl>() != null)
+                if (_gameObject.GetComponent<CombatControl>() != null)
                 {
-                    gameObject.GetComponent<CombatControl>().DamageBoost(increase);
+                    _gameObject.GetComponent<CombatControl>().DamageBoost(m_increase);
                 }
                 break;
             default:

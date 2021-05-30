@@ -1,53 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class StoreSubMenuControl : MonoBehaviour
 {
-    public Canvas WeaponUp;
-    public Canvas ComboUp;
-    public Canvas EquipUp;
+    [FormerlySerializedAs("WeaponUp")] public Canvas m_weaponUp;
+    [FormerlySerializedAs("ComboUp")] public Canvas m_comboUp;
+    [FormerlySerializedAs("EquipUp")] public Canvas m_equipUp;
     // Start is called before the first frame update
     void Start()
     {
-        WeaponUp.enabled = false;
-        ComboUp.enabled = false;
-        EquipUp.enabled = false;
+        m_weaponUp.enabled = false;
+        m_comboUp.enabled = false;
+        m_equipUp.enabled = false;
     }
 
     public void WeaponClick()
     {
-        WeaponUp.enabled = true;
-        ComboUp.enabled = false;
-        EquipUp.enabled = false;
+        m_weaponUp.enabled = true;
+        m_comboUp.enabled = false;
+        m_equipUp.enabled = false;
     }
 
     public void ComboClick()
     {
-        ComboUp.enabled = true;
-        WeaponUp.enabled = false;
-        EquipUp.enabled = false;
+        m_comboUp.enabled = true;
+        m_weaponUp.enabled = false;
+        m_equipUp.enabled = false;
     }
 
     public void StabClick()
     {
-        ComboUp.enabled = false;
-        WeaponUp.enabled = false;
-        EquipUp.enabled = false;
+        m_comboUp.enabled = false;
+        m_weaponUp.enabled = false;
+        m_equipUp.enabled = false;
     }
 
     public void EquipClick()
     {
-        EquipUp.enabled = true;
-        ComboUp.enabled = false;
-        WeaponUp.enabled = false;
+        m_equipUp.enabled = true;
+        m_comboUp.enabled = false;
+        m_weaponUp.enabled = false;
     }
 
     public void CloseAll()
     {
-        WeaponUp.enabled = false;
-        ComboUp.enabled = false;
-        EquipUp.enabled = false;
+        m_weaponUp.enabled = false;
+        m_comboUp.enabled = false;
+        m_equipUp.enabled = false;
     }
 }

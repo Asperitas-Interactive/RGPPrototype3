@@ -1,37 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ShopDetection : MonoBehaviour
 {
-    public Button Endbutton;
-    public Button UpgradeButton;
-    public Image prompt;
-    public bool inZone;
-    public bool inMenu;
-    public GameObject player;
-    public GameObject camera;
-    public waveManager waveManager;
+    [FormerlySerializedAs("Endbutton")] public Button m_endbutton;
+    [FormerlySerializedAs("UpgradeButton")] public Button m_upgradeButton;
+    [FormerlySerializedAs("prompt")] public Image m_prompt;
+    [FormerlySerializedAs("inZone")] public bool m_inZone;
+    [FormerlySerializedAs("inMenu")] public bool m_inMenu;
+    [FormerlySerializedAs("player")] public GameObject m_player;
+    [FormerlySerializedAs("camera")] public GameObject m_camera;
+    [FormerlySerializedAs("waveManager")] public waveManager m_waveManager;
 
-    GameObject[] PlayerUIObjects;
-    GameObject[] ShopUIObjects;
+    GameObject[] m_playerUIObjects;
+    GameObject[] m_shopUIObjects;
 
     // Start is called before the first frame update
     void Start()
     {
-        camera = Camera.main.gameObject;
+        m_camera = Camera.main.gameObject;
 
-        Endbutton.gameObject.SetActive(false);
+        m_endbutton.gameObject.SetActive(false);
 
-        PlayerUIObjects = GameObject.FindGameObjectsWithTag("PlayerUI");
-        ShopUIObjects = GameObject.FindGameObjectsWithTag("ShopUI");
+        m_playerUIObjects = GameObject.FindGameObjectsWithTag("PlayerUI");
+        m_shopUIObjects = GameObject.FindGameObjectsWithTag("ShopUI");
 
-        foreach (GameObject go in PlayerUIObjects)
+        foreach (GameObject go in m_playerUIObjects)
         {
             go.SetActive(true);
         }
-        foreach (GameObject go in ShopUIObjects)
+        foreach (GameObject go in m_shopUIObjects)
         {
             go.SetActive(false);
         }
@@ -41,62 +42,62 @@ public class ShopDetection : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("AOE") && inZone == true)
+        if (Input.GetButtonDown("AOE") && m_inZone == true)
         {
-            if (inMenu == false)
+            if (m_inMenu == false)
             {
                 Cursor.lockState = CursorLockMode.None;
 
-                if (waveManager.m_CombatEnded)
+                if (m_waveManager.m_combatEnded)
                 {
-                    Endbutton.gameObject.SetActive(true);
+                    m_endbutton.gameObject.SetActive(true);
                 }
 
-                foreach (GameObject go in PlayerUIObjects)
+                foreach (GameObject go in m_playerUIObjects)
                 {
                     go.SetActive(false);
                 }
-                foreach(GameObject go in ShopUIObjects)
+                foreach(GameObject go in m_shopUIObjects)
                 {
                     go.SetActive(true);
                 }
                 
-                inMenu = true;
+                m_inMenu = true;
             }
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider _other)
     {
-        if(other.gameObject == player)
+        if(_other.gameObject == m_player)
         {
-            inZone = true;
+            m_inZone = true;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider _other)
     {
-        if(other.gameObject == player)
+        if(_other.gameObject == m_player)
         {
-            inZone = false;
+            m_inZone = false;
         }
     }
 
-    public void closeMenus()
+    public void CloseMenus()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        UpgradeButton.GetComponent<StoreSubMenuControl>().CloseAll();
-        UpgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
-        Endbutton.gameObject.SetActive(false);
-        foreach (GameObject go in PlayerUIObjects)
+        m_upgradeButton.GetComponent<StoreSubMenuControl>().CloseAll();
+        m_upgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
+        m_endbutton.gameObject.SetActive(false);
+        foreach (GameObject go in m_playerUIObjects)
         {
             go.SetActive(true);
         }
-        foreach (GameObject go in ShopUIObjects)
+        foreach (GameObject go in m_shopUIObjects)
         {
             go.SetActive(false);
         }
 
-        inMenu = false;
+        m_inMenu = false;
     }
 }
