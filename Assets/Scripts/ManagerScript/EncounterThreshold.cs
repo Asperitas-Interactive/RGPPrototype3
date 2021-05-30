@@ -18,7 +18,7 @@ public class EncounterThreshold : MonoBehaviour
 
     [FormerlySerializedAs("waves")] public Waves[] m_waves;
 
-    [FormerlySerializedAs("InvisWalls")] public BoxCollider[] m_invisibleWalls;
+    [FormerlySerializedAs("InvisWalls")] public GameObject[] m_invisibleWalls;
 
     private void OnTriggerEnter(Collider _other)
     {
@@ -30,17 +30,17 @@ public class EncounterThreshold : MonoBehaviour
 
     public void turnOnWalls()
     {
-        foreach(BoxCollider bc in m_invisibleWalls)
+        foreach(GameObject go in m_invisibleWalls)
         {
-            bc.enabled = true;
+            go.SetActive(true);
         }
     }
 
     public void turnOffWalls()
     {
-        foreach(BoxCollider bc in m_invisibleWalls)
+        foreach(GameObject go in m_invisibleWalls)
         {
-            bc.enabled = false;
+            go.SetActive(false);
         }
     }
 }
