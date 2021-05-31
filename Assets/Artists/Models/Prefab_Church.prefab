@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3790711671000458523}
+  - component: {fileID: 7942589715406133755}
   m_Layer: 0
   m_Name: Prefab_Church
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &7942589715406133755
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5245590085018694524}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &5766166940039834427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82,6 +97,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 98f1e78d5391f5e44b51e145715558a1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cbbaa313834c09240abeb468427ab54c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 98f1e78d5391f5e44b51e145715558a1, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: eee5d6eaccb011b4095d1455db196f5c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 98f1e78d5391f5e44b51e145715558a1, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 521725731c6b220428936fcbcd80c4fa, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 98f1e78d5391f5e44b51e145715558a1, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41619209e14513043adc3164f8815fc1, type: 2}
     - target: {fileID: 919132149155446097, guid: 98f1e78d5391f5e44b51e145715558a1, type: 3}
       propertyPath: m_Name
       value: MOD_Church
