@@ -9,7 +9,14 @@ public class gameManager : MonoBehaviour
 
     private static gameManager m_instance { get; set; }
 
+
     private Scene m_currentScene;
+    [SerializeField] public float m_enemySpeed;
+    public float m_maxWanderTime;
+    public float m_counterTime = 1.5f;
+    public float m_StunTimer = 3f;
+    public string m_State;
+    public float m_attackCooldown = 4.5f;
 
     public static gameManager Instance
     {

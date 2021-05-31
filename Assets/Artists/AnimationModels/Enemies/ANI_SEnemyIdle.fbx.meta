@@ -39,44 +39,18 @@ ModelImporter:
     optimizeGameObjects: 1
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
-      copied configuration does not match position in animation file:\n\t'Base HumanLThigh'
-      : position error = 104.718323 mm\n\t'Base HumanLCalf' : position error = 37.802002
-      mm\n\t'Base HumanLFoot' : position error = 22.855106 mm\n\t'Base HumanRThigh'
-      : position error = 104.718468 mm\n\t'Base HumanRCalf' : position error = 37.801861
-      mm\n\t'Base HumanRFoot' : position error = 22.855003 mm\n\t'Base HumanSpine1'
-      : position error = 4.370342 mm\n\t'Base HumanSpine2' : position error = 9.713522
-      mm\n\t'Base HumanSpine3' : position error = 10.543267 mm\n\t'Base HumanSpine4'
-      : position error = 16.583569 mm\n\t'Base HumanRibcage' : position error = 14.150219
-      mm\n\t'Base HumanLCollarbone' : position error = 10.228427 mm\n\t'Base HumanLUpperarm'
-      : position error = 47.712837 mm\n\t'Base HumanLForearm' : position error =
-      77.840431 mm\n\t'Base HumanLPalm' : position error = 83.194122 mm\n\t'Base
-      HumanLDigit11' : position error = 20.168541 mm\n\t'Base HumanLDigit12' : position
-      error = 9.661958 mm\n\t'Base HumanLDigit13' : position error = 9.661873 mm\n\t'Base
-      HumanLDigit21' : position error = 15.987182 mm\n\t'Base HumanLDigit22' : position
-      error = 24.342207 mm\n\t'Base HumanLDigit23' : position error = 21.895647 mm\n\t'Base
-      HumanLDigit31' : position error = 32.426048 mm\n\t'Base HumanLDigit32' : position
-      error = 19.675613 mm\n\t'Base HumanLDigit33' : position error = 18.490105 mm\n\t'Base
-      HumanRCollarbone' : position error = 10.228419 mm\n\t'Base HumanRUpperarm'
-      : position error = 47.712627 mm\n\t'Base HumanRForearm' : position error =
-      77.840027 mm\n\t'Base HumanRPalm' : position error = 83.193512 mm\n\t'Base
-      HumanRDigit11' : position error = 20.168358 mm\n\t'Base HumanRDigit12' : position
-      error = 9.661897 mm\n\t'Base HumanRDigit13' : position error = 9.661839 mm\n\t'Base
-      HumanRDigit21' : position error = 16.151253 mm\n\t'Base HumanRDigit22' : position
-      error = 24.620691 mm\n\t'Base HumanRDigit23' : position error = 21.895647 mm\n\t'Base
-      HumanRDigit31' : position error = 32.126507 mm\n\t'Base HumanRDigit32' : position
-      error = 20.141682 mm\n\t'Base HumanRDigit33' : position error = 18.489956 mm\n\t'Base
-      HumanNeck2' : position error = 110.147774 mm\n\t'Base HumanHead' : position
-      error = 82.048729 mm\nCopied Avatar Rig Configuration mis-match. Inbetween
-      bone rotation in copied configuration does not match rotation in animation
-      file:\n\t'Base HumanSpine1' : rotation error = 26.136232 deg\n\t'Base HumanRibcage'
-      : rotation error = 1.255969 deg\n"
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
+      rotation in copied configuration does not match rotation in animation file:\n\t'Base
+      HumanSpine1' : rotation error = 2.178253 deg\n\t'Base HumanRibcage' : rotation
+      error = 4.006425 deg\n\t'Base HumanNeck2' : rotation error = 43.456421 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Base HumanSpine1' is inbetween humanoid
       transforms and has rotation animation that will be discarded.\n\t'Base HumanRibcage'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Base
+      HumanNeck2' is inbetween humanoid transforms and has rotation animation that
+      will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -93,21 +67,21 @@ ModelImporter:
       name: enemy_Idle
       takeName: Take 001
       internalID: 0
-      firstFrame: 5
-      lastFrame: 25
+      firstFrame: 9.5
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
       mirror: 0

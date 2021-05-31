@@ -223,4 +223,9 @@ public class CombatControl : MonoBehaviour
             }
         }
     }
+
+    public bool Counter()
+    {
+        return false;
+    }
 }
