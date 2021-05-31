@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Packages.Rider.Editor.UnitTesting;
+using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -190,6 +190,10 @@ public class EnemyControl : MonoBehaviour
 
             m_animator = m_children[5].GetComponent<Animator>();
         }
+        else if (m_health < 0f)
+        {
+            Destroy(this.gameObject);
+        }
 
         #endregion
 
@@ -258,17 +262,7 @@ public class EnemyControl : MonoBehaviour
             m_canHit = false;
             CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
     
-            if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
-            {
-                m_status = eStatus.Stun;
-                if (m_stunTimer > 0f)
-                {
-                    if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
-                        m_stunTimer += m_maxStunPerHit;
-    
-                }
-                else m_stunTimer = m_maxStunPerHit;
-            }
+            
     
             m_health -= cc.m_damage;
             cc.AttackEffect(this);
