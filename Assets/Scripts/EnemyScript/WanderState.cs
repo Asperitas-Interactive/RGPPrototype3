@@ -16,7 +16,8 @@ public class WanderState: BaseState
     private Vector3 m_direction;
 
     private float m_maxWanderTime = gameManager.Instance.m_maxWanderTime;
-    private float m_wanderTime; 
+    private float m_wanderTime;
+    private static readonly int Speed = Animator.StringToHash("Speed");
 
 
 
@@ -29,6 +30,8 @@ public class WanderState: BaseState
 
     public override Type Tick()
     {
+        
+        m_animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
         m_wanderTime -= Time.deltaTime;
         var chaseTarget = m_enemy.m_player;
 
@@ -100,9 +103,9 @@ public class WanderState: BaseState
         
     }
 
-
     private Quaternion startingAngle = Quaternion.AngleAxis(-60, Vector3.up);
     Quaternion stepAngle = Quaternion.AngleAxis(5, Vector3.up);
+
     private Transform CheckForAggro()
     {
         float aggroRadius = 5f;

@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using Packages.Rider.Editor.UnitTesting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -73,9 +75,9 @@ public class EnemyControl : MonoBehaviour
     public BoxCollider m_boxCollider { get; private set; }
     private Rigidbody m_rigidbody;
     
-    private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
+    private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Speed = Animator.StringToHash("speed");
-    private Animator m_animator;
+    public Animator m_animator { get; private set; }
 
     private Transform m_target;
     private void Start()
@@ -83,6 +85,7 @@ public class EnemyControl : MonoBehaviour
         m_rigidbody = GetComponent<Rigidbody>();
         m_agent = GetComponent<NavMeshAgent>();
 
+        
         //Set up pathfinding
         SetVariables();
         m_maxCharge = Random.Range(5f, 20f);
@@ -102,12 +105,16 @@ public class EnemyControl : MonoBehaviour
             m_children[i] = transform.GetChild(i).gameObject;
         }
         
-        m_boxCollider = m_children[1].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
         m_animator = m_children[1].GetComponent<Animator>();
-       
+        m_boxCollider = GetComponent<BoxCollider>();       
 
         m_maxAttackCooldown = Random.Range(2f, 6f);
         InitializeStateMachine();
+    }
+
+    private void Test()
+    {
+        Debug.Log("AnimationEvents");
     }
 
     private void InitializeStateMachine()
@@ -137,7 +144,6 @@ public class EnemyControl : MonoBehaviour
         {
             m_children[0].gameObject.SetActive(false);
             m_children[1].gameObject.SetActive(true);
-            m_boxCollider = m_children[1].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
             m_animator = m_children[1].GetComponent<Animator>();
         }
 
@@ -149,7 +155,6 @@ public class EnemyControl : MonoBehaviour
             m_children[1].gameObject.SetActive(false);
             m_children[2].gameObject.SetActive(true);
 
-            m_boxCollider = m_children[2].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
             m_animator = m_children[2].GetComponent<Animator>();
         }
 
@@ -161,7 +166,6 @@ public class EnemyControl : MonoBehaviour
             m_children[2].gameObject.SetActive(false);
             m_children[3].gameObject.SetActive(true);
 
-            m_boxCollider = m_children[3].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
             m_animator = m_children[3].GetComponent<Animator>();
         }
         else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
@@ -172,7 +176,6 @@ public class EnemyControl : MonoBehaviour
             m_children[2].gameObject.SetActive(false);
             m_children[3].gameObject.SetActive(false);
             m_children[4].gameObject.SetActive(true);
-            m_boxCollider = m_children[4].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
             m_animator = m_children[4].GetComponent<Animator>();
         }
         else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
@@ -185,7 +188,6 @@ public class EnemyControl : MonoBehaviour
             m_children[4].gameObject.SetActive(false);
             m_children[5].gameObject.SetActive(true);
 
-            m_boxCollider = m_children[5].transform.GetChild(transform.childCount - 1).GetComponent<BoxCollider>();
             m_animator = m_children[5].GetComponent<Animator>();
         }
 
@@ -241,42 +243,42 @@ public class EnemyControl : MonoBehaviour
             m_player.gameObject.GetComponent<PlayerMovement>().Heal(m_damage);
             m_attackTimer = 0f;
             m_attackCooldown = m_maxAttackCooldown;
-            m_animator.SetBool(IsAttacking, false);
+            m_animator.SetBool(Attack, false);
     
             m_rankingSys.DropCombo();
             m_damagesound.Play();
         }
     }
     //
-    // private void OnCollisionEnter(Collision _collision)
-    // {
-    //     //Check collisions
-    //     if (_collision.gameObject.CompareTag("Sword") && m_canHit)
-    //     {
-    //         m_canHit = false;
-    //         CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
-    //
-    //         if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
-    //         {
-    //             m_status = eStatus.Stun;
-    //             if (m_stunTimer > 0f)
-    //             {
-    //                 if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
-    //                     m_stunTimer += m_maxStunPerHit;
-    //
-    //             }
-    //             else m_stunTimer = m_maxStunPerHit;
-    //         }
-    //
-    //         m_health -= cc.m_damage;
-    //         cc.AttackEffect(this);
-    //
-    //         if (cc.m_damage <= 0) return;
-    //         
-    //         m_hit.Play();
-    //         m_rankingSys.IncreaseCombo();
-    //     }
-    // }
+    private void OnCollisionEnter(Collision _collision)
+    {
+        //Check collisions
+        if (_collision.gameObject.CompareTag("Sword") && m_canHit)
+        {
+            m_canHit = false;
+            CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
+    
+            if(m_attackCooldown > m_maxAttackCooldown - m_maxAttackCooldown * 4.0f / 5.0f && cc.m_damage > 0)
+            {
+                m_status = eStatus.Stun;
+                if (m_stunTimer > 0f)
+                {
+                    if(m_stunTimer < m_maxStunTimer - m_maxStunPerHit)
+                        m_stunTimer += m_maxStunPerHit;
+    
+                }
+                else m_stunTimer = m_maxStunPerHit;
+            }
+    
+            m_health -= cc.m_damage;
+            cc.AttackEffect(this);
+    
+            if (cc.m_damage <= 0) return;
+            
+            m_hit.Play();
+            m_rankingSys.IncreaseCombo();
+        }
+    }
 
     private void OnCollisionExit(Collision _collision)
     {
@@ -315,4 +317,6 @@ public class EnemyControl : MonoBehaviour
     {
         m_target = _target;
     }
+
+    
 }

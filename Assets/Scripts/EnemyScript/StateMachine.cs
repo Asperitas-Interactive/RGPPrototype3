@@ -34,6 +34,7 @@ public class StateMachine : MonoBehaviour
             m_currentState = m_availableStates.Values.First();
         }
 
+        m_currentState?.Update();
         Type nextState = m_currentState?.Tick();
 
         if (nextState != null &&
