@@ -257,8 +257,13 @@ public class EnemyControl : MonoBehaviour
     private void OnCollisionEnter(Collision _collision)
     {
         //Check collisions
-        if (_collision.gameObject.CompareTag("Sword") && m_canHit)
+        if (_collision.gameObject.CompareTag("Sword") && m_canHit && m_player.gameObject.GetComponent<CombatControl>().m_canDamage)
         {
+            m_player.gameObject.GetComponent<CombatControl>().m_canDamage = false;
+
+            m_animator.SetBool("Damage", true);
+
+        
             m_canHit = false;
             CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
     

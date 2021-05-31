@@ -57,7 +57,7 @@ public class PseudoAttackState: BaseState
 
         
 
-        if (m_enemy.m_player.GetComponent<CombatControl>().Counter())
+        if (m_enemy.m_player.GetComponent<CombatControl>().Counter(this.m_transform))
         {
             return typeof(StunState);
         }

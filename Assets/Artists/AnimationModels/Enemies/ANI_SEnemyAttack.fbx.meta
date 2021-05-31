@@ -42,9 +42,8 @@ ModelImporter:
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Base HumanSpine3' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'Base HumanRibcage'
+      might lower retargeting quality:\n\t'Base HumanSpine1' is inbetween humanoid
+      transforms and has rotation animation that will be discarded.\n\t'Base HumanSpine4'
       is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Base
       HumanNeck2' is inbetween humanoid transforms and has rotation animation that
       will be discarded.\n"
@@ -198,16 +197,8 @@ ModelImporter:
         value: {x: 0, y: 0, z: 0}
         length: 0
         modified: 0
-    - boneName: Base HumanSpine1
-      humanName: Spine
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
     - boneName: Base HumanSpine2
-      humanName: Chest
+      humanName: Spine
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -360,14 +351,6 @@ ModelImporter:
         modified: 0
     - boneName: Base HumanRDigit23
       humanName: Right Middle Distal
-      limit:
-        min: {x: 0, y: 0, z: 0}
-        max: {x: 0, y: 0, z: 0}
-        value: {x: 0, y: 0, z: 0}
-        length: 0
-        modified: 0
-    - boneName: Base HumanSpine4
-      humanName: UpperChest
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -686,7 +669,7 @@ ModelImporter:
     feetSpacing: 0
     globalScale: 1
     rootMotionBoneName: 
-    hasTranslationDoF: 0
+    hasTranslationDoF: 1
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
