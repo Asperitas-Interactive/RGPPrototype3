@@ -29,6 +29,7 @@ public class waveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_wave = 0;
         m_moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
         m_rankSys = GameObject.FindGameObjectWithTag("Player").GetComponent<RankingSystem>();
     }
@@ -38,13 +39,6 @@ public class waveManager : MonoBehaviour
     {
         if (m_isActive)
         {
-            if (m_wave > m_maxWaves)
-            {
-                //Insert new way to change the Scene
-                m_combatEnded = true;
-                WaveEnd();
-            }
-
             int t = 0;
             bool flag = false;
 
@@ -67,6 +61,7 @@ public class waveManager : MonoBehaviour
             if (!flag)
             {
                 m_wave++;
+                NewWave();
             }
 
             if (m_rankSys.GETCombo() <= m_encounterController.m_star2Combo)
@@ -89,6 +84,14 @@ public class waveManager : MonoBehaviour
             {
                m_meter.m_rank = 5;
             }
+
+            //I moved it down the bottom so we can have multiple waves in one encounter
+            if (m_wave > m_maxWaves)
+            {
+                //Insert new way to change the Scene
+                m_combatEnded = true;
+                WaveEnd();
+            }
         }
     }
 
@@ -99,6 +102,8 @@ public class waveManager : MonoBehaviour
             int count = 0;
 
             m_encounterController = _encounter;
+
+            m_encounterController.turnOnWalls();
 
             m_waveControl = _encounter.m_waves;
 
@@ -128,9 +133,32 @@ public class waveManager : MonoBehaviour
         return 0;
     }
 
+    int NewWave()
+    {
+        int count = 0;
+
+        if (m_wave < m_maxWaves)
+        {
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                count++;
+            }
+
+            m_boids = new GameObject[count];
+
+            for (int i = 0; i < m_waveControl[m_wave].m_enemies.Length; i++)
+            {
+                m_boids[i] = Instantiate(m_waveControl[m_wave].m_enemies[i], GetRandomLocation(), Quaternion.identity, null).gameObject;
+            }
+        }
+        return count;
+    }
+
     private void WaveEnd()
     {
+        m_encounterController.turnOffWalls();
         m_meter.HideImages();
+        m_wave = 0;
         m_isActive = false;
         m_waveControl = new Waves[0];
 

@@ -238,9 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de4f5b23a7d92bc44b8c225d1f7b58db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponUp: {fileID: 6434892252970410862}
-  ComboUp: {fileID: 6002894573704698882}
-  EquipUp: {fileID: 7591330333961228980}
+  m_weaponUp: {fileID: 6434892252970410862}
+  m_comboUp: {fileID: 6002894573704698882}
+  m_equipUp: {fileID: 7591330333961228980}
 --- !u!1 &654713845
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,8 +968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce977489c7a2f1438d31cb497fad846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackType: 1
-  cc: {fileID: 0}
+  m_attackType: 1
+  m_combatControl: {fileID: 0}
 --- !u!1 &959136465782717996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,10 +1270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatortype: 1
-  equipScript: {fileID: 432900816}
-  value: 0
-  moneyController: {fileID: 0}
+  m_activatortype: 1
+  m_equipScript: {fileID: 432900816}
+  m_value: 50
+  m_moneyController: {fileID: 0}
 --- !u!1 &1397833428465145845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d468719da6a342478d21da6f21b5d9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viginette: {fileID: 0}
+  m_viginette: {fileID: 0}
 --- !u!1 &1537018776632713149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,12 +1750,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cc: {fileID: 0}
-  increase: 40
-  value: 0
-  moneyController: {fileID: 0}
-  successorButton: {fileID: 0}
-  successorText: {fileID: 0}
+  m_cc: {fileID: 0}
+  m_increase: 40
+  m_value: 400
+  m_moneyController: {fileID: 0}
+  m_successorButton: {fileID: 0}
+  m_successorText: {fileID: 0}
 --- !u!1 &2034508963620291254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1946,7 +1946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -149, y: -82}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2034508964342933332
@@ -1979,18 +1979,20 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 2
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 60
+  m_Text: '0
+
+'
 --- !u!1 &2034508964451181404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,8 +2327,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42760cc094a2ca44ca95bd741c620467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: {fileID: 2034508964053103170}
-  maxHealth: {fileID: 2034508964451181406}
+  m_currentHealth: {fileID: 2034508964053103170}
+  m_maxHealth: {fileID: 2034508964451181406}
 --- !u!1 &2034508965313788397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,7 +2521,7 @@ GameObject:
   - component: {fileID: 2034508965652627719}
   m_Layer: 5
   m_Name: Timer
-  m_TagString: PlayerUI
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2541,7 +2543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 53.00006, y: -33}
+  m_AnchoredPosition: {x: 52.999817, y: -33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2170697278043036724
@@ -2657,8 +2659,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.22, y: 30}
-  m_SizeDelta: {x: 211.5696, y: 40}
+  m_AnchoredPosition: {x: -167.5, y: 30}
+  m_SizeDelta: {x: 335, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8048178284853489404
 CanvasRenderer:
@@ -2701,7 +2703,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Damage Up 2
+  m_Text: 'Damage Up 2 : $150'
 --- !u!1 &2219669543255872263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2974,10 +2976,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatortype: 0
-  equipScript: {fileID: 432900816}
-  value: 0
-  moneyController: {fileID: 0}
+  m_activatortype: 0
+  m_equipScript: {fileID: 432900816}
+  m_value: 50
+  m_moneyController: {fileID: 0}
 --- !u!1 &3148047551019462531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3443,12 +3445,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cc: {fileID: 0}
-  increase: 20
-  value: 0
-  moneyController: {fileID: 0}
-  successorButton: {fileID: 1794231244955795838}
-  successorText: {fileID: 8439823657452852400}
+  m_cc: {fileID: 0}
+  m_increase: 20
+  m_value: 150
+  m_moneyController: {fileID: 0}
+  m_successorButton: {fileID: 1794231244955795838}
+  m_successorText: {fileID: 8439823657452852400}
 --- !u!1 &3874913305659052189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,8 +3635,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.2152, y: 114.778755}
-  m_SizeDelta: {x: 211.5696, y: 40}
+  m_AnchoredPosition: {x: -167.50002, y: 114.778755}
+  m_SizeDelta: {x: 335, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &998089364880604710
 CanvasRenderer:
@@ -3677,7 +3679,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Damage Up 1
+  m_Text: 'Damage Up 1 : $50'
 --- !u!1 &4409114033537595957
 GameObject:
   m_ObjectHideFlags: 0
@@ -3905,13 +3907,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22cd848b1ea6c8b499430fae18399c18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  rank: 1
+  m_images:
+  - {fileID: 1305721420323263686}
+  - {fileID: 3965182334104779914}
+  - {fileID: 269093383358484870}
+  - {fileID: 9098517345330630130}
+  - {fileID: 319698674373619131}
+  m_greyedStar: {fileID: 21300000, guid: accc70160a4a46547b73dbeee737518f, type: 3}
+  m_coloredStar: {fileID: 21300000, guid: a8daa0fef94414c4bb1e45f5ad21ed61, type: 3}
+  m_rank: 1
 --- !u!1 &4859768191381219840
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,12 +4062,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba6f82cad590bc40ad06e2c77663832, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cc: {fileID: 0}
-  increase: 10
-  value: 0
-  moneyController: {fileID: 0}
-  successorButton: {fileID: 3709525781427706672}
-  successorText: {fileID: 2182231072437312130}
+  m_cc: {fileID: 0}
+  m_increase: 10
+  m_value: 50
+  m_moneyController: {fileID: 0}
+  m_successorButton: {fileID: 3709525781427706672}
+  m_successorText: {fileID: 2182231072437312130}
 --- !u!1 &5262145389614371628
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,10 +4214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ac1638a47369343996fc8622e01b80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activatortype: 2
-  equipScript: {fileID: 432900816}
-  value: 0
-  moneyController: {fileID: 0}
+  m_activatortype: 2
+  m_equipScript: {fileID: 432900816}
+  m_value: 50
+  m_moneyController: {fileID: 0}
 --- !u!1 &5338305347005641797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,8 +5121,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.22, y: -60}
-  m_SizeDelta: {x: 211.56, y: 40}
+  m_AnchoredPosition: {x: -167.5, y: -60}
+  m_SizeDelta: {x: 335, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9041538816572288236
 CanvasRenderer:
@@ -5161,7 +5165,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stunning Combo
+  m_Text: 'Stunning Combo : $50'
 --- !u!1 &6866940203232815996
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,8 +5279,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.2152, y: 120}
-  m_SizeDelta: {x: 211.5696, y: 40}
+  m_AnchoredPosition: {x: -167.50002, y: 120}
+  m_SizeDelta: {x: 335, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8653872991449493699
 CanvasRenderer:
@@ -5319,7 +5323,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Mighty Combo
+  m_Text: 'Mighty Combo: $50'
 --- !u!1 &7209642177412716374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,8 +5861,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.22, y: -60}
-  m_SizeDelta: {x: 211.56, y: 40}
+  m_AnchoredPosition: {x: -167.50005, y: -60}
+  m_SizeDelta: {x: 335, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7088525242653443849
 CanvasRenderer:
@@ -5901,7 +5905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Damage Up 3
+  m_Text: 'Damage Up 3 : $400'
 --- !u!1 &8449564579273419435
 GameObject:
   m_ObjectHideFlags: 0
@@ -6023,8 +6027,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -229.22, y: 30}
-  m_SizeDelta: {x: 211.5696, y: 40}
+  m_AnchoredPosition: {x: -167.5, y: 30}
+  m_SizeDelta: {x: 335.01, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &457076703960479664
 CanvasRenderer:
@@ -6067,7 +6071,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Explosive Combo
+  m_Text: 'Explosive Combo : $50'
 --- !u!1 &9043504302456785792
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,12 +18,29 @@ public class EncounterThreshold : MonoBehaviour
 
     [FormerlySerializedAs("waves")] public Waves[] m_waves;
 
+    [FormerlySerializedAs("InvisWalls")] public GameObject[] m_invisibleWalls;
+
     private void OnTriggerEnter(Collider _other)
     {
         if(_other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("EncounterStart!");
             GameObject.FindGameObjectWithTag("WaveManager").GetComponent<waveManager>().WaveStart(this);
+        }
+    }
+
+    public void turnOnWalls()
+    {
+        foreach(GameObject go in m_invisibleWalls)
+        {
+            go.SetActive(true);
+        }
+    }
+
+    public void turnOffWalls()
+    {
+        foreach(GameObject go in m_invisibleWalls)
+        {
+            go.SetActive(false);
         }
     }
 }

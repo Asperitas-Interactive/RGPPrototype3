@@ -24,7 +24,7 @@ public class FadeOut : MonoBehaviour
 
         if(m_viginette.color.a > 1.0f)
         {
-            gameManager.Instance.GameLost();
+            GameObject.FindGameObjectWithTag("Manager").GetComponent<gameManager>().GameLost();
         }
     }
 
