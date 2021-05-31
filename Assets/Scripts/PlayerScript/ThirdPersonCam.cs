@@ -75,5 +75,6 @@ public class ThirdPersonCam : MonoBehaviour
     void LateUpdate()
     {
         transform.parent.position = m_player.transform.position;
+        transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y + 3.0f, transform.parent.position.z);
     }
 }
