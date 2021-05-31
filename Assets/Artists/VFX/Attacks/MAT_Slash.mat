@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Emission:
+        m_Texture: {fileID: 2800000, guid: 4f5bcf0327067404dafff6ab68ac8526, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Main:
         m_Texture: {fileID: 2800000, guid: 742504c1d3d86604fbcec81c7b1a6721, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -31,14 +35,21 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TextureSample0:
+        m_Texture: {fileID: 2800000, guid: 0024f14d16162df489ac1ccd1b61656a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _EmissionIntensity: 12.48
     - _Float0: 1
     - _InvFade: 1
     - _Opacity: 20
     m_Colors:
+    - _Color0: {r: 0.4056604, g: 0.13801645, b: 0.109069064, a: 1}
+    - _NoiseSpeed: {r: 0, g: 0, b: 1.13, a: 0}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []
