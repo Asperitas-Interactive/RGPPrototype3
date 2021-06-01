@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Dissolve:
+        m_Texture: {fileID: 2800000, guid: 7203e1f37e09b27409c2fcb332836848, type: 3}
+        m_Scale: {x: 1, y: 2}
+        m_Offset: {x: 0, y: 0}
     - _Emission:
         m_Texture: {fileID: 2800000, guid: 4f5bcf0327067404dafff6ab68ac8526, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -36,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _TextureSample0:
-        m_Texture: {fileID: 2800000, guid: 0024f14d16162df489ac1ccd1b61656a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7203e1f37e09b27409c2fcb332836848, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
@@ -44,6 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _Desaturation: 0
     - _EmissionIntensity: 12.48
     - _Float0: 1
     - _InvFade: 1
