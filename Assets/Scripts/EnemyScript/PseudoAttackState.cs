@@ -20,7 +20,10 @@ public class PseudoAttackState: BaseState
         position *= -3f;
         
         Vector3 testPosition = new Vector3(position.x + _origin.x, 0f, position.y+ _origin.z);
-        m_animator.SetFloat(Speed, 1.0f);
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetFloat(Speed, 1.0f);
+        }
         m_agent.stoppingDistance = 0f;
         m_agent.SetDestination(testPosition);
     }
@@ -55,27 +58,36 @@ public class PseudoAttackState: BaseState
             FindRandomDestination(m_enemy.m_player.position);
         }
 
-        
+       
 
-        if (m_enemy.m_player.GetComponent<CombatControl>().Counter())
-        {
-            return typeof(StunState);
-        }
+       
+
 
         if(!m_agent.hasPath)
-            m_animator.SetFloat(Speed, 0.0f);
+        {
+            foreach (var _animator in m_animator)
+            {
+                _animator.SetFloat(Speed, 0.0f);
+            }
+        }
 
         return null;
     }
 
     public override void Init()
     {
-        m_animator.SetFloat(Speed, 0f);
 
-        
-        
-        m_animator.SetBool(Attack, false);
+
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetFloat(Speed, 0f);
+            _animator.SetBool(Attack, false);
+        }
         
         m_counterTimer = gameManager.Instance.m_counterTime;
+    }
+
+    public override void Destroy()
+    {
     }
 }
