@@ -23,6 +23,8 @@ public class PurchaseMove : MonoBehaviour
     [FormerlySerializedAs("PriceImage")] public Sprite m_PriceImage;
     [FormerlySerializedAs("SoldImage")] public Sprite m_SoldImage;
 
+    [FormerlySerializedAs("PurchaseSound")] public AudioSource m_purchase;
+
     private Button m_purchaseButton;
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,7 @@ public class PurchaseMove : MonoBehaviour
     {
         if (m_moneyController.m_money >= m_value)
         {
+            m_purchase.Play();
             m_purchaseButton.interactable = false;
             m_purchaseButton.GetComponent<Image>().sprite = m_SoldImage;
             m_equipScript.ActivatePowerup(m_activatortype);
