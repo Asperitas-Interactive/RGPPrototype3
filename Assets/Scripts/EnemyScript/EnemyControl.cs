@@ -77,7 +77,7 @@ public class EnemyControl : MonoBehaviour
     
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Speed = Animator.StringToHash("speed");
-    public Animator[] m_animator { get; private set; }
+    public Animator m_animator { get; private set; }
 
     private Transform m_target;
     private void Start()
@@ -100,22 +100,12 @@ public class EnemyControl : MonoBehaviour
         m_rankingSys = m_player.GetComponent<RankingSystem>();
 
         m_children = new GameObject[transform.childCount];
-        m_animator = new Animator[transform.childCount - 1];
-        for (int j = 0; j < transform.childCount; j++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            m_children[j] = transform.GetChild(j).gameObject;
+            m_children[i] = transform.GetChild(i).gameObject;
         }
-
-
-        int i = 0;
-        foreach (var child in m_children)
-        {
-            if(child.name != "Canvas")
-            {
-                m_animator[i++] = child.GetComponent<Animator>();
-            }
-
-        }
+        
+        m_animator = m_children[1].GetComponent<Animator>();
         m_boxCollider = GetComponent<BoxCollider>();       
 
         m_maxAttackCooldown = Random.Range(2f, 6f);
@@ -154,6 +144,13 @@ public class EnemyControl : MonoBehaviour
         {
             m_children[0].gameObject.SetActive(false);
             m_children[1].gameObject.SetActive(true);
+            Animator temp = m_animator;
+            m_animator = m_children[1].GetComponent<Animator>();
+            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
+            m_animator.SetBool(Attack, temp.GetBool(Attack));
+            m_animator.SetBool("Death", temp.GetBool("Death"));
+            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
+            m_animator.SetBool("Stun", temp.GetBool("Stun"));
         }
 
         else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
@@ -163,8 +160,15 @@ public class EnemyControl : MonoBehaviour
 
             m_children[1].gameObject.SetActive(false);
             m_children[2].gameObject.SetActive(true);
-           
+            Animator temp = m_animator;
 
+            m_animator = m_children[2].GetComponent<Animator>();
+
+            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
+            m_animator.SetBool(Attack, temp.GetBool(Attack));
+            m_animator.SetBool("Death", temp.GetBool("Death"));
+            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
+            m_animator.SetBool("Stun", temp.GetBool("Stun"));
         }
 
         else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
@@ -174,7 +178,14 @@ public class EnemyControl : MonoBehaviour
             m_children[1].gameObject.SetActive(false);
             m_children[2].gameObject.SetActive(false);
             m_children[3].gameObject.SetActive(true);
+            Animator temp = m_animator;
 
+            m_animator = m_children[3].GetComponent<Animator>();
+            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
+            m_animator.SetBool(Attack, temp.GetBool(Attack));
+            m_animator.SetBool("Death", temp.GetBool("Death"));
+            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
+            m_animator.SetBool("Stun", temp.GetBool("Stun"));
         }
         else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
@@ -184,6 +195,14 @@ public class EnemyControl : MonoBehaviour
             m_children[2].gameObject.SetActive(false);
             m_children[3].gameObject.SetActive(false);
             m_children[4].gameObject.SetActive(true);
+            Animator temp = m_animator;
+
+            m_animator = m_children[4].GetComponent<Animator>();
+            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
+            m_animator.SetBool(Attack, temp.GetBool(Attack));
+            m_animator.SetBool("Death", temp.GetBool("Death"));
+            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
+            m_animator.SetBool("Stun", temp.GetBool("Stun"));
         }
         else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
@@ -194,7 +213,14 @@ public class EnemyControl : MonoBehaviour
             m_children[3].gameObject.SetActive(false);
             m_children[4].gameObject.SetActive(false);
             m_children[5].gameObject.SetActive(true);
+            Animator temp = m_animator;
 
+            m_animator = m_children[5].GetComponent<Animator>();
+            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
+            m_animator.SetBool(Attack, temp.GetBool(Attack));
+            m_animator.SetBool("Death", temp.GetBool("Death"));
+            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
+            m_animator.SetBool("Stun", temp.GetBool("Stun"));
         }
         else if (m_health < 0f)
         {
@@ -253,10 +279,7 @@ public class EnemyControl : MonoBehaviour
             m_player.gameObject.GetComponent<PlayerMovement>().Heal(m_damage);
             m_attackTimer = 0f;
             m_attackCooldown = m_maxAttackCooldown;
-            foreach (var _animator in m_animator)
-            {
-                _animator.SetBool(Attack, false);
-            }
+            m_animator.SetBool(Attack, false);
     
             m_rankingSys.DropCombo();
             m_damagesound.Play();
@@ -270,10 +293,7 @@ public class EnemyControl : MonoBehaviour
         {
             m_player.gameObject.GetComponent<CombatControl>().m_canDamage = false;
 
-            foreach (var _animator in m_animator)
-            {
-                _animator.SetBool("Damage", true);
-            }
+            m_animator.SetBool("Damage", true);
 
             GetComponent<StateMachine>().Attacked();
         

@@ -17,10 +17,7 @@ public class ChaseState: BaseState
 
     public override Type Tick()
     {
-        foreach (var _animator in m_animator)
-        {
-            _animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
-        }
+        m_animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
 
         m_enemy.m_agent.SetDestination(m_enemy.m_player.position);
         if (m_enemy.m_agent.remainingDistance < 3.5f)
@@ -35,10 +32,7 @@ public class ChaseState: BaseState
     {
         m_agent.stoppingDistance = 3f;
         m_enemy.m_boxCollider.enabled = false;
-        foreach (var _animator in m_animator)
-        {
-            _animator.SetBool(Attack, false);
-        }
+        m_animator.SetBool(Attack, false);
 
     }
 
