@@ -15,4 +15,9 @@ public class Events : MonoBehaviour
     {
         transform.parent.GetComponent<BoxCollider>().enabled = false;
     }
+    
+    public void EnableCollider()
+    {
+        transform.parent.GetComponent<BoxCollider>().enabled = true;
+    }
 }

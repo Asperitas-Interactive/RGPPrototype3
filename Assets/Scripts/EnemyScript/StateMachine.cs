@@ -30,6 +30,7 @@ public class StateMachine : MonoBehaviour
     
     void Update()
     {
+        
         if (m_currentState == null)
         {
             m_currentState = m_availableStates.Values.First();

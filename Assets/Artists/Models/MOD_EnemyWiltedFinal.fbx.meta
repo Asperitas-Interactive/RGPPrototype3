@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert10
-    second: {fileID: 2100000, guid: b6dd9d315cc8eae4d93467b749f28ab2, type: 2}
+    second: {fileID: 2100000, guid: 2691bc3ce1809a248a7ce92d75d60d4f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert11
-    second: {fileID: 2100000, guid: 626e55ae1dbe4c241ace5df3724ce385, type: 2}
+    second: {fileID: 2100000, guid: 6d15aa745f57bf24e8166d168e89972d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert12
-    second: {fileID: 2100000, guid: 34ccdd91cba829f43826e2375707f5d9, type: 2}
+    second: {fileID: 2100000, guid: 84d4290cd28900c4599076ff9613be82, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: lambert13
-    second: {fileID: 2100000, guid: 916d2972db8583b438fcba4969bc6497, type: 2}
+    second: {fileID: 2100000, guid: d41137dd922e0b749ae6f9bdeb35d73f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,9 +35,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tFound
-      duplicate transform 'Base HumanRDigit11' for human bone 'Left Index Proximal'
-      and 'LeftHand'\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 

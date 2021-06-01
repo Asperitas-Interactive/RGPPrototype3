@@ -64,6 +64,8 @@ public class EnemyControl : MonoBehaviour
     float m_attackCooldown = 3.0f;
     float m_maxHealth;
 
+    [SerializeField] private GameObject m_critical;
+    
     bool m_canHit = true;
 
     public NavMeshAgent m_agent { get; private set; }
@@ -80,6 +82,8 @@ public class EnemyControl : MonoBehaviour
     public Animator[] m_animator { get; private set; }
 
     private Transform m_target;
+    public bool m_death { get; private set; }
+
     private void Start()
     {
         m_rigidbody = GetComponent<Rigidbody>();
@@ -114,7 +118,6 @@ public class EnemyControl : MonoBehaviour
             {
                 m_animator[i++] = child.GetComponent<Animator>();
             }
-
         }
         m_boxCollider = GetComponent<BoxCollider>();       
 
@@ -148,11 +151,15 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
+        if(m_death)
+            return;
         #region EnemyModelFromHealth
 
+        
         if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
         {
-            m_children[1].transform.GetChild(5).gameObject.SetActive(true);
+            
+            m_children[1].transform.GetChild(4).gameObject.SetActive(true);
             
             m_children[0].SetActive(false);
 
@@ -161,8 +168,7 @@ public class EnemyControl : MonoBehaviour
         else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
         {
-            m_children[0].SetActive(false);
-
+ 
             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
             m_children[2].transform.GetChild(4).gameObject.SetActive(true);
                    
@@ -171,8 +177,7 @@ public class EnemyControl : MonoBehaviour
         else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
         {
-            m_children[0].SetActive(false);
-            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
             m_children[2].transform.GetChild(4).gameObject.SetActive(false);
             m_children[3].transform.GetChild(4).gameObject.SetActive(true);
 
@@ -180,8 +185,7 @@ public class EnemyControl : MonoBehaviour
         else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
         {
-            m_children[0].SetActive(false);
-            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
             m_children[2].transform.GetChild(4).gameObject.SetActive(false);
             m_children[3].transform.GetChild(4).gameObject.SetActive(false);
             m_children[4].transform.GetChild(4).gameObject.SetActive(true);
@@ -190,8 +194,7 @@ public class EnemyControl : MonoBehaviour
         else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
         {
-            m_children[0].SetActive(false);
-            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
             m_children[2].transform.GetChild(4).gameObject.SetActive(false);
             m_children[3].transform.GetChild(4).gameObject.SetActive(false);
             m_children[4].transform.GetChild(4).gameObject.SetActive(false);
@@ -200,7 +203,14 @@ public class EnemyControl : MonoBehaviour
         }
         else if (m_health < 0f)
         {
-            Destroy(this.gameObject);
+            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[4].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[5].transform.GetChild(4).gameObject.SetActive(true);
+
+            m_death = true;
+            m_children[5].GetComponent<DissolvingController>().Die();
         }
 
         #endregion
@@ -332,5 +342,8 @@ public class EnemyControl : MonoBehaviour
         m_target = _target;
     }
 
-    
+    public void Critical(bool _critical)
+    {
+        m_critical.SetActive(_critical);
+    }
 }
