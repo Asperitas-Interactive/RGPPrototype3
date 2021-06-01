@@ -142,8 +142,7 @@ public class EnemyControl : MonoBehaviour
 
         if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
         {
-            m_children[0].gameObject.SetActive(false);
-            m_children[1].gameObject.SetActive(true);
+            m_children[1].transform.GetChild(5).gameObject.SetActive(true);
             Animator temp = m_animator;
             m_animator = m_children[1].GetComponent<Animator>();
             m_animator.SetFloat(Speed, temp.GetFloat(Speed));
@@ -151,33 +150,30 @@ public class EnemyControl : MonoBehaviour
             m_animator.SetBool("Death", temp.GetBool("Death"));
             m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
             m_animator.SetBool("Stun", temp.GetBool("Stun"));
+            m_children[0].SetActive(false);
+
         }
 
         else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
         {
-            m_children[0].gameObject.SetActive(false);
+            m_children[0].SetActive(false);
 
-            m_children[1].gameObject.SetActive(false);
-            m_children[2].gameObject.SetActive(true);
+            m_children[2].transform.GetChild(4).gameObject.SetActive(true);
             Animator temp = m_animator;
 
             m_animator = m_children[2].GetComponent<Animator>();
 
-            m_animator.SetFloat(Speed, temp.GetFloat(Speed));
-            m_animator.SetBool(Attack, temp.GetBool(Attack));
-            m_animator.SetBool("Death", temp.GetBool("Death"));
-            m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
-            m_animator.SetBool("Stun", temp.GetBool("Stun"));
+            m_animator.runtimeAnimatorController = temp.runtimeAnimatorController;           
+            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
         }
 
         else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
         {
-            m_children[0].gameObject.SetActive(false);
-            m_children[1].gameObject.SetActive(false);
-            m_children[2].gameObject.SetActive(false);
-            m_children[3].gameObject.SetActive(true);
+            m_children[0].SetActive(false);
+            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[3].transform.GetChild(4).gameObject.SetActive(true);
             Animator temp = m_animator;
 
             m_animator = m_children[3].GetComponent<Animator>();
@@ -186,15 +182,15 @@ public class EnemyControl : MonoBehaviour
             m_animator.SetBool("Death", temp.GetBool("Death"));
             m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
             m_animator.SetBool("Stun", temp.GetBool("Stun"));
+            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
         }
         else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
         {
-            m_children[0].gameObject.SetActive(false);
-            m_children[1].gameObject.SetActive(false);
-            m_children[2].gameObject.SetActive(false);
-            m_children[3].gameObject.SetActive(false);
-            m_children[4].gameObject.SetActive(true);
+            m_children[0].SetActive(false);
+            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[4].transform.GetChild(4).gameObject.SetActive(true);
             Animator temp = m_animator;
 
             m_animator = m_children[4].GetComponent<Animator>();
@@ -203,16 +199,16 @@ public class EnemyControl : MonoBehaviour
             m_animator.SetBool("Death", temp.GetBool("Death"));
             m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
             m_animator.SetBool("Stun", temp.GetBool("Stun"));
+            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
         }
         else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
                  m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
         {
-            m_children[0].gameObject.SetActive(false);
-            m_children[1].gameObject.SetActive(false);
-            m_children[2].gameObject.SetActive(false);
-            m_children[3].gameObject.SetActive(false);
-            m_children[4].gameObject.SetActive(false);
-            m_children[5].gameObject.SetActive(true);
+            m_children[0].SetActive(false);
+            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
+            m_children[5].transform.GetChild(4).gameObject.SetActive(true);
             Animator temp = m_animator;
 
             m_animator = m_children[5].GetComponent<Animator>();
@@ -221,6 +217,7 @@ public class EnemyControl : MonoBehaviour
             m_animator.SetBool("Death", temp.GetBool("Death"));
             m_animator.SetBool("Attacked", temp.GetBool("Attacked"));
             m_animator.SetBool("Stun", temp.GetBool("Stun"));
+            m_children[4].transform.GetChild(4).gameObject.SetActive(false);
         }
         else if (m_health < 0f)
         {
