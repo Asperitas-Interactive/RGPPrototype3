@@ -55,12 +55,10 @@ public class PseudoAttackState: BaseState
             FindRandomDestination(m_enemy.m_player.position);
         }
 
-        
+       
 
-        if (m_enemy.m_player.GetComponent<CombatControl>().Counter(this.m_transform))
-        {
-            return typeof(StunState);
-        }
+       
+
 
         if(!m_agent.hasPath)
             m_animator.SetFloat(Speed, 0.0f);
@@ -72,10 +70,14 @@ public class PseudoAttackState: BaseState
     {
         m_animator.SetFloat(Speed, 0f);
 
-        
-        
-        m_animator.SetBool(Attack, false);
-        
+        m_animator.SetBool("Attacked", false);
+
+
+
         m_counterTimer = gameManager.Instance.m_counterTime;
+    }
+
+    public override void Destroy()
+    {
     }
 }
