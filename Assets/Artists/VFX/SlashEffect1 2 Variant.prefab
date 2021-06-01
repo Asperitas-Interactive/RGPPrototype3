@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 535773586290492771, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
       propertyPath: m_Name
-      value: SlashEffect1 2
+      value: SlashEffect1 2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 535773586290492774, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
       propertyPath: m_RootOrder
@@ -66,6 +66,18 @@ PrefabInstance:
     - target: {fileID: 535773586290492774, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 36.259995
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042095480434090311, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3938228951783491831, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420678219978209967, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 949ec6c4560f8e94fbf1b9a347a834a3, type: 3}
