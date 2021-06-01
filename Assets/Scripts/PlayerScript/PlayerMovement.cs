@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [FormerlySerializedAs("groundDistance")] public float m_groundDistance = 0.4f;
     [FormerlySerializedAs("groundMask")] public LayerMask m_groundMask;
 
+   
+
     public Transform m_playerCam;
 
     [FormerlySerializedAs("animator")] public Animator m_animator;

@@ -13,6 +13,9 @@ public class CombatControl : MonoBehaviour
         Stun
     }
 
+    private bool m_isCountering = false;
+    private float m_CounterTimer = 0f;
+
     [FormerlySerializedAs("isAttacking")] public bool m_isAttacking = false;
     private bool m_isStabbing = false;
     [FormerlySerializedAs("animator")] public Animator m_animator;
@@ -44,7 +47,7 @@ public class CombatControl : MonoBehaviour
 
     bool m_moveForward;
     float m_moveTimer;
-
+    public bool m_canDamage;
     private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
     private static readonly int Combo = Animator.StringToHash("combo");
     private static readonly int RisingSlash = Animator.StringToHash("RisingSlash");
@@ -53,6 +56,8 @@ public class CombatControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_canDamage = false;
+
         //animator = GetComponent<Animator>();
         m_movementScript = GetComponent<PlayerMovement>();
         m_characterController = GetComponent<CharacterController>();
@@ -63,7 +68,10 @@ public class CombatControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(m_isCountering && m_CounterTimer<0f)
+        {
+            m_isCountering = false;
+        }
         if (!m_shopCheck.m_inMenu)
         {
             m_moveTimer -= Time.deltaTime;
@@ -114,28 +122,12 @@ public class CombatControl : MonoBehaviour
             //This will do the first hit of a combo
             if (Input.GetButtonDown("Melee") && m_canAttack && m_comboCounter == 0 && !m_isAttacking)
             {
-                m_moveForward = true;
-                m_moveTimer = 0.3f;
-                m_animator.SetBool(IsAttacking, true);
-                m_comboCounter = 1;
-                m_isAttacking = true;
-                m_animator.SetInteger(Combo, 1);
-                m_damage = 30 + m_damageIncrease;
-                m_slash.Play();
+                Hit1();
             }
             //This will do the second hit of the combo
             else if (Input.GetButtonDown("Melee") && m_canAttack && m_comboCounter == 1)
             {
-                m_moveForward = true;
-                m_moveTimer = 0.3f;
-                m_animator.SetBool(IsAttacking, true);
-
-                m_comboCounter = 0;
-                m_isAttacking = true;
-
-                m_animator.SetInteger(Combo, 2);
-                m_damage = 40 + m_damageIncrease;
-                m_slash.Play();
+                Hit2();
             }
             
 
@@ -172,6 +164,32 @@ public class CombatControl : MonoBehaviour
 
             //Debug.Log(isAttacking);
         }
+    }
+
+    private void Hit2()
+    {
+        m_moveForward = true;
+        m_moveTimer = 0.3f;
+        m_animator.SetBool(IsAttacking, true);
+
+        m_comboCounter = 0;
+        m_isAttacking = true;
+
+        m_animator.SetInteger(Combo, 2);
+        m_damage = 40 + m_damageIncrease;
+        m_slash.Play();
+    }
+
+    private void Hit1()
+    {
+        m_moveForward = true;
+        m_moveTimer = 0.3f;
+        m_animator.SetBool(IsAttacking, true);
+        m_comboCounter = 1;
+        m_isAttacking = true;
+        m_animator.SetInteger(Combo, 1);
+        m_damage = 30 + m_damageIncrease;
+        m_slash.Play();
     }
 
     public void DamageBoost(int _increase)
@@ -224,8 +242,26 @@ public class CombatControl : MonoBehaviour
         }
     }
 
-    public bool Counter()
+    public bool Counter(Transform _enemy)
     {
-        return false;
+        if (!m_isCountering && Input.GetButtonDown("Counter"))
+        {
+            transform.LookAt(_enemy);
+            Hit1();
+            return true;
+
+        }
+        else return false;
+    }
+
+    public bool Damage()
+    {
+        m_canDamage = true;
+        return true;
+    }
+
+    public void UnDamage()
+    {
+        m_canDamage = false;
     }
 }
