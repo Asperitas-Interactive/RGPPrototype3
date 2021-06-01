@@ -70,7 +70,7 @@ public class PseudoAttackState: BaseState
     {
         m_animator.SetFloat(Speed, 0f);
 
-        m_animator.SetBool("Attacked", false);
+       // m_animator.SetBool("Attacked", false);
 
 
 

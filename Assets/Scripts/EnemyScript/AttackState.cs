@@ -27,13 +27,12 @@ public class AttackState:BaseState
 
             
             m_animator.SetBool(Attacked, true);
-            m_animator.SetBool(Attack, false);
 
             m_enemy.m_boxCollider.enabled = true;
             
         }
 
-        if(m_AttackCooldown < -1.5f)
+        if(m_AttackCooldown < -1.3f)
         {
             return typeof(PseudoAttackState);
         }
@@ -59,6 +58,9 @@ public class AttackState:BaseState
     }
     public override void Destroy()
     {
+            m_animator.SetBool("Attacked", false);
+            m_animator.SetBool(Attack, false);
+
     }
 
 }
