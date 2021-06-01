@@ -183,6 +183,8 @@ public class waveManager : MonoBehaviour
         {
             m_moneyController.ReceiveMoney(m_encounterController.m_star5Money);
         }
+
+        m_rankSys.ResetCombo();
     }
 
 
