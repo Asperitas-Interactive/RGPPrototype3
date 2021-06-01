@@ -25,7 +25,8 @@ public class AttackState:BaseState
         
         if(m_AttackCooldown<0.4f)
         {
-            m_enemy.m_boxCollider.enabled = true;
+            //m_enemy.m_boxCollider.enabled = true;
+            m_enemy.Critical(false);
 
         }
 
@@ -62,6 +63,7 @@ public class AttackState:BaseState
 
     public override void Init()
     {
+        m_enemy.Critical(true);
         m_attacked = false;
 
         m_transform.LookAt(m_player.position);

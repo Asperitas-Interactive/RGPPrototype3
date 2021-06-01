@@ -31,13 +31,16 @@ public class DissolvingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(Dissolve());
+        }
     }
 
     public IEnumerator Dissolve()
     {
         if (animator != null)
-            animator.SetTrigger("Die");
+            animator.SetTrigger("death");
         yield return new WaitForSeconds(dieDelay);
      
         if(VFXGraph != null)
@@ -59,7 +62,12 @@ public class DissolvingController : MonoBehaviour
                 yield return new WaitForSeconds (refreshRate);
             }
 
-            Destroy(gameObject, 1);
+            Destroy(transform.parent.gameObject, animator.GetCurrentAnimatorClipInfo(0).Length);
         }
+    }
+
+    public void Die()
+    {
+        StartCoroutine(Dissolve());
     }
 }
