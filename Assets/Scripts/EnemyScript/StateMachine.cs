@@ -10,6 +10,7 @@ public class StateMachine : MonoBehaviour
 
     private void SwitchToNextState(Type _nextState)
     {
+        m_currentState?.Destroy();
         m_currentState = m_availableStates[_nextState];
         a_OnStateChanged?.Invoke(m_currentState);
         
@@ -42,6 +43,15 @@ public class StateMachine : MonoBehaviour
         {
             SwitchToNextState(nextState);
             
+        }
+    }
+
+    public void Attacked()
+    {
+        if(m_currentState == m_availableStates[typeof(AttackState)])
+        {
+            AttackState temp = (AttackState)m_currentState;
+            temp.m_attacked = true;
         }
     }
 }

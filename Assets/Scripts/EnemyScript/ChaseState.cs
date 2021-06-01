@@ -35,4 +35,9 @@ public class ChaseState: BaseState
         m_animator.SetBool(Attack, false);
 
     }
+
+    public override void Destroy()
+    {
+
+    }
 }

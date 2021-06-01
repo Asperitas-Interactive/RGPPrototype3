@@ -25,7 +25,13 @@ public class StunState:BaseState
     public override void Init()
     {
         m_stunTimer = gameManager.Instance.m_StunTimer;
-        
+        m_animator.SetBool("Stun", true);
+
+    }
+
+    public override void Destroy()
+    {
+        m_animator.SetBool("Stun", false);
 
     }
 }

@@ -12,6 +12,7 @@ public abstract class BaseState
     protected Transform m_player;
     protected NavMeshAgent m_agent;
 
+    public abstract void Destroy();
     public BaseState(GameObject _gameObject)
     {
         this.m_animator = _gameObject.GetComponent<EnemyControl>().m_animator;
