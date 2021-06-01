@@ -17,6 +17,11 @@ public class MoneyController : MonoBehaviour
     public void ReceiveMoney(float _moneyCount)
     {
         m_money += _moneyCount;
+
+        if(m_money > 999)
+        {
+            m_money = 999;
+        }
     }
 
     public void TakeMoney(float _moneyCount)
