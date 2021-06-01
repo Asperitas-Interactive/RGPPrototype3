@@ -45,4 +45,9 @@ public class RankingSystem : MonoBehaviour
     {
         return m_combo;
     }
+
+    public void ResetCombo()
+    {
+        m_combo = 0;
+    }
 }
