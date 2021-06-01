@@ -25,8 +25,10 @@ public class AttackState:BaseState
         if (m_AttackCooldown < 0f)
         {
 
-            
-            m_animator.SetBool(Attacked, true);
+            foreach (var _animator in m_animator)
+            {
+                _animator.SetBool(Attacked, true);
+            }
 
             m_enemy.m_boxCollider.enabled = true;
             
@@ -43,23 +45,33 @@ public class AttackState:BaseState
         }
 
         if (!m_agent.hasPath)
-            m_animator.SetFloat("Speed", 0.0f);
-
+        {
+            foreach (var _animator in m_animator)
+            {
+                _animator.SetFloat("Speed", 0.0f);
+            }
+        }
         return null;
     }
 
     public override void Init()
     {
         m_attacked = false;
-        m_animator.SetBool(Attack, true);
 
         m_transform.LookAt(m_player.position);
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetBool(Attack, true);
+        }
         m_AttackCooldown = gameManager.Instance.m_attackCooldown;
     }
     public override void Destroy()
     {
-            m_animator.SetBool("Attacked", false);
-            m_animator.SetBool(Attack, false);
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetBool("Attacked", false);
+            _animator.SetBool(Attack, false);
+        }
 
     }
 

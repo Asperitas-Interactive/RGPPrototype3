@@ -24,8 +24,10 @@ public class WanderState: BaseState
 
     public override Type Tick()
     {
-        
-        m_animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
+        }
         m_wanderTime -= Time.deltaTime;
         var chaseTarget = m_enemy.m_player;
 
