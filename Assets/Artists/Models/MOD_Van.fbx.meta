@@ -3,7 +3,42 @@ guid: 7dd2ea1618c522340bd2d05d239965a6
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chassis
+    second: {fileID: 2100000, guid: b3c1d895a7995a94e84962dd1d40f499, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Headlights
+    second: {fileID: 2100000, guid: de75c7b32b1ddad498c6b193f67dca2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hubcap
+    second: {fileID: 2100000, guid: cf783bf077044814aa82650fefd6d415, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mirrors
+    second: {fileID: 2100000, guid: bb160c826644c244bbc372b845f26cb5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RearLight
+    second: {fileID: 2100000, guid: e540d9816f81e0d4f83b5b8c41c36a2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windows
+    second: {fileID: 2100000, guid: ae10cc23886c2d94a8b01129c903c4ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 5557583df3807e84b86215f1c49d1b11, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
