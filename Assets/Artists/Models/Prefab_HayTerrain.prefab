@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 402bbdd94c02f7e4891f07f6d55b1c58, type: 2}
+  - {fileID: 2100000, guid: abf49fb4df1699c468f41189e78d7975, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -140,7 +140,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 402bbdd94c02f7e4891f07f6d55b1c58, type: 2}
+  - {fileID: 2100000, guid: abf49fb4df1699c468f41189e78d7975, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -247,7 +247,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 8c9709edf1c1d704ca8eb3753ef7efa2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 402bbdd94c02f7e4891f07f6d55b1c58, type: 2}
+      objectReference: {fileID: 2100000, guid: abf49fb4df1699c468f41189e78d7975, type: 2}
     - target: {fileID: 919132149155446097, guid: 8c9709edf1c1d704ca8eb3753ef7efa2, type: 3}
       propertyPath: m_Name
       value: Prefab_HayTerrain
