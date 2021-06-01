@@ -152,7 +152,7 @@ public class EnemyControl : MonoBehaviour
     private void Update()
     {
         if(m_death)
-            return;
+            Destroy(this);
         #region EnemyModelFromHealth
 
         
