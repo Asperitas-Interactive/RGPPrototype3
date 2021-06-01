@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.764954, g: 60.91211, b: 613.65234, a: 1}
+  m_IndirectSpecularColor: {r: 27.755737, g: 60.89746, b: 613.56836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1084,7 +1084,7 @@ PrefabInstance:
       objectReference: {fileID: 1412391154}
     - target: {fileID: 1741561211, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: m_money
-      value: 0
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1666380704132617457, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: slider
@@ -3967,7 +3967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &215575532
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4421,7 +4421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &223668814
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7833,7 +7833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &404957613
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10782,7 +10782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794231244955795838, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2034508963620291249, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10894,7 +10894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3398197777726870260, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3671762404497009752, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
@@ -10916,6 +10916,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6002894573704698882, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434892252970410862, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6704255785156596906, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -10923,6 +10931,10 @@ PrefabInstance:
     - target: {fileID: 7554391093615317825, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591330333961228980, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7674570232331056333, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -10938,15 +10950,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8145555683198145593, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8439823657452852400, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8651971921006173758, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_PresetInfoIsWorld
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
