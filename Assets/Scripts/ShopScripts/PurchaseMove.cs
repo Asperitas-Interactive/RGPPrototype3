@@ -20,12 +20,16 @@ public class PurchaseMove : MonoBehaviour
 
     [FormerlySerializedAs("moneyController")] public MoneyController m_moneyController;
 
+    [FormerlySerializedAs("PriceImage")] public Sprite m_PriceImage;
+    [FormerlySerializedAs("SoldImage")] public Sprite m_SoldImage;
+
     private Button m_purchaseButton;
     // Start is called before the first frame update
     void Start()
     {
         m_purchaseButton = gameObject.GetComponent<Button>();
         m_moneyController = GameObject.FindGameObjectWithTag("Player").GetComponent<MoneyController>();
+        m_purchaseButton.GetComponent<Image>().sprite = m_PriceImage;
     }
 
     // Update is called once per frame
@@ -39,7 +43,7 @@ public class PurchaseMove : MonoBehaviour
         if (m_moneyController.m_money >= m_value)
         {
             m_purchaseButton.interactable = false;
-            m_purchaseButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
+            m_purchaseButton.GetComponent<Image>().sprite = m_SoldImage;
             m_equipScript.ActivatePowerup(m_activatortype);
             m_moneyController.TakeMoney(m_value);
         } else

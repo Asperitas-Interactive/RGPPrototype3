@@ -1104,6 +1104,8 @@ MonoBehaviour:
   m_equipScript: {fileID: 432900816}
   m_value: 50
   m_moneyController: {fileID: 0}
+  m_PriceImage: {fileID: 21300000, guid: bf5a648b14e597a408133c1a97aecaa2, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
 --- !u!1 &1397833428465145845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,6 +1586,8 @@ MonoBehaviour:
   m_moneyController: {fileID: 0}
   m_successorButton: {fileID: 0}
   m_successorText: {fileID: 0}
+  m_PriceImage: {fileID: 21300000, guid: 0d345e35845c2e24dab0bed2e20ffe00, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
 --- !u!1 &2034508963620291254
 GameObject:
   m_ObjectHideFlags: 0
@@ -2801,6 +2805,8 @@ MonoBehaviour:
   m_equipScript: {fileID: 432900816}
   m_value: 50
   m_moneyController: {fileID: 0}
+  m_PriceImage: {fileID: 21300000, guid: bf5a648b14e597a408133c1a97aecaa2, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
 --- !u!1 &3148047551019462531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3270,6 +3276,8 @@ MonoBehaviour:
   m_moneyController: {fileID: 0}
   m_successorButton: {fileID: 1794231244955795838}
   m_successorText: {fileID: 8439823657452852400}
+  m_PriceImage: {fileID: 21300000, guid: e13be61226ba41d43bf5b1e65480159b, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
 --- !u!1 &3874913305659052189
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,6 +3890,8 @@ MonoBehaviour:
   m_moneyController: {fileID: 0}
   m_successorButton: {fileID: 3709525781427706672}
   m_successorText: {fileID: 2182231072437312130}
+  m_PriceImage: {fileID: 21300000, guid: bf5a648b14e597a408133c1a97aecaa2, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
 --- !u!1 &5262145389614371628
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,6 +4041,8 @@ MonoBehaviour:
   m_equipScript: {fileID: 432900816}
   m_value: 50
   m_moneyController: {fileID: 0}
+  m_PriceImage: {fileID: 21300000, guid: bf5a648b14e597a408133c1a97aecaa2, type: 3}
+  m_SoldImage: {fileID: 21300000, guid: 0d345e35845c2e24dab0bed2e20ffe00, type: 3}
 --- !u!1 &5338305347005641797
 GameObject:
   m_ObjectHideFlags: 0
