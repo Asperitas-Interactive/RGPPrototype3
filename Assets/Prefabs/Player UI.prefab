@@ -161,6 +161,15 @@ MonoBehaviour:
   m_weaponUp: {fileID: 6434892252970410862}
   m_comboUp: {fileID: 6002894573704698882}
   m_equipUp: {fileID: 7591330333961228980}
+  m_WeaponButton: {fileID: 2424799603177782189}
+  m_ComboButton: {fileID: 6229591532665593842}
+  m_EquipButton: {fileID: 3698820467295756662}
+  m_WeaponImage: {fileID: 21300000, guid: de5100f79c1832d4b9546e8cf7efa93f, type: 3}
+  m_WeaponSelectedImage: {fileID: 21300000, guid: 4e03deee262ce2f42aa5389f37e283f8, type: 3}
+  m_ComboImage: {fileID: 21300000, guid: be008b8dbf0e60f46b473fb8c264bb68, type: 3}
+  m_ComboSelectedImage: {fileID: 21300000, guid: 5a1ad35a76b884b41946e09dcc957a9c, type: 3}
+  m_EquipImage: {fileID: 21300000, guid: 6325548be02fa2743856634505b687e9, type: 3}
+  m_EquipSelectedImage: {fileID: 21300000, guid: aaf229867a12c13468d09f1289c2a15c, type: 3}
 --- !u!1 &1628285903
 GameObject:
   m_ObjectHideFlags: 0
