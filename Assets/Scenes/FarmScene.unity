@@ -17732,6 +17732,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: WeakEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1668191970472579597, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2299900245589446471, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3769379394963293657, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820212426704037890, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5502873274488998592, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929980795621376871, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5980813831657123516, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100008881359550824, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8266671107008843842, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -17775,6 +17807,10 @@ PrefabInstance:
     - target: {fileID: 8266671107008843842, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8693490985737249826, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a5aa8dcb018de5458ca556d3e26bd06, type: 3}
