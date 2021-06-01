@@ -52,6 +52,8 @@ public class CombatControl : MonoBehaviour
     private static readonly int Combo = Animator.StringToHash("combo");
     private static readonly int RisingSlash = Animator.StringToHash("RisingSlash");
     private static readonly int Stab = Animator.StringToHash("Stab");
+    public ParticleSystem m_vfx1;
+    public ParticleSystem m_vfx2;
 
     // Start is called before the first frame update
     void Start()
@@ -264,4 +266,14 @@ public class CombatControl : MonoBehaviour
     {
         m_canDamage = false;
     }
+    public void VFX1()
+    {
+        m_vfx1.Play();
+    }
+
+    public void VFX2()
+    {
+        m_vfx2.Play();
+    }
+  
 }
