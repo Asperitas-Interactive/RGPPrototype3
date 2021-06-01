@@ -7,12 +7,7 @@ public class WanderState: BaseState
 {
     private EnemyControl m_enemy;
     private Vector3? m_destination;
-    private float m_stopDistance = 2f;
-    private float m_turnSpeed = 1f;
-    private readonly  LayerMask m_layerMask = LayerMask.NameToLayer("Ground");
-    private float m_rayDistance = 3.5f;
-    private Quaternion m_desiredRotation;
-    private Vector3 m_direction;
+   
 
     private float m_maxWanderTime = gameManager.Instance.m_maxWanderTime;
     private float m_wanderTime;
@@ -29,8 +24,10 @@ public class WanderState: BaseState
 
     public override Type Tick()
     {
-        
-        m_animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
+        foreach (var _animator in m_animator)
+        {
+            _animator.SetFloat(Speed, m_enemy.m_agent.velocity.magnitude);
+        }
         m_wanderTime -= Time.deltaTime;
         var chaseTarget = m_enemy.m_player;
 
@@ -55,17 +52,6 @@ public class WanderState: BaseState
         m_wanderTime = m_maxWanderTime;
     }
 
-    private bool IsPathBlocked()
-    {
-        Ray ray = new Ray(m_transform.position, m_direction);
-        return Physics.SphereCast(ray, 0.5f, m_rayDistance, m_layerMask);
-    }
-
-    private bool IsForwardBlocked()
-    {
-        Ray ray = new Ray(m_transform.position, m_transform.forward);
-        return Physics.SphereCast(ray, 0.5f, m_rayDistance, m_layerMask);
-    }
 
     private void FindRandomDestination()
     {
@@ -105,37 +91,7 @@ public class WanderState: BaseState
     private Quaternion startingAngle = Quaternion.AngleAxis(-60, Vector3.up);
     Quaternion stepAngle = Quaternion.AngleAxis(5, Vector3.up);
 
-    private Transform CheckForAggro()
+    public override void Destroy()
     {
-        float aggroRadius = 5f;
-        
-        RaycastHit hit;
-        var angle = m_transform.rotation * startingAngle;
-        var direction = angle * Vector3.forward;
-        var pos = m_transform.position;
-        for(var i = 0; i < 24; i++)
-        {
-            if(Physics.Raycast(pos, direction, out hit, aggroRadius))
-            {
-                
-                var playa = hit.collider.GetComponent<PlayerMovement>();
-                if(playa != null)
-                {
-                    Debug.DrawRay(pos, direction * hit.distance, Color.red);
-                    return playa.transform;
-                }
-                else
-                {
-                    Debug.DrawRay(pos, direction * hit.distance, Color.yellow);
-                }
-            }
-            else
-            {
-                Debug.DrawRay(pos, direction * aggroRadius, Color.white);
-            }
-            direction = stepAngle * direction;
-        }
-
-        return null;
     }
 }
