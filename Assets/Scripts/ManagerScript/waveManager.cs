@@ -185,6 +185,8 @@ public class waveManager : MonoBehaviour
         }
 
         m_rankSys.ResetCombo();
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Heal(100);
     }
 
 
