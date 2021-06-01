@@ -26,6 +26,10 @@ public class waveManager : MonoBehaviour
     [FormerlySerializedAs("meter")] public ScoreUI m_meter;
     private MoneyController m_moneyController;
 
+    [FormerlySerializedAs("OverworldOST")] public AudioSource m_Overworld;
+    [FormerlySerializedAs("CombatOST")] public AudioSource m_Combat;
+    [FormerlySerializedAs("ClearOST")] public AudioSource m_CombatClear;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -99,6 +103,8 @@ public class waveManager : MonoBehaviour
     {
         if (m_isActive == false)
         {
+            m_Overworld.Stop();
+            m_Combat.Play();
             int count = 0;
 
             m_encounterController = _encounter;
@@ -156,6 +162,9 @@ public class waveManager : MonoBehaviour
 
     private void WaveEnd()
     {
+        m_CombatClear.Play();
+        m_Overworld.Play();
+        m_Combat.Stop();
         m_encounterController.turnOffWalls();
         m_meter.HideImages();
         m_wave = 0;

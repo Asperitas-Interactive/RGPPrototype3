@@ -18,6 +18,12 @@ public class WeaponUpgrade : MonoBehaviour
 
     [FormerlySerializedAs("successorButton")] public GameObject m_successorButton;
     [FormerlySerializedAs("successorText")] public GameObject m_successorText;
+
+    [FormerlySerializedAs("PriceImage")] public Sprite m_PriceImage;
+    [FormerlySerializedAs("SoldImage")] public Sprite m_SoldImage;
+
+    [FormerlySerializedAs("PurchaseSound")] public AudioSource m_purchase;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,14 +38,17 @@ public class WeaponUpgrade : MonoBehaviour
         {
             m_successorText.gameObject.SetActive(false);
         }
+
+        GetComponent<Image>().sprite = m_PriceImage;
     }
 
     public void OnClick()
     {
         if (m_moneyController.m_money >= m_value)
         {
+            m_purchase.Play();
             m_selfButton.interactable = false;
-            m_selfButton.transform.GetChild(0).GetComponent<Text>().text = "Sold Out";
+            GetComponent<Image>().sprite = m_SoldImage;
             m_cc.DamageBoost(m_increase);
             m_moneyController.TakeMoney(m_value);
             if (m_successorButton != null)
