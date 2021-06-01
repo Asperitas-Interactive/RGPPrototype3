@@ -10162,6 +10162,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5668661345854236358, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
   m_PrefabInstance: {fileID: 1097757608}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &543715653 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1421242612164359081, guid: 12713cabc610df04f8221606fb6eb042, type: 3}
+  m_PrefabInstance: {fileID: 1848985991}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &549418834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33441,6 +33446,8 @@ MonoBehaviour:
   m_player: {fileID: 1441095022}
   m_camera: {fileID: 1067025637}
   m_waveManager: {fileID: 1240482177}
+  m_Overworld: {fileID: 1848985996}
+  m_ShopMenu: {fileID: 543715653}
 --- !u!64 &1836658899
 MeshCollider:
   m_ObjectHideFlags: 0

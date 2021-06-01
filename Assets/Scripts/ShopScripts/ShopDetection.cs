@@ -15,6 +15,9 @@ public class ShopDetection : MonoBehaviour
     [FormerlySerializedAs("camera")] public GameObject m_camera;
     [FormerlySerializedAs("waveManager")] public waveManager m_waveManager;
 
+    [FormerlySerializedAs("OverworldOST")] public AudioSource m_Overworld;
+    [FormerlySerializedAs("ShopOST")] public AudioSource m_ShopMenu;
+
     GameObject[] m_playerUIObjects;
     GameObject[] m_shopUIObjects;
 
@@ -44,6 +47,8 @@ public class ShopDetection : MonoBehaviour
 
         if (Input.GetButtonDown("AOE") && m_inZone == true)
         {
+            m_ShopMenu.Play();
+            m_Overworld.Stop();
             if (m_inMenu == false)
             {
                 Cursor.lockState = CursorLockMode.None;
@@ -85,6 +90,8 @@ public class ShopDetection : MonoBehaviour
 
     public void CloseMenus()
     {
+        m_ShopMenu.Stop();
+        m_Overworld.Play();
         Cursor.lockState = CursorLockMode.Locked;
         m_upgradeButton.GetComponent<StoreSubMenuControl>().CloseAll();
         m_upgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
