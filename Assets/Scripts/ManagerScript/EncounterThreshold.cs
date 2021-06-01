@@ -43,4 +43,9 @@ public class EncounterThreshold : MonoBehaviour
             go.SetActive(false);
         }
     }
+
+    public void Close()
+    {
+        GetComponent<BoxCollider>().enabled = false;
+    }
 }
