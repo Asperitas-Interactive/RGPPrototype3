@@ -1,50 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ThirdPersonCam : MonoBehaviour
 {
-    [SerializeField]
-    private float sensitivity = 100f;
-    [SerializeField]
-    private Transform player;
+    [FormerlySerializedAs("sensitivity")] [SerializeField]
+    private float m_sensitivity = 100f;
+    [FormerlySerializedAs("player")] [SerializeField]
+    private Transform m_player;
     GameObject m_temp;
 
     private CharacterController m_playerCont;
 
     bool m_turning;
 
-    float xRot = 0f;
-    float yRot = 90f;
+    float m_xRot = 0f;
+    float m_yRot = 90f;
 
-    ShopDetection ShopCheck;
+    ShopDetection m_shopCheck;
 
     // Start is called before the first frame update
     void Start()
     {
         m_temp = new GameObject();
 
-        m_temp.transform.position = player.transform.position;
-        m_temp.transform.rotation = player.transform.rotation;
+        m_temp.transform.position = m_player.transform.position;
+        m_temp.transform.rotation = m_player.transform.rotation;
 
         Cursor.lockState = CursorLockMode.Locked;
         transform.parent.transform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-        m_playerCont = player.GetComponent<CharacterController>();
-        ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
+        m_playerCont = m_player.GetComponent<CharacterController>();
+        m_shopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ShopCheck.inMenu) {
-            float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
-            float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
+        if (!m_shopCheck.m_inMenu) {
+            float mouseX = Input.GetAxis("Mouse X") * m_sensitivity * Time.deltaTime;
+            float mouseY = Input.GetAxis("Mouse Y") * m_sensitivity * Time.deltaTime;
 
-            xRot += mouseY;
+            m_xRot += mouseY;
 
-            xRot = Mathf.Clamp(xRot, 0.0f, 80.0f);
+            m_xRot = Mathf.Clamp(m_xRot, 0.0f, 80.0f);
 
-            yRot += mouseX;
+            m_yRot += mouseX;
             //transform.parent.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);
 
         //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
@@ -64,7 +65,7 @@ public class ThirdPersonCam : MonoBehaviour
             //transform.RotateAround(transform.parent.transform.position, Vector3.right, -mouseY);
             //player.Rotate(Vector3.up, mouseX);
             //transform.parent.Rotate(Vector3.up, mouseX);
-            transform.parent.localRotation = Quaternion.Euler(xRot, yRot, 0.0f);
+            transform.parent.localRotation = Quaternion.Euler(m_xRot, m_yRot, 0.0f);
             //player.Rotate(Vector3.up, mouseX);
         
         }
@@ -73,6 +74,7 @@ public class ThirdPersonCam : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.parent.position = player.transform.position;
+        transform.parent.position = m_player.transform.position;
+        transform.parent.position = new Vector3(transform.parent.position.x, transform.parent.position.y + 3.0f, transform.parent.position.z);
     }
 }

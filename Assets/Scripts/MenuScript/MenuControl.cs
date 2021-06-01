@@ -9,17 +9,17 @@ public class MenuControl : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
     }
-    public void goToLevel()
+    public void GOToLevel()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void goToMenu()
+    public void GOToMenu()
     {
         SceneManager.LoadScene(0);
     }
     
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

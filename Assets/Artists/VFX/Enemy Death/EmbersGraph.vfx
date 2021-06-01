@@ -74,7 +74,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":9.734288215637207,"g":0.7311407923698425,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":1.7445039749145508,"g":0.15392683446407319,"b":0.0,"a":1.0}'
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -576,7 +576,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614583}
   - {fileID: 8926484042661614585}
   dataType: 0
-  capacity: 19000
+  capacity: 5000
   stripCapacity: 16
   particlePerStripCount: 16
   m_Space: 0
@@ -990,7 +990,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":22.363521575927736,"g":2.4588165283203127,"b":0.0,"a":1.0},"time":0.014709697104990483},{"color":{"r":16.948379516601564,"g":0.35493987798690798,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":1.0,"time":0.5411764979362488},{"alpha":0.0,"time":0.994125247001648}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":2.2973968982696535,"g":0.49836891889572146,"b":0.0,"a":1.0},"time":0.014709697104990483},{"color":{"r":0.10412467271089554,"g":0.011095251888036728,"b":0.0,"a":1.0},"time":0.9058823585510254},{"color":{"r":0.0003940343449357897,"g":0.0,"b":0.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":1.0,"time":0.10000763088464737},{"alpha":1.0,"time":0.4911726415157318},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
@@ -1134,7 +1134,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0.04
+      m_SerializableObject: 0.06
     m_Space: 2147483647
   m_Property:
     name: Size
@@ -1297,7 +1297,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":9.734288215637207,"g":0.7311407923698425,"b":0.0,"a":1.0}'
+      m_SerializableObject: '{"r":1.7445039749145508,"g":0.15392683446407319,"b":0.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: o

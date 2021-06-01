@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class enemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
     private int m_health = 100;
-    public int spawnNum = 5;
+    [FormerlySerializedAs("spawnNum")] public int m_spawnNum = 5;
 
     public enum EnemyType
     {
@@ -14,11 +15,11 @@ public class enemyHealth : MonoBehaviour
         Charge
     };
 
-    public EnemyType type;
+    [FormerlySerializedAs("type")] public EnemyType m_type;
 
     private void Start()
     {
-        if(type == EnemyType.Standard)
+        if(m_type == EnemyType.Standard)
         {
 
         }
@@ -32,13 +33,13 @@ public class enemyHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision _collision)
     {
-        if(collision.gameObject.tag == "Sword")
+        if(_collision.gameObject.CompareTag("Sword"))
         {
-            CombatControl cc = collision.gameObject.GetComponentInParent<CombatControl>();
+            CombatControl cc = _collision.gameObject.GetComponentInParent<CombatControl>();
 
-            m_health -= cc.damage;
+            m_health -= cc.m_damage;
 
             Debug.Log(m_health);
         }

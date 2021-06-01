@@ -1,63 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CombatControl : MonoBehaviour
 {
-    public enum attackType
+    public enum eAttackType
     {
-        NORMAL,
-        MIGHTY,
-        EXPLOSIVE,
-        STUN
+        Normal,
+        Mighty,
+        Explosive,
+        Stun
     }
 
-    public bool isAttacking = false;
-    bool isStabbing = false;
-    public Animator animator;
+    private bool m_isCountering = false;
+    private float m_CounterTimer = 0f;
 
-    public int comboCounter = 0;
+    [FormerlySerializedAs("isAttacking")] public bool m_isAttacking = false;
+    private bool m_isStabbing = false;
+    [FormerlySerializedAs("animator")] public Animator m_animator;
 
-    public int damage = 0;
-    private int damageIncrease = 0;
+    [FormerlySerializedAs("comboCounter")] public int m_comboCounter = 0;
+
+    [FormerlySerializedAs("damage")] public int m_damage = 0;
+    private int m_damageIncrease = 0;
     private CharacterController m_characterController;
-    public bool canAttack;
-    public Transform aoePos;
+    [FormerlySerializedAs("canAttack")] public bool m_canAttack;
+    [FormerlySerializedAs("aoePos")] public Transform m_aoePos;
 
     //AOE values
-    public float Radius = 5.0f;
+    [FormerlySerializedAs("Radius")] public float m_radius = 5.0f;
 
-    public AudioSource thrust;
-    public AudioSource slash;
+    [FormerlySerializedAs("thrust")] public AudioSource m_thrust;
+    [FormerlySerializedAs("slash")] public AudioSource m_slash;
 
-    public GameObject bullet;
+    [FormerlySerializedAs("bullet")] public GameObject m_bullet;
 
-    public PlayerMovement m_MovementScript;
+    [FormerlySerializedAs("m_MovementScript")] public PlayerMovement m_movementScript;
 
-    ShopDetection ShopCheck;
+    ShopDetection m_shopCheck;
 
-    public attackType StabType;
-    public attackType ComboType;
+    [FormerlySerializedAs("StabType")] public eAttackType m_stabType;
+    [FormerlySerializedAs("ComboType")] public eAttackType m_comboType;
 
-    RankingSystem rankSys;
+    RankingSystem m_rankSys;
 
     bool m_moveForward;
     float m_moveTimer;
+    public bool m_canDamage;
+    private static readonly int IsAttacking = Animator.StringToHash("isAttacking");
+    private static readonly int Combo = Animator.StringToHash("combo");
+    private static readonly int RisingSlash = Animator.StringToHash("RisingSlash");
+    private static readonly int Stab = Animator.StringToHash("Stab");
+
     // Start is called before the first frame update
     void Start()
     {
+        m_canDamage = false;
+
         //animator = GetComponent<Animator>();
-        m_MovementScript = GetComponent<PlayerMovement>();
+        m_movementScript = GetComponent<PlayerMovement>();
         m_characterController = GetComponent<CharacterController>();
-        ShopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
-        rankSys = GetComponent<RankingSystem>();
+        m_shopCheck = GameObject.FindGameObjectWithTag("ShopEvent").GetComponent<ShopDetection>();
+        m_rankSys = GetComponent<RankingSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (!ShopCheck.inMenu)
+        if(m_isCountering && m_CounterTimer<0f)
+        {
+            m_isCountering = false;
+        }
+        if (!m_shopCheck.m_inMenu)
         {
             m_moveTimer -= Time.deltaTime;
 
@@ -67,17 +82,17 @@ public class CombatControl : MonoBehaviour
             }
             else if(m_moveForward)
             {
-                m_characterController.Move(transform.forward * Time.deltaTime * 3.0f);
+                m_characterController.Move(transform.forward * (Time.deltaTime * 3.0f));
             }
 
             
-            if (isAttacking == true)
+            if (m_isAttacking == true)
             {
-                m_MovementScript.m_isAttacking = true;
+                m_movementScript.m_isAttacking = true;
             }
             else
             {
-                m_MovementScript.m_isAttacking = false;
+                m_movementScript.m_isAttacking = false;
             }
             float x = Input.GetAxis("Vertical");
 
@@ -105,40 +120,24 @@ public class CombatControl : MonoBehaviour
                 thrust.Play();
             }*/
             //This will do the first hit of a combo
-            if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 0 && !isAttacking)
+            if (Input.GetButtonDown("Melee") && m_canAttack && m_comboCounter == 0 && !m_isAttacking)
             {
-                m_moveForward = true;
-                m_moveTimer = 0.3f;
-                animator.SetBool("isAttacking", true);
-                comboCounter = 1;
-                isAttacking = true;
-                animator.SetInteger("combo", 1);
-                damage = 30 + damageIncrease;
-                slash.Play();
+                Hit1();
             }
             //This will do the second hit of the combo
-            else if (Input.GetButtonDown("Melee") && canAttack && comboCounter == 1)
+            else if (Input.GetButtonDown("Melee") && m_canAttack && m_comboCounter == 1)
             {
-                m_moveForward = true;
-                m_moveTimer = 0.3f;
-                animator.SetBool("isAttacking", true);
-
-                comboCounter = 0;
-                isAttacking = true;
-
-                animator.SetInteger("combo", 2);
-                damage = 40 + damageIncrease;
-                slash.Play();
+                Hit2();
             }
             
 
-            if (!isAttacking)
+            if (!m_isAttacking)
             {
-                damage = 0;
-                animator.SetInteger("combo", 0);
-                animator.SetBool("RisingSlash", false);
-                animator.SetBool("Stab", false);
-                animator.SetBool("isAttacking", false);
+                m_damage = 0;
+                m_animator.SetInteger(Combo, 0);
+                m_animator.SetBool(RisingSlash, false);
+                m_animator.SetBool(Stab, false);
+                m_animator.SetBool(IsAttacking, false);
             }
 
             //Special moves
@@ -167,53 +166,102 @@ public class CombatControl : MonoBehaviour
         }
     }
 
-    public void DamageBoost(int Increase)
+    private void Hit2()
     {
-        damageIncrease = Increase;
+        m_moveForward = true;
+        m_moveTimer = 0.3f;
+        m_animator.SetBool(IsAttacking, true);
+
+        m_comboCounter = 0;
+        m_isAttacking = true;
+
+        m_animator.SetInteger(Combo, 2);
+        m_damage = 40 + m_damageIncrease;
+        m_slash.Play();
     }
 
-    public void AttackEffect(EnemyControl collider)
+    private void Hit1()
     {
-        if(animator.GetInteger("combo") > 0)
+        m_moveForward = true;
+        m_moveTimer = 0.3f;
+        m_animator.SetBool(IsAttacking, true);
+        m_comboCounter = 1;
+        m_isAttacking = true;
+        m_animator.SetInteger(Combo, 1);
+        m_damage = 30 + m_damageIncrease;
+        m_slash.Play();
+    }
+
+    public void DamageBoost(int _increase)
+    {
+        m_damageIncrease = _increase;
+    }
+
+    public void AttackEffect(EnemyControl _collider)
+    {
+        if(m_animator.GetInteger(Combo) > 0)
         {
-            switch (ComboType)
+            switch (m_comboType)
             {
-                case attackType.MIGHTY:
+                case eAttackType.Mighty:
                     int random = Random.Range(1, 100);
 
                     if (random < 25)
                     {
                         //Want to add any increases in damage to the critical boost
-                        collider.health -= (int)((damage + damageIncrease) * 1.5);
-                        rankSys.increaseCombo();
+                        _collider.m_health -= (int)((m_damage + m_damageIncrease) * 1.5);
+                        m_rankSys.IncreaseCombo();
                     }
                     else
                     {
-                        collider.health -= damage + damageIncrease;
+                        _collider.m_health -= m_damage + m_damageIncrease;
                     }
                     break;
-                case attackType.EXPLOSIVE:
-                    Collider[] objInRadius = Physics.OverlapSphere(collider.gameObject.transform.position, 5.0f);
+                case eAttackType.Explosive:
+                    Collider[] objInRadius = Physics.OverlapSphere(_collider.gameObject.transform.position, 5.0f);
                     foreach (Collider col in objInRadius)
                     {
-                        if (col.gameObject.tag == "Enemy" && col.gameObject != collider.gameObject)
+                        if (col.gameObject.CompareTag("Enemy") && col.gameObject != _collider.gameObject)
                         {
-                            col.gameObject.GetComponent<EnemyControl>().health -= (int)((damage + damageIncrease) / 2);
-                            rankSys.increaseCombo();
+                            col.gameObject.GetComponent<EnemyControl>().m_health -= (int)((m_damage + m_damageIncrease) / 2);
+                            m_rankSys.IncreaseCombo();
                         }
                     }
 
-                    collider.health -= damage + damageIncrease;
+                    _collider.m_health -= m_damage + m_damageIncrease;
                     break;
-                case attackType.STUN:
+                case eAttackType.Stun:
                     Debug.Log("Inset a stun mechanic oops lol");
-                    collider.health -= damage + damageIncrease;
+                    _collider.m_health -= m_damage + m_damageIncrease;
                     break;
                 //Default is for attackType.NORMAL
                 default:
-                    collider.health -= damage + damageIncrease;
+                    _collider.m_health -= m_damage + m_damageIncrease;
                     break;
             }
         }
+    }
+
+    public bool Counter(Transform _enemy)
+    {
+        if (!m_isCountering && Input.GetButtonDown("Counter"))
+        {
+            transform.LookAt(_enemy);
+            Hit1();
+            return true;
+
+        }
+        else return false;
+    }
+
+    public bool Damage()
+    {
+        m_canDamage = true;
+        return true;
+    }
+
+    public void UnDamage()
+    {
+        m_canDamage = false;
     }
 }

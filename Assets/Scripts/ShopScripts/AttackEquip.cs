@@ -1,34 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class AttackEquip : MonoBehaviour
 {
-    public enum attacks
+    public enum eAttacks
     {
-        STAB, 
-        COMBO
+        Stab, 
+        Combo
     }
 
-    public attacks attackType;
+    [FormerlySerializedAs("attackType")] public eAttacks m_attackType;
 
-    public CombatControl cc;
+    [FormerlySerializedAs("cc")] public CombatControl m_combatControl;
 
-    private Dropdown dropdown;
+    private Dropdown m_dropdown;
 
     //Purchase Checking Booleans
-    private bool mightyUnlock = false;
-    private bool explosiveUnlock = false;
-    private bool stunUnlock = false;
+    private bool m_mightyUnlock = false;
+    private bool m_explosiveUnlock = false;
+    private bool m_stunUnlock = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        dropdown = GetComponent<Dropdown>();
+        m_dropdown = GetComponent<Dropdown>();
 
-        dropdown.onValueChanged.AddListener(delegate {
-            SetDropDown(dropdown);
+        m_dropdown.onValueChanged.AddListener(delegate {
+            SetDropDown(m_dropdown);
         });
     }
 
@@ -60,7 +61,7 @@ public class AttackEquip : MonoBehaviour
             //Unity I despise you for doing this btw
             mighty = ddMenu.transform.GetChild(0).GetChild(0).GetChild(2).gameObject.GetComponent<Toggle>();
 
-            if (mightyUnlock)
+            if (m_mightyUnlock)
             {
                 mighty.enabled = true;
                 mighty.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Mighty";
@@ -73,7 +74,7 @@ public class AttackEquip : MonoBehaviour
 
             explosive = ddMenu.transform.GetChild(0).GetChild(0).GetChild(3).gameObject.GetComponent<Toggle>();
 
-            if (explosiveUnlock)
+            if (m_explosiveUnlock)
             {
                 explosive.enabled = true;
                 explosive.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Explosive";
@@ -86,7 +87,7 @@ public class AttackEquip : MonoBehaviour
 
             stun = ddMenu.transform.GetChild(0).GetChild(0).GetChild(4).gameObject.GetComponent<Toggle>();
 
-            if (stunUnlock)
+            if (m_stunUnlock)
             {
                 stun.enabled = true;
                 stun.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Stun";
@@ -99,52 +100,52 @@ public class AttackEquip : MonoBehaviour
         }
     }
 
-    void SetDropDown(Dropdown change)
+    void SetDropDown(Dropdown _change)
     {
         //We have this switch so we can have the same script on all dropdowns
-        switch (attackType)
+        switch (m_attackType)
         {
-            case attacks.STAB:
+            case eAttacks.Stab:
                 //0 - Normal
                 //1 - Mighty
                 //2 - Explosive
                 //3 - Stun
-                switch (dropdown.value)
+                switch (m_dropdown.value)
                 {
                     case 0:
-                        cc.StabType = CombatControl.attackType.NORMAL;
+                        m_combatControl.m_stabType = CombatControl.eAttackType.Normal;
                         break;
                     case 1:
-                        cc.StabType = CombatControl.attackType.MIGHTY;
+                        m_combatControl.m_stabType = CombatControl.eAttackType.Mighty;
                         break;
                     case 2:
-                        cc.StabType = CombatControl.attackType.EXPLOSIVE;
+                        m_combatControl.m_stabType = CombatControl.eAttackType.Explosive;
                         break;
                     case 3:
-                        cc.StabType = CombatControl.attackType.STUN;
+                        m_combatControl.m_stabType = CombatControl.eAttackType.Stun;
                         break;
                     default:
                         break;
                 }
                 break;
-            case attacks.COMBO:
+            case eAttacks.Combo:
                 //0 - Normal
                 //1 - Mighty
                 //2 - Explosive
                 //3 - Stun
-                switch (dropdown.value)
+                switch (m_dropdown.value)
                 {
                     case 0:
-                        cc.ComboType = CombatControl.attackType.NORMAL;
+                        m_combatControl.m_comboType = CombatControl.eAttackType.Normal;
                         break;
                     case 1:
-                        cc.ComboType = CombatControl.attackType.MIGHTY;
+                        m_combatControl.m_comboType = CombatControl.eAttackType.Mighty;
                         break;
                     case 2:
-                        cc.ComboType = CombatControl.attackType.EXPLOSIVE;
+                        m_combatControl.m_comboType = CombatControl.eAttackType.Explosive;
                         break;
                     case 3:
-                        cc.ComboType = CombatControl.attackType.STUN;
+                        m_combatControl.m_comboType = CombatControl.eAttackType.Stun;
                         break;
                     default:
                         break;
@@ -156,18 +157,18 @@ public class AttackEquip : MonoBehaviour
         }
     }
 
-    public void activatePowerup(PurchaseMove.activator activator)
+    public void ActivatePowerup(PurchaseMove.eActivator _activator)
     {
-        switch (activator)
+        switch (_activator)
         {
-            case PurchaseMove.activator.Mighty:
-                mightyUnlock = true;
+            case PurchaseMove.eActivator.Mighty:
+                m_mightyUnlock = true;
                 break;
-            case PurchaseMove.activator.Explosive:
-                explosiveUnlock = true;
+            case PurchaseMove.eActivator.Explosive:
+                m_explosiveUnlock = true;
                 break;
-            case PurchaseMove.activator.Stun:
-                stunUnlock = true;
+            case PurchaseMove.eActivator.Stun:
+                m_stunUnlock = true;
                 break;
         }
     }
