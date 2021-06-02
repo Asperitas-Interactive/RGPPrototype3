@@ -777,6 +777,22 @@ PrefabInstance:
       value: -4.0900373
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76ce3fd093a6817428c7d87579f82128, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a973032e9a044542b6293abdbe26cb9, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 63d5ace534e2ee74d9595c49e72bc7f2, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_invisibleWalls.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -4282,6 +4298,22 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -9.647934
       objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a0e3f972006e4ff4a9c3510eb6523bd3, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4546d1d68ec117745875491b5c8f0cbe, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 592e9dd1d9db68f4a8b5eea4674cfb0a, type: 2}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_invisibleWalls.Array.data[0]
       value: 
@@ -28249,6 +28281,10 @@ PrefabInstance:
       value: -3.0997353
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: e031f071ac18170429783c4978559327, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_invisibleWalls.Array.data[0]
       value: 
       objectReference: {fileID: 448539787}
@@ -36026,6 +36062,22 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -9.647934
       objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: a81bf7d5641101847b8ece7cea52079a, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b3710389f7f92cf4a9604c22243205f4, type: 2}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 061d91cd4b32ce44f86da0b248b22ec6, type: 2}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_invisibleWalls.Array.data[0]
       value: 
