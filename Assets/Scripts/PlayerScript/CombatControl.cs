@@ -234,7 +234,10 @@ public class CombatControl : MonoBehaviour
                     _collider.m_health -= m_damage + m_damageIncrease;
                     break;
                 case eAttackType.Stun:
-                    Debug.Log("Inset a stun mechanic oops lol");
+                    if (_collider.m_isStunned)
+                    {
+                        m_rankSys.IncreaseCombo();
+                    }
                     _collider.m_health -= m_damage + m_damageIncrease;
                     break;
                 //Default is for attackType.NORMAL

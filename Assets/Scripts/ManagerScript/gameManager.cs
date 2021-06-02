@@ -15,6 +15,7 @@ public class gameManager : MonoBehaviour
     public float m_maxWanderTime;
     public float[] m_counterTime = { 1.5f, 3f };
     public float[] m_StunTimer = { 3.4f / 5f };
+    public float[] m_defaultStunTimer;
     public string m_State;
     public float[] m_attackCooldown = { 3.5f, 4.5f };
 
