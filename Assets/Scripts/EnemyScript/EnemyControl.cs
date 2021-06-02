@@ -220,8 +220,16 @@ public class EnemyControl : MonoBehaviour
             #endregion
         }
         //CalculateTimer();
-        
-      
+
+        if (m_hPool == eHealthPool.Normal)
+        {
+
+            if (m_health < 0f)
+            {
+                m_death = true;
+                m_children[6].GetComponent<DissolvingController>().Die();
+            }
+        }
         
 
        
@@ -327,7 +335,7 @@ public class EnemyControl : MonoBehaviour
                 m_maxHealth = m_health;
                 break;
             case eHealthPool.Normal:
-                m_health = Random.Range(100, 130);
+                m_health = Random.Range(500, 730);
                // m_agent.speed = Random.Range(4.0f, 5.0f);
                 m_maxHealth = m_health;
                 break;
