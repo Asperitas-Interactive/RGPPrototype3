@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 577071089}
     - target: {fileID: 1741561211, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: m_money
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1275332018332005251, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: CustomDataModule.vector1_0.scalar
@@ -12250,6 +12250,10 @@ PrefabInstance:
     - target: {fileID: 791475447834486521, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_TagString
       value: ShopUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 816468946804009766, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 995383125157101083, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_LocalScale.y
