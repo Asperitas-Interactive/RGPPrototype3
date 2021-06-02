@@ -38962,12 +38962,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7b8e701eba64347978c88fea430b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemySpeed: 8
+  m_enemySpeed:
+  - 8
+  - 11
   m_maxWanderTime: 0
-  m_counterTime: 1.5
-  m_StunTimer: 3
+  m_counterTime:
+  - 1.3
+  - 2.5
+  m_StunTimer:
+  - 2
+  - 4
   m_State: 
-  m_attackCooldown: 2
+  m_attackCooldown:
+  - 1.2
+  - 2.5
 --- !u!4 &1889824806
 Transform:
   m_ObjectHideFlags: 0
