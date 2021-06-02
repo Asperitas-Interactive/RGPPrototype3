@@ -112,7 +112,7 @@ public class EnemyControl : MonoBehaviour
             m_children[j] = transform.GetChild(j).gameObject;
         }
 
-        m_agent.speed = gameManager.Instance.m_enemySpeed;
+        m_agent.speed = Random.Range(gameManager.Instance.m_enemySpeed[0], gameManager.Instance.m_enemySpeed[1]);
 
         int i = 0;
         foreach (var child in m_children)
