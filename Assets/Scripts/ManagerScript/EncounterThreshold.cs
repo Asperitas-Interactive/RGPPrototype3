@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class EncounterThreshold : MonoBehaviour
@@ -20,16 +22,25 @@ public class EncounterThreshold : MonoBehaviour
 
     [FormerlySerializedAs("InvisWalls")] public GameObject[] m_invisibleWalls;
 
+    public UnityEvent m_Open;
+    public UnityEvent m_Close;
     private void OnTriggerEnter(Collider _other)
     {
         if(_other.gameObject.CompareTag("Player"))
         {
             GameObject.FindGameObjectWithTag("WaveManager").GetComponent<waveManager>().WaveStart(this);
+            
         }
     }
 
-    public void turnOnWalls()
+    private void Start()
     {
+        m_Close?.Invoke();
+    }
+
+    public void turnOnWalls()
+    { 
+        m_Open?.Invoke();
         foreach(GameObject go in m_invisibleWalls)
         {
             go.SetActive(true);
@@ -38,6 +49,7 @@ public class EncounterThreshold : MonoBehaviour
 
     public void turnOffWalls()
     {
+        m_Close?.Invoke();
         foreach(GameObject go in m_invisibleWalls)
         {
             go.SetActive(false);

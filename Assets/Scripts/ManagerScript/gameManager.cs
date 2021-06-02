@@ -13,6 +13,7 @@ public class gameManager : MonoBehaviour
     private Scene m_currentScene;
     [SerializeField] public float m_enemySpeed;
     public float m_maxWanderTime;
+    public float m_defaultStunTimer = 3f;
     public float m_counterTime = 1.5f;
     public float m_StunTimer = 3f;
     public string m_State;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.755737, g: 60.89746, b: 613.56836, a: 1}
+  m_IndirectSpecularColor: {r: 27.76056, g: 60.89978, b: 613.4629, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 577071089}
     - target: {fileID: 1741561211, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: m_money
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1275332018332005251, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: CustomDataModule.vector1_0.scalar
@@ -12183,6 +12183,10 @@ PrefabInstance:
       propertyPath: m_purchase
       value: 
       objectReference: {fileID: 1848985994}
+    - target: {fileID: 891430243, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_SoldImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
     - target: {fileID: 891430243, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_moneyController
       value: 
@@ -35334,6 +35338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1718772629}
+  - component: {fileID: 1718772630}
   m_Layer: 0
   m_Name: ArenaBarn
   m_TagString: Untagged
@@ -35359,6 +35364,18 @@ Transform:
   m_Father: {fileID: 718603563}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718772630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718772628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edb7eb79d2a29424683ff48ece6d7630, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1720431905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5668661345854236358, guid: 2d1e3d4134732564cb5ce5451cdddcdb, type: 3}
@@ -37600,8 +37617,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.324313, y: 5.6535497, z: 8.80879}
-  m_Center: {x: 5.4621654, y: 3.0767748, z: 0.42407066}
+  m_Size: {x: 14.226933, y: 6.972083, z: 13.617516}
+  m_Center: {x: 0.092562586, y: 3.7360415, z: -1.9803028}
 --- !u!114 &1836658898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38949,8 +38966,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7b8e701eba64347978c88fea430b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemySpeed: 0
+  m_enemySpeed: 8
   m_maxWanderTime: 0
+  m_defaultStunTimer: 3
   m_counterTime: 1.5
   m_StunTimer: 3
   m_State: 

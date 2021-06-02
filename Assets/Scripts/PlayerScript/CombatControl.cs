@@ -70,6 +70,7 @@ public class CombatControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        m_CounterTimer -= Time.deltaTime;
         if(m_isCountering && m_CounterTimer<0f)
         {
             m_isCountering = false;
@@ -233,7 +234,10 @@ public class CombatControl : MonoBehaviour
                     _collider.m_health -= m_damage + m_damageIncrease;
                     break;
                 case eAttackType.Stun:
-                    Debug.Log("Inset a stun mechanic oops lol");
+                    if (_collider.m_isStunned)
+                    {
+                        m_rankSys.IncreaseCombo();
+                    }
                     _collider.m_health -= m_damage + m_damageIncrease;
                     break;
                 //Default is for attackType.NORMAL
@@ -246,10 +250,12 @@ public class CombatControl : MonoBehaviour
 
     public bool Counter(Transform _enemy)
     {
-        if (!m_isCountering && Input.GetButtonDown("Counter"))
+        if (!m_isCountering && Input.GetButtonDown("Counter") && (transform.position - _enemy.position).magnitude < 3f)
         {
             transform.LookAt(_enemy);
             Hit1();
+            m_isCountering = true;
+            m_CounterTimer = 2f;
             return true;
 
         }
