@@ -33,7 +33,5 @@ public class ClearCheck : MonoBehaviour
         {
             isActive = true;
         }
-
-        Debug.Log(isActive);
     }
 }
