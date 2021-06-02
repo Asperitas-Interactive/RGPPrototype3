@@ -646,7 +646,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: ce3f829954c31ee4cb8c41ce62b487fb, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: 62a60ea74baddea4abfc69930b157869, type: 3}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -663,7 +663,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2060443091}
         m_TargetAssemblyTypeName: MenuControl, Assembly-CSharp
-        m_MethodName: goToMenu
+        m_MethodName: GOToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac0fd34247d21bc45aab025c12de98c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c7dc5d42a429b147bd93dbfa82bd419, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
