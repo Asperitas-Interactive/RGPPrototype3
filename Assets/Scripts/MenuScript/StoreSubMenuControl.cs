@@ -23,10 +23,13 @@ public class StoreSubMenuControl : MonoBehaviour
     [FormerlySerializedAs("EquipImage")] public Sprite m_EquipImage;
     [FormerlySerializedAs("EquipSelectedImage")] public Sprite m_EquipSelectedImage;
 
+    private Vector2 baseSize;
+
     // Start is called before the first frame update
     void Start()
     {
         m_weaponUp.enabled = false;
+        baseSize = m_WeaponButton.gameObject.GetComponent<RectTransform>().sizeDelta;
         m_comboUp.enabled = false;
         m_equipUp.enabled = false;
     }
@@ -35,20 +38,36 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         m_weaponUp.enabled = true;
         m_WeaponButton.sprite = m_WeaponSelectedImage;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().sizeDelta = m_WeaponSelectedImage.rect.size;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(0.8f, 0.8f);
+
         m_comboUp.enabled = false;
         m_ComboButton.sprite = m_ComboImage;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+
         m_equipUp.enabled = false;
         m_EquipButton.sprite = m_EquipImage;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
     }
 
     public void ComboClick()
     {
         m_comboUp.enabled = true;
         m_ComboButton.sprite = m_ComboSelectedImage;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().sizeDelta = m_ComboSelectedImage.rect.size;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(0.8f, 0.8f);
+
         m_weaponUp.enabled = false;
         m_WeaponButton.sprite = m_WeaponImage;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+
         m_equipUp.enabled = false;
         m_EquipButton.sprite = m_EquipImage;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
     }
 
     public void StabClick()
@@ -62,19 +81,35 @@ public class StoreSubMenuControl : MonoBehaviour
     {
         m_equipUp.enabled = true;
         m_EquipButton.sprite = m_EquipSelectedImage;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().sizeDelta = m_EquipSelectedImage.rect.size;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(0.8f, 0.8f);
+
         m_comboUp.enabled = false;
         m_ComboButton.sprite = m_ComboImage;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+
         m_weaponUp.enabled = false;
         m_WeaponButton.sprite = m_WeaponImage;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
     }
 
     public void CloseAll()
     {
         m_weaponUp.enabled = false;
         m_WeaponButton.sprite = m_WeaponImage;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_WeaponButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+
         m_comboUp.enabled = false;
         m_ComboButton.sprite = m_ComboImage;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_ComboButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
+
         m_equipUp.enabled = false;
         m_EquipButton.sprite = m_EquipImage;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().sizeDelta = baseSize;
+        m_EquipButton.gameObject.GetComponent<RectTransform>().localScale = new Vector2(1.5f, 1.5f);
     }
 }

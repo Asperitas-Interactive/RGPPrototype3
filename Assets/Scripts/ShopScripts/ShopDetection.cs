@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class ShopDetection : MonoBehaviour
 {
     //[FormerlySerializedAs("Endbutton")] public Button m_endbutton;
-    [FormerlySerializedAs("UpgradeButton")] public Button m_upgradeButton;
+    [FormerlySerializedAs("UpgradeButton")] public Image m_upgradeButton;
     [FormerlySerializedAs("prompt")] public Image m_prompt;
     [FormerlySerializedAs("inZone")] public bool m_inZone;
     [FormerlySerializedAs("inMenu")] public bool m_inMenu;

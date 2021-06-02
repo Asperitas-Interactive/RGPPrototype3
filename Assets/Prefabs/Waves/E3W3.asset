@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20ee5f63322e9c4d8587412d0108346, type: 3}
+  m_Name: E3W3
+  m_EditorClassIdentifier: 
+  m_enemies:
+  - {fileID: 217161078240397676, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+  - {fileID: 217161078240397676, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+  - {fileID: 217161078240397676, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
+  - {fileID: 217161078240397676, guid: c66e341b8a1df6c46b42f6d061e44915, type: 3}
