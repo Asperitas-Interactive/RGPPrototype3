@@ -22,6 +22,13 @@ public class AttackEquip : MonoBehaviour
     private bool m_mightyUnlock = false;
     private bool m_explosiveUnlock = false;
     private bool m_stunUnlock = false;
+    public Sprite m_mightySprite;
+    public Sprite m_explosiveSprite;
+    public Sprite m_stunSprite;
+    public Sprite m_questionMarkSprite;
+    public Sprite m_normalSprite;
+    public Sprite m_open;
+    public Sprite m_Equip;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +55,8 @@ public class AttackEquip : MonoBehaviour
         Toggle mighty;
         Toggle explosive;
         Toggle stun;
+        Toggle normal;
+
         if(transform.childCount == 4)
         {
             ddMenu = transform.GetChild(3).gameObject;
@@ -57,19 +66,29 @@ public class AttackEquip : MonoBehaviour
         }
 
         if(ddMenu != null)
-        { 
+        {
+            normal = ddMenu.transform.GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<Toggle>();
+            normal.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_normalSprite;
+            transform.GetChild(0).GetComponent<Image>().sprite = m_open;
+            Destroy(normal.gameObject.transform.GetChild(2).GetComponent<Text>());
+
+            transform.GetChild(3).GetComponent<Image>().enabled = false;
             //Unity I despise you for doing this btw
             mighty = ddMenu.transform.GetChild(0).GetChild(0).GetChild(2).gameObject.GetComponent<Toggle>();
 
             if (m_mightyUnlock)
             {
                 mighty.enabled = true;
-                mighty.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Mighty";
+                mighty.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_mightySprite;
+                Destroy(mighty.gameObject.transform.GetChild(2).GetComponent<Text>());
+
             }
             else
             {
                 mighty.enabled = false;
-                mighty.gameObject.transform.GetChild(2).GetComponent<Text>().text = "???";
+                mighty.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_questionMarkSprite;
+                Destroy(mighty.gameObject.transform.GetChild(2).GetComponent<Text>());
+                
             }
 
             explosive = ddMenu.transform.GetChild(0).GetChild(0).GetChild(3).gameObject.GetComponent<Toggle>();
@@ -77,12 +96,14 @@ public class AttackEquip : MonoBehaviour
             if (m_explosiveUnlock)
             {
                 explosive.enabled = true;
-                explosive.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Explosive";
+                Destroy(explosive.gameObject.transform.GetChild(2).GetComponent<Text>());
+                explosive.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_explosiveSprite;
             }
             else
             {
                 explosive.enabled = false;
-                explosive.gameObject.transform.GetChild(2).GetComponent<Text>().text = "???";
+                Destroy(explosive.gameObject.transform.GetChild(2).GetComponent<Text>());
+                explosive.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_questionMarkSprite;
             }
 
             stun = ddMenu.transform.GetChild(0).GetChild(0).GetChild(4).gameObject.GetComponent<Toggle>();
@@ -90,14 +111,24 @@ public class AttackEquip : MonoBehaviour
             if (m_stunUnlock)
             {
                 stun.enabled = true;
-                stun.gameObject.transform.GetChild(2).GetComponent<Text>().text = "Stun";
+                Destroy(stun.gameObject.transform.GetChild(2).GetComponent<Text>());
+                stun.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_stunSprite;
             }
             else
             {
                 stun.enabled = false;
-                stun.gameObject.transform.GetChild(2).GetComponent<Text>().text = "???";
+                Destroy(stun.gameObject.transform.GetChild(2).GetComponent<Text>());
+                stun.gameObject.transform.GetChild(0).GetComponent<Image>().sprite = m_questionMarkSprite;
             }
         }
+
+        else
+        {
+            transform.GetChild(0).GetComponent<Image>().sprite = m_Equip;
+
+        }
+        
+        
     }
 
     void SetDropDown(Dropdown _change)
