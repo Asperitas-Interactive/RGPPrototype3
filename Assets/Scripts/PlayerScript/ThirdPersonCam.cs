@@ -43,7 +43,7 @@ public class ThirdPersonCam : MonoBehaviour
 
             m_xRot += mouseY;
 
-            m_xRot = Mathf.Clamp(m_xRot, 0.0f, 80.0f);
+            m_xRot = Mathf.Clamp(m_xRot, 0.0f, 50.0f);
 
             m_yRot += mouseX;
             //transform.parent.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ShopDetection : MonoBehaviour
 {
-    [FormerlySerializedAs("Endbutton")] public Button m_endbutton;
+    //[FormerlySerializedAs("Endbutton")] public Button m_endbutton;
     [FormerlySerializedAs("UpgradeButton")] public Button m_upgradeButton;
     [FormerlySerializedAs("prompt")] public Image m_prompt;
     [FormerlySerializedAs("inZone")] public bool m_inZone;
@@ -26,7 +26,7 @@ public class ShopDetection : MonoBehaviour
     {
         m_camera = Camera.main.gameObject;
 
-        m_endbutton.gameObject.SetActive(false);
+        //m_endbutton.gameObject.SetActive(false); 
 
         m_playerUIObjects = GameObject.FindGameObjectsWithTag("PlayerUI");
         m_shopUIObjects = GameObject.FindGameObjectsWithTag("ShopUI");
@@ -55,7 +55,7 @@ public class ShopDetection : MonoBehaviour
 
                 if (m_waveManager.m_combatEnded)
                 {
-                    m_endbutton.gameObject.SetActive(true);
+                    //m_endbutton.gameObject.SetActive(true);
                 }
 
                 foreach (GameObject go in m_playerUIObjects)
@@ -95,7 +95,7 @@ public class ShopDetection : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         m_upgradeButton.GetComponent<StoreSubMenuControl>().CloseAll();
         m_upgradeButton.GetComponent<UpgradeMenu>().CloseUpgradeMenu();
-        m_endbutton.gameObject.SetActive(false);
+        //m_endbutton.gameObject.SetActive(false);
         foreach (GameObject go in m_playerUIObjects)
         {
             go.SetActive(true);
