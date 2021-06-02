@@ -24,6 +24,7 @@ public class StunState:BaseState
 
     public override void Init()
     {
+        m_enemy.m_isStunned = true;
         m_stunTimer = gameManager.Instance.m_StunTimer;
         foreach (var _animator in m_animator)
         {
@@ -34,6 +35,7 @@ public class StunState:BaseState
 
     public override void Destroy()
     {
+        m_enemy.m_isStunned = false;
         foreach (var _animator in m_animator)
         {
             _animator.SetBool("Stun", false);

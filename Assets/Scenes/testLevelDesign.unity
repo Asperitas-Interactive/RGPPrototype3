@@ -1146,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 577071089}
     - target: {fileID: 1741561211, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: m_money
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1275332018332005251, guid: 02760668178a48444b51b4914cb5d7fc, type: 3}
       propertyPath: CustomDataModule.vector1_0.scalar
@@ -12183,6 +12183,10 @@ PrefabInstance:
       propertyPath: m_purchase
       value: 
       objectReference: {fileID: 1848985994}
+    - target: {fileID: 891430243, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_SoldImage
+      value: 
+      objectReference: {fileID: 21300000, guid: b045f06a89ef4e04895e3710fa840806, type: 3}
     - target: {fileID: 891430243, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_moneyController
       value: 
@@ -38964,6 +38968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enemySpeed: 8
   m_maxWanderTime: 0
+  m_defaultStunTimer: 3
   m_counterTime: 1.5
   m_StunTimer: 3
   m_State: 

@@ -43,6 +43,8 @@ public class EnemyControl : MonoBehaviour
 
     //Rigidbody rb;
 
+    public bool m_isStunned = false;
+
     private GameObject[] m_children;
     
     [FormerlySerializedAs("maxCharge")] public float m_maxCharge;
