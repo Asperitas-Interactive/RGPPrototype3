@@ -110,6 +110,7 @@ public class EnemyControl : MonoBehaviour
             m_children[j] = transform.GetChild(j).gameObject;
         }
 
+        m_agent.speed = gameManager.Instance.m_enemySpeed;
 
         int i = 0;
         foreach (var child in m_children)
@@ -153,68 +154,71 @@ public class EnemyControl : MonoBehaviour
     {
         if(m_death)
             Destroy(this);
-        #region EnemyModelFromHealth
 
-        
-        if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
+        if (m_hPool == eHealthPool.Weak)
         {
-            
-            m_children[1].transform.GetChild(4).gameObject.SetActive(true);
-            
-            m_children[0].SetActive(false);
+            #region EnemyModelFromHealth
 
+
+            if (m_health < m_maxHealth && m_health > m_maxHealth - m_maxHealth / 5)
+            {
+
+                m_children[1].transform.GetChild(4).gameObject.SetActive(true);
+
+                m_children[0].SetActive(false);
+
+            }
+
+            else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
+                     m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
+            {
+
+                m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[2].transform.GetChild(4).gameObject.SetActive(true);
+
+            }
+
+            else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
+                     m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
+            {
+                m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[3].transform.GetChild(4).gameObject.SetActive(true);
+
+            }
+            else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
+                     m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
+            {
+                m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[3].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[4].transform.GetChild(4).gameObject.SetActive(true);
+
+            }
+            else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
+                     m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
+            {
+                m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[3].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[4].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[5].transform.GetChild(4).gameObject.SetActive(true);
+
+            }
+            else if (m_health < 0f)
+            {
+                m_children[1].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[2].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[3].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[4].transform.GetChild(4).gameObject.SetActive(false);
+                m_children[5].transform.GetChild(4).gameObject.SetActive(true);
+
+                m_death = true;
+                m_children[5].GetComponent<DissolvingController>().Die();
+            }
+
+            #endregion
         }
-
-        else if (m_health < m_maxHealth - m_maxHealth * (1.0f / 5.0f) &&
-                 m_health > m_maxHealth - m_maxHealth * (2.0f / 5.0f))
-        {
- 
-            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[2].transform.GetChild(4).gameObject.SetActive(true);
-                   
-        }
-
-        else if (m_health < m_maxHealth - m_maxHealth * (2.0f / 5.0f) &&
-                 m_health > m_maxHealth - m_maxHealth * (3.0f / 5.0f))
-        {
-             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[3].transform.GetChild(4).gameObject.SetActive(true);
-
-        }
-        else if (m_health < m_maxHealth - m_maxHealth * (3.0f / 5.0f) &&
-                 m_health > m_maxHealth - m_maxHealth * (4.0f / 5.0f))
-        {
-             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[4].transform.GetChild(4).gameObject.SetActive(true);
-           
-        }
-        else if (m_health < m_maxHealth - m_maxHealth * (4.0f / 5.0f) &&
-                 m_health > m_maxHealth - m_maxHealth * (5.0f / 5.0f))
-        {
-             m_children[1].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[4].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[5].transform.GetChild(4).gameObject.SetActive(true);
-           
-        }
-        else if (m_health < 0f)
-        {
-            m_children[1].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[2].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[3].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[4].transform.GetChild(4).gameObject.SetActive(false);
-            m_children[5].transform.GetChild(4).gameObject.SetActive(true);
-
-            m_death = true;
-            m_children[5].GetComponent<DissolvingController>().Die();
-        }
-
-        #endregion
-
         //CalculateTimer();
         
       
