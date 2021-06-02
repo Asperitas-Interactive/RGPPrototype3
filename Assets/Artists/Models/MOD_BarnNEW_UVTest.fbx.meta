@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: d5a26ea8bf2abf3438c417b18d9ee049
+guid: 8383762ad7ef51840be50c9159eee400
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_BeamsPoles
+    second: {fileID: 2100000, guid: de912a328db2f134793af1d8bb2b7139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_Ceilings
+    second: {fileID: 2100000, guid: 0af92f1ce26cd014c9c1e614b9406bf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_Roofs
+    second: {fileID: 2100000, guid: 29d3136ebd064d342acf38eeef6385e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_Stairs
+    second: {fileID: 2100000, guid: 2bcc47a09393b654ea87f5173ad9a65a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_Walls
+    second: {fileID: 2100000, guid: beb3408e720ae9a458d3dfa17612a432, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert_BeamsPoles
+    second: {fileID: 2100000, guid: de912a328db2f134793af1d8bb2b7139, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__lambert_Walls
+    second: {fileID: 2100000, guid: beb3408e720ae9a458d3dfa17612a432, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

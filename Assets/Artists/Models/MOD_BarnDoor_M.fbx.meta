@@ -3,7 +3,12 @@ guid: e96262aa36324534a900362faf87cbbb
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert_BeamsPoles
+    second: {fileID: 2100000, guid: de912a328db2f134793af1d8bb2b7139, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
