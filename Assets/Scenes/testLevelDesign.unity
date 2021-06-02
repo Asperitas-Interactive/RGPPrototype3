@@ -38949,7 +38949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7b8e701eba64347978c88fea430b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_enemySpeed: 0
+  m_enemySpeed: 8
   m_maxWanderTime: 0
   m_counterTime: 1.5
   m_StunTimer: 3
