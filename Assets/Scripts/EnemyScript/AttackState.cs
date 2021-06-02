@@ -73,7 +73,7 @@ public class AttackState:BaseState
         {
             _animator.SetBool(Attack, true);
         }
-        m_AttackCooldown = gameManager.Instance.m_attackCooldown;
+        m_AttackCooldown = UnityEngine.Random.Range(gameManager.Instance.m_attackCooldown[0], gameManager.Instance.m_attackCooldown[1]);
     }
     public override void Destroy()
     {

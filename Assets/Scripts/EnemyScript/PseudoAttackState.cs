@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 public class PseudoAttackState: BaseState
 {
-    private float m_counterTimer = gameManager.Instance.m_counterTime; 
+    private float m_counterTimer = Random.Range(gameManager.Instance.m_counterTime[0], gameManager.Instance.m_counterTime[1]); 
     private EnemyControl m_enemy;
     private static readonly int Attack = Animator.StringToHash("Attack");
     private static readonly int Speed = Animator.StringToHash("Speed");
@@ -84,7 +84,7 @@ public class PseudoAttackState: BaseState
             _animator.SetBool(Attack, false);
         }
         
-        m_counterTimer = gameManager.Instance.m_counterTime;
+        m_counterTimer = Random.Range(gameManager.Instance.m_counterTime[0], gameManager.Instance.m_counterTime[1]);
     }
 
     public override void Destroy()
