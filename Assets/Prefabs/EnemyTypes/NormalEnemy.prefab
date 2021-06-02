@@ -46,6 +46,18 @@ MonoBehaviour:
   skinnedMesh: {fileID: 8808021728114413032}
   VFXGraph: {fileID: 6657489142788715596}
   refreshRate: 0.02
+--- !u!114 &256703478128006600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302596254846855080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e946e8949fd608428de67199916f409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5797798517634806625
 GameObject:
   m_ObjectHideFlags: 0

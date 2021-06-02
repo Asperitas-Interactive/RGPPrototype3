@@ -149,7 +149,8 @@ public class AttackEquip : MonoBehaviour
                         break;
                     case 3:
                         m_combatControl.m_comboType = CombatControl.eAttackType.Stun;
-                        gameManager.Instance.m_StunTimer = gameManager.Instance.m_StunTimer * 2;
+                        gameManager.Instance.m_StunTimer[0] = gameManager.Instance.m_defaultStunTimer[0] * 2f;
+                        gameManager.Instance.m_StunTimer[1] = gameManager.Instance.m_defaultStunTimer[1] * 2f;
                         break;
                     default:
                         break;
