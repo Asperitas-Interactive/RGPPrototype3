@@ -43,7 +43,7 @@ public class EnemyControl : MonoBehaviour
 
     //Rigidbody rb;
 
-    public bool isStunned = false;
+    public bool m_isStunned = false;
 
     private GameObject[] m_children;
     
