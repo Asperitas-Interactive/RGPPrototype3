@@ -3,7 +3,27 @@ guid: 4395d71d1b59a3047b67164d1b47a1bf
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 0ca4d90deb1edac4da1563d1d4832f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: 84d4290cd28900c4599076ff9613be82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Petals
+    second: {fileID: 2100000, guid: 2691bc3ce1809a248a7ce92d75d60d4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SideOfFace
+    second: {fileID: 2100000, guid: d41137dd922e0b749ae6f9bdeb35d73f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

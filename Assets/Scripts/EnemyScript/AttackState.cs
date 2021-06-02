@@ -16,6 +16,8 @@ public class AttackState:BaseState
 
     public override Type Tick()
     {
+        if (m_enemy.m_death)
+            return null;
         m_transform.LookAt(new Vector3(m_player.position.x, m_transform.position.y, m_player.position.z));
         m_AttackCooldown -= Time.deltaTime;
         if (m_attacked && m_AttackCooldown > 0f)
@@ -26,12 +28,12 @@ public class AttackState:BaseState
         if(m_AttackCooldown<0.4f)
         {
             //m_enemy.m_boxCollider.enabled = true;
-            m_enemy.Critical(false);
 
         }
 
         if (m_AttackCooldown < 0f)
         {
+            m_enemy.Critical(false);
 
             foreach (var _animator in m_animator)
             {

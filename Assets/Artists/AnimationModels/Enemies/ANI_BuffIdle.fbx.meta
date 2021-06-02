@@ -6,7 +6,32 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BodyOBJ2_initialShadingGroup1
+    second: {fileID: 2100000, guid: 0ca4d90deb1edac4da1563d1d4832f21, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: 2691bc3ce1809a248a7ce92d75d60d4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert6
+    second: {fileID: 2100000, guid: 6d15aa745f57bf24e8166d168e89972d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 84d4290cd28900c4599076ff9613be82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert9
+    second: {fileID: 2100000, guid: d41137dd922e0b749ae6f9bdeb35d73f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -19,18 +44,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: <Root Transform>
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Inbetween bone rotation
-      in configuration does not match rotation in animation file:\n\t'Base HumanSpine3'
-      : rotation error = 12.965706 deg\n\t'Base HumanRibcage' : rotation error =
-      4.614993 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Base HumanSpine3' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'Base HumanRibcage'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Base
-      HumanNeck1' is inbetween humanoid transforms and has rotation animation that
-      will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
