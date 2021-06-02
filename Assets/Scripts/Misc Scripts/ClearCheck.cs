@@ -26,14 +26,13 @@ public class ClearCheck : MonoBehaviour
             i++;
         }
 
-        if(i != encounters.Length - 1)
+        if(i != encounters.Length)
         {
             isActive = false;
         } else
         {
             isActive = true;
+            gameManager.Instance.GameOver();
         }
-
-        Debug.Log(isActive);
     }
 }
