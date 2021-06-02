@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.76056, g: 60.89978, b: 613.4629, a: 1}
+  m_IndirectSpecularColor: {r: 27.755737, g: 60.89746, b: 613.56836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -37654,7 +37654,8 @@ PrefabInstance:
       propertyPath: m_TagString
       value: ShopEvent
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1836658898, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
 --- !u!1 &1836658895 stripped
 GameObject:
