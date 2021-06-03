@@ -778,11 +778,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
-      value: 65
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star2Money
-      value: 120
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Combo
@@ -790,7 +790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Money
-      value: 170
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star4Combo
@@ -798,7 +798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star4Money
-      value: 230
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Combo
@@ -806,7 +806,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Money
-      value: 250
+      value: 260
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_waves.Array.size
@@ -29861,11 +29861,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
-      value: 55
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star2Money
-      value: 100
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Combo
@@ -29873,11 +29873,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Money
-      value: 150
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star4Money
-      value: 200
+      value: 205
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Combo
@@ -29885,7 +29885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Money
-      value: 225
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_waves.Array.data[1]
@@ -38283,7 +38283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
-      value: 80
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star2Combo
@@ -38291,7 +38291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star2Money
-      value: 160
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Combo
@@ -38299,7 +38299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star3Money
-      value: 220
+      value: 245
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star4Combo
@@ -38307,7 +38307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star4Money
-      value: 270
+      value: 295
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Combo
@@ -38315,7 +38315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star5Money
-      value: 300
+      value: 325
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_waves.Array.size

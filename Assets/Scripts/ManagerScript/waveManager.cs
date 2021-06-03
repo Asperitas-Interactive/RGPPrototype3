@@ -207,7 +207,11 @@ public class waveManager : MonoBehaviour
 
         m_encounterController.Close();
 
-        Debug.Log(lastEnemyPos);
+        
+        if(m_encounterController.tag == "FinalEncounter")
+        {
+            gameManager.Instance.GameOver();
+        }
     }
 
 
