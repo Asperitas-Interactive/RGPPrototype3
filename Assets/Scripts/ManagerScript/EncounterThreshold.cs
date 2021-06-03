@@ -22,6 +22,8 @@ public class EncounterThreshold : MonoBehaviour
 
     [FormerlySerializedAs("InvisWalls")] public GameObject[] m_invisibleWalls;
 
+    public String m_messageContent;
+    
     public UnityEvent m_Open;
     public UnityEvent m_Close;
     private void OnTriggerEnter(Collider _other)
