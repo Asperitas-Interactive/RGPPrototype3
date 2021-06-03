@@ -46,6 +46,8 @@ public class waveManager : MonoBehaviour
     {
         if (m_isActive)
         {
+            Debug.Log(m_boids.Length);
+
             int t = 0;
             bool flag = false;
 
@@ -54,11 +56,6 @@ public class waveManager : MonoBehaviour
                 if (boid == null)
                 {
                     continue;
-                }
-
-                if(m_boids.Length == 1)
-                {
-                    lastEnemyPos = m_boids[0].transform.position;
                 }
 
                 else
