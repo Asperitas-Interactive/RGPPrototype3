@@ -40933,7 +40933,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Van
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1836658897, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
 --- !u!114 &1836658898 stripped
 MonoBehaviour:
