@@ -52,7 +52,7 @@ public class gameManager : MonoBehaviour
         SceneManager.LoadScene("gameOver");
     }
 
-    void Arena2()
+    public void Arena2()
     {
         m_enemySpeed[0] = 10f;
         m_enemySpeed[1] = 12f;
@@ -60,6 +60,20 @@ public class gameManager : MonoBehaviour
         m_StunTimer[1] = 2.5f;
         m_defaultStunTimer[0] = 1.5f;
         m_defaultStunTimer[1] = 2.5f;
+        m_attackCooldown[0] = 2f;
+        m_attackCooldown[1] = 3f;
+        m_counterTime[0] = 0f;
+        m_counterTime[1] = 2f;
+    }
+    
+    public void Arena3()
+    {
+        m_enemySpeed[0] = 11f;
+        m_enemySpeed[1] = 13f;
+        m_StunTimer[0] = 1f;
+        m_StunTimer[1] = 1.8f;
+        m_defaultStunTimer[0] = 1.2f;
+        m_defaultStunTimer[1] = 2.4f;
         m_attackCooldown[0] = 2f;
         m_attackCooldown[1] = 3f;
         m_counterTime[0] = 0f;

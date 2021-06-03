@@ -169,8 +169,9 @@ public class EnemyControl : MonoBehaviour
     {
         if (m_death)
         {
-            Destroy(this);
             m_agent.SetDestination(transform.position);
+
+            Destroy(this);
         }
 
         if (m_hPool == eHealthPool.Weak)
@@ -350,7 +351,7 @@ public class EnemyControl : MonoBehaviour
         {
             case eHealthPool.Weak:
                // m_agent.speed = Random.Range(5.0f, 6.0f);
-                m_health = Random.Range(20, 30);
+                m_health = Random.Range(200, 300);
                 m_maxHealth = m_health;
                 break;
             case eHealthPool.Normal:
