@@ -5,9 +5,10 @@ using UnityEngine;
 public class Location : MonoBehaviour
 {
     public Transform[] m_vanLocation;
+    public Vector3 test;
     void Start()
     {
-        
+        test = new Vector3();
     }
 
     void Update()
