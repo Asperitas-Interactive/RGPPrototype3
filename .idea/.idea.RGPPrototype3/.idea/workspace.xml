@@ -22,7 +22,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8D3A4CBA-CDAE-45B3-84E0-E80B376938E1/76/54facd92/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EnemyScript/StateMachine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../Tutorials/DroneProject/Assets/Scripts/Drone.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Location.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc Scripts/BarrierVfx.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42A5878C-E129-4030-83AC-CCF18E43363F/cf/30aa48c7/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42A5878C-E129-4030-83AC-CCF18E43363F/df/b2fafec6/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Misc Scripts/tranformToChild.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +61,8 @@
       <option value="$PROJECT_DIR$/Assets/BarnDoors.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/AttackEquip.cs" />
       <option value="$PROJECT_DIR$/Assets/Location.cs" />
+      <option value="$PROJECT_DIR$/Assets/Collectible.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/BarrierVfx.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t7LUohOWlPeyAXbOSZdepycuhI" />
@@ -100,10 +102,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16172">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="16172" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
