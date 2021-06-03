@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.76056, g: 60.89978, b: 613.4629, a: 1}
+  m_IndirectSpecularColor: {r: 28.122545, g: 60.733364, b: 611.94995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -29913,7 +29913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -29928,6 +29928,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1718772630}
@@ -29940,6 +29944,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1836658896}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1240482177}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -29949,6 +29957,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
@@ -29964,6 +29976,10 @@ PrefabInstance:
       value: SetLocation
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: DropKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: BarnDoors, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -29976,12 +29992,24 @@ PrefabInstance:
       value: Location, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: waveManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: Go to the church
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Open.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -29993,6 +30021,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_Close.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555511, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}

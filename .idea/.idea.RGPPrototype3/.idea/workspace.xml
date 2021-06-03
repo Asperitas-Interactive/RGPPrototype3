@@ -42,7 +42,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/enemyHealth.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/FadeOut.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/HPText.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/EncounterThreshold.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/PlayerMovement.cs" />
       <option value="$PROJECT_DIR$/../../Tutorials/DroneProject/Assets/Scripts/Drone.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/WanderState.cs" />
@@ -56,14 +55,16 @@
       <option value="$PROJECT_DIR$/Assets/LookAt.cs" />
       <option value="$PROJECT_DIR$/Assets/Events.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/AttackState.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/EnemyControl.cs" />
       <option value="$PROJECT_DIR$/Assets/BarnDoors.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/AttackEquip.cs" />
       <option value="$PROJECT_DIR$/Assets/Location.cs" />
       <option value="$PROJECT_DIR$/Assets/Collectible.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/BarrierVfx.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/waveManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/Collectible.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/Location.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/EncounterThreshold.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/waveManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/EnemyControl.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t7LUohOWlPeyAXbOSZdepycuhI" />
@@ -103,10 +104,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16172">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="16172" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
