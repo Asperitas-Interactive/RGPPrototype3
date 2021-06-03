@@ -2963,7 +2963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3269192871882282153}
   m_Layer: 0
-  m_Name: Prefab_BarnNEW
+  m_Name: Prefab_Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

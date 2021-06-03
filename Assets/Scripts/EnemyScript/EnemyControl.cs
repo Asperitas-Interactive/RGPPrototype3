@@ -106,7 +106,6 @@ public class EnemyControl : MonoBehaviour
         m_rankingSys = m_player.GetComponent<RankingSystem>();
 
         m_children = new GameObject[transform.childCount];
-        m_animator = new Animator[transform.childCount - 1];
         for (int j = 0; j < transform.childCount; j++)
         {
             m_children[j] = transform.GetChild(j).gameObject;
@@ -115,13 +114,25 @@ public class EnemyControl : MonoBehaviour
         m_agent.speed = Random.Range(gameManager.Instance.m_enemySpeed[0], gameManager.Instance.m_enemySpeed[1]);
 
         int i = 0;
-        foreach (var child in m_children)
+        if (m_hPool == eHealthPool.Weak)
         {
-            if(child.name != "Canvas")
+            m_animator = new Animator[transform.childCount - 1];
+
+            foreach (var child in m_children)
             {
-                m_animator[i++] = child.GetComponent<Animator>();
+                if (child.name != "Canvas")
+                {
+                    m_animator[i++] = child.GetComponent<Animator>();
+                }
             }
         }
+        else
+        {
+            m_animator = new Animator[1];
+            m_animator.SetValue(m_children[6].GetComponent<Animator>(), 0);
+
+        }
+
         m_boxCollider = GetComponent<BoxCollider>();       
 
         m_maxAttackCooldown = Random.Range(2f, 6f);
@@ -225,10 +236,11 @@ public class EnemyControl : MonoBehaviour
 
         if (m_hPool == eHealthPool.Normal)
         {
-
+            
             if (m_health < 0f)
             {
                 m_death = true;
+               
                 m_children[6].GetComponent<DissolvingController>().Die();
             }
         }

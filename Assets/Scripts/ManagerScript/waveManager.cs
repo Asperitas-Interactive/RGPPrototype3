@@ -1,15 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class waveManager : MonoBehaviour
 {
     [FormerlySerializedAs("boidCount")] public int m_boidCount = 0;
     [FormerlySerializedAs("maxWaves")] public int m_maxWaves;
     int m_wave;
+
+    public GameObject m_key;
 
     [FormerlySerializedAs("boids")] public GameObject[] m_boids;
     public GameObject m_collectible;
@@ -31,7 +36,7 @@ public class waveManager : MonoBehaviour
     [FormerlySerializedAs("CombatOST")] public AudioSource m_Combat;
     [FormerlySerializedAs("ClearOST")] public AudioSource m_CombatClear;
 
-    private Vector3 lastEnemyPos = new Vector3();
+    private Vector3 m_lastEnemyPos = new Vector3();
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +68,7 @@ public class waveManager : MonoBehaviour
 
                     if (t == 1)
                     {
-                        lastEnemyPos = boid.transform.position;
+                        m_lastEnemyPos = boid.transform.position;
                     }
 
                 }
@@ -234,4 +239,14 @@ public class waveManager : MonoBehaviour
 
         return point;
     }
+
+    public void DropKey(String _message)
+    {
+        if (m_lastEnemyPos != Vector3.zero)
+        {
+            GameObject.Instantiate(m_key, m_lastEnemyPos, Quaternion.identity).GetComponent<Collectible>().m_message = _message;
+        }
+    }
+    
+    
 }
