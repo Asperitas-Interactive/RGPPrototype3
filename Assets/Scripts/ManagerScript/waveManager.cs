@@ -16,6 +16,7 @@ public class waveManager : MonoBehaviour
 
     public GameObject m_key;
 
+    
     [FormerlySerializedAs("boids")] public GameObject[] m_boids;
 
     private Waves[] m_waveControl;
@@ -243,7 +244,9 @@ public class waveManager : MonoBehaviour
     {
         if (m_lastEnemyPos != Vector3.zero)
         {
-            GameObject.Instantiate(m_key, m_lastEnemyPos, Quaternion.identity).GetComponent<Collectible>().m_message = _message;
+            GameObject temp = GameObject.Instantiate(m_key, m_lastEnemyPos, Quaternion.identity);
+            temp.GetComponent<Collectible>().m_message = _message;
+            temp.GetComponent<Collectible>().m_OnTrigger = m_encounterController.m_passthrough;
         }
     }
     
