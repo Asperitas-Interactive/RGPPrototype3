@@ -5,11 +5,12 @@ using UnityEngine;
 public class ClearCheck : MonoBehaviour
 {
     public EncounterThreshold[] encounters;
+    public EncounterThreshold finalEncounter;
     private bool isActive = false; 
     // Start is called before the first frame update
     void Start()
     {
-        
+        finalEncounter.GetComponent<BoxCollider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class ClearCheck : MonoBehaviour
         } else
         {
             isActive = true;
-            gameManager.Instance.GameOver();
+            finalEncounter.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }
