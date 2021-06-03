@@ -18,6 +18,7 @@ TagManager:
   - ShopEvent
   - UpgradeUI
   - WaveManager
+  - PickUpMessage
   layers:
   - Default
   - TransparentFX
