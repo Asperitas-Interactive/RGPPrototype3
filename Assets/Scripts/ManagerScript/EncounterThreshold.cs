@@ -43,7 +43,10 @@ public class EncounterThreshold : MonoBehaviour
         m_Open?.Invoke();
         foreach(GameObject go in m_invisibleWalls)
         {
-            go.SetActive(true);
+            if (go != null)
+            {
+                go.SetActive(true);
+            }
         }
     }
 
@@ -52,7 +55,10 @@ public class EncounterThreshold : MonoBehaviour
         m_Close?.Invoke();
         foreach(GameObject go in m_invisibleWalls)
         {
-            go.SetActive(false);
+            if (go != null)
+            {
+                go.SetActive(false);
+            }
         }
     }
 

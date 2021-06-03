@@ -31,6 +31,8 @@ public class waveManager : MonoBehaviour
     [FormerlySerializedAs("CombatOST")] public AudioSource m_Combat;
     [FormerlySerializedAs("ClearOST")] public AudioSource m_CombatClear;
 
+    private Vector3 lastEnemyPos = new Vector3();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +60,11 @@ public class waveManager : MonoBehaviour
                 {
                     t++;
                     flag = true;
+
+                    if (t == 1)
+                    {
+                        lastEnemyPos = boid.transform.position;
+                    }
 
                 }
             }
@@ -199,6 +206,12 @@ public class waveManager : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().Heal(100);
 
         m_encounterController.Close();
+
+        
+        if(m_encounterController.tag == "FinalEncounter")
+        {
+            gameManager.Instance.GameOver();
+        }
     }
 
 
