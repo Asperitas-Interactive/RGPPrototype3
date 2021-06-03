@@ -31,7 +31,7 @@ public class waveManager : MonoBehaviour
     [FormerlySerializedAs("CombatOST")] public AudioSource m_Combat;
     [FormerlySerializedAs("ClearOST")] public AudioSource m_CombatClear;
 
-    private Vector3 lastEnemyPos;
+    private Vector3 lastEnemyPos = new Vector3();
 
     // Start is called before the first frame update
     void Start()
