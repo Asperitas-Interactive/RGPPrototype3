@@ -3,7 +3,12 @@ guid: fc4d4afb8aa489b40b8e98ce236c230b
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: IronGate
+    second: {fileID: 2100000, guid: 714934b2bdc39b441b3f9ca3f74fecaf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
