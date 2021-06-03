@@ -4695,19 +4695,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.x
-      value: 54.84123
+      value: 49.752728
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.z
-      value: 38.038876
+      value: 33.612988
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.x
-      value: -4.3754883
+      value: -4.0296326
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.z
-      value: -9.647934
+      value: -10.104139
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
@@ -4816,6 +4816,10 @@ PrefabInstance:
     - target: {fileID: 4639435190725555511, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4639435190725555511, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
+      propertyPath: m_TagString
+      value: FinalEncounter
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555514, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_RootOrder

@@ -207,9 +207,9 @@ public class waveManager : MonoBehaviour
 
         m_encounterController.Close();
 
-        
         if(m_encounterController.tag == "FinalEncounter")
         {
+            Debug.Log("Call");
             gameManager.Instance.GameOver();
         }
     }
