@@ -70,8 +70,6 @@ public class waveManager : MonoBehaviour
             }
             m_boidCount = t;
 
-            Debug.Log(m_boidCount);
-
             if (!flag)
             {
                 m_wave++;
