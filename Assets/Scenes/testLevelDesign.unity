@@ -28898,7 +28898,7 @@ GameObject:
   - component: {fileID: 1265097365}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: PickUpMessage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29720,19 +29720,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.x
-      value: 36.09485
+      value: 31.792622
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.z
-      value: 27.796284
+      value: 26.547764
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.x
-      value: 0.5143242
+      value: 2.3827195
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.z
-      value: -3.2555866
+      value: -2.904398
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
@@ -34475,8 +34475,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf44856133fdb7849ba0ef866918172c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_msgHolder: {fileID: 0}
-  m_message: 
+  m_msgHolder: {fileID: 1265097365}
+  m_message: You got the key!
 --- !u!65 &1519534283
 BoxCollider:
   m_ObjectHideFlags: 0
