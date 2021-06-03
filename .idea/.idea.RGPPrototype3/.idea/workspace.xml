@@ -40,7 +40,6 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/SCRAPPEDSCRIPTS/PickUps.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ShopScripts/WeaponUpgrade.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/EnemyScript/enemyHealth.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/waveManager.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/FadeOut.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/PlayerScript/HPText.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/EncounterThreshold.cs" />
@@ -63,6 +62,8 @@
       <option value="$PROJECT_DIR$/Assets/Location.cs" />
       <option value="$PROJECT_DIR$/Assets/Collectible.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/BarrierVfx.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/ManagerScript/waveManager.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Misc Scripts/Collectible.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1t7LUohOWlPeyAXbOSZdepycuhI" />
@@ -102,10 +103,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16172">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16172" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
