@@ -167,8 +167,11 @@ public class EnemyControl : MonoBehaviour
 
     private void Update()
     {
-        if(m_death)
+        if (m_death)
+        {
             Destroy(this);
+            m_agent.SetDestination(transform.position);
+        }
 
         if (m_hPool == eHealthPool.Weak)
         {
