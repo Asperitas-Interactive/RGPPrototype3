@@ -19,6 +19,7 @@ TagManager:
   - UpgradeUI
   - WaveManager
   - PickUpMessage
+  - FinalEncounter
   layers:
   - Default
   - TransparentFX

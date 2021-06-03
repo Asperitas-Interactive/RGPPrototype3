@@ -17,7 +17,6 @@ public class waveManager : MonoBehaviour
     public GameObject m_key;
 
     [FormerlySerializedAs("boids")] public GameObject[] m_boids;
-    public GameObject m_collectible;
 
     private Waves[] m_waveControl;
 
@@ -212,9 +211,9 @@ public class waveManager : MonoBehaviour
 
         m_encounterController.Close();
 
-        
         if(m_encounterController.tag == "FinalEncounter")
         {
+            Debug.Log("Call");
             gameManager.Instance.GameOver();
         }
     }
