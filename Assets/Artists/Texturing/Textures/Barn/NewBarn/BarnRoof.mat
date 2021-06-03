@@ -7,10 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BarnWall
+  m_Name: BarnRoof
   m_Shader: {fileID: 4800000, guid: 6e4ae4064600d784cac1e41a9e6f2e59, type: 3}
   m_ShaderKeywords: _DISABLE_SSR_TRANSPARENT _MASKMAP _NORMALMAP _NORMALMAP_TANGENT_SPACE
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 2225
@@ -30,7 +30,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseColorMap:
-        m_Texture: {fileID: 2800000, guid: 500eb875eb93b1b4596ea8785bbf3122, type: 3}
+        m_Texture: {fileID: 2800000, guid: a5a0587ffb0f99c4cb7ffe21b2a64b12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BentNormalMap:
@@ -70,15 +70,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 500eb875eb93b1b4596ea8785bbf3122, type: 3}
+        m_Texture: {fileID: 2800000, guid: a5a0587ffb0f99c4cb7ffe21b2a64b12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
-        m_Texture: {fileID: 2800000, guid: 2f56a03fc3cd074418beedf82067f732, type: 3}
+        m_Texture: {fileID: 2800000, guid: a5a0587ffb0f99c4cb7ffe21b2a64b12, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: e9d52e44eac135e44bf835c8c902ff35, type: 3}
+        m_Texture: {fileID: 2800000, guid: fd299e7d408f6db41bcbbaf7f7bea99a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMapOS:
@@ -107,6 +107,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _TransmittanceColorMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _UnlitColorMap:
+        m_Texture: {fileID: 2800000, guid: 3e64bd84e3a10f546b834a11987e9b4b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -161,6 +165,7 @@ Material:
     - _DistortionDepthTest: 1
     - _DistortionDstBlend: 1
     - _DistortionEnable: 0
+    - _DistortionOnly: 0
     - _DistortionScale: 1
     - _DistortionSrcBlend: 1
     - _DistortionVectorBias: -1
@@ -169,7 +174,7 @@ Material:
     - _DoubleSidedNormalMode: 1
     - _DstBlend: 0
     - _EmissiveColorMode: 1
-    - _EmissiveExposureWeight: 0.618
+    - _EmissiveExposureWeight: 0.383
     - _EmissiveIntensity: 1
     - _EmissiveIntensityUnit: 0
     - _EnableBlendModePreserveSpecularLighting: 1
@@ -185,6 +190,7 @@ Material:
     - _HeightPoMAmplitude: 2
     - _HeightTessAmplitude: 2
     - _HeightTessCenter: 0.5
+    - _IncludeIndirectLighting: 1
     - _InvTilingScale: 1
     - _Ior: 1.5
     - _IridescenceMask: 1
@@ -195,7 +201,7 @@ Material:
     - _MetallicRemapMax: 1
     - _MetallicRemapMin: 0
     - _NormalMapSpace: 0
-    - _NormalScale: 0
+    - _NormalScale: 0.1
     - _OpaqueCullMode: 2
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
@@ -207,7 +213,7 @@ Material:
     - _ReceivesSSRTransparent: 0
     - _RefractionModel: 0
     - _Smoothness: 0.5
-    - _SmoothnessRemapMax: 0.27570707
+    - _SmoothnessRemapMax: 0.6034893
     - _SmoothnessRemapMin: 0
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
@@ -254,8 +260,8 @@ Material:
     - _DiffusionProfileAsset: {r: 0, g: 0, b: 0, a: 0}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissiveColor: {r: 0.40619448, g: 0.08995317, b: 0.13372305, a: 1}
-    - _EmissiveColorLDR: {r: 0.6698113, g: 0.33174616, b: 0.4012173, a: 1}
+    - _EmissiveColor: {r: 0.19061664, g: 0.34092283, b: 0.65626645, a: 1}
+    - _EmissiveColorLDR: {r: 0.4738341, g: 0.61879194, b: 0.8301887, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
@@ -264,6 +270,8 @@ Material:
     - _UVDetailsMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+    - _UnlitColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UnlitColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &214659088648361142
 MonoBehaviour:
