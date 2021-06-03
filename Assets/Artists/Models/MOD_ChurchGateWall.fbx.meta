@@ -3,7 +3,22 @@ guid: 8d5d41b8a90ffa745bcdbd4a190200c8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BrickWallTop
+    second: {fileID: 2100000, guid: 61b766486a05b5047a4aa3dbb7a9f725, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert23
+    second: {fileID: 2100000, guid: 83dd5cfc91992d54d893fb101ab162f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert24
+    second: {fileID: 2100000, guid: 83dd5cfc91992d54d893fb101ab162f3, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
