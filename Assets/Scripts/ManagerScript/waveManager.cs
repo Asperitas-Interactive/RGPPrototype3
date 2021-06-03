@@ -75,8 +75,6 @@ public class waveManager : MonoBehaviour
             }
             m_boidCount = t;
 
-            //Debug.Log(m_boidCount);
-
             if (!flag)
             {
                 m_wave++;
@@ -214,7 +212,11 @@ public class waveManager : MonoBehaviour
 
         m_encounterController.Close();
 
-        Debug.Log(m_lastEnemyPos);
+        
+        if(m_encounterController.tag == "FinalEncounter")
+        {
+            gameManager.Instance.GameOver();
+        }
     }
 
 
