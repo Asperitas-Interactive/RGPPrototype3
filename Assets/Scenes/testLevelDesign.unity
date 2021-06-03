@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 28.15186, g: 60.7583, b: 612.2358, a: 1}
+  m_IndirectSpecularColor: {r: 27.755737, g: 60.89746, b: 613.56836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4251,6 +4251,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 727785659}
     m_Modifications:
+    - target: {fileID: 359884528415825890, guid: ba5cd6d6bd6950e4f97bc03b97830aaa, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 714934b2bdc39b441b3f9ca3f74fecaf, type: 2}
     - target: {fileID: 2901108002630821498, guid: ba5cd6d6bd6950e4f97bc03b97830aaa, type: 3}
       propertyPath: m_Name
       value: Prefab_ChurchGate
@@ -10933,6 +10937,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MOD_ChurchGateWall
       objectReference: {fileID: 0}
+    - target: {fileID: 3226705860825812310, guid: 8d5d41b8a90ffa745bcdbd4a190200c8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 61b766486a05b5047a4aa3dbb7a9f725, type: 2}
+    - target: {fileID: 3226705860825812310, guid: 8d5d41b8a90ffa745bcdbd4a190200c8, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83dd5cfc91992d54d893fb101ab162f3, type: 2}
+    - target: {fileID: 3226705860825812310, guid: 8d5d41b8a90ffa745bcdbd4a190200c8, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 83dd5cfc91992d54d893fb101ab162f3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d5d41b8a90ffa745bcdbd4a190200c8, type: 3}
 --- !u!1001 &489618618
