@@ -170,6 +170,7 @@ public class EnemyControl : MonoBehaviour
         if (m_death)
         {
             m_agent.SetDestination(transform.position);
+            m_agent.velocity = Vector3.zero;
 
             Destroy(this);
         }

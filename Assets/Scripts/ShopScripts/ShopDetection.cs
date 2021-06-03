@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class ShopDetection : MonoBehaviour
 {
+    public Image m_moneySprite;
+
+    public Sprite m_blueMoney;
+
+    public Sprite m_whiteMoney;
     //[FormerlySerializedAs("Endbutton")] public Button m_endbutton;
     [FormerlySerializedAs("UpgradeButton")] public Image m_upgradeButton;
     [FormerlySerializedAs("prompt")] public Image m_prompt;
@@ -71,6 +76,12 @@ public class ShopDetection : MonoBehaviour
                 
                 m_inMenu = true;
             }
+
+            if (m_inMenu)
+            {
+                if(m_moneySprite.sprite != m_blueMoney)
+                    m_moneySprite.sprite = m_blueMoney;
+            }
         }
     }
 
@@ -94,6 +105,7 @@ public class ShopDetection : MonoBehaviour
 
     public void CloseMenus()
     {
+        m_moneySprite.sprite = m_whiteMoney;
         m_ShopMenu.Stop();
         m_Overworld.Play();
         Cursor.lockState = CursorLockMode.Locked;

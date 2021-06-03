@@ -24,6 +24,7 @@ public class StunState:BaseState
 
     public override void Init()
     {
+        m_enemy.Critical(false);
         m_enemy.m_isStunned = true;
         m_stunTimer = UnityEngine.Random.Range(gameManager.Instance.m_StunTimer[0], gameManager.Instance.m_StunTimer[1]);
         foreach (var _animator in m_animator)
