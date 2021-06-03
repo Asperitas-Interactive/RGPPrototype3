@@ -37,7 +37,7 @@ public class EncounterThreshold : MonoBehaviour
 
     private void Start()
     {
-        m_Close?.Invoke();
+        
     }
 
     public void turnOnWalls()

@@ -17,7 +17,6 @@ public class waveManager : MonoBehaviour
     public GameObject m_key;
 
     [FormerlySerializedAs("boids")] public GameObject[] m_boids;
-    public GameObject m_collectible;
 
     private Waves[] m_waveControl;
 
