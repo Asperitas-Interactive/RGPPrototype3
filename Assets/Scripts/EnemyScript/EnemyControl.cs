@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -12,6 +13,7 @@ public class EnemyControl : MonoBehaviour
 {
     //For Health
     [FormerlySerializedAs("health")] public int m_health = 100;
+
 
     [FormerlySerializedAs("slider")] public Slider m_slider;
     
@@ -345,11 +347,11 @@ public class EnemyControl : MonoBehaviour
         {
             case eHealthPool.Weak:
                // m_agent.speed = Random.Range(5.0f, 6.0f);
-                m_health = Random.Range(400, 600);
+                m_health = Random.Range(20, 30);
                 m_maxHealth = m_health;
                 break;
             case eHealthPool.Normal:
-                m_health = Random.Range(500, 700);
+                m_health = Random.Range(300, 400);
                // m_agent.speed = Random.Range(4.0f, 5.0f);
                 m_maxHealth = m_health;
                 break;

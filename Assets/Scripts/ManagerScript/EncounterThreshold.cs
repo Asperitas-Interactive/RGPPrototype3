@@ -11,6 +11,8 @@ public class EncounterThreshold : MonoBehaviour
     [FormerlySerializedAs("Star3Combo")] public int m_star3Combo;
     [FormerlySerializedAs("Star4Combo")] public int m_star4Combo;
     [FormerlySerializedAs("Star5Combo")] public int m_star5Combo;
+    public UnityEvent m_passthrough;
+
 
     [FormerlySerializedAs("Star1Money")] public float m_star1Money;
     [FormerlySerializedAs("Star2Money")] public float m_star2Money;
