@@ -18,6 +18,7 @@ public class gameManager : MonoBehaviour
     public float[] m_defaultStunTimer;
     public string m_State;
     public float[] m_attackCooldown = { 3.5f, 4.5f };
+    
 
     public static gameManager Instance
     {
@@ -49,6 +50,20 @@ public class gameManager : MonoBehaviour
     public void GameLost()
     {
         SceneManager.LoadScene("gameOver");
+    }
+
+    void Arena2()
+    {
+        m_enemySpeed[0] = 10f;
+        m_enemySpeed[1] = 12f;
+        m_StunTimer[0] = 1.5f;
+        m_StunTimer[1] = 2.5f;
+        m_defaultStunTimer[0] = 1.5f;
+        m_defaultStunTimer[1] = 2.5f;
+        m_attackCooldown[0] = 2f;
+        m_attackCooldown[1] = 3f;
+        m_counterTime[0] = 0f;
+        m_counterTime[1] = 2f;
     }
     
 }
