@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 27.762817, g: 60.885864, b: 613.3711, a: 1}
+  m_IndirectSpecularColor: {r: 27.76056, g: 60.89978, b: 613.4629, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13841,6 +13841,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.3221
       objectReference: {fileID: 0}
+    - target: {fileID: 5603438878509609240, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5616188272145288023, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -13910,6 +13914,17 @@ MonoBehaviour:
 --- !u!114 &577071090 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 104511262, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
+  m_PrefabInstance: {fileID: 577071088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &577071091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1268257754264569839, guid: 46e62b0eca78a494c85f74af264aa4f7, type: 3}
   m_PrefabInstance: {fileID: 577071088}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -29694,19 +29709,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.x
-      value: 44.245075
+      value: 36.09485
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Size.z
-      value: 48.11869
+      value: 27.796284
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.x
-      value: -3.682417
+      value: 0.5143242
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555508, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_Center.z
-      value: -3.0997353
+      value: -3.2555866
       objectReference: {fileID: 0}
     - target: {fileID: 4639435190725555509, guid: 5653adc527ac4ec41b5f2039fa7c91dc, type: 3}
       propertyPath: m_star1Money
@@ -40838,6 +40853,10 @@ PrefabInstance:
       propertyPath: m_player
       value: 
       objectReference: {fileID: 1441095022}
+    - target: {fileID: 1836658898, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
+      propertyPath: m_prompt
+      value: 
+      objectReference: {fileID: 577071091}
     - target: {fileID: 1836658898, guid: cb6ee1e7b191a4840b51d06cd3e14c30, type: 3}
       propertyPath: m_ShopMenu
       value: 

@@ -39,6 +39,8 @@ public class ShopDetection : MonoBehaviour
         {
             go.SetActive(false);
         }
+
+        m_prompt.enabled = false;
     }
 
     // Update is called once per frame
@@ -77,6 +79,7 @@ public class ShopDetection : MonoBehaviour
         if(_other.gameObject == m_player)
         {
             m_inZone = true;
+            m_prompt.enabled = true;
         }
     }
 
@@ -85,6 +88,7 @@ public class ShopDetection : MonoBehaviour
         if(_other.gameObject == m_player)
         {
             m_inZone = false;
+            m_prompt.enabled = false;
         }
     }
 
